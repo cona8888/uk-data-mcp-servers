@@ -1,0 +1,724 @@
+{
+  "schema_version": "1.0",
+  "source_id": "bgs_boreholes",
+  "status": "partial",
+  "source": {
+    "id": "bgs_boreholes",
+    "name": "BGS borehole index discovery",
+    "provider": "British Geological Survey",
+    "category": "ground_investigation",
+    "coverage": [
+      "Great Britain"
+    ],
+    "access": "open_no_key",
+    "interface": [
+      "OGC API Features",
+      "GeoJSON index records"
+    ],
+    "status": "implemented",
+    "documentation_url": "https://www.bgs.ac.uk/datasets/boreholes-index/",
+    "licence": {
+      "name": "Open Government Licence v3.0 for the open index",
+      "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "scope": "The public borehole index is open; linked scans, reports, confidential records and third-party test data may have separate rights/access conditions."
+    },
+    "attribution": "Contains British Geological Survey materials \u00a9 UKRI 2026.",
+    "limitations": [
+      "Index discovery does not extract or validate SPT/CPT/laboratory test results.",
+      "The index is incomplete and location/record quality varies.",
+      "Nearby boreholes do not establish ground conditions at the site; absent records do not mean no investigation exists."
+    ],
+    "priority": 1,
+    "reviewed_on": "2026-10-27"
+  },
+  "retrieved_at_utc": "2026-10-28T21:16:51.676584Z",
+  "query": {
+    "collection": "onshoreboreholeindex",
+    "bbox": [
+      -1.944916492670114,
+      52.440909090909095,
+      -1.915083507329886,
+      52.45909090909091
+    ],
+    "limit": 20,
+    "offset": 6,
+    "include_geometry": true
+  },
+  "data": [
+    {
+      "type": "Feature",
+      "properties": {
+        "reference": "SP08SE124",
+        "name": "EDGBASTON PARK ROAD 3",
+        "grid_ref": "SP 05210 84130",
+        "easting": 405210.0,
+        "northing": 284130.0,
+        "precision": "\u00b1 10 METRES",
+        "length": 8.1,
+        "year_known": "1989",
+        "sitereport": "5064",
+        "held_at": "KW",
+        "id": 305257.0,
+        "length_scan_cat": "1_Y",
+        "bgs_id": 305257.0,
+        "date_updated": "2013-01-22T18:25:55",
+        "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305257",
+        "ags_log_url": null,
+        "water_well_ref": "N/A",
+        "scan_quality": "not Entered"
+      },
+      "id": 305257.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.924758342571233,
+          52.45509917743054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reference": "SP08SE125",
+        "name": "EDGBASTON PARK ROAD TP 1",
+        "grid_ref": "SP 05160 84150",
+        "easting": 405160.0,
+        "northing": 284150.0,
+        "precision": "\u00b1 10 METRES",
+        "length": 1.8,
+        "year_known": "1989",
+        "sitereport": "5064",
+        "held_at": "KW",
+        "id": 305258.0,
+        "length_scan_cat": "1_Y",
+        "bgs_id": 305258.0,
+        "date_updated": "2013-01-22T18:25:55",
+        "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305258",
+        "ags_log_url": null,
+        "water_well_ref": "N/A",
+        "scan_quality": "not Entered"
+      },
+      "id": 305258.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.925493829179869,
+          52.4552794412877
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reference": "SP08SE126",
+        "name": "EDGBASTON PARK ROAD TP 2",
+        "grid_ref": "SP 05190 84130",
+        "easting": 405190.0,
+        "northing": 284130.0,
+        "precision": "\u00b1 10 METRES",
+        "length": 2.4,
+        "year_known": "1989",
+        "sitereport": "5064",
+        "held_at": "KW",
+        "id": 305259.0,
+        "length_scan_cat": "1_Y",
+        "bgs_id": 305259.0,
+        "date_updated": "2013-01-22T18:25:55",
+        "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305259",
+        "ags_log_url": null,
+        "water_well_ref": "N/A",
+        "scan_quality": "not Entered"
+      },
+      "id": 305259.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.9250526581618896,
+          52.45509936361683
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reference": "SP08SE127",
+        "name": "EDGBASTON PARK ROAD TP 3",
+        "grid_ref": "SP 05200 84110",
+        "easting": 405200.0,
+        "northing": 284110.0,
+        "precision": "\u00b1 10 METRES",
+        "length": 2.0,
+        "year_known": "1989",
+        "sitereport": "5064",
+        "held_at": "KW",
+        "id": 305260.0,
+        "length_scan_cat": "1_Y",
+        "bgs_id": 305260.0,
+        "date_updated": "2013-01-22T18:25:55",
+        "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305260",
+        "ags_log_url": null,
+        "water_well_ref": "N/A",
+        "scan_quality": "not Entered"
+      },
+      "id": 305260.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.9249058051343522,
+          52.45491947084765
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reference": "SP08SE128",
+        "name": "EDGBASTON PARK ROAD TP 4",
+        "grid_ref": "SP 05200 84150",
+        "easting": 405200.0,
+        "northing": 284150.0,
+        "precision": "\u00b1 10 METRES",
+        "length": 1.15,
+        "year_known": "1989",
+        "sitereport": "5064",
+        "held_at": "KW",
+        "id": 305261.0,
+        "length_scan_cat": "1_Y",
+        "bgs_id": 305261.0,
+        "date_updated": "2013-01-22T18:25:55",
+        "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305261",
+        "ags_log_url": null,
+        "water_well_ref": "N/A",
+        "scan_quality": "not Entered"
+      },
+      "id": 305261.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.9249051955947478,
+          52.455279070377294
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reference": "SP08SE129",
+        "name": "EDGBASTON PARK ROAD TP 5",
+        "grid_ref": "SP 05200 84160",
+        "easting": 405200.0,
+        "northing": 284160.0,
+        "precision": "\u00b1 10 METRES",
+        "length": 2.0,
+        "year_known": "1989",
+        "sitereport": "5064",
+        "held_at": "KW",
+        "id": 305262.0,
+        "length_scan_cat": "1_Y",
+        "bgs_id": 305262.0,
+        "date_updated": "2013-01-22T18:25:55",
+        "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305262",
+        "ags_log_url": null,
+        "water_well_ref": "N/A",
+        "scan_quality": "not Entered"
+      },
+      "id": 305262.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.9249050432078354,
+          52.45536897025625
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reference": "SP08SE130",
+        "name": "EDGBASTON PARK ROAD TP 6",
+        "grid_ref": "SP 05180 84160",
+        "easting": 405180.0,
+        "northing": 284160.0,
+        "precision": "\u00b1 10 METRES",
+        "length": 2.0,
+        "year_known": "1989",
+        "sitereport": "5064",
+        "held_at": "KW",
+        "id": 305263.0,
+        "length_scan_cat": "1_Y",
+        "bgs_id": 305263.0,
+        "date_updated": "2013-01-22T18:25:55",
+        "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305263",
+        "ags_log_url": null,
+        "water_well_ref": "N/A",
+        "scan_quality": "not Entered"
+      },
+      "id": 305263.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.9251993605981446,
+          52.45536915607822
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reference": "SP08SE131",
+        "name": "PERSHORE ROAD TP 1",
+        "grid_ref": "SP 05830 82970",
+        "easting": 405830.0,
+        "northing": 282970.0,
+        "precision": "\u00b1 10 METRES",
+        "length": 2.5,
+        "year_known": "1991",
+        "sitereport": null,
+        "held_at": "KW",
+        "id": 305264.0,
+        "length_scan_cat": "1_Y",
+        "bgs_id": 305264.0,
+        "date_updated": "2013-01-22T18:25:55",
+        "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305264",
+        "ags_log_url": null,
+        "water_well_ref": "N/A",
+        "scan_quality": "not Entered"
+      },
+      "id": 305264.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.9156544214895526,
+          52.44466464915472
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reference": "SP08SE132",
+        "name": "PERSHORE ROAD TP 2",
+        "grid_ref": "SP 05840 82990",
+        "easting": 405840.0,
+        "northing": 282990.0,
+        "precision": "\u00b1 10 METRES",
+        "length": 2.0,
+        "year_known": "1991",
+        "sitereport": null,
+        "held_at": "KW",
+        "id": 305265.0,
+        "length_scan_cat": "1_Y",
+        "bgs_id": 305265.0,
+        "date_updated": "2013-01-22T18:25:55",
+        "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305265",
+        "ags_log_url": null,
+        "water_well_ref": "N/A",
+        "scan_quality": "not Entered"
+      },
+      "id": 305265.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.9155069555802484,
+          52.44484434451614
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reference": "SP08SE133",
+        "name": "PERSHORE ROAD TP 3",
+        "grid_ref": "SP 05860 82960",
+        "easting": 405860.0,
+        "northing": 282960.0,
+        "precision": "\u00b1 10 METRES",
+        "length": 3.2,
+        "year_known": "1991",
+        "sitereport": null,
+        "held_at": "KW",
+        "id": 305266.0,
+        "length_scan_cat": "1_Y",
+        "bgs_id": 305266.0,
+        "date_updated": "2013-01-22T18:25:55",
+        "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305266",
+        "ags_log_url": null,
+        "water_well_ref": "N/A",
+        "scan_quality": "not Entered"
+      },
+      "id": 305266.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.9152132245802398,
+          52.444574434547064
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reference": "SP08SE208",
+        "name": "CHAD VALLEY SEWER 1",
+        "grid_ref": "SP 05560 83610",
+        "easting": 405560.0,
+        "northing": 283610.0,
+        "precision": "\u00b1 10 METRES",
+        "length": 8.0,
+        "year_known": null,
+        "sitereport": null,
+        "held_at": "KW",
+        "id": 305341.0,
+        "length_scan_cat": "1_Y",
+        "bgs_id": 305341.0,
+        "date_updated": "2013-01-07T09:40:10",
+        "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305341",
+        "ags_log_url": null,
+        "water_well_ref": "N/A",
+        "scan_quality": "not Entered"
+      },
+      "id": 305341.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.9196163041036165,
+          52.4504210054678
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reference": "SP08SE209",
+        "name": "CHAD VALLEY SEWER 2",
+        "grid_ref": "SP 05480 83680",
+        "easting": 405480.0,
+        "northing": 283680.0,
+        "precision": "\u00b1 10 METRES",
+        "length": 8.0,
+        "year_known": null,
+        "sitereport": null,
+        "held_at": "KW",
+        "id": 305342.0,
+        "length_scan_cat": "1_Y",
+        "bgs_id": 305342.0,
+        "date_updated": "2013-01-07T09:40:10",
+        "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305342",
+        "ags_log_url": null,
+        "water_well_ref": "N/A",
+        "scan_quality": "not Entered"
+      },
+      "id": 305342.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.9207923164656509,
+          52.451051096530094
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reference": "SP08SE210",
+        "name": "CHAD VALLEY SEWER 3",
+        "grid_ref": "SP 05390 83820",
+        "easting": 405390.0,
+        "northing": 283820.0,
+        "precision": "\u00b1 10 METRES",
+        "length": 8.0,
+        "year_known": null,
+        "sitereport": null,
+        "held_at": "KW",
+        "id": 305343.0,
+        "length_scan_cat": "1_Y",
+        "bgs_id": 305343.0,
+        "date_updated": "2013-01-07T09:40:10",
+        "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305343",
+        "ags_log_url": null,
+        "water_well_ref": "N/A",
+        "scan_quality": "not Entered"
+      },
+      "id": 305343.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.9221144024395231,
+          52.45231057196522
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reference": "SP08SE211",
+        "name": "CHAD VALLEY SEWER 4",
+        "grid_ref": "SP 05340 84070",
+        "easting": 405340.0,
+        "northing": 284070.0,
+        "precision": "\u00b1 10 METRES",
+        "length": 8.0,
+        "year_known": null,
+        "sitereport": null,
+        "held_at": "KW",
+        "id": 305344.0,
+        "length_scan_cat": "1_Y",
+        "bgs_id": 305344.0,
+        "date_updated": "2013-01-07T09:40:10",
+        "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305344",
+        "ags_log_url": null,
+        "water_well_ref": "N/A",
+        "scan_quality": "not Entered"
+      },
+      "id": 305344.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.9228462307780898,
+          52.45455855007638
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reference": "SP08SE212",
+        "name": "CHAD VALLEY SEWER 5",
+        "grid_ref": "SP 05310 84330",
+        "easting": 405310.0,
+        "northing": 284330.0,
+        "precision": "\u00b1 10 METRES",
+        "length": 7.0,
+        "year_known": null,
+        "sitereport": null,
+        "held_at": "KW",
+        "id": 305345.0,
+        "length_scan_cat": "1_Y",
+        "bgs_id": 305345.0,
+        "date_updated": "2013-01-07T09:40:10",
+        "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305345",
+        "ags_log_url": null,
+        "water_well_ref": "N/A",
+        "scan_quality": "not Entered"
+      },
+      "id": 305345.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.9232836508763502,
+          52.456896232820895
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reference": "SP08SE215",
+        "name": "CHAD VALLEY SEWER 11",
+        "grid_ref": "SP 05450 83720",
+        "easting": 405450.0,
+        "northing": 283720.0,
+        "precision": "\u00b1 10 METRES",
+        "length": 8.0,
+        "year_known": null,
+        "sitereport": null,
+        "held_at": "KW",
+        "id": 305348.0,
+        "length_scan_cat": "1_Y",
+        "bgs_id": 305348.0,
+        "date_updated": "2013-01-07T09:40:10",
+        "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305348",
+        "ags_log_url": null,
+        "water_well_ref": "N/A",
+        "scan_quality": "not Entered"
+      },
+      "id": 305348.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.9212331099735294,
+          52.45141099005663
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reference": "SP08SE222",
+        "name": "CHURCH ROAD EDGBASTON",
+        "grid_ref": "SP 05640 84150",
+        "easting": 405640.0,
+        "northing": 284150.0,
+        "precision": "\u00b1 10 METRES",
+        "length": 85.5,
+        "year_known": null,
+        "sitereport": null,
+        "held_at": "WLKW",
+        "id": 305355.0,
+        "length_scan_cat": "3_Y",
+        "bgs_id": 305355.0,
+        "date_updated": "2013-01-22T18:16:54",
+        "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305355",
+        "ags_log_url": null,
+        "water_well_ref": "SP08/229",
+        "scan_quality": "not Entered"
+      },
+      "id": 305355.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.918430227030387,
+          52.455274797037234
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reference": "SP08SE234",
+        "name": "SELLY PARK BIRMINGHAM TP 1",
+        "grid_ref": "SP 05700 82900",
+        "easting": 405700.0,
+        "northing": 282900.0,
+        "precision": "\u00b1 10 METRES",
+        "length": 1.0,
+        "year_known": null,
+        "sitereport": null,
+        "held_at": "KW",
+        "id": 305367.0,
+        "length_scan_cat": "1_Y",
+        "bgs_id": 305367.0,
+        "date_updated": "2013-01-22T18:16:54",
+        "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305367",
+        "ags_log_url": null,
+        "water_well_ref": "N/A",
+        "scan_quality": "not Entered"
+      },
+      "id": 305367.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.9175681912790672,
+          52.444036693111066
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reference": "SP08SE235",
+        "name": "SELLY PARK BIRMINGHAM TP 2",
+        "grid_ref": "SP 05700 82900",
+        "easting": 405700.0,
+        "northing": 282900.0,
+        "precision": "\u00b1 10 METRES",
+        "length": 3.0,
+        "year_known": null,
+        "sitereport": null,
+        "held_at": "KW",
+        "id": 305368.0,
+        "length_scan_cat": "1_Y",
+        "bgs_id": 305368.0,
+        "date_updated": "2013-01-22T18:16:54",
+        "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305368",
+        "ags_log_url": null,
+        "water_well_ref": "N/A",
+        "scan_quality": "not Entered"
+      },
+      "id": 305368.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.9175681912790672,
+          52.444036693111066
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reference": "SP08SE236",
+        "name": "SELLY PARK BIRMINGHAM TP 3",
+        "grid_ref": "SP 05700 82900",
+        "easting": 405700.0,
+        "northing": 282900.0,
+        "precision": "\u00b1 10 METRES",
+        "length": 2.0,
+        "year_known": null,
+        "sitereport": null,
+        "held_at": "KW",
+        "id": 305369.0,
+        "length_scan_cat": "1_Y",
+        "bgs_id": 305369.0,
+        "date_updated": "2013-01-22T18:16:54",
+        "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305369",
+        "ags_log_url": null,
+        "water_well_ref": "N/A",
+        "scan_quality": "not Entered"
+      },
+      "id": 305369.0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.9175681912790672,
+          52.444036693111066
+        ]
+      }
+    }
+  ],
+  "pagination": {
+    "returned": 20,
+    "total_reported_by_provider": 423,
+    "truncated": true,
+    "next_page": {
+      "collection": "onshoreboreholeindex",
+      "bbox": [
+        -1.944916492670114,
+        52.440909090909095,
+        -1.915083507329886,
+        52.45909090909091
+      ],
+      "limit": 20,
+      "offset": 26,
+      "include_geometry": true
+    }
+  },
+  "provenance": [
+    {
+      "url": "https://ogcapi.bgs.ac.uk/collections/onshoreboreholeindex/items?f=json&bbox=-1.944916492670114%2C52.440909090909095%2C-1.915083507329886%2C52.45909090909091&limit=20&offset=6&skipGeometry=false",
+      "retrieved_at_utc": "2026-10-28T21:16:51.676584Z",
+      "response_sha256": "18c9c0b41cfcdd83c311adb92db08b5b8ba3f966c2f38ef7dc0ebe9c210630c3",
+      "content_type": "application/json",
+      "http_status": 200
+    }
+  ],
+  "metadata": {
+    "collection": "onshoreboreholeindex",
+    "title": "Single Onshore Borehole Index (SOBI)",
+    "coverage": "Great Britain, including onshore and near-shore records",
+    "coordinate_reference_system": "OGC:CRS84",
+    "coordinate_order": "longitude, latitude",
+    "selection_method": "bounding_box_intersection",
+    "geometry_requested": true,
+    "geometry_included": true,
+    "service_status": "BETA",
+    "upstream_timestamp": "2026-10-28T21:16:50.407899Z",
+    "upstream_number_returned": 20,
+    "collection_url": "https://ogcapi.bgs.ac.uk/collections/onshoreboreholeindex"
+  },
+  "warnings": [
+    "Results are candidates intersecting the requested bounding box, not a determination of the ground conditions at an exact point.",
+    "An empty result is not evidence that a feature, borehole or hazard is absent.",
+    "These records do not supply validated site-specific geotechnical design parameters.",
+    "Retrieval and API response times are not survey dates; source dates are preserved separately.",
+    "Index records are not interpreted soil profiles. Review original logs, record dates and position precision before assessing relevance to a site.",
+    "Scan and AGS links are returned for inspection; their files are not downloaded or interpreted. Reuse of underlying reports may have separate terms.",
+    "Only one page is returned; more matching records may exist.",
+    "Index discovery does not extract or validate SPT/CPT/laboratory test results.",
+    "The index is incomplete and location/record quality varies.",
+    "Nearby boreholes do not establish ground conditions at the site; absent records do not mean no investigation exists.",
+    "An empty result is not evidence that a hazard, asset or geological feature is absent.",
+    "Retrieved timestamps describe access time; use record observation dates for freshness."
+  ],
+  "use": "Data discovery and preliminary screening; does not certify site safety or establish design parameters."
+}

@@ -1,26 +1,26 @@
 # Birmingham geotechnical desk study
 
-DRAFT D02 | 28 October 2026 | Original-log review revision | Public demonstration area
+DRAFT D03 | 28 October 2026 | Edgbaston BH3 and TP1-TP6 revision | Public demonstration area
 
-The six historic borehole logs now provide evidence of local fill, variable clay and granular soils, historical marl with rock bands, and weak sandstone. These are observations at the archived positions, approximately 396 to 694 m from the demonstration point. Their relevance to the actual development footprint must be established before designing new GI or selecting engineering parameters.
+The additional Edgbaston records materially sharpen the follow-up priorities. TP4 records very loose ash and construction-debris fill above a bathing-pool base, pungent groundwater at 0.80 m and continuing excavation collapse. Locate and assess that historical feature before specifying GI where it may affect the works. The reviewed records are historical observations at archived positions; their relevance to the actual development footprint remains to be established.
 
 ### Key findings from the originals
 
-- Near-surface anthropogenic material occurs in several records: Bournbrook A records made ground to 11 ft 6 in (3.51 m); the Edgbaston holes label fill to 1.10 and 0.60 m. Bristol Road logs contain brick and other construction debris. These depths are local observations, not a site-wide fill thickness. [SP08SE16/49/50/122/123 p1]
+- TP4 reached a recorded bathing-pool base at 1.15 m beneath paving and very loose ash/cinders/brick/concrete fill. Pungent water and collapse are direct historical observations, requiring targeted history, environmental and excavation assessment. They do not identify a contaminant or a current groundwater regime. [SP08SE128 p1]
 
-- The older southern records describe heterogeneous clay, sand and gravel, with historical Keuper marl at Bournbrook and friable marl with rock bands at Bristol Road. The Edgbaston logs describe mixed soils above very poorly cemented sandstone beginning at 6.50 and 5.50 m. A continuous profile between these areas is unproved. [Six logs p1]
+- BH3 records fill to 1.30 m and poorly cemented weak-to-moderately-weak sandstone from 6.40 to 8.10 m. Across BH1-BH3, local fill bases are 0.60-1.30 m and sandstone tops 5.50-6.50 m. Do not transfer these depths to the demonstration point. [SP08SE122/123/124 p1]
 
-- Edgbaston drilling dates are August/September 1988, while the index says 1989. Other logs reveal differences between the index, metric annotations and original imperial depths; the two Bristol logs also contain internally conflicting total-depth notes. These conflicts remain explicit. [Six logs p1]
+- TP1 shows contrasting materials at opposite pit ends and wet sand pockets; TP3 has possible fill and variable contacts; TP5 records buried topsoil; TP6 has a variable fill base. These support investigating short-distance changes and buried features. [SP08SE125/127/129/130 p1]
 
-- Edgbaston high seating-blow entries over limited penetration are not ordinary full-penetration SPT N values. No laboratory results, energy corrections or verified design parameters were supplied in these six PDFs. [SP08SE122/123 p1]
+- BH3 is dated 6-7 September 1988 and TP1-TP3 8 September 1988, conflicting with index year 1989. The TP4-TP6 sheet has no excavation date or method; September 1988 is drawing/campaign context only. Earlier depth conflicts remain unresolved. [Originals and index follow-up]
 
-- Groundwater remains unresolved. Bristol Road B has an old standing-water notation with an uncertain reference; Edgbaston drilling-day dry notes accompany added water. Neither establishes current conditions. The nearby EA observation remains old and Unchecked. [SP08SE50/122/123 p1; query-011]
+- SPT seating blows over limited penetration remain separate from ordinary N values. Most Edgbaston holes have drilling/excavation-day dry notes; TP4 records water and TP1 wet pockets. No laboratory results or verified design parameters are supplied. [Edgbaston original sheets]
 
 ### Revision and study basis
 
-D02 supersedes D01 by adding visual review of all 12 pages in six original BGS PDFs, log-specific findings, a discrepancy register and a revised GI sequence. The repeated Edgbaston drawings are shared context, not six additional borehole logs. Original source files were retrieved on 28 October 2026; a factual review JSON records URLs, hashes, page references and uncertainties.
+D03 supersedes D02. This revision visually reviews 28 pages in seven further BGS PDFs, adding BH3 and TP1-TP6. Together with the D02 review, 13 physical exploratory holes are represented by 13 PDFs and 40 archive pages. Repeated pit sheets and drawings are counted once as evidence. Source URLs, hashes, page references and uncertainties are retained in the audit JSON.
 
-The frozen Groundwork run was generated at 19:30:45 UTC on 28 October 2026 for 52.45, -1.93, England, nominal radius 1 km. No construction boundary, surveyed site levels, layout, loads or excavation geometry has been supplied. The app export remains the unchanged historical run: 11 queries, 13 HTTP 200 responses, one unresolved coverage entry, ten open tasks and seven unknown design parameters. D02 records a subsequent review; it does not silently alter the export.
+The frozen Groundwork run remains dated 28 October 2026, 19:30:45 UTC, for 52.45, -1.93, England, nominal radius 1 km: 11 queries, 13 HTTP 200 responses, one coverage entry, ten open tasks and seven unknown parameters. A separate bounded index follow-up retrieved 20 records. No site boundary, surveyed levels, works layout, loads or excavation geometry has been supplied; the app export is unchanged.
 
 
 <!-- pagebreak -->
@@ -31,10 +31,11 @@ This model combines regional mapping with separate historic observations. It ide
 
 | Component | Observed evidence | Question for GI |
 | --- | --- | --- |
-| Fill and disturbed ground | Made ground in Bournbrook A; labelled fill at Edgbaston; brick-bearing layers in other logs, with timber/mortar/earthenware at Bristol Road A. | Map fill extent, thickness, obstructions and variability. Assess settlement and environmental questions against actual land use and proposed works. |
-| Mixed soils | Clay, silt, sand and gravel alternate in the southern records. Edgbaston BH1 includes a very-soft-described clayey sand at 1.10-1.30 m and clay between granular layers. | Identify weak pockets, granular lenses, continuity and engineering response across the works. Logged consistency/density words are historical descriptions. |
+| Fill and buried features | Made ground in Bournbrook; fill in BH1-BH3; TP4 pool base beneath ash/debris; TP5 buried topsoil; possible fill at TP1/TP3. | Locate the former pool and other buried features; assess fill thickness, obstructions, settlement, water and environmental linkages. |
+| Mixed soils | Clay, silt, sand and gravel vary between and within pits. TP1 contrasts north/south materials and wet pockets; BH1 includes very-soft-described clayey sand. | Investigate weak pockets, lenses and short-distance variability. Logged consistency/density words are historical descriptions. |
 | Historical marl / rock bands | Bournbrook A: Keuper marl from 20 ft (6.10 m). Bristol A/B: marl from 8 ft 6 in / 6 ft (2.59 / 1.83 m), with deeper rock bands. | Resolve modern correlation, weathering, soil-rock transition and band hardness/thickness. No founding horizon or formation boundary is established. |
-| Sand / weak sandstone | Edgbaston BH1/BH2: sandstone tops 6.50 / 5.50 m, poorly cemented and weak-described, continuing to 8.10 m. Chiselling and limited penetration recorded. | Distinguish dense sand, weathered/cemented material and rock; obtain suitable samples/core where rock behaviour affects design. |
+| Sand / weak sandstone | BH1/BH2/BH3 sandstone tops 6.50 / 5.50 / 6.40 m, continuing to 8.10 m. All record poor cementation, chiselling and limited-penetration blows. | Distinguish dense sand, weathered/cemented material and rock; obtain suitable samples/core where rock behaviour affects design. |
+| Water and excavation behaviour | TP4: pungent water at 0.80 m and continuing collapse. TP1: wet pockets despite an overall dry/stable excavation note. | Resolve local water sources and current stability; select investigation and temporary-works methods accordingly. |
 
 ### Regional mapped context
 
@@ -68,7 +69,9 @@ Seek supporting reports to resolve total-depth conventions, sample records and t
 
 The provider reported 423 SOBI matches in the enclosing rectangle; offsets 0 and 3 returned six, with continuation at offset 6. The six are not established as the nearest or most relevant records. The 423 is not an exact-circle count, a count of distinct physical holes or a guarantee of exhaustive archive coverage. Review of these six originals closes their acquisition/review step only. [query-003/004]
 
-Define the site before extending bounded searches or using publisher/GIS tools. The Edgbaston shared plan identifies BH3 and TP1-TP6, which are not represented by detailed logs in these six PDFs. Acquire that report family and available laboratory results, and record relevance/exclusion decisions. An empty AGS result does not mean no investigation files exist. [query-005; SP08SE122/123 pp2-4; G2]
+The separate D03 index follow-up used the same box, offset 6, limit 20 and returned 20 more features: 26 distinct index candidates now obtained across the two retrieval stages, while 13 requested holes have original records reviewed. The provider still reports 423 matches and continuation at offset 26. This remains a partial search. [index-follow-up]
+
+The BH3 and TP1-TP6 acquisition/review gap is now closed for the retrieved PDFs. The complete narrative report, laboratory results, historic survey basis, current site relevance and wider archive coverage remain unresolved. An empty AGS result does not establish absence of usable files. [query-005; G2]
 
 
 <!-- pagebreak -->
@@ -116,9 +119,63 @@ All intervals above: original PDF page 1; material and consistency/density/stren
 
 ### Shared drawings and further records
 
-Each four-page PDF contains its individual log at page 1 and the same September 1988 drawings at pages 2-4: location plans, exploratory-hole plan and geological section (contract 1829, drawings 1-3). The plan shows BH1-BH3 and TP1-TP6, a historic proposed-building outline, retaining wall and vegetation. These are historical context, not a current site survey.
+The three borehole PDFs contain individual logs at page 1. The six trial-pit PDFs repeat two combined sheets: TP1-TP3 and TP4-TP6. All nine Edgbaston PDFs repeat the same September 1988 drawings at pages 2-4: location plans, exploratory-hole plan and geological section (contract 1829, drawings 1-3). The plan shows the nine physical holes, a historic proposed-building outline, retaining wall and vegetation; it is not a current survey.
 
-The west-east section uses questioned correlations and states that ground levels were extrapolated from another drawing. Its interpreted boulder-clay label is not a replacement for the page-1 sandy-clay descriptions. Obtain the full report and survey basis before using correlations or elevations. A groundwater-level key alone is not a measured current water level. The repeated drawings have been counted once as context, not as additional investigations. [SP08SE122/123 pp2-4]
+The west-east section uses questioned correlations and extrapolated ground levels. Its horizontal 1:200 and vertical 1:100 scales imply twice vertical exaggeration; no surveyed section alignment is established. The interpreted boulder-clay key does not replace individual descriptions, and its groundwater key is not a measurement. Use original log sheets for test entries and obtain the full report/survey basis before adopting correlations. [Edgbaston pp2-4]
+
+
+<!-- pagebreak -->
+
+## Additional records and Edgbaston BH3
+
+| Original PDF | Hole | Index / log depth m | Original date / status |
+| --- | --- | --- | --- |
+| [SP08SE124](https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305257) | BH3 | 8.10 / 8.10 | 6-7 Sep 1988; index 1989 differs. |
+| [SP08SE125](https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305258) | TP1 | 1.80 / 1.80 | 8 Sep 1988; index 1989 differs. |
+| [SP08SE126](https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305259) | TP2 | 2.40 / 2.40 | 8 Sep 1988; index 1989 differs. |
+| [SP08SE127](https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305260) | TP3 | 2.00 / 2.00 | 8 Sep 1988; index 1989 differs. |
+| [SP08SE128](https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305261) | TP4 | 1.15 / 1.15 | Excavation date absent; Sept 1988 drawings. Index 1989 unverified. |
+| [SP08SE129](https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305262) | TP5 | 2.00 / 2.00 | Same undated combined sheet as TP4. |
+| [SP08SE130](https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305263) | TP6 | 2.00 / 1.80 | Depth conflict; undated combined sheet. Index 1989 unverified. |
+
+All log observations cite page 1 of the linked PDF. The index has plus/minus 10 m position precision. TP6 ends at 1.80 m while the index says 2.00 m; this discrepancy is unresolved. Retain the 1989 index year separately from explicit/missing original dates. TP1-TP3 state JCB 3C excavation; their date/method cannot automatically be assigned to TP4-TP6.
+
+### BH3 profile: depth below logged ground, metres
+
+| Interval | Paraphrased original observation |
+| --- | --- |
+| 0-0.20 | Sandy topsoil labelled fill. |
+| 0.20-1.30 | Soft-firm sandy clay fill, sand pockets and occasional gravel. |
+| 1.30-3.90 | Very dense sand/gravel, becoming dense. |
+| 3.90-4.30 | Stiff sandy clay with gravel. |
+| 4.30-5.00 | Medium-dense fine sand. |
+| 5.00-5.30 | Clayey fine sand, described as very stiff. |
+| 5.30-6.40 | Dense fine sand, becoming very dense. |
+| 6.40-8.10 | Very poorly cemented fine sandstone, weak-moderately weak. |
+
+BH3 used 150 mm cable percussion, casing to 8.0 m. Ground-level field and explicit termination reason are absent. Water was added below 1.30 m; drilling-day dry notes occur on 6 and 7 September. One hour chiselling at 6.40-8.00 m supports allowing for cemented material in method selection, without establishing competent bearing rock. [SP08SE124 p1]
+
+
+<!-- pagebreak -->
+
+## Trial pits: findings and implications
+
+These are six physical pits recorded on two combined sheets, reproduced in six BGS PDF packages. Depths are interpreted as metres from the record series, section and index. Slash boundaries denote variable contacts within a pit; no midpoint has been substituted. TP1-TP3 are explicitly dated 8 September 1988; TP4-TP6 dates are unrecorded on their sheet.
+
+| Pit / depth | Paraphrased ground observations | Water, stability and sample notes |
+| --- | --- | --- |
+| TP1<br>1.80 m | Topsoil 0-0.30; soft-described, slightly clayey fine sand 0.30-0.60. At 0.60-1.50, south end firm-stiff silty clay; north end possible gravelly fill with wet sand pockets. Gravel/cobbles 1.50-1.80. | Overall dry/stable during excavation, despite local wet pockets. D sample 1.00 m. |
+| TP2<br>2.40 m | Topsoil to 0.30/0.40 with brick traces; sandy clay to 0.80; fissured stiff-very stiff silty clay to 2.15; fine sand with soft clay lumps to 2.40. | Dry/stable during excavation. No sample/test result recorded. |
+| TP3<br>2.00 m | Topsoil to 0.10/0.25; possible fill of soft-firm very clayey sand/gravel to 0.70/0.90; very stiff silty clay to 1.80; sandy gravel to 2.00. | Dry/stable during excavation. No sample/test result recorded. |
+| TP4<br>1.15 m | Paving slabs on fine sand to 0.15; very loose ash/cinders/brick/concrete fill to 1.15; bathing-pool base recorded at 1.15. Natural ground below is not proved. | Pungent groundwater, level 0.80 m; continuing collapse. D sample 1.00 m; no analytical result. |
+| TP5<br>2.00 m | Fill topsoil to 0.20; soft sandy-clay fill with tile to 0.70; buried topsoil 0.70-1.00; firm-very stiff silty clay to 1.80; gravel to 2.00. | Dry/stable during excavation. No sample/test result recorded. |
+| TP6<br>1.80 m | Fill topsoil to 0.30; soft clayey-sand fill with tile/topsoil pockets to 0.60/0.70; soft-firm clay to 1.10; stiff clay to 1.50; gravel/cobbles to 1.80. | Dry/stable during excavation. No sample/test result recorded. |
+
+Sources: TP1-TP3, SP08SE125/126/127 p1; TP4-TP6, SP08SE128/129/130 p1. D is conventionally interpreted as disturbed; the pit sheets do not define the code. No analytical results or explicit termination reasons are given; TP4 ends at the recorded pool base. Excavation dimensions, observation times and equilibrium water levels are absent.
+
+### Change to priorities
+
+First locate the former pool and assess its extent, infill, water source and relationship to proposed works. Pungent water plus ash/debris justifies a competent-person environmental conceptual model and evidence-led sampling; no chemical identity or contamination concentration is established. Historical collapse requires a reviewed investigation/temporary-works approach. Elsewhere target fill changes, buried topsoil, wet pockets and granular/clay contacts rather than assuming a uniform shallow profile.
 
 
 <!-- pagebreak -->
@@ -127,37 +184,41 @@ The west-east section uses questioned correlations and states that ground levels
 
 ### Historic test information
 
-Edgbaston page-1 sheets contain SPT-column values and bulk/sample markings. Unstarred reported entries range 4-77 in BH1 and 14-141 in BH2; 141 at 5.50 m is printed on BH2. These are archival entries, without supplied energy/overburden corrections, complete test sheets or a verified modern interpretation basis. No strength or density correlation is adopted here.
+Unstarred SPT-column entries range 4-77 in BH1, 14-141 in BH2 and 12-85 in BH3; 141 at 5.50 m is printed on BH2. Energy/overburden corrections, complete test sheets and a verified modern interpretation basis are absent. No strength/density correlation is adopted. The legend defines starred entries below as seating blows, not ordinary full-penetration N values.
 
 | Record / depth | Restricted-penetration entries | Interpretation limit |
 | --- | --- | --- |
 | BH1 6.50, 7.00, 7.50, 8.00 m | 94* /150 mm; 53* /75 mm; 51* /75 mm; 64* /75 mm, respectively. | The legend defines * as SPT seating blows. These entries are not ordinary full-penetration N values. |
 | BH2 6.00, 6.50, 7.00, 7.50, 8.00 m | 52*, 61*, 60*, 65*, 70*, each /75 mm, respectively. | Keep blows and penetration together. Do not pool with unstarred entries or infer competent rock from high blows. |
+| BH3 6.50, 7.00, 7.50, 8.00 m | 53*, 66*, 64*, 72*, each /75 mm, respectively. | Same seating-blow qualification; use original logs rather than section duplicates. |
 
-BH1 records one hour chiselling at 6.50-8.00 m; BH2 one hour at 5.90-8.00 m. These observations inform method selection for cemented material or hard layers. No core recovery, RQD or laboratory rock-strength results occur in these PDFs. Bristol Road B reports ten 4-inch undisturbed samples and a note extending to 50 ft, but individual sample depths, quality and laboratory results are absent. Seek the supporting records. [SP08SE50/122/123 p1]
+One hour chiselling is recorded in each borehole: BH1 6.50-8.00 m, BH2 5.90-8.00 m, BH3 6.40-8.00 m. No core recovery, RQD or rock-strength results are supplied. Bristol B reports ten nominally undisturbed samples without depth schedules/analyses; TP1 and TP4 note D samples at 1.00 m without analytical results. [Original log sheets]
 
 ### Water observations and their limitations
 
 - Bristol Road B: standing-water notation 16 ft 7 in (about 5.05 m). Reference datum, measurement date/time and stabilisation are not established; do not report it as a verified depth below present ground or an AOD elevation. [SP08SE50 p1]
 
-- Edgbaston BH1: dry on 31 August 1988, water added below 2.30 m. BH2: dry on 2 September, water added below 1.60 m; dry again on 5 September with added water. These are drilling observations with no monitoring installation or measured equilibrium water level recorded. They do not establish absence of groundwater. [SP08SE122/123 p1]
+- Edgbaston BH1/BH2/BH3: drilling-day dry notes, with added water below 2.30/1.60/1.30 m respectively. No monitoring installation or measured equilibrium level is recorded. These do not establish absence of groundwater. [SP08SE122/123/124 p1]
+
+- TP4: pungent groundwater, recorded level 0.80, interpreted nominally in metres in the pit-depth convention; the sheet gives no explicit datum, time, stabilisation or surveyed elevation. TP1 has wet pockets despite its overall dry/stable note. Other pits give excavation-day observations only. [Pit sheets p1]
 
 - Nearby EA Birmingham University station: latest returned value 129.14 mAOD on 16 June 2026 at 09:28:28, quality Unchecked, 134 calendar days before retrieval. The station is approximately 200 m from the point. A Qualified series label does not override reading quality. [query-009/011; G3]
 
-mAOD is elevation, not depth. Station datum=135.23 is not a verified site ground level and cannot be subtracted to establish site groundwater depth. Aquifer relevance, perched water, pore pressures and seasonal variability remain questions for the defined works. Do not combine the 1962 notation, 1988 dry notes and 2026 station elevation into a single groundwater profile.
+mAOD is elevation, not depth. Station datum=135.23 is not a verified site ground level. Assess aquifer relevance, perched water, pore pressures and seasonal variability for the works. Do not combine the 1962 notation, historic borehole/pit observations and 2026 station elevation into a single groundwater profile.
 
 
 <!-- pagebreak -->
 
 ## Remaining gaps and closure criteria
 
-Priorities indicate work sequence and prerequisites, not assessed hazard likelihood. Original-log review is complete for the six supplied PDFs; the frozen app task counts are unchanged. Close work packages only after a recorded technical review of the evidence below.
+Priorities indicate sequence and prerequisites, not assessed hazard likelihood. Review of the seven requested additional PDFs is complete; together with D02, thirteen physical holes have original-record review. The frozen app counts are unchanged. Close remaining work packages only after recorded technical review.
 
 | Priority | Gap after original-log review | Required closure evidence |
 | --- | --- | --- |
 | P0 | Site and engineering scope | Boundary, surveyed levels, proposed structures, loads, excavations, drainage and movement criteria. |
 | P0 gate | Utilities, access and permissions | Asset-owner information, suitable service locating/survey, access and an agreed safe intrusive method before fieldwork. [G4] |
-| P1 | Record relevance and completeness | Georeferenced historic plans; wider relevant archive coverage; full Edgbaston report including BH3/TP1-TP6; supporting Bristol sample/lab records; discrepancy decisions. |
+| P1 first | TP4 former pool, ash fill, water and collapse | Locate/georeference feature; assess history, extent, current water and environmental linkages; agree investigation and temporary-works controls where it affects the works. |
+| P1 | Record relevance and completeness | Georeferenced historic plans; wider archive search; full Edgbaston narrative/lab report and survey basis; Bristol sample/lab records; TP6 and earlier discrepancy decisions. |
 | P1 | Site history / ground hazards | Detailed mapping, land-use and development history, walkover, relevant mining/ground-hazard information and environmental conceptual model. |
 | P1-P2 | Fill and mixed-soil variability | Footprint-specific evidence of fill base, obstructions, soft pockets and granular/clay lenses, with suitable sampling and classification. |
 | P2 | Weathered material / rock bands | Applicable depth coverage, weathering, sand-sandstone distinction and band/core quality where design requires; verified test quality. |
@@ -168,7 +229,7 @@ Priorities indicate work sequence and prerequisites, not assessed hazard likelih
 
 Empty AGS, landslide, EA flood-monitoring-station and current-warning results establish only that those requests returned no records. They do not prove absence of investigations, instability, flood hazard or groundwater. Review long-term flood/drainage information for the works. [query-005/008; G6]
 
-Planning Data identified Birmingham LPA, entity 626130, reference E60000130; its representative point is not a boundary and this query did not assess all planning constraints. Brick-bearing fill warrants site-history and environmental questions but does not itself prove contamination. Mining effects, shrink-swell, faults and other relevant hazards remain subject to targeted review. [query-010; G5/G7]
+Planning Data identified Birmingham LPA, entity 626130, reference E60000130; its representative point is not a boundary. TP4 ash/debris and pungent water warrant a competent-person environmental assessment; no contaminant or concentration is established. Mining effects, shrink-swell, faults and other relevant hazards require targeted review. [query-010; G5/G7]
 
 
 <!-- pagebreak -->
@@ -181,21 +242,21 @@ Client and geotechnical designer: establish the site polygon, topographic survey
 
 ### P1 Resolve evidence relevance before final GI design
 
-- First georeference the six index positions and historic plans against the actual footprint and geological setting. Check the plus/minus 10 m index precision and the extrapolated Edgbaston section levels. Retain a relevance/exclusion register rather than treating proximity as proof.
+- First georeference all thirteen reviewed hole positions and historic plans against the actual footprint. Prioritise locating the TP4 bathing pool and its relationship to works, drainage and neighbouring assets. Verify current condition and infill history; the pit proves neither the full pool extent nor natural ground below its base.
 
-- Prioritise the complete Edgbaston 1988 report family: BH3, TP1-TP6, laboratory schedules, factual report and drawing datum. Seek Bristol Road supporting project/sample records and clarification of the conflicting total-depth notes. Record the 1988/index-1989 conflict and imperial/metric differences without rewriting source evidence.
+- Obtain the full Edgbaston narrative, laboratory schedules/results and survey/drawing datum. BH3 and TP1-TP6 log retrieval is now complete. Seek Bristol supporting records and resolve the TP6 2.00 m index versus 1.80 m original depth, earlier total-depth conflicts and original/index dates where possible.
 
-- Extend the archive search beyond the six provider-order results using bounded requests or suitable publisher/GIS tools. Target the actual site and influence area; record unsearched coverage from the 423 reported box matches. Search for usable AGS and private/client-held records where available.
+- Extend relevant archive coverage beyond the 26 distinct index candidates now obtained; the provider reports 423 box matches. Use bounded requests or publisher/GIS tools and record unsearched coverage. Search for available AGS and client-held records.
 
 - Obtain detailed geological and relevant ground-hazard information, historic maps and land-use/development records. Walk over the site to check made-ground indicators, obstructions, retaining walls, drainage, slopes, vegetation, neighbouring assets and access.
 
-- Coordinate competent-person contamination preliminary assessment using potential source-pathway-receptor linkages. Develop chemical or gas questions from history and site evidence; construction debris alone does not establish contamination. [G5]
+- Coordinate competent-person environmental assessment. Give TP4 ash/cinders, pungent water and the former pool explicit source-pathway-receptor questions; develop chemical, water or gas sampling only from that model and site evidence. Review legacy sample results if obtainable. [G5]
 
-Required output: a site-specific conceptual ground model distinguishing observed evidence, inferred connections and unknowns; a prioritised list of engineering questions; and a preliminary GI scope. The original-log acquisition step is complete for these six PDFs, while the full-report and relevance steps remain open.
+Required output: a site-specific conceptual model, record-relevance register and preliminary GI scope. Include TP1 lateral changes, TP3 possible fill, TP5 buried topsoil and TP6 variable contacts. Log retrieval is complete for the thirteen reviewed holes; full-report, laboratory and relevance gaps remain.
 
 ### Hold point before intrusive work
 
-Obtain current utility information and suitable service locating/survey; confirm permissions, working space, plant/access constraints and health/environmental controls. Agree the safe method for intrusive work. HSG47 addresses planning, locating and identifying services, and safe excavation. Public borehole records provide no utility clearance. [G4]
+Obtain utility information and suitable service locating/survey; confirm permissions, working space, access and health/environmental controls. Where the former pool or loose fill may affect investigation, explicitly review collapse, buried structures and water; select suitable plant and temporary works or alternative methods. Agree a safe intrusive method. HSG47 addresses planning, service locating and safe excavation. Public records provide no utility clearance. [G4]
 
 Release criterion: designer has reviewed the works, conceptual model and investigation objectives, and responsible parties have agreed the scope and constraint controls. This demonstration point does not justify fixed hole quantities, spacing, depths, a foundation type or a GI price.
 
@@ -208,6 +269,7 @@ P2 methods below are conditional options to resolve the evidenced questions. The
 
 | Priority target | Field and laboratory response | Decision supported |
 | --- | --- | --- |
+| Former pool / ash fill / water | After locating TP4 and reviewing the environmental model, target fill/pool margins and water where relevant. Use methods addressing collapse and buried obstructions; obtain representative samples and evidence-led analyses. | Pool/infill extent, current water source, environmental linkages and safe investigation/excavation response. |
 | Fill, obstructions and soft pockets | Use safe shallow trial pits or suitable sampling where feasible. Sample variable fill and natural soils; classify grading, moisture and plasticity, with compressibility/strength work where relevant. | Fill extent/base, earthworks reuse, variability and settlement/excavation questions. |
 | Clay / sand / gravel transitions | Boreholes and suitable sampling/testing across relevant strata. Select penetration or other in-situ testing with a verified quality basis; account for gravel/cobbles and local clay lenses. | Continuity, sample quality and project-specific strength, stiffness and permeability interpretation. |
 | Weathered marl / rock bands / sandstone | Choose plant capable of advancing through hard bands and weak rock. Consider rotary coring where rock behaviour governs, with recovery/discontinuity/weathering records and appropriate tests. | Distinguish weathered soil, cemented material and rock; assess rock quality and excavation/foundation response. |
@@ -223,14 +285,14 @@ Review station/aquifer history and the possibility of local perched water. Desig
 
 Check new factual logs, sample/test quality, locations, levels and monitoring results. Reconcile the ground model with the proposed works, identify residual uncertainty and commission supplementary investigation where needed. Record the applicability and uncertainty of derived inputs and the technical reviewer decision.
 
-Release criterion for design: evidence and interpretation address the critical engineering questions. Friction angle, undrained strength, stiffness, permeability, design groundwater level, allowable bearing pressure and utility clearance remain unknown in D02. Closing a workflow task does not establish any of these values. Project-specific technical review is required before engineering issue.
+Design release requires evidence addressing critical engineering questions. Friction angle, undrained strength, stiffness, permeability, design groundwater level, allowable bearing pressure and utility clearance remain unknown in D03. Workflow closure does not establish a parameter; project-specific technical review remains required.
 
 
 <!-- pagebreak -->
 
 ## Sources, attribution and audit trail
 
-Original sources: the six linked PDFs in the log register, retrieved 28 October 2026 at 20:56:17-20:56:26 UTC. All 12 pages were visually reviewed. The factual log-review JSON contains file SHA-256 hashes, byte counts, page-specific observations, converted depths and explicit uncertainty. Original scans, drawings and personal names/signatures are not redistributed in the repository.
+D03 sources: seven additional BGS PDFs retrieved 28 October 2026 at 21:17:06-21:17:18 UTC, all 28 pages visually reviewed. D02 supplied the earlier six PDFs/12 pages. Combined coverage is 13 physical holes, 40 archive pages and repeated sheets counted once. The audit JSON records hashes, dates, page references, uncertainty and the separate 20-record index follow-up. Original scans, drawings and personal details are not redistributed.
 
 Derived review: examples/birmingham_original_log_review_2026-10-28.json. The frozen Groundwork evidence remains examples/birmingham_report_evidence_2026-10-28.json. It retains query arguments, response dates/hashes, metadata, warnings, pagination and source terms. The following links are each query's first provider request; additional requests remain in that evidence file.
 
@@ -268,4 +330,6 @@ Planning dataset: Source: Office for National Statistics licensed under OGL v3.0
 
 [G7] [Planning Data API documentation](https://www.planning.data.gov.uk/docs). Accessed 28 October 2026.
 
-Frozen Groundwork evidence SHA-256: a8ccd4e9dd99e1e7d5c32c5b895cef50448f1be28273df6102aa45719f39f2b6. D02 is a draft for project scoping and technical review.
+Index follow-up evidence: examples/birmingham_edgbaston_index_followup_2026-10-28.json. It preserves the MCP-adapter query, 20 returned features, source terms, request time/hash and remaining pagination. This extends discovery without changing the frozen app export. [index-follow-up]
+
+Frozen Groundwork evidence SHA-256: a8ccd4e9dd99e1e7d5c32c5b895cef50448f1be28273df6102aa45719f39f2b6. D03 is a draft for project scoping and technical review.

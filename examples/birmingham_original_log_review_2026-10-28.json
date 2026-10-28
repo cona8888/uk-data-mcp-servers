@@ -1,9 +1,9 @@
 {
-  "schema": "birmingham-original-log-review-v1",
-  "report_revision": "D02",
+  "schema": "birmingham-original-log-review-v2",
+  "report_revision": "D03",
   "review_date": "2026-10-28",
-  "review_method": "Visual reading of all 12 original PDF pages, with enlarged views and independent checks of critical depths, dates, water observations and test qualifiers. Factual paraphrases, not a certified transcription or engineering design.",
-  "scope": "Six historic index candidates around 52.45, -1.93; actual construction boundary and proposed works remain undefined. Observations apply to the individual archived holes only.",
+  "review_method": "D03: visual review of all 28 pages in seven additional original PDFs, checking unique BH3 and two combined trial-pit sheets plus repeated drawings. D02: inherited review of six PDFs/12 pages. Critical new depths, water, dates and test qualifiers independently checked. Factual paraphrases, not a certified transcription or engineering design.",
+  "scope": "Thirteen historic physical exploratory holes: four southern boreholes plus Edgbaston BH1-BH3 and TP1-TP6. Actual construction boundary and works remain undefined. Findings apply at archived positions only.",
   "conversion_basis": "1 international foot = 0.3048 m; 1 inch = 0.0254 m. Conversions do not resolve conflicting source statements, validate a datum or add measurement accuracy.",
   "source_handling": "Original PDFs/drawings are linked for source checking, not redistributed. Index OGL scope does not automatically license linked report content. Personal names, signatures and contact details are excluded from this derived record.",
   "frozen_workspace": {
@@ -1097,96 +1097,1650 @@
         3,
         4
       ]
-    }
-  ],
-  "shared_edgbaston_context": {
-    "review_scope": "Visual review of all four pages of each original BGS PDF; factual paraphrases for a preliminary desk study, without design parameters.",
-    "shared_pages": [
-      {
-        "references": [
-          "SP08SE122",
-          "SP08SE123"
-        ],
-        "page": 2,
-        "description": "Same historical site-location plans in both PDFs, with different BGS wrappers. Drawing 1, contract 1829, September 1988."
+    },
+    {
+      "reference": "SP08SE124",
+      "original_borehole_number": {
+        "value": "3",
+        "page": 1
       },
-      {
-        "references": [
-          "SP08SE122",
-          "SP08SE123"
-        ],
-        "page": 3,
-        "description": "Same exploratory-hole location plan in both PDFs. Drawing 2, September 1988; shows BH1, BH2, BH3 and TP1 to TP6, a historical proposed-building footprint, an approximately 1 m retaining wall and vegetation. This is a historical plan, not a current site boundary."
+      "bgs_wrapper": {
+        "id": 305257,
+        "bng_easting_m": 405210,
+        "bng_northing_m": 284130,
+        "page": 1,
+        "note": "Wrapper metadata, not a new survey of the original hole."
       },
-      {
-        "references": [
-          "SP08SE122",
-          "SP08SE123"
-        ],
-        "page": 4,
-        "description": "Same west-to-east geological section in both PDFs. Drawing 3, September 1988; depicts BH1 to BH3 and trial pits with questioned correlations. It explicitly states that ground levels were extrapolated from another drawing. The interpreted boulder-clay key does not turn the individual logs' sandy-clay descriptions into a confirmed site-wide till unit. Do not infer current groundwater or a surveyed borehole datum from this section."
-      }
-    ],
-    "report_family_gap": {
-      "note": "The shared exploratory plan and section show BH3 and TP1 to TP6 in addition to the two individual logs reviewed here. Obtain the complete investigation report and remaining original logs before finalising the ground model or GI scope; no detailed findings for those additional holes have been transcribed from these diagrams.",
-      "references": [
-        "SP08SE122",
-        "SP08SE123"
+      "method": {
+        "value": "Cable percussion",
+        "diameter_mm": 150,
+        "casing_depth_m": 8.0,
+        "page": 1
+      },
+      "dates": {
+        "original_drilling_date_start": "1988-09-06",
+        "original_drilling_date_end": "1988-09-07",
+        "page": 1
+      },
+      "pagination": {
+        "log_sheet": "1 of 1",
+        "pdf_pages": 4,
+        "page": 1
+      },
+      "termination": {
+        "logged_depth_m_bgl": 8.1,
+        "reason": null,
+        "note": "The logged succession ends at 8.10 m. No explicit termination reason is stated.",
+        "page": 1
+      },
+      "ground_elevation": {
+        "value": null,
+        "note": "The ground-level and reduced-level fields are blank.",
+        "page": 1
+      },
+      "intervals_m_bgl": [
+        {
+          "from": 0.0,
+          "to": 0.2,
+          "description": "Sandy topsoil labelled as fill.",
+          "page": 1
+        },
+        {
+          "from": 0.2,
+          "to": 1.3,
+          "description": "Soft to firm orange- and yellow-brown sandy clay fill with sand pockets and occasional gravel.",
+          "page": 1
+        },
+        {
+          "from": 1.3,
+          "to": 3.9,
+          "description": "Orange-brown medium to coarse sand and gravel, described as very dense becoming dense.",
+          "page": 1
+        },
+        {
+          "from": 3.9,
+          "to": 4.3,
+          "description": "Stiff red-brown sandy clay with gravel.",
+          "page": 1
+        },
+        {
+          "from": 4.3,
+          "to": 5.0,
+          "description": "Medium-dense orange-brown fine sand.",
+          "page": 1
+        },
+        {
+          "from": 5.0,
+          "to": 5.3,
+          "description": "Red-brown clayey fine sand with a parenthesised very-stiff description in the original. This is a historical logging descriptor, not an inferred design parameter.",
+          "page": 1
+        },
+        {
+          "from": 5.3,
+          "to": 6.4,
+          "description": "Red-brown fine sand, described as dense becoming very dense.",
+          "page": 1
+        },
+        {
+          "from": 6.4,
+          "to": 8.1,
+          "description": "Very poorly cemented red-brown fine sandstone, described as weak to moderately weak.",
+          "page": 1
+        }
       ],
-      "pages": [
+      "unstarred_reported_spt_entries": [
+        {
+          "depth_m_bgl": 1.0,
+          "count": 19,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 1.5,
+          "count": 59,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 2.0,
+          "count": 61,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 2.5,
+          "count": 53,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 3.0,
+          "count": 38,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 3.5,
+          "count": 24,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 4.0,
+          "count": 30,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 4.5,
+          "count": 12,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 5.0,
+          "count": 73,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 5.5,
+          "count": 49,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 6.0,
+          "count": 85,
+          "page": 1
+        }
+      ],
+      "restricted_seating_blow_entries": [
+        {
+          "depth_m_bgl": 6.5,
+          "blows": 53,
+          "penetration_mm": 75,
+          "starred_in_source": true,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 7.0,
+          "blows": 66,
+          "penetration_mm": 75,
+          "starred_in_source": true,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 7.5,
+          "blows": 64,
+          "penetration_mm": 75,
+          "starred_in_source": true,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 8.0,
+          "blows": 72,
+          "penetration_mm": 75,
+          "starred_in_source": true,
+          "page": 1
+        }
+      ],
+      "sampling_notes": [
+        {
+          "note": "Standalone bulk-sample markings occur at 0.00 and 1.30 m. S/B markings occur at 2.50, 3.50, 4.50, 5.00, 6.00 and 7.00 m. Other tabulated test markings are S.",
+          "page": 1
+        },
+        {
+          "note": "The log legend defines the asterisk as SPT seating blows. Keep the stated blows and 75 mm penetration together; these are not ordinary full-penetration N values.",
+          "page": 1
+        },
+        {
+          "note": "No laboratory results, SPT calibration or energy/overburden corrections, rock core recovery, RQD or measured rock strength are supplied in this four-page PDF.",
+          "pages": [
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      ],
+      "water_drilling_notes": [
+        {
+          "date": "1988-09-06",
+          "note": "Borehole recorded dry; water added to aid boring below 1.30 m.",
+          "page": 1
+        },
+        {
+          "date": "1988-09-07",
+          "note": "Borehole recorded dry; water added to aid boring.",
+          "page": 1
+        },
+        {
+          "note": "One hour of chiselling recorded from 6.40 to 8.00 m.",
+          "page": 1
+        },
+        {
+          "note": "The water-level column is blank; no monitoring installation or equilibrium groundwater measurement is recorded.",
+          "page": 1
+        }
+      ],
+      "uncertainties": [
+        {
+          "note": "Dry drilling observations with added water do not establish present groundwater depth or exclude seasonal or perched water.",
+          "page": 1
+        },
+        {
+          "note": "Descriptions such as very stiff applied to clayey sand are reproduced as qualified historical observations; they are not converted to soil strength or density parameters.",
+          "page": 1
+        },
+        {
+          "note": "Neither terminal depth nor restricted-penetration seating blows establish competent rock, allowable bearing pressure or adequate design influence-depth coverage.",
+          "page": 1
+        },
+        {
+          "note": "The page-1 log gives no surveyed elevation. The shared section explicitly relies on extrapolated ground levels, and its questioned correlations do not confirm continuity.",
+          "pages": [
+            1,
+            4
+          ]
+        }
+      ],
+      "confidence": "High for visually legible identity, dates, method, depth boundaries, test entries and drilling notes. Applicability to the demonstration point and actual works remains unproved.",
+      "index_feature": {
+        "type": "Feature",
+        "properties": {
+          "reference": "SP08SE124",
+          "name": "EDGBASTON PARK ROAD 3",
+          "grid_ref": "SP 05210 84130",
+          "easting": 405210.0,
+          "northing": 284130.0,
+          "precision": "\u00b1 10 METRES",
+          "length": 8.1,
+          "year_known": "1989",
+          "sitereport": "5064",
+          "held_at": "KW",
+          "id": 305257.0,
+          "length_scan_cat": "1_Y",
+          "bgs_id": 305257.0,
+          "date_updated": "2013-01-22T18:25:55",
+          "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305257",
+          "ags_log_url": null,
+          "water_well_ref": "N/A",
+          "scan_quality": "not Entered"
+        },
+        "id": 305257.0,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.924758342571233,
+            52.45509917743054
+          ]
+        }
+      },
+      "original_pdf_provenance": {
+        "reference": "SP08SE124",
+        "provider_id": 305257,
+        "url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305257",
+        "retrieved_at_utc": "2026-10-28T21:17:06.333625+00:00",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "bytes": 334983,
+        "sha256": "bead405fbfe375022c37ec8f05629c1dd7bee2293e020edc3e9844fe05754515"
+      },
+      "pages_reviewed": [
+        1,
+        2,
         3,
         4
-      ]
+      ],
+      "review_revision": "D03",
+      "primary_log_page": 1
     },
-    "conditional_gi_implications": [
-      {
-        "inference": "Reconcile the drilling-date discrepancy and georeference the historical plan to the actual development before transferring any depths or observations.",
-        "basis_pages": [
+    {
+      "reference": "SP08SE125",
+      "bgs_id": 305258,
+      "original_label": "Trial Pit 1",
+      "original_label_short": "TP1",
+      "pages_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "primary_observation_page": 1,
+      "page_reference": "SP08SE125 original PDF p. 1; same TP1 record repeated on SP08SE126 and SP08SE127 p. 1",
+      "identity": {
+        "bng_easting": 405160,
+        "bng_northing": 284150,
+        "wrapper_reference_matches_sheet_annotation": true
+      },
+      "date": {
+        "original_text": "8/9/88",
+        "interpreted_iso_date": "1988-09-08",
+        "interpretation_basis": "UK day/month convention and September 1988 report-family drawings",
+        "page": 1,
+        "confidence": "high"
+      },
+      "method": {
+        "value": "Mechanical trial-pit excavation using a JCB 3C excavator",
+        "page": 1,
+        "confidence": "high"
+      },
+      "terminal_depth": {
+        "m_below_logged_ground": 1.8,
+        "reason": null,
+        "qualification": "Last described interval ends at 1.80; no explicit reason for stopping is given.",
+        "page": 1,
+        "confidence": "high"
+      },
+      "intervals": [
+        {
+          "from_m": 0,
+          "to_m": 0.3,
+          "material_paraphrase": "Topsoil",
+          "page": 1
+        },
+        {
+          "from_m": 0.3,
+          "to_m": 0.6,
+          "material_paraphrase": "Light-brown fine sand, slightly clayey, with occasional rounded medium gravel; the source places a soft descriptor in parentheses.",
+          "qualification": "Historical descriptor, not a measured density or strength.",
+          "page": 1
+        },
+        {
+          "from_m": 0.6,
+          "to_m": 1.5,
+          "spatial_variation": [
+            {
+              "location_within_pit": "South end",
+              "material_paraphrase": "Firm-to-stiff red-brown silty clay with occasional rounded medium gravel."
+            },
+            {
+              "location_within_pit": "North end",
+              "material_paraphrase": "Possible fill of light-brown slightly clayey sandy fine-to-medium gravel with some coarse particles and wet sand pockets."
+            }
+          ],
+          "qualification": "The two descriptions apply to different ends of the same pit, not successive depth layers. Preserve the possible-fill qualifier.",
+          "page": 1
+        },
+        {
+          "from_m": 1.5,
+          "to_m": 1.8,
+          "material_paraphrase": "Brown clayey sandy gravel of rounded fine-to-coarse sizes, with cobbles.",
+          "page": 1
+        }
+      ],
+      "water_and_stability": {
+        "excavation_observation": "Recorded dry and stable during excavation.",
+        "material_moisture_note": "Wet sand pockets are separately described at the north end between 0.60 and 1.50.",
+        "standing_water_level_m": null,
+        "seepage_rate": null,
+        "qualification": "Retain both the wet-pocket description and overall dry excavation note. No measured equilibrium water level, monitoring installation or observation duration is reported; do not infer present-day dryness or long-term excavation stability.",
+        "page": 1
+      },
+      "sampling": [
+        {
+          "source_code": "D",
+          "depth_m": 1.0,
+          "qualification": "A D sample entry at 1.00 is listed. The combined sheet supplies no sample-quality assessment or laboratory result and no sample-code legend.",
+          "page": 1
+        }
+      ],
+      "tests": {
+        "in_situ_results_present": false,
+        "laboratory_results_present": false,
+        "qualification": "No measured strength, density, stiffness, compressibility or permeability result is provided for this pit on these four pages."
+      },
+      "uncertainties": [
+        "The possible-fill identification is explicitly tentative and limited to the north end of the pit in the recorded interval.",
+        "No explicit excavation termination reason, surveyed pit level or current condition is established.",
+        "The shared section is an interpretation with questioned correlations and extrapolated levels, not a substitute for the direct pit descriptions.",
+        "A historic dry and stable excavation note is not a groundwater regime or a current safe excavation assessment."
+      ],
+      "confidence": "High for typed depths, date, method, descriptions and observation notes; engineering applicability and contemporary conditions remain unproved.",
+      "conditional_gi_implications": "If relevant to the actual footprint, test short-distance lateral variability, distinguish possible fill from natural clay/gravel, investigate moisture or perched-water questions, and select sampling methods suitable for gravel and cobbles.",
+      "index_feature": {
+        "type": "Feature",
+        "properties": {
+          "reference": "SP08SE125",
+          "name": "EDGBASTON PARK ROAD TP 1",
+          "grid_ref": "SP 05160 84150",
+          "easting": 405160.0,
+          "northing": 284150.0,
+          "precision": "\u00b1 10 METRES",
+          "length": 1.8,
+          "year_known": "1989",
+          "sitereport": "5064",
+          "held_at": "KW",
+          "id": 305258.0,
+          "length_scan_cat": "1_Y",
+          "bgs_id": 305258.0,
+          "date_updated": "2013-01-22T18:25:55",
+          "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305258",
+          "ags_log_url": null,
+          "water_well_ref": "N/A",
+          "scan_quality": "not Entered"
+        },
+        "id": 305258.0,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.925493829179869,
+            52.4552794412877
+          ]
+        }
+      },
+      "original_pdf_provenance": {
+        "reference": "SP08SE125",
+        "provider_id": 305258,
+        "url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305258",
+        "retrieved_at_utc": "2026-10-28T21:17:08.395561+00:00",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "bytes": 320076,
+        "sha256": "1895139393cd60b355e94f672d38b85907f3528945bf839b22a030423ef56f85"
+      },
+      "review_revision": "D03",
+      "primary_log_page": 1
+    },
+    {
+      "reference": "SP08SE126",
+      "bgs_id": 305259,
+      "original_label": "Trial Pit 2",
+      "original_label_short": "TP2",
+      "pages_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "primary_observation_page": 1,
+      "page_reference": "SP08SE126 original PDF p. 1; same TP2 record repeated on SP08SE125 and SP08SE127 p. 1",
+      "identity": {
+        "bng_easting": 405190,
+        "bng_northing": 284130,
+        "wrapper_reference_matches_sheet_annotation": true
+      },
+      "date": {
+        "original_text": "8/9/88",
+        "interpreted_iso_date": "1988-09-08",
+        "interpretation_basis": "UK day/month convention and September 1988 report-family drawings",
+        "page": 1,
+        "confidence": "high"
+      },
+      "method": {
+        "value": "Mechanical trial-pit excavation using a JCB 3C excavator",
+        "page": 1,
+        "confidence": "high"
+      },
+      "terminal_depth": {
+        "m_below_logged_ground": 2.4,
+        "reason": null,
+        "qualification": "Last described interval ends at 2.40; no explicit reason for stopping is given.",
+        "page": 1,
+        "confidence": "high"
+      },
+      "intervals": [
+        {
+          "from_m": 0,
+          "to_original_text": "0.30/0.40",
+          "to_m_range": [
+            0.3,
+            0.4
+          ],
+          "material_paraphrase": "Topsoil containing occasional roots and brick traces.",
+          "qualification": "Preserve the variable/slashed depth notation; no single level or thickness is assigned.",
+          "page": 1
+        },
+        {
+          "from_original_text": "0.30/0.40",
+          "from_m_range": [
+            0.3,
+            0.4
+          ],
+          "to_m": 0.8,
+          "material_paraphrase": "Firm brown sandy clay with some gravel and sand pockets.",
+          "page": 1
+        },
+        {
+          "from_m": 0.8,
+          "to_m": 2.15,
+          "material_paraphrase": "Fissured red-brown silty clay with occasional gravel, described as stiff and becoming very stiff.",
+          "qualification": "Historical consistency description, not a measured strength.",
+          "page": 1
+        },
+        {
+          "from_m": 2.15,
+          "to_m": 2.4,
+          "material_paraphrase": "Brown fine sand containing small soft clay lumps.",
+          "page": 1
+        }
+      ],
+      "water_and_stability": {
+        "excavation_observation": "Recorded dry and stable during excavation.",
+        "standing_water_level_m": null,
+        "seepage_rate": null,
+        "qualification": "No monitoring installation, measured equilibrium water level or observation duration is reported. Do not infer present-day dryness or long-term excavation stability.",
+        "page": 1
+      },
+      "sampling": [],
+      "sampling_note": {
+        "value": "No sample entry is listed for TP2 on the shared sheet.",
+        "page": 1
+      },
+      "tests": {
+        "in_situ_results_present": false,
+        "laboratory_results_present": false,
+        "qualification": "No measured strength, density, stiffness, compressibility or permeability result is provided for this pit on these four pages."
+      },
+      "uncertainties": [
+        "The topsoil boundary is recorded as 0.30/0.40; direction and geometry of the variation are not stated.",
+        "Brick traces in topsoil do not by themselves establish a deeper made-ground profile or contamination.",
+        "No explicit excavation termination reason, surveyed pit level or current condition is established.",
+        "The shared section is an interpretation with questioned correlations and extrapolated levels, not a substitute for direct pit descriptions.",
+        "A historic dry and stable excavation note is not a groundwater regime or a current safe excavation assessment."
+      ],
+      "confidence": "High for typed depths, date, method, descriptions and observation note; engineering applicability and contemporary conditions remain unproved.",
+      "conditional_gi_implications": "If relevant to the actual footprint, investigate topsoil/disturbance thickness, fissured clay behaviour and the clay-to-fine-sand transition; test suitability and variability using appropriate site-specific sampling and monitoring.",
+      "index_feature": {
+        "type": "Feature",
+        "properties": {
+          "reference": "SP08SE126",
+          "name": "EDGBASTON PARK ROAD TP 2",
+          "grid_ref": "SP 05190 84130",
+          "easting": 405190.0,
+          "northing": 284130.0,
+          "precision": "\u00b1 10 METRES",
+          "length": 2.4,
+          "year_known": "1989",
+          "sitereport": "5064",
+          "held_at": "KW",
+          "id": 305259.0,
+          "length_scan_cat": "1_Y",
+          "bgs_id": 305259.0,
+          "date_updated": "2013-01-22T18:25:55",
+          "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305259",
+          "ags_log_url": null,
+          "water_well_ref": "N/A",
+          "scan_quality": "not Entered"
+        },
+        "id": 305259.0,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.9250526581618896,
+            52.45509936361683
+          ]
+        }
+      },
+      "original_pdf_provenance": {
+        "reference": "SP08SE126",
+        "provider_id": 305259,
+        "url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305259",
+        "retrieved_at_utc": "2026-10-28T21:17:10.302428+00:00",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "bytes": 320080,
+        "sha256": "ae4d44ac7c67b51f9c73d73a275cca4f79f38d4ee6421922edf5a2b36fa09318"
+      },
+      "review_revision": "D03",
+      "primary_log_page": 1
+    },
+    {
+      "reference": "SP08SE127",
+      "bgs_id": 305260,
+      "original_label": "Trial Pit 3",
+      "original_label_short": "TP3",
+      "pages_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "primary_observation_page": 1,
+      "page_reference": "SP08SE127 original PDF p. 1; same TP3 record repeated on SP08SE125 and SP08SE126 p. 1",
+      "identity": {
+        "bng_easting": 405200,
+        "bng_northing": 284110,
+        "wrapper_reference_matches_sheet_annotation": true
+      },
+      "date": {
+        "original_text": "8/9/88",
+        "interpreted_iso_date": "1988-09-08",
+        "interpretation_basis": "UK day/month convention and September 1988 report-family drawings",
+        "page": 1,
+        "confidence": "high"
+      },
+      "method": {
+        "value": "Mechanical trial-pit excavation using a JCB 3C excavator",
+        "page": 1,
+        "confidence": "high"
+      },
+      "terminal_depth": {
+        "m_below_logged_ground": 2.0,
+        "reason": null,
+        "qualification": "Last described interval ends at 2.00; no explicit reason for stopping is given.",
+        "page": 1,
+        "confidence": "high"
+      },
+      "intervals": [
+        {
+          "from_m": 0,
+          "to_original_text": "0.10/0.25",
+          "to_m_range": [
+            0.1,
+            0.25
+          ],
+          "material_paraphrase": "Topsoil containing many roots and rootlets.",
+          "page": 1
+        },
+        {
+          "from_original_text": "0.10/0.25",
+          "from_m_range": [
+            0.1,
+            0.25
+          ],
+          "to_original_text": "0.70/0.90",
+          "to_m_range": [
+            0.7,
+            0.9
+          ],
+          "material_paraphrase": "Possible fill of brown very clayey sand with medium and coarse gravel, described in parentheses as soft to firm.",
+          "qualification": "Preserve possible-fill and parenthesised historical descriptor; do not substitute a measured strength or assume a single boundary depth.",
+          "page": 1
+        },
+        {
+          "from_original_text": "0.70/0.90",
+          "from_m_range": [
+            0.7,
+            0.9
+          ],
+          "to_m": 1.8,
+          "material_paraphrase": "Very-stiff-described red-brown silty clay containing medium and coarse gravel.",
+          "qualification": "Historical consistency description, not a measured strength.",
+          "page": 1
+        },
+        {
+          "from_m": 1.8,
+          "to_m": 2.0,
+          "material_paraphrase": "Brown slightly clayey sandy gravel with medium and coarse particles.",
+          "page": 1
+        }
+      ],
+      "water_and_stability": {
+        "excavation_observation": "Recorded dry and stable during excavation.",
+        "standing_water_level_m": null,
+        "seepage_rate": null,
+        "qualification": "No monitoring installation, measured equilibrium water level or observation duration is reported. Do not infer present-day dryness or long-term excavation stability.",
+        "page": 1
+      },
+      "sampling": [],
+      "sampling_note": {
+        "value": "No sample entry is listed for TP3 on the shared sheet.",
+        "page": 1
+      },
+      "tests": {
+        "in_situ_results_present": false,
+        "laboratory_results_present": false,
+        "qualification": "No measured strength, density, stiffness, compressibility or permeability result is provided for this pit on these four pages."
+      },
+      "uncertainties": [
+        "Topsoil and possible-fill boundaries are recorded with slashes: 0.10/0.25 and 0.70/0.90. Direction and geometry of variation are not stated.",
+        "Possible fill is explicitly tentative and should not be converted into confirmed made ground.",
+        "No explicit excavation termination reason, surveyed pit level or current condition is established.",
+        "The shared section is an interpretation with questioned correlations and extrapolated levels, not a substitute for direct pit descriptions.",
+        "A historic dry and stable excavation note is not a groundwater regime or a current safe excavation assessment."
+      ],
+      "confidence": "High for typed depths, date, method, descriptions and observation note; engineering applicability and contemporary conditions remain unproved.",
+      "conditional_gi_implications": "If relevant to the actual footprint, establish whether shallow possible fill is present and delineate its variable base, then characterise clay/gravel variability and water response using appropriate new investigation.",
+      "index_feature": {
+        "type": "Feature",
+        "properties": {
+          "reference": "SP08SE127",
+          "name": "EDGBASTON PARK ROAD TP 3",
+          "grid_ref": "SP 05200 84110",
+          "easting": 405200.0,
+          "northing": 284110.0,
+          "precision": "\u00b1 10 METRES",
+          "length": 2.0,
+          "year_known": "1989",
+          "sitereport": "5064",
+          "held_at": "KW",
+          "id": 305260.0,
+          "length_scan_cat": "1_Y",
+          "bgs_id": 305260.0,
+          "date_updated": "2013-01-22T18:25:55",
+          "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305260",
+          "ags_log_url": null,
+          "water_well_ref": "N/A",
+          "scan_quality": "not Entered"
+        },
+        "id": 305260.0,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.9249058051343522,
+            52.45491947084765
+          ]
+        }
+      },
+      "original_pdf_provenance": {
+        "reference": "SP08SE127",
+        "provider_id": 305260,
+        "url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305260",
+        "retrieved_at_utc": "2026-10-28T21:17:12.139784+00:00",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "bytes": 320073,
+        "sha256": "3b08f10c06d75cccb4fd224e0d6eea1d8490a9d52dcbdbddb392c0ab98a5ec1c"
+      },
+      "review_revision": "D03",
+      "primary_log_page": 1
+    },
+    {
+      "reference": "SP08SE128",
+      "bgs_id": 305261,
+      "original_label": "TRIAL PIT 4",
+      "source_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305261",
+      "pages_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "primary_log_page": 1,
+      "same_log_sheet_also_in": [
+        "SP08SE129 p1",
+        "SP08SE130 p1"
+      ],
+      "grid_reference_bng_from_wrapper": {
+        "easting": 405200,
+        "northing": 284150
+      },
+      "excavation_date_on_pit_sheet": null,
+      "associated_drawing_date": "1988-09",
+      "method": {
+        "type": "Trial-pit excavation",
+        "plant_or_excavation_technique": "Not stated.",
+        "pit_dimensions": "Not stated.",
+        "page": 1
+      },
+      "depth_unit": "m, contextually interpreted; see units_and_datum",
+      "logged_end_depth_m": 1.15,
+      "strata": [
+        {
+          "interval_original": "0.00-0.15",
+          "intervals_m_bgl": {
+            "from": 0.0,
+            "to": 0.15
+          },
+          "description_paraphrased": "Fill comprising concrete paving slabs on fine sand; slab plan dimensions recorded as 2 ft by 2 ft.",
+          "page": 1,
+          "confidence": "high"
+        },
+        {
+          "interval_original": "0.15-1.15",
+          "intervals_m_bgl": {
+            "from": 0.15,
+            "to": 1.15
+          },
+          "description_paraphrased": "Very loose dark-grey fill containing ash, cinders, brick and concrete-slab fragments.",
+          "page": 1,
+          "confidence": "high"
+        }
+      ],
+      "end_observation": {
+        "depth_original": "1.15",
+        "depth_m": 1.15,
+        "observation_paraphrased": "Base of a bathing pool recorded at the final logged depth.",
+        "termination_limit": "The log stops at this feature; a separate explicit termination rationale or proof of natural ground/competent bearing material is not given.",
+        "page": 1,
+        "confidence": "high"
+      },
+      "groundwater": {
+        "observation_paraphrased": "Water described as having a very strong pungent odour, with a recorded level at 0.80.",
+        "level_original": "0.80",
+        "nominal_depth_m": 0.8,
+        "observation_context": "Historic excavation observation; exact date, time, stabilisation and measurement datum not separately supplied.",
+        "limit": "Sensory odour is not an analytical result or identification of a contaminant. This does not establish the current site water level, aquifer connection or design groundwater regime.",
+        "page": 1,
+        "confidence": "high for the printed observation"
+      },
+      "stability": {
+        "observation_paraphrased": "Collapse continued during excavation.",
+        "limit": "Applies to this historic pit and excavation conditions; it does not establish a universally applicable excavation slope or support design.",
+        "page": 1,
+        "confidence": "high"
+      },
+      "samples": [
+        {
+          "original_code": "D",
+          "depth_original": "1.00",
+          "nominal_depth_m": 1.0,
+          "code_definition": "Not defined on this sheet; do not assert modern sample quality or analytical coverage.",
+          "page": 1
+        }
+      ],
+      "tests": {
+        "observation": "No TP4 in-situ test results or laboratory/chemical results supplied on the pit sheet or the shared drawings.",
+        "page_references": [
           1,
           2,
-          3
-        ],
-        "references": [
-          "SP08SE122",
-          "SP08SE123"
+          3,
+          4
         ]
       },
-      {
-        "inference": "If relevant to the actual site and works, target made-ground thickness, shallow soft pockets, clay/granular variability and the sand-to-weak-sandstone transition. The two historical fill bases are 1.10 and 0.60 m, and sandstone tops 6.50 and 5.50 m; these are observations at those holes only.",
-        "basis_pages": [
-          1
-        ],
-        "references": [
-          "SP08SE122",
-          "SP08SE123"
+      "uncertainties": [
+        "Excavation date and plant/method detail are absent from the pit sheet.",
+        "Metric units are contextual; a surveyed ground elevation is not provided.",
+        "The pool's age, construction, extent, depth below base, and subsequent removal or redevelopment are not established.",
+        "The cause and composition of the pungent water are unknown.",
+        "Fill continues to the pool-base feature; natural strata are not proved beneath it by this log."
+      ],
+      "conditional_gi_implications": [
+        "If relevant to the defined works, trace the former pool and fill extent through historic plans, records and walkover, then verify current buried structures and ground conditions.",
+        "Make the historic odorous water and ash/cinder fill explicit in the environmental conceptual model; select any chemistry/gas investigation through a competent assessment rather than asserting contamination from odour alone.",
+        "Review safe investigation/excavation methods for possible loose fill, local water and instability; do not assume shallow pits will remain stable.",
+        "Investigate below or around the buried pool feature where needed to establish the engineering profile, and obtain project-specific water observations."
+      ],
+      "retrieval_provenance": {
+        "retrieved_at_utc": "2026-10-28T21:17:14.832310+00:00",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "bytes": 314626,
+        "sha256": "22ca35a6f84c9931a71e13c5a15acef0e7631d6d7aa3fbf1e0dbf396505f91bb"
+      },
+      "index_metadata": {
+        "length_m": 1.15,
+        "year_known": "1989",
+        "position_precision": "\u00b1 10 METRES",
+        "source": "reports/original-logs/edgbaston-retrievals.json"
+      },
+      "index_date_comparison": {
+        "index_year": "1989",
+        "original_pit_excavation_date": null,
+        "associated_drawing_date": "September 1988",
+        "assessment": "The index year is 1989, the pit sheet is undated and associated drawings are September 1988. Preserve all three facts; the pit excavation year is not established by the drawings alone."
+      },
+      "index_depth_comparison": {
+        "index_length_m": 1.15,
+        "original_logged_end_depth_m": 1.15,
+        "status": "matches original logged end depth",
+        "original_page": 1
+      },
+      "index_feature": {
+        "type": "Feature",
+        "properties": {
+          "reference": "SP08SE128",
+          "name": "EDGBASTON PARK ROAD TP 4",
+          "grid_ref": "SP 05200 84150",
+          "easting": 405200.0,
+          "northing": 284150.0,
+          "precision": "\u00b1 10 METRES",
+          "length": 1.15,
+          "year_known": "1989",
+          "sitereport": "5064",
+          "held_at": "KW",
+          "id": 305261.0,
+          "length_scan_cat": "1_Y",
+          "bgs_id": 305261.0,
+          "date_updated": "2013-01-22T18:25:55",
+          "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305261",
+          "ags_log_url": null,
+          "water_well_ref": "N/A",
+          "scan_quality": "not Entered"
+        },
+        "id": 305261.0,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.9249051955947478,
+            52.455279070377294
+          ]
+        }
+      },
+      "original_pdf_provenance": {
+        "reference": "SP08SE128",
+        "provider_id": 305261,
+        "url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305261",
+        "retrieved_at_utc": "2026-10-28T21:17:14.832310+00:00",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "bytes": 314626,
+        "sha256": "22ca35a6f84c9931a71e13c5a15acef0e7631d6d7aa3fbf1e0dbf396505f91bb"
+      },
+      "review_revision": "D03"
+    },
+    {
+      "reference": "SP08SE129",
+      "bgs_id": 305262,
+      "original_label": "TRIAL PIT 5",
+      "source_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305262",
+      "pages_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "primary_log_page": 1,
+      "same_log_sheet_also_in": [
+        "SP08SE128 p1",
+        "SP08SE130 p1"
+      ],
+      "grid_reference_bng_from_wrapper": {
+        "easting": 405200,
+        "northing": 284160
+      },
+      "excavation_date_on_pit_sheet": null,
+      "associated_drawing_date": "1988-09",
+      "method": {
+        "type": "Trial-pit excavation",
+        "plant_or_excavation_technique": "Not stated.",
+        "pit_dimensions": "Not stated.",
+        "page": 1
+      },
+      "depth_unit": "m, contextually interpreted; see units_and_datum",
+      "logged_end_depth_m": 2.0,
+      "strata": [
+        {
+          "interval_original": "0.00-0.20",
+          "intervals_m_bgl": {
+            "from": 0.0,
+            "to": 0.2
+          },
+          "description_paraphrased": "Topsoil with occasional roots, explicitly labelled fill.",
+          "page": 1,
+          "confidence": "high"
+        },
+        {
+          "interval_original": "0.20-0.70",
+          "intervals_m_bgl": {
+            "from": 0.2,
+            "to": 0.7
+          },
+          "description_paraphrased": "Soft brown sandy-clay fill with gravel and occasional tile fragments.",
+          "page": 1,
+          "confidence": "high"
+        },
+        {
+          "interval_original": "0.70-1.00",
+          "intervals_m_bgl": {
+            "from": 0.7,
+            "to": 1.0
+          },
+          "description_paraphrased": "A separate topsoil layer below the explicitly fill-labelled layers.",
+          "page": 1,
+          "confidence": "high"
+        },
+        {
+          "interval_original": "1.00-1.80",
+          "intervals_m_bgl": {
+            "from": 1.0,
+            "to": 1.8
+          },
+          "description_paraphrased": "Red-brown silty clay, firm becoming very stiff, with rounded medium/coarse gravel.",
+          "page": 1,
+          "confidence": "high"
+        },
+        {
+          "interval_original": "1.80-2.00",
+          "intervals_m_bgl": {
+            "from": 1.8,
+            "to": 2.0
+          },
+          "description_paraphrased": "Brown rounded medium/coarse gravel with sand and a small clay component.",
+          "page": 1,
+          "confidence": "high"
+        }
+      ],
+      "end_observation": {
+        "depth_m": 2.0,
+        "observation": "Last logged interval ends at 2.00.",
+        "termination_reason": "Not stated; final depth alone is not proof of a competent founding horizon.",
+        "page": 1
+      },
+      "groundwater": {
+        "observation_paraphrased": "Recorded as dry during excavation.",
+        "limit": "A historic excavation observation of unspecified duration/date, not proof of no groundwater or a design seasonal maximum.",
+        "page": 1,
+        "confidence": "high"
+      },
+      "stability": {
+        "observation_paraphrased": "Recorded as stable during excavation.",
+        "limit": "Restricted to this historic pit and its excavation conditions; not a current excavation-design criterion.",
+        "page": 1,
+        "confidence": "high"
+      },
+      "samples": {
+        "observation": "No TP5 sampling entry supplied on the shared pit sheet.",
+        "page": 1
+      },
+      "tests": {
+        "observation": "No TP5 in-situ or laboratory test results supplied; the borehole SPT values on the shared section are separate evidence.",
+        "page_references": [
+          1,
+          4
         ]
       },
-      {
-        "inference": "Select investigation equipment for cobbles and weak rock; consider coring where rock quality affects design. Chiselling and short penetration seating blows do not establish competent bearing rock.",
-        "basis_pages": [
-          1
+      "uncertainties": [
+        "Excavation date, plant and surveyed ground datum are unavailable.",
+        "Depth units are contextual; original decimal values are clear.",
+        "The topsoil layer at 0.70-1.00 is not separately labelled fill. Its origin and the exact boundary between reworked and natural material require interpretation; do not silently assign a proven natural-ground surface at 0.70.",
+        "Historical consistency words do not provide verified strength, stiffness or settlement parameters."
+      ],
+      "conditional_gi_implications": [
+        "If relevant to the works, verify the present fill and buried-topsoil sequence, weak/organic horizons and clay-to-gravel transition rather than assuming continuity from nearby boreholes.",
+        "Plan project-specific sampling, classification and water observations as required by the actual engineering questions."
+      ],
+      "retrieval_provenance": {
+        "retrieved_at_utc": "2026-10-28T21:17:16.785018+00:00",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "bytes": 314627,
+        "sha256": "0557942964c3eb9c34b2576cb61f6c0e25efd9a7e1e47d2a690fde4ca50e0282"
+      },
+      "index_metadata": {
+        "length_m": 2.0,
+        "year_known": "1989",
+        "position_precision": "\u00b1 10 METRES",
+        "source": "reports/original-logs/edgbaston-retrievals.json"
+      },
+      "index_date_comparison": {
+        "index_year": "1989",
+        "original_pit_excavation_date": null,
+        "associated_drawing_date": "September 1988",
+        "assessment": "The index year is 1989, the pit sheet is undated and associated drawings are September 1988. Preserve all three facts; the pit excavation year is not established by the drawings alone."
+      },
+      "index_depth_comparison": {
+        "index_length_m": 2.0,
+        "original_logged_end_depth_m": 2.0,
+        "status": "matches original logged end depth",
+        "original_page": 1
+      },
+      "index_feature": {
+        "type": "Feature",
+        "properties": {
+          "reference": "SP08SE129",
+          "name": "EDGBASTON PARK ROAD TP 5",
+          "grid_ref": "SP 05200 84160",
+          "easting": 405200.0,
+          "northing": 284160.0,
+          "precision": "\u00b1 10 METRES",
+          "length": 2.0,
+          "year_known": "1989",
+          "sitereport": "5064",
+          "held_at": "KW",
+          "id": 305262.0,
+          "length_scan_cat": "1_Y",
+          "bgs_id": 305262.0,
+          "date_updated": "2013-01-22T18:25:55",
+          "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305262",
+          "ags_log_url": null,
+          "water_well_ref": "N/A",
+          "scan_quality": "not Entered"
+        },
+        "id": 305262.0,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.9249050432078354,
+            52.45536897025625
+          ]
+        }
+      },
+      "original_pdf_provenance": {
+        "reference": "SP08SE129",
+        "provider_id": 305262,
+        "url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305262",
+        "retrieved_at_utc": "2026-10-28T21:17:16.785018+00:00",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "bytes": 314627,
+        "sha256": "0557942964c3eb9c34b2576cb61f6c0e25efd9a7e1e47d2a690fde4ca50e0282"
+      },
+      "review_revision": "D03"
+    },
+    {
+      "reference": "SP08SE130",
+      "bgs_id": 305263,
+      "original_label": "TRIAL PIT 6",
+      "source_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305263",
+      "pages_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "primary_log_page": 1,
+      "same_log_sheet_also_in": [
+        "SP08SE128 p1",
+        "SP08SE129 p1"
+      ],
+      "grid_reference_bng_from_wrapper": {
+        "easting": 405180,
+        "northing": 284160
+      },
+      "excavation_date_on_pit_sheet": null,
+      "associated_drawing_date": "1988-09",
+      "method": {
+        "type": "Trial-pit excavation",
+        "plant_or_excavation_technique": "Not stated.",
+        "pit_dimensions": "Not stated.",
+        "page": 1
+      },
+      "depth_unit": "m, contextually interpreted; see units_and_datum",
+      "logged_end_depth_m": 1.8,
+      "variable_interface_m_bgl": {
+        "range": [
+          0.6,
+          0.7
         ],
-        "references": [
-          "SP08SE122",
-          "SP08SE123"
+        "basis": "Original explicitly prints 0.60/0.70 for both sides of this boundary; retain the variable depth rather than selecting one value.",
+        "page": 1
+      },
+      "strata": [
+        {
+          "interval_original": "0.00-0.30",
+          "intervals_m_bgl": {
+            "from": 0.0,
+            "to": 0.3
+          },
+          "description_paraphrased": "Topsoil with occasional coarse gravel, explicitly labelled fill.",
+          "page": 1,
+          "confidence": "high"
+        },
+        {
+          "interval_original": "0.30-0.60/0.70",
+          "intervals_m_bgl": {
+            "from": 0.3,
+            "to": null,
+            "to_range": [
+              0.6,
+              0.7
+            ]
+          },
+          "description_paraphrased": "Fill described as soft in parentheses: red/light-brown clayey sand containing clay and topsoil pockets and occasional tile fragments.",
+          "page": 1,
+          "confidence": "high"
+        },
+        {
+          "interval_original": "0.60/0.70-1.10",
+          "intervals_m_bgl": {
+            "from": null,
+            "from_range": [
+              0.6,
+              0.7
+            ],
+            "to": 1.1
+          },
+          "description_paraphrased": "Soft-to-firm red-brown silty clay with occasional medium gravel.",
+          "page": 1,
+          "confidence": "high"
+        },
+        {
+          "interval_original": "1.10-1.50",
+          "intervals_m_bgl": {
+            "from": 1.1,
+            "to": 1.5
+          },
+          "description_paraphrased": "Stiff red-brown silty clay with occasional gravel.",
+          "page": 1,
+          "confidence": "high"
+        },
+        {
+          "interval_original": "1.50-1.80",
+          "intervals_m_bgl": {
+            "from": 1.5,
+            "to": 1.8
+          },
+          "description_paraphrased": "Brown rounded gravel across a range of sizes, containing sand, a small clay component and cobbles.",
+          "page": 1,
+          "confidence": "high"
+        }
+      ],
+      "end_observation": {
+        "depth_m": 1.8,
+        "observation": "Last logged interval ends at 1.80.",
+        "termination_reason": "Not stated; do not infer refusal or an adequate design investigation depth.",
+        "page": 1
+      },
+      "groundwater": {
+        "observation_paraphrased": "Recorded as dry during excavation.",
+        "limit": "A historic excavation observation of unspecified duration/date, not proof of no groundwater or a design seasonal maximum.",
+        "page": 1,
+        "confidence": "high"
+      },
+      "stability": {
+        "observation_paraphrased": "Recorded as stable during excavation.",
+        "limit": "Restricted to this historic pit and excavation conditions; not a current excavation-design criterion.",
+        "page": 1,
+        "confidence": "high"
+      },
+      "samples": {
+        "observation": "No TP6 sampling entry supplied on the shared pit sheet.",
+        "page": 1
+      },
+      "tests": {
+        "observation": "No TP6 in-situ or laboratory test results supplied; the borehole SPT values on the shared section are separate evidence.",
+        "page_references": [
+          1,
+          4
         ]
       },
-      {
-        "inference": "Obtain appropriately screened and surveyed groundwater monitoring with repeat observations where relevant to the works. Historic dry drilling notes do not justify omitting groundwater assessment.",
-        "basis_pages": [
-          1
-        ],
-        "references": [
-          "SP08SE122",
-          "SP08SE123"
-        ]
-      }
-    ]
-  },
+      "uncertainties": [
+        "Excavation date, plant and surveyed ground datum are unavailable.",
+        "Depth units are contextual; the printed 0.60/0.70 boundary is deliberately retained as a variable depth.",
+        "Historical softness/stiffness words do not supply verified design parameters.",
+        "The brief pit log does not establish lateral continuity of clay/gravel layers or the depth to rock.",
+        "Index length 2.00 m conflicts with original logged end depth 1.80 m; this remains unresolved."
+      ],
+      "conditional_gi_implications": [
+        "If relevant to the works, verify the variable shallow fill base, local soft clay and cobbly gravel when selecting sampling and investigation methods.",
+        "Establish investigation depth and groundwater monitoring needs from the actual works; the shallow dry/stable observation does not close those questions."
+      ],
+      "retrieval_provenance": {
+        "retrieved_at_utc": "2026-10-28T21:17:18.701920+00:00",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "bytes": 314638,
+        "sha256": "6553d1e5a42f0bbdea759bb42438c986b367b8c9651ac04d3b686692f4b9763c"
+      },
+      "index_metadata": {
+        "length_m": 2.0,
+        "year_known": "1989",
+        "position_precision": "\u00b1 10 METRES",
+        "source": "reports/original-logs/edgbaston-retrievals.json"
+      },
+      "index_date_comparison": {
+        "index_year": "1989",
+        "original_pit_excavation_date": null,
+        "associated_drawing_date": "September 1988",
+        "assessment": "The index year is 1989, the pit sheet is undated and associated drawings are September 1988. Preserve all three facts; the pit excavation year is not established by the drawings alone."
+      },
+      "index_depth_comparison": {
+        "index_length_m": 2.0,
+        "original_logged_end_depth_m": 1.8,
+        "status": "unresolved discrepancy",
+        "original_page": 1,
+        "assessment": "Index length is 2.00 m while TP6 on the original shared sheet ends at 1.80 m. Do not invent an interval from 1.80 to 2.00 m or silently replace either source value."
+      },
+      "index_feature": {
+        "type": "Feature",
+        "properties": {
+          "reference": "SP08SE130",
+          "name": "EDGBASTON PARK ROAD TP 6",
+          "grid_ref": "SP 05180 84160",
+          "easting": 405180.0,
+          "northing": 284160.0,
+          "precision": "\u00b1 10 METRES",
+          "length": 2.0,
+          "year_known": "1989",
+          "sitereport": "5064",
+          "held_at": "KW",
+          "id": 305263.0,
+          "length_scan_cat": "1_Y",
+          "bgs_id": 305263.0,
+          "date_updated": "2013-01-22T18:25:55",
+          "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305263",
+          "ags_log_url": null,
+          "water_well_ref": "N/A",
+          "scan_quality": "not Entered"
+        },
+        "id": 305263.0,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.9251993605981446,
+            52.45536915607822
+          ]
+        }
+      },
+      "original_pdf_provenance": {
+        "reference": "SP08SE130",
+        "provider_id": 305263,
+        "url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305263",
+        "retrieved_at_utc": "2026-10-28T21:17:18.701920+00:00",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "bytes": 314638,
+        "sha256": "6553d1e5a42f0bbdea759bb42438c986b367b8c9651ac04d3b686692f4b9763c"
+      },
+      "review_revision": "D03"
+    }
+  ],
   "review_limits": [
     "No current site ground profile, design parameter, foundation recommendation or hazard absence has been established.",
-    "Six reviewed records are not an exhaustive search of the 423 reported index matches in the enclosing box.",
+    "Thirteen reviewed original-hole records and 26 distinct discovered index candidates are not an exhaustive search of the 423 provider-reported matches in the enclosing box.",
     "Historic descriptions and uncorrected test entries require relevance and quality assessment before design use.",
     "Raw drilling-day observations and an old off-site station observation do not establish current or design groundwater conditions."
-  ]
+  ],
+  "coverage_counts": {
+    "physical_holes_reviewed": 13,
+    "pdf_packages": 13,
+    "archive_pages": 40,
+    "new_d03_pdf_packages": 7,
+    "new_d03_archive_pages": 28,
+    "edgbaston_physical_holes": 9,
+    "edgbaston_pdf_packages": 9,
+    "edgbaston_unique_log_sheets": 5,
+    "shared_drawings_counted_once": 3
+  },
+  "additional_review_context": {
+    "BH3": {
+      "review_scope": "Visual review of all four pages of SP08SE124. Factual paraphrases, with individual-log observations distinguished from shared interpreted drawings.",
+      "shared_pages": [
+        {
+          "reference": "SP08SE124",
+          "page": 2,
+          "description": "Same September 1988 site-location plans already reviewed in SP08SE122 and SP08SE123, drawing 1, contract 1829. Count once as contextual material, not another investigation."
+        },
+        {
+          "reference": "SP08SE124",
+          "page": 3,
+          "description": "Same September 1988 exploratory-hole plan already reviewed in SP08SE122 and SP08SE123, drawing 2. It shows BH1 to BH3 and TP1 to TP6 around a historic proposed-building footprint. It is not a current site survey."
+        },
+        {
+          "reference": "SP08SE124",
+          "page": 4,
+          "description": "Same September 1988 west-to-east interpreted section already reviewed in SP08SE122 and SP08SE123, drawing 3, with questioned correlations and extrapolated ground levels. Handwritten reference 124 above BH3 agrees with the individual log identity. Use the individual page-1 logs as primary sources for factual transcriptions."
+        }
+      ],
+      "comparison_with_bh1_bh2": [
+        {
+          "observation": "Historic fill bases are 1.10 m in BH1, 0.60 m in BH2 and 1.30 m in BH3, a local range of 0.60 to 1.30 m below each hole's logged ground. BH3's fill description does not mention brick; its absence from the description is not proof of absence.",
+          "sources": [
+            {
+              "reference": "SP08SE122",
+              "page": 1
+            },
+            {
+              "reference": "SP08SE123",
+              "page": 1
+            },
+            {
+              "reference": "SP08SE124",
+              "page": 1
+            }
+          ]
+        },
+        {
+          "observation": "Sandstone tops are 6.50 m in BH1, 5.50 m in BH2 and 6.40 m in BH3; all three logs end at 8.10 m. These are local depths with no verified common surveyed datum, not an established bedrock surface at the demonstration point.",
+          "sources": [
+            {
+              "reference": "SP08SE122",
+              "page": 1
+            },
+            {
+              "reference": "SP08SE123",
+              "page": 1
+            },
+            {
+              "reference": "SP08SE124",
+              "page": 1
+            }
+          ]
+        },
+        {
+          "observation": "BH3 has granular material directly below fill, unlike the upper clay/clayey-sand sequence in BH1 and upper sandy clay in BH2. BH3 also logs a clay layer at 3.90 to 4.30 m and clayey fine sand at 5.00 to 5.30 m. The logs support testing variability, not assuming cross-hole continuity.",
+          "sources": [
+            {
+              "reference": "SP08SE122",
+              "page": 1
+            },
+            {
+              "reference": "SP08SE123",
+              "page": 1
+            },
+            {
+              "reference": "SP08SE124",
+              "page": 1
+            }
+          ]
+        },
+        {
+          "observation": "All three record dry drilling with added water and chiselling in the deeper cemented material. None supplies a present groundwater regime, measured rock-quality basis or design parameters.",
+          "sources": [
+            {
+              "reference": "SP08SE122",
+              "page": 1
+            },
+            {
+              "reference": "SP08SE123",
+              "page": 1
+            },
+            {
+              "reference": "SP08SE124",
+              "page": 1
+            }
+          ]
+        }
+      ],
+      "conditional_gi_implications": [
+        {
+          "inference": "Where these records prove relevant to the actual works, target fill-base variability, local clay and granular lenses, the weathered/cemented sand-to-sandstone transition and obstruction/advancement requirements. Final locations, quantities and depths require the site footprint and engineering influence zone.",
+          "basis": [
+            {
+              "reference": "SP08SE124",
+              "page": 1
+            },
+            {
+              "reference": "SP08SE122",
+              "page": 1
+            },
+            {
+              "reference": "SP08SE123",
+              "page": 1
+            }
+          ]
+        },
+        {
+          "inference": "Obtain appropriate groundwater monitoring and test-quality information; use suitable coring and laboratory testing if rock behaviour controls the design. Do not derive bearing capacity, strength, stiffness or dewatering rates from these historic notes.",
+          "basis": [
+            {
+              "reference": "SP08SE124",
+              "page": 1
+            }
+          ]
+        }
+      ]
+    },
+    "TP1-TP3": {
+      "review_type": "visual_review_of_original_BGS_scans",
+      "review_date": "2026-10-28",
+      "source_handling": "Derived factual paraphrases only. Do not redistribute original scans or drawings. Personal names, signatures and contact information are omitted.",
+      "scope": "All four pages of each of SP08SE125, SP08SE126 and SP08SE127 were visually inspected.",
+      "duplicate_coverage": {
+        "references": [
+          "SP08SE125",
+          "SP08SE126",
+          "SP08SE127"
+        ],
+        "page_1": "All three PDFs repeat the same combined trial-pit record sheet containing TP1, TP2 and TP3. The BGS wrappers identify different archive entries. These are three physical pits, not nine independent pit records.",
+        "page_2": "All three repeat the September 1988 site-location plans, contract 1829, drawing 1.",
+        "page_3": "All three repeat the September 1988 exploratory-hole location plan, contract 1829, drawing 2, showing BH1-BH3 and TP1-TP6 and the historical proposed-building outline.",
+        "page_4": "All three repeat the September 1988 west-east geological section, contract 1829, drawing 3, containing questioned correlations and a warning that ground levels were extrapolated from another drawing.",
+        "counting_rule": "Count TP1, TP2 and TP3 once each. Count the three shared drawings once as report-family context; they are also present in the previously reviewed Edgbaston PDFs."
+      },
+      "depth_units": {
+        "interpreted_units": "m below the pit's recorded ground surface",
+        "qualification": "Page 1 uses decimal depth intervals without an explicit adjacent unit label. Metres are interpreted from the investigation context and the shared metric geological section; no surveyed pit datum is provided on the combined sheet.",
+        "confidence": "high for numerical transcription; contextual interpretation for metric units"
+      },
+      "shared_context_limits": [
+        {
+          "pages": [
+            2,
+            3
+          ],
+          "note": "The historic plans establish report-family context, not the current site boundary or present positions/levels without georeferencing."
+        },
+        {
+          "page": 4,
+          "note": "Questioned connections and extrapolated ground levels do not confirm continuous strata or surveyed elevations. Do not turn the interpreted boulder-clay key into an independently established formation for every pit."
+        },
+        {
+          "page": 4,
+          "note": "Borehole SPT entries shown in the shared section belong to boreholes, not to the trial pits. No SPT results are assigned to TP1-TP3."
+        },
+        {
+          "pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "note": "No quantitative design strength, stiffness, bearing resistance, permeability, groundwater regime or current excavation stability is established for the proposed works."
+        }
+      ]
+    },
+    "TP4-TP6": {
+      "review_scope": "Complete visual review of all 12 pages in SP08SE128, SP08SE129 and SP08SE130. Derived factual paraphrases only; no original scans, personal names, signatures or contact details are reproduced.",
+      "duplicate_coverage": {
+        "assessment": "Each four-page PDF contains the same shared TP4-TP6 log sheet at page 1 and the same three drawings at pages 2-4. The BGS wrappers identify different records and grid positions. There are three distinct trial-pit records, not nine independent pit logs.",
+        "verification": "Corresponding embedded original scan images have identical SHA-256 hashes across all three PDFs, supplementing visual inspection of every page.",
+        "embedded_scan_sha256_by_page": {
+          "1": "ed5a7631dca30918acbfd1b532557191b0c471a25591ce00d4e23bfc3bab8573",
+          "2": "1bff2770b4f7f92e143daee63bba0a6908adfc50e8c5aacd74b584a4827f58e6",
+          "3": "2ccd5694123a52ce93a14cce6f555f2bfd5c479e431578c2f465bcec73a26910",
+          "4": "35880753641f081ab201b2e4955ff49790b48db49f75528728347327e069a5fa"
+        }
+      },
+      "shared_drawing_context": {
+        "project": "Lucas Institute Annexe, University of Birmingham; ground investigation; contract 1829.",
+        "date_on_drawings": "September 1988",
+        "date_limit": "The drawing date is not a stated excavation date for any of TP4-TP6. The shared pit sheet has no excavation date.",
+        "pages": [
+          {
+            "page": 2,
+            "drawing_number": 1,
+            "content": "Historic site location plans."
+          },
+          {
+            "page": 3,
+            "drawing_number": 2,
+            "content": "Historic exploratory-hole location plan showing BH1-BH3 and TP1-TP6, a proposed building outline, an approximately 1 m retaining wall and vegetation."
+          },
+          {
+            "page": 4,
+            "drawing_number": 3,
+            "content": "Interpreted west-east geological section; questioned correlations, groundwater-level key and borehole SPT entries. Ground levels are stated to be extrapolated from another drawing."
+          }
+        ],
+        "limits": [
+          "Drawings are historic context, not a current site survey or proof that the original proposal was built as shown.",
+          "Do not assign borehole SPT entries on the shared section to the trial pits.",
+          "Section correlations and the boulder-clay interpretation do not replace the individual pit lithological descriptions.",
+          "Extrapolated section levels must not be adopted as surveyed pit or development-site datums."
+        ]
+      },
+      "units_and_datum": {
+        "depth_unit_used": "m",
+        "qualification": "The pit sheet prints decimal depth values without an explicit depth-unit heading. Metres are the contextual interpretation supported by the associated metric investigation drawings and depth scale; the page explicitly labels only the paving-slab dimensions in feet. Retain this qualification if strict original-unit verification is required.",
+        "datum": "Intervals are nominal depths from each original pit's zero, conventionally interpreted as logged ground. No independently surveyed pit ground-level elevation or present-day surface datum is supplied. The intervals_m_bgl schema does not certify the reference level.",
+        "confidence": "High for the printed decimal values; metric unit interpretation is contextual; surveyed datum unavailable.",
+        "sample_code_note": "The TP sheets record D without defining the code. Disturbed is a conventional interpretation, not an explicit legend on these sheets."
+      }
+    }
+  },
+  "closed_acquisition_gap": "Original records for Edgbaston BH3 and TP1-TP6 retrieved and reviewed. This does not close narrative report, laboratory-results, survey-datum, site-relevance or groundwater gaps.",
+  "new_priority": "Locate and assess the historical TP4 bathing-pool feature with ash/debris fill, pungent water and excavation collapse. Develop environmental linkages and safe GI/temporary-works response where relevant to the actual works; no contaminant identity or current condition is established.",
+  "prior_d02_shared_context": {
+    "status": "historical D02 context; missing-log acquisition statements superseded by D03",
+    "content": {
+      "review_scope": "Visual review of all four pages of each original BGS PDF; factual paraphrases for a preliminary desk study, without design parameters.",
+      "shared_pages": [
+        {
+          "references": [
+            "SP08SE122",
+            "SP08SE123"
+          ],
+          "page": 2,
+          "description": "Same historical site-location plans in both PDFs, with different BGS wrappers. Drawing 1, contract 1829, September 1988."
+        },
+        {
+          "references": [
+            "SP08SE122",
+            "SP08SE123"
+          ],
+          "page": 3,
+          "description": "Same exploratory-hole location plan in both PDFs. Drawing 2, September 1988; shows BH1, BH2, BH3 and TP1 to TP6, a historical proposed-building footprint, an approximately 1 m retaining wall and vegetation. This is a historical plan, not a current site boundary."
+        },
+        {
+          "references": [
+            "SP08SE122",
+            "SP08SE123"
+          ],
+          "page": 4,
+          "description": "Same west-to-east geological section in both PDFs. Drawing 3, September 1988; depicts BH1 to BH3 and trial pits with questioned correlations. It explicitly states that ground levels were extrapolated from another drawing. The interpreted boulder-clay key does not turn the individual logs' sandy-clay descriptions into a confirmed site-wide till unit. Do not infer current groundwater or a surveyed borehole datum from this section."
+        }
+      ],
+      "report_family_gap": {
+        "note": "The shared exploratory plan and section show BH3 and TP1 to TP6 in addition to the two individual logs reviewed here. Obtain the complete investigation report and remaining original logs before finalising the ground model or GI scope; no detailed findings for those additional holes have been transcribed from these diagrams.",
+        "references": [
+          "SP08SE122",
+          "SP08SE123"
+        ],
+        "pages": [
+          3,
+          4
+        ]
+      },
+      "conditional_gi_implications": [
+        {
+          "inference": "Reconcile the drilling-date discrepancy and georeference the historical plan to the actual development before transferring any depths or observations.",
+          "basis_pages": [
+            1,
+            2,
+            3
+          ],
+          "references": [
+            "SP08SE122",
+            "SP08SE123"
+          ]
+        },
+        {
+          "inference": "If relevant to the actual site and works, target made-ground thickness, shallow soft pockets, clay/granular variability and the sand-to-weak-sandstone transition. The two historical fill bases are 1.10 and 0.60 m, and sandstone tops 6.50 and 5.50 m; these are observations at those holes only.",
+          "basis_pages": [
+            1
+          ],
+          "references": [
+            "SP08SE122",
+            "SP08SE123"
+          ]
+        },
+        {
+          "inference": "Select investigation equipment for cobbles and weak rock; consider coring where rock quality affects design. Chiselling and short penetration seating blows do not establish competent bearing rock.",
+          "basis_pages": [
+            1
+          ],
+          "references": [
+            "SP08SE122",
+            "SP08SE123"
+          ]
+        },
+        {
+          "inference": "Obtain appropriately screened and surveyed groundwater monitoring with repeat observations where relevant to the works. Historic dry drilling notes do not justify omitting groundwater assessment.",
+          "basis_pages": [
+            1
+          ],
+          "references": [
+            "SP08SE122",
+            "SP08SE123"
+          ]
+        }
+      ]
+    }
+  },
+  "index_followup": {
+    "path": "examples/birmingham_edgbaston_index_followup_2026-10-28.json",
+    "sha256": "0eb9fd84f4491a8da2fcf1573f27749c2d7ab082a489c339a2668872f2022bbf",
+    "query": {
+      "collection": "onshoreboreholeindex",
+      "bbox": [
+        -1.944916492670114,
+        52.440909090909095,
+        -1.915083507329886,
+        52.45909090909091
+      ],
+      "limit": 20,
+      "offset": 6,
+      "include_geometry": true
+    },
+    "retrieved_at_utc": "2026-10-28T21:16:51.676584Z",
+    "returned": 20,
+    "distinct_candidates_across_retrieval_stages": 26,
+    "provider_reported_box_matches": 423,
+    "next_offset": 26,
+    "complete": false
+  }
 }

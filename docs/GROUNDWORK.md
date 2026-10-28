@@ -36,14 +36,18 @@ remain explicit. The example is not a defined construction project.
 
 A [draft desk-study report](desk-studies/birmingham-draft-geotechnical-desk-study.pdf)
 and its [editable Markdown source](desk-studies/birmingham-draft-geotechnical-desk-study.md)
-review the fresh 28 October Birmingham run. Revision **D02** includes visual
-review of all twelve pages of the six original BGS PDFs, with recorded strata,
-historic water/test notes, depth/date discrepancies and a revised prioritised GI
-plan. The [factual log-review audit record](../examples/birmingham_original_log_review_2026-10-28.json)
+review the fresh 28 October Birmingham run. Revision **D03** adds Edgbaston BH3
+and TP1-TP6 to the D02 review: thirteen physical exploratory holes represented
+by thirteen BGS PDFs and forty archive pages. Repeated log sheets and drawings
+are counted once as evidence. The findings include TP4's former bathing-pool
+base, loose ash/debris fill, pungent water and excavation collapse, with targeted
+follow-up in the revised GI plan. The [factual log-review audit record](../examples/birmingham_original_log_review_2026-10-28.json)
 retains source URLs, hashes, page references, conversions and uncertainties;
-original scans are not redistributed. The 423 provider-reported index matches
-remain incompletely searched, and the demonstration's site boundary and works
-remain undefined. The frozen app export is unchanged; D02 is a subsequent review.
+original scans are not redistributed. A [separate index follow-up](../examples/birmingham_edgbaston_index_followup_2026-10-28.json)
+extends discovery to twenty-six distinct candidates from 423 provider-reported
+box matches; coverage remains partial. The demonstration's site boundary and
+works, current groundwater conditions and design parameters remain unresolved.
+The frozen app export is unchanged; D03 is a subsequent review.
 
 For a fresh study, enter the project name, location, nation, search radius,
 development type and proposed works. Review the advanced request limits before
