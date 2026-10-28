@@ -4,13 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "uk-data-mcp-servers"
-version = "0.1.0"
+version = "0.2.0"
 description = "Read-only UK public-data MCP tools for infrastructure and ground investigation discovery"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
 authors = [{name = "UK Infrastructure MCP contributors"}]
-dependencies = ["mcp==2.3.0", "httpx==0.28.1"]
+dependencies = ["mcp==2.3.0", "httpx==0.28.1", "starlette==1.10.0", "uvicorn==0.54.0"]
 
 [project.optional-dependencies]
 dev = ["pytest>=9.0,<10", "pytest-asyncio>=1.0,<2", "ruff>=0.17,<0.18", "build>=1.0,<2"]
@@ -22,11 +22,12 @@ uk-data-mcp = "uk_data_mcp.cli:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
-uk_data_mcp = ["sources.json"]
+uk_data_mcp = ["sources.json", "demo_desk_study.json", "web/*.html", "web/*.css", "web/*.js"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
 markers = ["live: opt-in tests contacting public providers"]
 
 [tool.ruff]

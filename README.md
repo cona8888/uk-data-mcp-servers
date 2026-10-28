@@ -2,15 +2,16 @@
 
 A working, read-only Python MCP server for discovering and querying UK public
 data relevant to infrastructure, geology and preliminary ground investigations.
-Version **0.1.0**; sources reviewed **27 October 2026**.
+Version **0.2.0** includes **Groundwork**, a local geotechnical desk-study
+assistant and ground-investigation gap planner. Sources reviewed **27 October 2026**.
 
 Inspired by [Koomook/data-go-mcp-servers](https://github.com/Koomook/data-go-mcp-servers),
 which wraps Korean public APIs in MCP tools. This is an original UK implementation.
 The `go` in that reference names `data.go.kr`; this project uses Python.
 
-**15 tools, 2 resources, 1 prompt, 36 source-registry entries.** Twelve provider
+**16 tools, 2 resources, 1 prompt, 36 source-registry entries.** Twelve provider
 tools implement selected operations across seven service families. The other
-three tools expose the source registry and combine preliminary site evidence.
+four tools expose the source registry and compose preliminary site evidence and desk studies.
 Eleven registry entries describe implemented data families; the remaining
 entries are explicitly planned, discovery-only or restricted. This is an MVP,
 not a complete UK data lake or an engineering design system.
@@ -29,6 +30,7 @@ not a complete UK data lake or an engineering design system.
 | `os_products`, `os_downloads` | Product versions, documentation, formats, file sizes and download links | No-key OpenData endpoints; no bulk download or spatial road query |
 | `dft_traffic` | Annual average daily traffic flow, optionally by road/count point | Great Britain; annual estimates, not live traffic or pavement design loads |
 | `site_context` | Bounded evidence bundle with separate provider outcomes and missing design parameters | Caller supplies nation; England services omitted elsewhere; all reports remain preliminary |
+| `desk_study` | Cited evidence register, paginated SOBI/AGS candidates, groundwater follow-ups and a GI gap register | Bounded pages; human review of record relevance; no automatic log interpretation or investigation design |
 
 All implemented upstream operations require **no provider API key**. The server
 does not call an LLM and needs no AI API key. Your chosen MCP client may have its
@@ -60,10 +62,38 @@ py -3 -m venv .venv
 
 The package is supplied as source; it has **not** been published to PyPI. Use
 `pip install .` from this folder, not a similarly named package from a registry.
-Direct runtime dependencies are pinned to the tested official `mcp==2.3.0`
-and `httpx==0.28.1`. `requirements-runtime.txt` locks their tested transitive
+Direct runtime dependencies are pinned to the official `mcp==2.3.0`,
+`httpx==0.28.1`, `starlette==1.10.0` and `uvicorn==0.54.0`.
+`requirements-runtime.txt` locks their tested transitive
 dependencies; for that environment install the lock first, then the local
 package with `pip install --no-deps .`.
+
+## Use the desk study and GI planner
+
+After installation, start the local browser application:
+
+```text
+uk-data-mcp app
+```
+
+Open `http://127.0.0.1:8765`. On Windows, the executable is
+`.venv\Scripts\uk-data-mcp.exe`. Load the dated public Birmingham example to
+explore without provider calls, or enter a project location and run a fresh
+study. Review historic record relevance, add notes, track GI questions, and
+download an editable JSON workspace, CSV registers or a printable HTML report.
+Project edits stay in browser memory until downloaded; the server does not store them.
+
+The same workflow is available through the `desk_study` MCP tool and the CLI:
+
+```text
+uk-data-mcp desk-study --latitude 52.45 --longitude -1.93 --nation England --project-name "Birmingham example" --limit 3 --max-borehole-pages 2 --output-dir reports/birmingham
+uk-data-mcp report --input reports/birmingham/desk-study.json --output-dir reports/reviewed
+```
+
+The output directory contains JSON, HTML, Markdown and two CSV registers.
+`reports/` is ignored by Git. Keep private project workspaces outside public
+repository commits. Read [the Groundwork guide](docs/GROUNDWORK.md) for search
+limits, review states, evidence interpretation and the application architecture.
 
 ## Try the Birmingham example
 
@@ -137,8 +167,8 @@ Example prompts after connecting:
 ## Docker
 
 ```bash
-docker build -t uk-data-mcp:0.1.0 .
-docker run --rm -i uk-data-mcp:0.1.0
+docker build -t uk-data-mcp:0.2.0 .
+docker run --rm -i uk-data-mcp:0.2.0
 ```
 
 Use `-i` and **no `-t`** for MCP stdio. The Docker image runs as an unprivileged
@@ -152,7 +182,7 @@ The supplied compose file publishes only `127.0.0.1:8000`; an MCP client can use
 `http://127.0.0.1:8000/mcp`. This is an MCP endpoint, not a browser GUI. You can
 also run `uk-data-mcp serve --transport streamable-http` directly.
 
-There is no remote user authentication in v0.1. Do not publish this local
+This release has no remote user authentication. Do not publish this local
 configuration as an Internet service. A hosted multi-user deployment needs
 HTTPS, authentication/authorization, resource limits and provider credential
 separation. See [deployment notes](docs/DEPLOYMENT.md). Docker definitions are

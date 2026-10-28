@@ -284,7 +284,7 @@ async def bgs_features(
         query=query,
         warnings=warnings,
         total=total,
-        truncated=bool(has_more),
+        truncated=bool(has_more) or offset > 0,
         next_page=next_page,
         metadata=metadata,
     )

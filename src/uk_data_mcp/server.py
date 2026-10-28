@@ -24,6 +24,8 @@ utility absence or design compliance from these queries. Catalogue visibility is
 The server never downloads linked reports, scans or bulk files automatically. All built-in tools
 are no-key public-data operations. Call site_context with an explicit caller-supplied UK nation;
 it omits England-only services elsewhere. Report coverage gaps and failed providers prominently.
+Use desk_study to build a source-linked evidence register, bounded historic-investigation
+inventory and GI gap plan. Review tasks do not establish design parameters or site safety.
 """
 
 READ_ONLY = ToolAnnotations(
@@ -221,6 +223,42 @@ def create_server(http_client: HttpClient | None = None) -> MCPServer:
             nation=nation,
             radius_km=radius_km,
             limit_per_source=limit_per_source,
+        )
+
+    @mcp.tool(annotations=READ_ONLY)
+    async def desk_study(
+        latitude: float,
+        longitude: float,
+        nation: Literal["England", "Scotland", "Wales", "Northern Ireland"],
+        project_name: str = "Untitled project",
+        development_type: Literal[
+            "general",
+            "housing",
+            "industrial",
+            "solar_battery",
+            "basement",
+            "corridor",
+            "brownfield",
+        ] = "general",
+        works_description: str = "",
+        radius_km: float = 1,
+        limit_per_source: int = 10,
+        max_borehole_pages: int = 3,
+        max_groundwater_measures: int = 3,
+    ) -> CallToolResult:
+        """Build a preliminary desk-study evidence register and GI gap plan using existing public-data tools. Pages and groundwater follow-ups are bounded. Historic records remain unreviewed candidates; missing design values stay unknown. Does not download logs or prescribe investigation spacing/depth."""
+        return await call(
+            "desk_study",
+            latitude=latitude,
+            longitude=longitude,
+            nation=nation,
+            project_name=project_name,
+            development_type=development_type,
+            works_description=works_description,
+            radius_km=radius_km,
+            limit_per_source=limit_per_source,
+            max_borehole_pages=max_borehole_pages,
+            max_groundwater_measures=max_groundwater_measures,
         )
 
     @mcp.resource("ukdata://sources", mime_type="application/json")

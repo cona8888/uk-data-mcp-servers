@@ -11,3 +11,4 @@ dist/
 !.env.example
 live-checks.json
 data/raw/
+reports/

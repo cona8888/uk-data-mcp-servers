@@ -42,6 +42,10 @@ class DataService:
             return get_source(**arguments)
         if name == "site_context":
             return await self.site_context(**arguments)
+        if name == "desk_study":
+            from .deskstudy import build_desk_study
+
+            return await build_desk_study(self.call, **arguments)
         if name not in TOOLS:
             raise ValueError("Unknown tool name. Run uk-data-mcp tools to list supported tools.")
         function, source_id = TOOLS[name]

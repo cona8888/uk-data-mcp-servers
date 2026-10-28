@@ -1,5 +1,9 @@
 # Validation record
 
+The **v0.2.0 implementation** of the desk-study assistant and GI gap planner has
+[its own validation record](GROUNDWORK_VALIDATION.md), including 158 passing
+tests and a fresh browser-to-MCP study. The records below predate that implementation.
+
 A fresh Windows review dated **28 October 2026**, including 86 passing tests,
 live provider failures and geotechnical project opportunities, is recorded in
 [MCP validation and geotechnical project opportunities](GEOTECHNICAL_REVIEW.md).

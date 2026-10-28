@@ -6,6 +6,8 @@
 |---|---|---|
 | MCP / command line | `server.py`, `cli.py` | Typed tools, resources, prompt, stdio/HTTP, JSON output |
 | Application | `service.py` | Shared tool dispatch and bounded combined site queries; errors stay visible |
+| Desk study and GI planning | `deskstudy.py` | Bounded provider composition, historic candidates, groundwater follow-ups and evidence questions |
+| Browser and exports | `webapp.py`, `web/`, `reporting.py` | Local SDK client, human review workspace, validated JSON and escaped report/CSV exports |
 | Providers | `adapters/` | Validated provider parameters, upstream schemas, licence/freshness/spatial caveats |
 | Evidence | `results.py`, `registry.py`, `sources.json` | Provenance, attribution, licence scope, counts, warnings, implementation status |
 | Network and coordinates | `transport.py`, `geo.py` | Official API allowlist, byte/time/rate limits, explicit WGS84 inputs |
@@ -28,6 +30,12 @@ part of the result set or supporting metadata could not be checked. `error`
 means the operation failed and includes an error code. MCP marks those tool
 responses `isError: true`. The combined site tool exposes per-query statuses
 and its separate omitted-query/coverage-gap lists.
+
+The `desk_study` report retains each original envelope under its evidence entry.
+Its summary distinguishes raw partial pages from unresolved coverage after a
+valid sequence of pages has been collected. Review statuses and notes are human
+decisions and do not change the source records or establish design parameters.
+See [Groundwork](GROUNDWORK.md) for its workflow and local application contract.
 
 Provenance hashes refer to decompressed response bytes before JSON parsing.
 They identify what was observed; raw responses are not retained automatically.

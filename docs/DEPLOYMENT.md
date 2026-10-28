@@ -13,6 +13,12 @@ port to loopback while the container listens internally on `0.0.0.0`. DNS
 rebinding checks only allow local Host/Origin values. The process runs without
 root privileges in the container and cannot mutate upstream datasets.
 
+The separate `uk-data-mcp app` command serves the local Groundwork browser
+interface at `http://127.0.0.1:8765`. It calls `desk_study` through the official
+MCP SDK's in-memory transport and stores no project data on the server. The
+supplied Docker compose configuration continues to serve the MCP endpoint;
+it does not start the browser application.
+
 Standard `HTTP_PROXY`/`HTTPS_PROXY` settings are respected for managed networks.
 Do not put proxy credentials in project files. The built-in adapters require no
 provider credentials and do not expose a general URL fetch primitive.

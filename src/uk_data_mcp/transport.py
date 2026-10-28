@@ -16,6 +16,8 @@ from urllib.parse import urljoin, urlsplit
 
 import httpx
 
+from . import __version__
+
 ALLOWED_PATHS = {
     "ogcapi.bgs.ac.uk": ("/collections",),
     "environment.data.gov.uk": ("/flood-monitoring", "/hydrology"),
@@ -117,7 +119,7 @@ class HttpClient:
             follow_redirects=False,
             trust_env=True,
             headers={
-                "User-Agent": "UK-Data-MCP/0.1 (+read-only public data discovery)",
+                "User-Agent": f"UK-Data-MCP/{__version__} (+read-only public data discovery)",
                 "Accept": "application/geo+json, application/json",
             },
         )

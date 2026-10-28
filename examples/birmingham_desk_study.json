@@ -1,0 +1,2443 @@
+{
+  "schema_version": "1.0",
+  "kind": "geotechnical_desk_study",
+  "status": "partial",
+  "generated_at_utc": "2026-10-28T19:11:04.044978Z",
+  "project": {
+    "project_name": "Live Birmingham MCP validation",
+    "development_type": "basement",
+    "works_description": "Public demonstration only; no construction site or design loads defined."
+  },
+  "site": {
+    "latitude": 52.45,
+    "longitude": -1.93,
+    "nation": "England",
+    "radius_km": 1,
+    "bgs_bbox_crs84": [
+      -1.944916492670114,
+      52.440909090909095,
+      -1.915083507329886,
+      52.45909090909091
+    ],
+    "crs": "EPSG:4326",
+    "nation_basis": "caller supplied; not boundary-validated"
+  },
+  "request_limits": {
+    "limit_per_source": 2,
+    "max_borehole_pages": 2,
+    "max_groundwater_measures": 1
+  },
+  "summary": {
+    "investigation_count": 4,
+    "query_count": 11,
+    "failed_query_count": 0,
+    "incomplete_query_count": 3,
+    "open_gap_count": 13
+  },
+  "evidence": [
+    {
+      "id": "query-001",
+      "topic": "regional_geology",
+      "tool": "bgs_features",
+      "arguments": {
+        "collection": "bgsgeology625kbedrock",
+        "bbox": [
+          -1.944916492670114,
+          52.440909090909095,
+          -1.915083507329886,
+          52.45909090909091
+        ],
+        "limit": 2
+      },
+      "status": "partial",
+      "result": {
+        "schema_version": "1.0",
+        "source_id": "bgs_geology_625k",
+        "status": "partial",
+        "source": {
+          "id": "bgs_geology_625k",
+          "name": "BGS geology at 1:625,000",
+          "provider": "British Geological Survey",
+          "category": "geology",
+          "coverage": [
+            "United Kingdom"
+          ],
+          "access": "open_no_key",
+          "interface": [
+            "OGC API Features",
+            "GeoJSON"
+          ],
+          "status": "implemented",
+          "documentation_url": "https://www.bgs.ac.uk/datasets/bgs-geology-625k/",
+          "licence": {
+            "name": "Open Government Licence v3.0",
+            "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+            "scope": "Applies to BGS Geology 625K, not automatically to 1:50,000 mapping or other commercial BGS products."
+          },
+          "attribution": "Contains British Geological Survey materials © UKRI 2026.",
+          "limitations": [
+            "National overview at 1:625,000; unsuitable for resolving site-scale geology or design parameters.",
+            "Mapped geology is an interpretation and is not a measured stratigraphic profile.",
+            "Do not infer soil strength, stiffness, groundwater depth or founding depth from these polygons."
+          ],
+          "priority": 1,
+          "reviewed_on": "2026-10-27"
+        },
+        "retrieved_at_utc": "2026-10-28T19:10:52.328016Z",
+        "query": {
+          "collection": "bgsgeology625kbedrock",
+          "bbox": [
+            -1.944916492670114,
+            52.440909090909095,
+            -1.915083507329886,
+            52.45909090909091
+          ],
+          "limit": 2,
+          "offset": 0,
+          "include_geometry": false
+        },
+        "data": [
+          {
+            "type": "Feature",
+            "properties": {
+              "objectid": 9950,
+              "lex": "TRIA",
+              "lex_d": "TRIASSIC ROCKS (UNDIFFERENTIATED)",
+              "lex_rcs": "TRIA-SCON",
+              "rcs": "SCON",
+              "rcs_x": "CONG + SDST",
+              "rcs_d": "SANDSTONE AND CONGLOMERATE, INTERBEDDED",
+              "rank": "NOT APPLICABLE",
+              "bed_eq": " ",
+              "bed_eq_d": " ",
+              "mb_eq": " ",
+              "mb_eq_d": " ",
+              "fm_eq": " ",
+              "fm_eq_d": " ",
+              "subgp_eq": " ",
+              "subgp_eq_d": " ",
+              "gp_eq": " ",
+              "gp_eq_d": " ",
+              "supgp_eq": " ",
+              "supgp_eq_d": " ",
+              "max_time_d": "TRIASSIC",
+              "min_time_d": "TRIASSIC",
+              "max_time_y": 248200000,
+              "min_time_y": 205700000,
+              "max_index": 1239999,
+              "min_index": 1239999,
+              "max_age": " ",
+              "min_age": " ",
+              "max_epoch": " ",
+              "min_epoch": " ",
+              "max_subper": " ",
+              "min_subper": " ",
+              "max_period": "TRIASSIC",
+              "min_period": "TRIASSIC",
+              "max_era": "MESOZOIC",
+              "min_era": "MESOZOIC",
+              "max_eon": "PHANEROZOIC",
+              "min_eon": "PHANEROZOIC",
+              "prev_name": " ",
+              "bgstype": "625k_BEDROCK",
+              "lex_rcs_i": "1239999_TRIA-SCON",
+              "lex_rcs_d": "TRIASSIC ROCKS (UNDIFFERENTIATED) - SANDSTONE AND CONGLOMERATE, INTERBEDDED",
+              "map_code": "T1",
+              "age_onegl": "TRIASSIC",
+              "bgsref": 304,
+              "bgsref_lex": 404,
+              "bgsref_fm": 404,
+              "bgsref_gp": 404,
+              "bgsref_rk": 430,
+              "sheet": "625k_V5_Bedrock",
+              "version": "5.17",
+              "released": "11- 2-2008",
+              "nom_scale": "625000",
+              "nom_os_yr": "2005 HC",
+              "nom_bgs_yr": "2007",
+              "mslink": 17487
+            },
+            "id": 9950,
+            "geometry": null
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "objectid": 11236,
+              "lex": "TRIA",
+              "lex_d": "TRIASSIC ROCKS (UNDIFFERENTIATED)",
+              "lex_rcs": "TRIA-MDSS",
+              "rcs": "MDSS",
+              "rcs_x": "MDST + SDST + SLST",
+              "rcs_d": "MUDSTONE, SILTSTONE AND SANDSTONE",
+              "rank": "NOT APPLICABLE",
+              "bed_eq": " ",
+              "bed_eq_d": " ",
+              "mb_eq": " ",
+              "mb_eq_d": " ",
+              "fm_eq": " ",
+              "fm_eq_d": " ",
+              "subgp_eq": " ",
+              "subgp_eq_d": " ",
+              "gp_eq": " ",
+              "gp_eq_d": " ",
+              "supgp_eq": " ",
+              "supgp_eq_d": " ",
+              "max_time_d": "TRIASSIC",
+              "min_time_d": "TRIASSIC",
+              "max_time_y": 248200000,
+              "min_time_y": 205700000,
+              "max_index": 1239999,
+              "min_index": 1239999,
+              "max_age": " ",
+              "min_age": " ",
+              "max_epoch": " ",
+              "min_epoch": " ",
+              "max_subper": " ",
+              "min_subper": " ",
+              "max_period": "TRIASSIC",
+              "min_period": "TRIASSIC",
+              "max_era": "MESOZOIC",
+              "min_era": "MESOZOIC",
+              "max_eon": "PHANEROZOIC",
+              "min_eon": "PHANEROZOIC",
+              "prev_name": " ",
+              "bgstype": "625k_BEDROCK",
+              "lex_rcs_i": "1239999_TRIA-MDSS",
+              "lex_rcs_d": "TRIASSIC ROCKS (UNDIFFERENTIATED) - MUDSTONE, SILTSTONE AND SANDSTONE",
+              "map_code": "T2",
+              "age_onegl": "TRIASSIC",
+              "bgsref": 505,
+              "bgsref_lex": 404,
+              "bgsref_fm": 404,
+              "bgsref_gp": 404,
+              "bgsref_rk": 633,
+              "sheet": "625k_V5_Bedrock",
+              "version": "5.17",
+              "released": "11- 2-2008",
+              "nom_scale": "625000",
+              "nom_os_yr": "2005 HC",
+              "nom_bgs_yr": "2007",
+              "mslink": 17486
+            },
+            "id": 11236,
+            "geometry": null
+          }
+        ],
+        "pagination": {
+          "returned": 2,
+          "total_reported_by_provider": 2,
+          "truncated": true,
+          "next_page": {
+            "collection": "bgsgeology625kbedrock",
+            "bbox": [
+              -1.944916492670114,
+              52.440909090909095,
+              -1.915083507329886,
+              52.45909090909091
+            ],
+            "limit": 2,
+            "offset": 2,
+            "include_geometry": false
+          }
+        },
+        "provenance": [
+          {
+            "url": "https://ogcapi.bgs.ac.uk/collections/bgsgeology625kbedrock/items?f=json&bbox=-1.944916492670114%2C52.440909090909095%2C-1.915083507329886%2C52.45909090909091&limit=2&offset=0&skipGeometry=true",
+            "retrieved_at_utc": "2026-10-28T19:10:52.328016Z",
+            "response_sha256": "692b8293e3f517cea56fb16ba7bcbe1ecf34be1462d4f0142f030ab537f94cb1",
+            "content_type": "application/json",
+            "http_status": 200
+          }
+        ],
+        "metadata": {
+          "collection": "bgsgeology625kbedrock",
+          "title": "BGS Geology 625K bedrock",
+          "coverage": "Great Britain and Northern Ireland",
+          "coordinate_reference_system": "OGC:CRS84",
+          "coordinate_order": "longitude, latitude",
+          "selection_method": "bounding_box_intersection",
+          "geometry_requested": false,
+          "geometry_included": false,
+          "service_status": "BETA",
+          "upstream_timestamp": "2026-10-28T19:10:51.700665Z",
+          "upstream_number_returned": 2,
+          "collection_url": "https://ogcapi.bgs.ac.uk/collections/bgsgeology625kbedrock",
+          "nominal_scale_denominator": 625000
+        },
+        "warnings": [
+          "Results are candidates intersecting the requested bounding box, not a determination of the ground conditions at an exact point.",
+          "An empty result is not evidence that a feature, borehole or hazard is absent.",
+          "These records do not supply validated site-specific geotechnical design parameters.",
+          "Retrieval and API response times are not survey dates; source dates are preserved separately.",
+          "The nominal mapping scale is 1:625,000: use this generalised geology for regional or national context, not parcel boundaries, foundation design or a site-specific ground model.",
+          "Only one page is returned; more matching records may exist.",
+          "National overview at 1:625,000; unsuitable for resolving site-scale geology or design parameters.",
+          "Mapped geology is an interpretation and is not a measured stratigraphic profile.",
+          "Do not infer soil strength, stiffness, groundwater depth or founding depth from these polygons.",
+          "An empty result is not evidence that a hazard, asset or geological feature is absent.",
+          "Retrieved timestamps describe access time; use record observation dates for freshness."
+        ],
+        "use": "Data discovery and preliminary screening; does not certify site safety or establish design parameters."
+      }
+    },
+    {
+      "id": "query-002",
+      "topic": "regional_geology",
+      "tool": "bgs_features",
+      "arguments": {
+        "collection": "bgsgeology625ksuperficial",
+        "bbox": [
+          -1.944916492670114,
+          52.440909090909095,
+          -1.915083507329886,
+          52.45909090909091
+        ],
+        "limit": 2
+      },
+      "status": "partial",
+      "result": {
+        "schema_version": "1.0",
+        "source_id": "bgs_geology_625k",
+        "status": "partial",
+        "source": {
+          "id": "bgs_geology_625k",
+          "name": "BGS geology at 1:625,000",
+          "provider": "British Geological Survey",
+          "category": "geology",
+          "coverage": [
+            "United Kingdom"
+          ],
+          "access": "open_no_key",
+          "interface": [
+            "OGC API Features",
+            "GeoJSON"
+          ],
+          "status": "implemented",
+          "documentation_url": "https://www.bgs.ac.uk/datasets/bgs-geology-625k/",
+          "licence": {
+            "name": "Open Government Licence v3.0",
+            "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+            "scope": "Applies to BGS Geology 625K, not automatically to 1:50,000 mapping or other commercial BGS products."
+          },
+          "attribution": "Contains British Geological Survey materials © UKRI 2026.",
+          "limitations": [
+            "National overview at 1:625,000; unsuitable for resolving site-scale geology or design parameters.",
+            "Mapped geology is an interpretation and is not a measured stratigraphic profile.",
+            "Do not infer soil strength, stiffness, groundwater depth or founding depth from these polygons."
+          ],
+          "priority": 1,
+          "reviewed_on": "2026-10-27"
+        },
+        "retrieved_at_utc": "2026-10-28T19:10:53.260213Z",
+        "query": {
+          "collection": "bgsgeology625ksuperficial",
+          "bbox": [
+            -1.944916492670114,
+            52.440909090909095,
+            -1.915083507329886,
+            52.45909090909091
+          ],
+          "limit": 2,
+          "offset": 0,
+          "include_geometry": false
+        },
+        "data": [
+          {
+            "type": "Feature",
+            "properties": {
+              "objectid": 9792,
+              "lex_rock": "GSG-SAGR",
+              "lex": "GSG",
+              "lex_d": "GLACIAL SAND AND GRAVEL",
+              "rock": "SAGR",
+              "rock_d": "SAND AND GRAVEL",
+              "rcs": "SAGR",
+              "rcs_d": "SAND AND GRAVEL",
+              "rank": " ",
+              "bed_eq": " ",
+              "bed_eq_d": " ",
+              "mb_eq": " ",
+              "mb_eq_d": " ",
+              "fm_eq": " ",
+              "fm_eq_d": " ",
+              "subgp_eq": " ",
+              "subgp_eq_d": " ",
+              "gp_eq": " ",
+              "gp_eq_d": " ",
+              "supgp_eq": " ",
+              "supgp_eq_d": " ",
+              "max_age_no": 1110000,
+              "min_age_no": 1110000,
+              "max_age": "Q",
+              "min_age": " ",
+              "max_stage": " ",
+              "min_stage": " ",
+              "max_series": " ",
+              "min_series": " ",
+              "max_subsys": " ",
+              "min_subsys": " ",
+              "max_system": "QUATERNARY",
+              "min_system": "QUATERNARY",
+              "max_erath": "CAINOZOIC",
+              "min_erath": "CAINOZOIC",
+              "max_eonoth": "PHANEROZOIC",
+              "min_eonoth": "PHANEROZOIC",
+              "bgsref": 3,
+              "bgsref_lex": 3,
+              "bgsref_fm": 3,
+              "bgsref_gp": 3,
+              "bgsref_rk": 407,
+              "sheet": "UK_Superficial_625k_v4",
+              "version": "1.10",
+              "released": "30- 4-2003",
+              "nom_scale": "625000",
+              "nom_os_yr": "No Date",
+              "nom_bgs_yr": "No Date",
+              "mslink": 2899
+            },
+            "id": 9792,
+            "geometry": null
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "objectid": 10371,
+              "lex_rock": "TILL-DMTN",
+              "lex": "TILL",
+              "lex_d": "TILL",
+              "rock": "DMTN",
+              "rock_d": "DIAMICTON",
+              "rcs": "DMTN",
+              "rcs_d": "DIAMICTON",
+              "rank": " ",
+              "bed_eq": " ",
+              "bed_eq_d": " ",
+              "mb_eq": " ",
+              "mb_eq_d": " ",
+              "fm_eq": " ",
+              "fm_eq_d": " ",
+              "subgp_eq": " ",
+              "subgp_eq_d": " ",
+              "gp_eq": " ",
+              "gp_eq_d": " ",
+              "supgp_eq": " ",
+              "supgp_eq_d": " ",
+              "max_age_no": 1110000,
+              "min_age_no": 1110000,
+              "max_age": "Q",
+              "min_age": " ",
+              "max_stage": " ",
+              "min_stage": " ",
+              "max_series": " ",
+              "min_series": " ",
+              "max_subsys": " ",
+              "min_subsys": " ",
+              "max_system": "QUATERNARY",
+              "min_system": "QUATERNARY",
+              "max_erath": "CAINOZOIC",
+              "min_erath": "CAINOZOIC",
+              "max_eonoth": "PHANEROZOIC",
+              "min_eonoth": "PHANEROZOIC",
+              "bgsref": 20,
+              "bgsref_lex": 20,
+              "bgsref_fm": 20,
+              "bgsref_gp": 20,
+              "bgsref_rk": 343,
+              "sheet": "UK_Superficial_625k_v4",
+              "version": "1.10",
+              "released": "30- 4-2003",
+              "nom_scale": "625000",
+              "nom_os_yr": "No Date",
+              "nom_bgs_yr": "No Date",
+              "mslink": 2892
+            },
+            "id": 10371,
+            "geometry": null
+          }
+        ],
+        "pagination": {
+          "returned": 2,
+          "total_reported_by_provider": 2,
+          "truncated": true,
+          "next_page": {
+            "collection": "bgsgeology625ksuperficial",
+            "bbox": [
+              -1.944916492670114,
+              52.440909090909095,
+              -1.915083507329886,
+              52.45909090909091
+            ],
+            "limit": 2,
+            "offset": 2,
+            "include_geometry": false
+          }
+        },
+        "provenance": [
+          {
+            "url": "https://ogcapi.bgs.ac.uk/collections/bgsgeology625ksuperficial/items?f=json&bbox=-1.944916492670114%2C52.440909090909095%2C-1.915083507329886%2C52.45909090909091&limit=2&offset=0&skipGeometry=true",
+            "retrieved_at_utc": "2026-10-28T19:10:53.260213Z",
+            "response_sha256": "49eda215fac31579eb10c23b83b72229c00ca73eee6fa1b85ea52e01e4930ae0",
+            "content_type": "application/json",
+            "http_status": 200
+          }
+        ],
+        "metadata": {
+          "collection": "bgsgeology625ksuperficial",
+          "title": "BGS Geology 625K superficial deposits",
+          "coverage": "Great Britain and Northern Ireland",
+          "coordinate_reference_system": "OGC:CRS84",
+          "coordinate_order": "longitude, latitude",
+          "selection_method": "bounding_box_intersection",
+          "geometry_requested": false,
+          "geometry_included": false,
+          "service_status": "BETA",
+          "upstream_timestamp": "2026-10-28T19:10:52.629641Z",
+          "upstream_number_returned": 2,
+          "collection_url": "https://ogcapi.bgs.ac.uk/collections/bgsgeology625ksuperficial",
+          "nominal_scale_denominator": 625000
+        },
+        "warnings": [
+          "Results are candidates intersecting the requested bounding box, not a determination of the ground conditions at an exact point.",
+          "An empty result is not evidence that a feature, borehole or hazard is absent.",
+          "These records do not supply validated site-specific geotechnical design parameters.",
+          "Retrieval and API response times are not survey dates; source dates are preserved separately.",
+          "The nominal mapping scale is 1:625,000: use this generalised geology for regional or national context, not parcel boundaries, foundation design or a site-specific ground model.",
+          "Only one page is returned; more matching records may exist.",
+          "National overview at 1:625,000; unsuitable for resolving site-scale geology or design parameters.",
+          "Mapped geology is an interpretation and is not a measured stratigraphic profile.",
+          "Do not infer soil strength, stiffness, groundwater depth or founding depth from these polygons.",
+          "An empty result is not evidence that a hazard, asset or geological feature is absent.",
+          "Retrieved timestamps describe access time; use record observation dates for freshness."
+        ],
+        "use": "Data discovery and preliminary screening; does not certify site safety or establish design parameters."
+      }
+    },
+    {
+      "id": "query-003",
+      "topic": "historic_investigations",
+      "tool": "bgs_features",
+      "arguments": {
+        "collection": "onshoreboreholeindex",
+        "bbox": [
+          -1.944916492670114,
+          52.440909090909095,
+          -1.915083507329886,
+          52.45909090909091
+        ],
+        "limit": 2,
+        "offset": 0,
+        "include_geometry": true
+      },
+      "status": "partial",
+      "result": {
+        "schema_version": "1.0",
+        "source_id": "bgs_boreholes",
+        "status": "partial",
+        "source": {
+          "id": "bgs_boreholes",
+          "name": "BGS borehole index discovery",
+          "provider": "British Geological Survey",
+          "category": "ground_investigation",
+          "coverage": [
+            "Great Britain"
+          ],
+          "access": "open_no_key",
+          "interface": [
+            "OGC API Features",
+            "GeoJSON index records"
+          ],
+          "status": "implemented",
+          "documentation_url": "https://www.bgs.ac.uk/datasets/boreholes-index/",
+          "licence": {
+            "name": "Open Government Licence v3.0 for the open index",
+            "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+            "scope": "The public borehole index is open; linked scans, reports, confidential records and third-party test data may have separate rights/access conditions."
+          },
+          "attribution": "Contains British Geological Survey materials © UKRI 2026.",
+          "limitations": [
+            "Index discovery does not extract or validate SPT/CPT/laboratory test results.",
+            "The index is incomplete and location/record quality varies.",
+            "Nearby boreholes do not establish ground conditions at the site; absent records do not mean no investigation exists."
+          ],
+          "priority": 1,
+          "reviewed_on": "2026-10-27"
+        },
+        "retrieved_at_utc": "2026-10-28T19:10:54.268536Z",
+        "query": {
+          "collection": "onshoreboreholeindex",
+          "bbox": [
+            -1.944916492670114,
+            52.440909090909095,
+            -1.915083507329886,
+            52.45909090909091
+          ],
+          "limit": 2,
+          "offset": 0,
+          "include_geometry": true
+        },
+        "data": [
+          {
+            "type": "Feature",
+            "properties": {
+              "reference": "SP08SE14",
+              "name": "BECHENHURST NO 1 BIRMINGHAM",
+              "grid_ref": "SP 05150 82960",
+              "easting": 405150,
+              "northing": 282960,
+              "precision": "± 10 METRES",
+              "length": 4,
+              "year_known": null,
+              "sitereport": null,
+              "held_at": "KW",
+              "id": 305147,
+              "length_scan_cat": "1_Y",
+              "bgs_id": 305147,
+              "date_updated": "2013-01-22T18:16:54",
+              "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305147",
+              "ags_log_url": null,
+              "water_well_ref": "N/A",
+              "scan_quality": "not Entered"
+            },
+            "id": 305147,
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -1.925658937626633,
+                52.444581437957645
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "reference": "SP08SE16",
+              "name": "BOURNBROOK A BIRMINGHAM",
+              "grid_ref": "SP 05170 83190",
+              "easting": 405170,
+              "northing": 283190,
+              "precision": "± 10 METRES",
+              "length": 15,
+              "year_known": null,
+              "sitereport": null,
+              "held_at": "KW",
+              "id": 305149,
+              "length_scan_cat": "2_Y",
+              "bgs_id": 305149,
+              "date_updated": "2013-01-22T18:16:54",
+              "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305149",
+              "ags_log_url": null,
+              "water_well_ref": "N/A",
+              "scan_quality": "not Entered"
+            },
+            "id": 305149,
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -1.9253612098959327,
+                52.44664895396065
+              ]
+            }
+          }
+        ],
+        "pagination": {
+          "returned": 2,
+          "total_reported_by_provider": 423,
+          "truncated": true,
+          "next_page": {
+            "collection": "onshoreboreholeindex",
+            "bbox": [
+              -1.944916492670114,
+              52.440909090909095,
+              -1.915083507329886,
+              52.45909090909091
+            ],
+            "limit": 2,
+            "offset": 2,
+            "include_geometry": true
+          }
+        },
+        "provenance": [
+          {
+            "url": "https://ogcapi.bgs.ac.uk/collections/onshoreboreholeindex/items?f=json&bbox=-1.944916492670114%2C52.440909090909095%2C-1.915083507329886%2C52.45909090909091&limit=2&offset=0&skipGeometry=false",
+            "retrieved_at_utc": "2026-10-28T19:10:54.268536Z",
+            "response_sha256": "0ee7ed9cacfc6f1cc3311965ac90c84cd646a4e46e01455618c5d8d7cef83c21",
+            "content_type": "application/json",
+            "http_status": 200
+          }
+        ],
+        "metadata": {
+          "collection": "onshoreboreholeindex",
+          "title": "Single Onshore Borehole Index (SOBI)",
+          "coverage": "Great Britain, including onshore and near-shore records",
+          "coordinate_reference_system": "OGC:CRS84",
+          "coordinate_order": "longitude, latitude",
+          "selection_method": "bounding_box_intersection",
+          "geometry_requested": true,
+          "geometry_included": true,
+          "service_status": "BETA",
+          "upstream_timestamp": "2026-10-28T19:10:53.644428Z",
+          "upstream_number_returned": 2,
+          "collection_url": "https://ogcapi.bgs.ac.uk/collections/onshoreboreholeindex"
+        },
+        "warnings": [
+          "Results are candidates intersecting the requested bounding box, not a determination of the ground conditions at an exact point.",
+          "An empty result is not evidence that a feature, borehole or hazard is absent.",
+          "These records do not supply validated site-specific geotechnical design parameters.",
+          "Retrieval and API response times are not survey dates; source dates are preserved separately.",
+          "Index records are not interpreted soil profiles. Review original logs, record dates and position precision before assessing relevance to a site.",
+          "Scan and AGS links are returned for inspection; their files are not downloaded or interpreted. Reuse of underlying reports may have separate terms.",
+          "Only one page is returned; more matching records may exist.",
+          "Index discovery does not extract or validate SPT/CPT/laboratory test results.",
+          "The index is incomplete and location/record quality varies.",
+          "Nearby boreholes do not establish ground conditions at the site; absent records do not mean no investigation exists.",
+          "An empty result is not evidence that a hazard, asset or geological feature is absent.",
+          "Retrieved timestamps describe access time; use record observation dates for freshness."
+        ],
+        "use": "Data discovery and preliminary screening; does not certify site safety or establish design parameters."
+      },
+      "page_number": 1,
+      "pagination_followed": true
+    },
+    {
+      "id": "query-004",
+      "topic": "historic_investigations",
+      "tool": "bgs_features",
+      "arguments": {
+        "collection": "onshoreboreholeindex",
+        "bbox": [
+          -1.944916492670114,
+          52.440909090909095,
+          -1.915083507329886,
+          52.45909090909091
+        ],
+        "limit": 2,
+        "offset": 2,
+        "include_geometry": true
+      },
+      "status": "partial",
+      "result": {
+        "schema_version": "1.0",
+        "source_id": "bgs_boreholes",
+        "status": "partial",
+        "source": {
+          "id": "bgs_boreholes",
+          "name": "BGS borehole index discovery",
+          "provider": "British Geological Survey",
+          "category": "ground_investigation",
+          "coverage": [
+            "Great Britain"
+          ],
+          "access": "open_no_key",
+          "interface": [
+            "OGC API Features",
+            "GeoJSON index records"
+          ],
+          "status": "implemented",
+          "documentation_url": "https://www.bgs.ac.uk/datasets/boreholes-index/",
+          "licence": {
+            "name": "Open Government Licence v3.0 for the open index",
+            "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+            "scope": "The public borehole index is open; linked scans, reports, confidential records and third-party test data may have separate rights/access conditions."
+          },
+          "attribution": "Contains British Geological Survey materials © UKRI 2026.",
+          "limitations": [
+            "Index discovery does not extract or validate SPT/CPT/laboratory test results.",
+            "The index is incomplete and location/record quality varies.",
+            "Nearby boreholes do not establish ground conditions at the site; absent records do not mean no investigation exists."
+          ],
+          "priority": 1,
+          "reviewed_on": "2026-10-27"
+        },
+        "retrieved_at_utc": "2026-10-28T19:10:55.281053Z",
+        "query": {
+          "collection": "onshoreboreholeindex",
+          "bbox": [
+            -1.944916492670114,
+            52.440909090909095,
+            -1.915083507329886,
+            52.45909090909091
+          ],
+          "limit": 2,
+          "offset": 2,
+          "include_geometry": true
+        },
+        "data": [
+          {
+            "type": "Feature",
+            "properties": {
+              "reference": "SP08SE49",
+              "name": "BRISTOL ROAD A BIRMINGHAM",
+              "grid_ref": "SP 05110 83260",
+              "easting": 405110,
+              "northing": 283260,
+              "precision": "± 10 METRES",
+              "length": 18.29,
+              "year_known": null,
+              "sitereport": null,
+              "held_at": "KW",
+              "id": 305182,
+              "length_scan_cat": "2_Y",
+              "bgs_id": 305182,
+              "date_updated": "2013-01-22T18:16:54",
+              "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305182",
+              "ags_log_url": null,
+              "water_well_ref": "N/A",
+              "scan_quality": "not Entered"
+            },
+            "id": 305182,
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -1.9262429404092587,
+                52.44727880582878
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "reference": "SP08SE50",
+              "name": "BRISTOL ROAD B BIRMINGHAM",
+              "grid_ref": "SP 05130 83220",
+              "easting": 405130,
+              "northing": 283220,
+              "precision": "± 10 METRES",
+              "length": 15.24,
+              "year_known": null,
+              "sitereport": null,
+              "held_at": "KW",
+              "id": 305183,
+              "length_scan_cat": "2_Y",
+              "bgs_id": 305183,
+              "date_updated": "2013-01-22T18:16:54",
+              "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305183",
+              "ags_log_url": null,
+              "water_well_ref": "N/A",
+              "scan_quality": "not Entered"
+            },
+            "id": 305183,
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -1.925949277803139,
+                52.44691902259527
+              ]
+            }
+          }
+        ],
+        "pagination": {
+          "returned": 2,
+          "total_reported_by_provider": 423,
+          "truncated": true,
+          "next_page": {
+            "collection": "onshoreboreholeindex",
+            "bbox": [
+              -1.944916492670114,
+              52.440909090909095,
+              -1.915083507329886,
+              52.45909090909091
+            ],
+            "limit": 2,
+            "offset": 4,
+            "include_geometry": true
+          }
+        },
+        "provenance": [
+          {
+            "url": "https://ogcapi.bgs.ac.uk/collections/onshoreboreholeindex/items?f=json&bbox=-1.944916492670114%2C52.440909090909095%2C-1.915083507329886%2C52.45909090909091&limit=2&offset=2&skipGeometry=false",
+            "retrieved_at_utc": "2026-10-28T19:10:55.281053Z",
+            "response_sha256": "ee1936900128dcaaf3442bf8f4c7eb25de335607d9bce6ccdd152081d3aa6ffd",
+            "content_type": "application/json",
+            "http_status": 200
+          }
+        ],
+        "metadata": {
+          "collection": "onshoreboreholeindex",
+          "title": "Single Onshore Borehole Index (SOBI)",
+          "coverage": "Great Britain, including onshore and near-shore records",
+          "coordinate_reference_system": "OGC:CRS84",
+          "coordinate_order": "longitude, latitude",
+          "selection_method": "bounding_box_intersection",
+          "geometry_requested": true,
+          "geometry_included": true,
+          "service_status": "BETA",
+          "upstream_timestamp": "2026-10-28T19:10:54.655764Z",
+          "upstream_number_returned": 2,
+          "collection_url": "https://ogcapi.bgs.ac.uk/collections/onshoreboreholeindex"
+        },
+        "warnings": [
+          "Results are candidates intersecting the requested bounding box, not a determination of the ground conditions at an exact point.",
+          "An empty result is not evidence that a feature, borehole or hazard is absent.",
+          "These records do not supply validated site-specific geotechnical design parameters.",
+          "Retrieval and API response times are not survey dates; source dates are preserved separately.",
+          "Index records are not interpreted soil profiles. Review original logs, record dates and position precision before assessing relevance to a site.",
+          "Scan and AGS links are returned for inspection; their files are not downloaded or interpreted. Reuse of underlying reports may have separate terms.",
+          "Only one page is returned; more matching records may exist.",
+          "Index discovery does not extract or validate SPT/CPT/laboratory test results.",
+          "The index is incomplete and location/record quality varies.",
+          "Nearby boreholes do not establish ground conditions at the site; absent records do not mean no investigation exists.",
+          "An empty result is not evidence that a hazard, asset or geological feature is absent.",
+          "Retrieved timestamps describe access time; use record observation dates for freshness."
+        ],
+        "use": "Data discovery and preliminary screening; does not certify site safety or establish design parameters."
+      },
+      "page_number": 2,
+      "pagination_stop_reason": "Configured page limit reached."
+    },
+    {
+      "id": "query-005",
+      "topic": "historic_investigations",
+      "tool": "bgs_features",
+      "arguments": {
+        "collection": "agsboreholeindex",
+        "bbox": [
+          -1.944916492670114,
+          52.440909090909095,
+          -1.915083507329886,
+          52.45909090909091
+        ],
+        "limit": 2,
+        "offset": 0,
+        "include_geometry": true
+      },
+      "status": "empty",
+      "result": {
+        "schema_version": "1.0",
+        "source_id": "bgs_ags",
+        "status": "empty",
+        "source": {
+          "id": "bgs_ags",
+          "name": "BGS available AGS investigation data index",
+          "provider": "British Geological Survey",
+          "category": "ground_investigation",
+          "coverage": [
+            "Record-dependent; inspect collection extent"
+          ],
+          "access": "mixed",
+          "interface": [
+            "OGC API Features",
+            "GeoJSON index and links"
+          ],
+          "status": "implemented",
+          "documentation_url": "https://www.bgs.ac.uk/technologies/geotechnical-data-services/ags-download-service/",
+          "licence": {
+            "name": "Dataset and donor permission dependent",
+            "url": "https://www.bgs.ac.uk/technologies/geotechnical-data-services/ags-download-service/",
+            "scope": "The implemented tool discovers index records and links. Reuse/download rights and the exported AGS groups must be checked for each record; donor consent controls availability."
+          },
+          "attribution": "Contains British Geological Survey materials © UKRI 2026. Retain original investigation/data-owner attribution where supplied.",
+          "limitations": [
+            "Not all investigations or AGS groups are available.",
+            "Does not parse/download arbitrary AGS files or certify tests.",
+            "Preserve units, methods, depth and original provenance before using test values."
+          ],
+          "priority": 1,
+          "reviewed_on": "2026-10-27"
+        },
+        "retrieved_at_utc": "2026-10-28T19:10:56.249845Z",
+        "query": {
+          "collection": "agsboreholeindex",
+          "bbox": [
+            -1.944916492670114,
+            52.440909090909095,
+            -1.915083507329886,
+            52.45909090909091
+          ],
+          "limit": 2,
+          "offset": 0,
+          "include_geometry": true
+        },
+        "data": [],
+        "pagination": {
+          "returned": 0,
+          "total_reported_by_provider": 0,
+          "truncated": false,
+          "next_page": null
+        },
+        "provenance": [
+          {
+            "url": "https://ogcapi.bgs.ac.uk/collections/agsboreholeindex/items?f=json&bbox=-1.944916492670114%2C52.440909090909095%2C-1.915083507329886%2C52.45909090909091&limit=2&offset=0&skipGeometry=false",
+            "retrieved_at_utc": "2026-10-28T19:10:56.249845Z",
+            "response_sha256": "3c2a21f2ffe05ada0c083f771341623b48dc79132ffd9facaf3967431bec7f50",
+            "content_type": "application/json",
+            "http_status": 200
+          }
+        ],
+        "metadata": {
+          "collection": "agsboreholeindex",
+          "title": "AGS borehole index",
+          "coverage": "Donated and released AGS records; spatial coverage is incomplete",
+          "coordinate_reference_system": "OGC:CRS84",
+          "coordinate_order": "longitude, latitude",
+          "selection_method": "bounding_box_intersection",
+          "geometry_requested": true,
+          "geometry_included": false,
+          "service_status": "BETA",
+          "upstream_timestamp": "2026-10-28T19:10:55.625925Z",
+          "upstream_number_returned": 0,
+          "collection_url": "https://ogcapi.bgs.ac.uk/collections/agsboreholeindex"
+        },
+        "warnings": [
+          "Results are candidates intersecting the requested bounding box, not a determination of the ground conditions at an exact point.",
+          "An empty result is not evidence that a feature, borehole or hazard is absent.",
+          "These records do not supply validated site-specific geotechnical design parameters.",
+          "Retrieval and API response times are not survey dates; source dates are preserved separately.",
+          "This is an index of released AGS borehole locations and links, not a download of laboratory or in-situ test results. Availability depends on donor consent.",
+          "BGS-generated borehole and project IDs can differ from original investigation IDs.",
+          "Not all investigations or AGS groups are available.",
+          "Does not parse/download arbitrary AGS files or certify tests.",
+          "Preserve units, methods, depth and original provenance before using test values.",
+          "An empty result is not evidence that a hazard, asset or geological feature is absent.",
+          "Retrieved timestamps describe access time; use record observation dates for freshness."
+        ],
+        "use": "Data discovery and preliminary screening; does not certify site safety or establish design parameters."
+      },
+      "page_number": 1
+    },
+    {
+      "id": "query-006",
+      "topic": "recorded_landslides",
+      "tool": "bgs_features",
+      "arguments": {
+        "collection": "landslideindex",
+        "bbox": [
+          -1.944916492670114,
+          52.440909090909095,
+          -1.915083507329886,
+          52.45909090909091
+        ],
+        "limit": 2,
+        "include_geometry": true
+      },
+      "status": "empty",
+      "result": {
+        "schema_version": "1.0",
+        "source_id": "bgs_landslides",
+        "status": "empty",
+        "source": {
+          "id": "bgs_landslides",
+          "name": "BGS recorded landslide inventory discovery",
+          "provider": "British Geological Survey",
+          "category": "ground_hazards",
+          "coverage": [
+            "Great Britain"
+          ],
+          "access": "open_no_key",
+          "interface": [
+            "OGC API Features",
+            "GeoJSON inventory points"
+          ],
+          "status": "implemented",
+          "documentation_url": "https://www.bgs.ac.uk/geology-projects/landslides/national-landslide-database/a-guide-to-the-national-landslide-database-on-the-geoindex/",
+          "licence": {
+            "name": "Public layer terms; check collection metadata and BGS guidance",
+            "url": "https://www.bgs.ac.uk/technologies/web-map-services-wms/geoindex-wms-services/",
+            "scope": "Public inventory/map-layer access only; follow current BGS licence and usage guidance. The GeoIndex guide states the data must not be used for insurance purposes."
+          },
+          "attribution": "Contains British Geological Survey materials © UKRI 2026.",
+          "limitations": [
+            "Inventory of recorded events, not a landslide susceptibility or probability model.",
+            "Point locations do not map the entire affected footprint.",
+            "Incomplete and biased toward documented events; absence of a record does not establish safety.",
+            "Excludes Northern Ireland, Isle of Man and Channel Islands."
+          ],
+          "priority": 1,
+          "reviewed_on": "2026-10-27"
+        },
+        "retrieved_at_utc": "2026-10-28T19:10:57.279912Z",
+        "query": {
+          "collection": "landslideindex",
+          "bbox": [
+            -1.944916492670114,
+            52.440909090909095,
+            -1.915083507329886,
+            52.45909090909091
+          ],
+          "limit": 2,
+          "offset": 0,
+          "include_geometry": true
+        },
+        "data": [],
+        "pagination": {
+          "returned": 0,
+          "total_reported_by_provider": 0,
+          "truncated": false,
+          "next_page": null
+        },
+        "provenance": [
+          {
+            "url": "https://ogcapi.bgs.ac.uk/collections/landslideindex/items?f=json&bbox=-1.944916492670114%2C52.440909090909095%2C-1.915083507329886%2C52.45909090909091&limit=2&offset=0&skipGeometry=false",
+            "retrieved_at_utc": "2026-10-28T19:10:57.279912Z",
+            "response_sha256": "2fa025e34e69cc375d027bbec8da1edc8d6115eebcde77e1dccd46cf770a18c7",
+            "content_type": "application/json",
+            "http_status": 200
+          }
+        ],
+        "metadata": {
+          "collection": "landslideindex",
+          "title": "National Landslide Database index",
+          "coverage": "Great Britain; excludes Northern Ireland, Isle of Man and Channel Islands",
+          "coordinate_reference_system": "OGC:CRS84",
+          "coordinate_order": "longitude, latitude",
+          "selection_method": "bounding_box_intersection",
+          "geometry_requested": true,
+          "geometry_included": false,
+          "service_status": "BETA",
+          "upstream_timestamp": "2026-10-28T19:10:56.655719Z",
+          "upstream_number_returned": 0,
+          "collection_url": "https://ogcapi.bgs.ac.uk/collections/landslideindex"
+        },
+        "warnings": [
+          "Results are candidates intersecting the requested bounding box, not a determination of the ground conditions at an exact point.",
+          "An empty result is not evidence that a feature, borehole or hazard is absent.",
+          "These records do not supply validated site-specific geotechnical design parameters.",
+          "Retrieval and API response times are not survey dates; source dates are preserved separately.",
+          "This is an incomplete and historically uneven inventory of landslide surveys. Point locations do not represent landslide extents or current movement.",
+          "The same landslide can have multiple survey records; do not count all records as distinct events. Preserve location accuracy and unknown dates.",
+          "The BGS National Landslide Database guide states that these data must not be used for insurance purposes.",
+          "Inventory of recorded events, not a landslide susceptibility or probability model.",
+          "Point locations do not map the entire affected footprint.",
+          "Incomplete and biased toward documented events; absence of a record does not establish safety.",
+          "Excludes Northern Ireland, Isle of Man and Channel Islands.",
+          "An empty result is not evidence that a hazard, asset or geological feature is absent.",
+          "Retrieved timestamps describe access time; use record observation dates for freshness."
+        ],
+        "use": "Data discovery and preliminary screening; does not certify site safety or establish design parameters."
+      }
+    },
+    {
+      "id": "query-007",
+      "topic": "surface_water_stations",
+      "tool": "ea_stations",
+      "arguments": {
+        "latitude": 52.45,
+        "longitude": -1.93,
+        "radius_km": 1,
+        "limit": 2
+      },
+      "status": "empty",
+      "result": {
+        "schema_version": "1.0",
+        "source_id": "ea_flood",
+        "status": "empty",
+        "source": {
+          "id": "ea_flood",
+          "name": "Environment Agency flood-monitoring API",
+          "provider": "Environment Agency",
+          "category": "flood_and_water",
+          "coverage": [
+            "England service; some water-level records may be from Wales"
+          ],
+          "access": "open_no_key",
+          "interface": [
+            "REST JSON"
+          ],
+          "status": "implemented",
+          "documentation_url": "https://environment.data.gov.uk/flood-monitoring/doc/reference",
+          "licence": {
+            "name": "Open Government Licence v3.0",
+            "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+            "scope": "EA real-time flood and river-level data API; retain record ownership where Welsh data are included."
+          },
+          "attribution": "This uses Environment Agency flood and river level data from the real-time data API (Beta).",
+          "limitations": [
+            "Current alerts and gauge observations are not a site-specific flood-risk assessment.",
+            "No warning or nearby station does not mean no flood risk.",
+            "Retrieval time differs from measurement time; telemetry updates can be delayed.",
+            "Coverage is not UK-wide and the provider gives no safety-critical availability guarantee."
+          ],
+          "priority": 1,
+          "reviewed_on": "2026-10-27"
+        },
+        "retrieved_at_utc": "2026-10-28T19:11:00.752007Z",
+        "query": {
+          "latitude": 52.45,
+          "longitude": -1.93,
+          "radius_km": 1,
+          "limit": 2,
+          "offset": 0
+        },
+        "data": [],
+        "pagination": {
+          "returned": 0,
+          "total_reported_by_provider": null,
+          "truncated": false,
+          "next_page": null
+        },
+        "provenance": [
+          {
+            "url": "https://environment.data.gov.uk/flood-monitoring/id/stations.json?lat=52.45&long=-1.93&dist=1.0&_limit=2&_offset=0",
+            "retrieved_at_utc": "2026-10-28T19:11:00.752007Z",
+            "response_sha256": "46faba139413f21fb915d7dcee2a7b26508e6d983d767315b47633a9d3447e0d",
+            "content_type": "application/json",
+            "http_status": 200
+          }
+        ],
+        "metadata": {
+          "upstream_metadata": {
+            "publisher": "Environment Agency",
+            "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+            "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+            "version": "0.9",
+            "comment": "Status: Beta service",
+            "hasFormat": [
+              "http://environment.data.gov.uk/flood-monitoring/id/stations.csv?lat=52.45&long=-1.93&dist=1.0&_limit=2&_offset=0",
+              "http://environment.data.gov.uk/flood-monitoring/id/stations.rdf?lat=52.45&long=-1.93&dist=1.0&_limit=2&_offset=0",
+              "http://environment.data.gov.uk/flood-monitoring/id/stations.ttl?lat=52.45&long=-1.93&dist=1.0&_limit=2&_offset=0",
+              "http://environment.data.gov.uk/flood-monitoring/id/stations.html?lat=52.45&long=-1.93&dist=1.0&_limit=2&_offset=0"
+            ],
+            "limit": 2,
+            "offset": 0
+          },
+          "pagination": {
+            "offset": 0,
+            "requested_limit": 2,
+            "upstream_limit": 2,
+            "returned": 0,
+            "has_more": false,
+            "complete_snapshot": false
+          },
+          "crs": "EPSG:4326",
+          "observation_type": "station_metadata"
+        },
+        "warnings": [
+          "Environment Agency service for England; not UK-wide coverage.",
+          "The provider's location filter may approximate the radius with a bounding box. Results are a bounded page, not an exhaustive survey of this site.",
+          "Retain the supplied units and vertical datum: mASD (station datum), mAOD (Ordnance Datum), groundwater depth and flood depth are different quantities.",
+          "Current alerts and gauge observations are not a site-specific flood-risk assessment.",
+          "No warning or nearby station does not mean no flood risk.",
+          "Retrieval time differs from measurement time; telemetry updates can be delayed.",
+          "Coverage is not UK-wide and the provider gives no safety-critical availability guarantee.",
+          "An empty result is not evidence that a hazard, asset or geological feature is absent.",
+          "Retrieved timestamps describe access time; use record observation dates for freshness."
+        ],
+        "use": "Data discovery and preliminary screening; does not certify site safety or establish design parameters."
+      }
+    },
+    {
+      "id": "query-008",
+      "topic": "current_flood_warnings",
+      "tool": "ea_floods",
+      "arguments": {
+        "latitude": 52.45,
+        "longitude": -1.93,
+        "radius_km": 1,
+        "limit": 2
+      },
+      "status": "empty",
+      "result": {
+        "schema_version": "1.0",
+        "source_id": "ea_flood",
+        "status": "empty",
+        "source": {
+          "id": "ea_flood",
+          "name": "Environment Agency flood-monitoring API",
+          "provider": "Environment Agency",
+          "category": "flood_and_water",
+          "coverage": [
+            "England service; some water-level records may be from Wales"
+          ],
+          "access": "open_no_key",
+          "interface": [
+            "REST JSON"
+          ],
+          "status": "implemented",
+          "documentation_url": "https://environment.data.gov.uk/flood-monitoring/doc/reference",
+          "licence": {
+            "name": "Open Government Licence v3.0",
+            "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+            "scope": "EA real-time flood and river-level data API; retain record ownership where Welsh data are included."
+          },
+          "attribution": "This uses Environment Agency flood and river level data from the real-time data API (Beta).",
+          "limitations": [
+            "Current alerts and gauge observations are not a site-specific flood-risk assessment.",
+            "No warning or nearby station does not mean no flood risk.",
+            "Retrieval time differs from measurement time; telemetry updates can be delayed.",
+            "Coverage is not UK-wide and the provider gives no safety-critical availability guarantee."
+          ],
+          "priority": 1,
+          "reviewed_on": "2026-10-27"
+        },
+        "retrieved_at_utc": "2026-10-28T19:11:01.746132Z",
+        "query": {
+          "latitude": 52.45,
+          "longitude": -1.93,
+          "radius_km": 1,
+          "limit": 2,
+          "offset": 0,
+          "min_severity": 3
+        },
+        "data": [],
+        "pagination": {
+          "returned": 0,
+          "total_reported_by_provider": null,
+          "truncated": false,
+          "next_page": null
+        },
+        "provenance": [
+          {
+            "url": "https://environment.data.gov.uk/flood-monitoring/id/floods.json?lat=52.45&long=-1.93&dist=1.0&_limit=2&_offset=0&min-severity=3",
+            "retrieved_at_utc": "2026-10-28T19:11:01.746132Z",
+            "response_sha256": "fc8bb6168e042c63a96bb1b740808a9061b5b3d6b21f7bac60a9de67ae62420e",
+            "content_type": "application/json",
+            "http_status": 200
+          }
+        ],
+        "metadata": {
+          "upstream_metadata": {
+            "publisher": "Environment Agency",
+            "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+            "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+            "version": "0.9",
+            "comment": "Status: Beta service",
+            "hasFormat": [
+              "http://environment.data.gov.uk/flood-monitoring/id/floods.csv?lat=52.45&long=-1.93&dist=1.0&_limit=2&_offset=0&min-severity=3",
+              "http://environment.data.gov.uk/flood-monitoring/id/floods.rdf?lat=52.45&long=-1.93&dist=1.0&_limit=2&_offset=0&min-severity=3",
+              "http://environment.data.gov.uk/flood-monitoring/id/floods.ttl?lat=52.45&long=-1.93&dist=1.0&_limit=2&_offset=0&min-severity=3",
+              "http://environment.data.gov.uk/flood-monitoring/id/floods.html?lat=52.45&long=-1.93&dist=1.0&_limit=2&_offset=0&min-severity=3"
+            ],
+            "limit": 2,
+            "offset": 0
+          },
+          "pagination": {
+            "offset": 0,
+            "requested_limit": 2,
+            "upstream_limit": 2,
+            "returned": 0,
+            "has_more": false,
+            "complete_snapshot": false
+          },
+          "crs": "EPSG:4326",
+          "observation_type": "current_operational_warnings"
+        },
+        "warnings": [
+          "Environment Agency service for England; not UK-wide coverage.",
+          "The provider's location filter may approximate the radius with a bounding box. Results are a bounded page, not an exhaustive survey of this site.",
+          "Current warnings and alerts are not a flood risk assessment. No returned warnings does not establish absence of flood risk, past flooding or future flooding.",
+          "The beta API has no guaranteed service level and does not replace official flood-warning channels.",
+          "Current alerts and gauge observations are not a site-specific flood-risk assessment.",
+          "No warning or nearby station does not mean no flood risk.",
+          "Retrieval time differs from measurement time; telemetry updates can be delayed.",
+          "Coverage is not UK-wide and the provider gives no safety-critical availability guarantee.",
+          "An empty result is not evidence that a hazard, asset or geological feature is absent.",
+          "Retrieved timestamps describe access time; use record observation dates for freshness."
+        ],
+        "use": "Data discovery and preliminary screening; does not certify site safety or establish design parameters."
+      }
+    },
+    {
+      "id": "query-009",
+      "topic": "groundwater_stations",
+      "tool": "hydrology_stations",
+      "arguments": {
+        "latitude": 52.45,
+        "longitude": -1.93,
+        "radius_km": 1,
+        "limit": 2,
+        "observed_property": "groundwaterLevel"
+      },
+      "status": "ok",
+      "result": {
+        "schema_version": "1.0",
+        "source_id": "ea_hydrology",
+        "status": "ok",
+        "source": {
+          "id": "ea_hydrology",
+          "name": "Environment Agency Hydrology API",
+          "provider": "Environment Agency",
+          "category": "flood_and_water",
+          "coverage": [
+            "England / EA monitoring service; inspect station metadata"
+          ],
+          "access": "open_no_key",
+          "interface": [
+            "REST JSON"
+          ],
+          "status": "implemented",
+          "documentation_url": "https://environment.data.gov.uk/hydrology/doc/reference",
+          "licence": {
+            "name": "Open Government Licence v3.0",
+            "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+            "scope": "Data returned by the Hydrology API with its licence metadata; retain specific record attribution and quality flags."
+          },
+          "attribution": "Contains Environment Agency information licensed under the Open Government Licence v3.0.",
+          "limitations": [
+            "Parameters, measurement datum, units, interval and quality differ between series.",
+            "A nearby surface-water gauge is not a site groundwater measurement.",
+            "Not a complete UK-wide hydrometric service."
+          ],
+          "priority": 1,
+          "reviewed_on": "2026-10-27"
+        },
+        "retrieved_at_utc": "2026-10-28T19:11:01.891232Z",
+        "query": {
+          "latitude": 52.45,
+          "longitude": -1.93,
+          "radius_km": 1,
+          "limit": 2,
+          "offset": 0,
+          "observed_property": "groundwaterLevel"
+        },
+        "data": [
+          {
+            "@id": "http://environment.data.gov.uk/hydrology/id/stations/0957e811-a4b7-45c1-8b50-2896a1598fe6",
+            "type": [
+              {
+                "@id": "http://environment.data.gov.uk/reference/def/core/SamplingLocation"
+              },
+              {
+                "@id": "http://environment.data.gov.uk/flood-monitoring/def/core/GroundwaterDippedOnly"
+              },
+              {
+                "@id": "http://environment.data.gov.uk/flood-monitoring/def/core/Groundwater"
+              },
+              {
+                "@id": "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+              }
+            ],
+            "label": "Birmingham University",
+            "notation": "0957e811-a4b7-45c1-8b50-2896a1598fe6",
+            "easting": 404685,
+            "northing": 283455,
+            "lat": 52.449027,
+            "long": -1.932486,
+            "stationGuid": "0957e811-a4b7-45c1-8b50-2896a1598fe6",
+            "wiskiID": "1229GW",
+            "dateOpened": "1994-06-07",
+            "datum": 135.23,
+            "observedProperty": [
+              {
+                "@id": "http://environment.data.gov.uk/reference/def/op/groundwaterLevel"
+              }
+            ],
+            "status": [
+              {
+                "@id": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+                "label": "Active"
+              }
+            ],
+            "measures": [
+              {
+                "@id": "http://environment.data.gov.uk/hydrology/id/measures/0957e811-a4b7-45c1-8b50-2896a1598fe6-gw-dipped-i-mAOD-qualified",
+                "parameter": "level",
+                "valueStatistic": {
+                  "@id": "http://environment.data.gov.uk/reference/def/core/instantaneous"
+                }
+              }
+            ]
+          }
+        ],
+        "pagination": {
+          "returned": 1,
+          "total_reported_by_provider": null,
+          "truncated": false,
+          "next_page": null
+        },
+        "provenance": [
+          {
+            "url": "https://environment.data.gov.uk/hydrology/id/stations.json?lat=52.45&long=-1.93&dist=1.0&_limit=2&_offset=0&observedProperty=groundwaterLevel",
+            "retrieved_at_utc": "2026-10-28T19:11:01.891232Z",
+            "response_sha256": "768ae074a9e2f19c2b21f29cc0f4ce3d12a925356ca23442cbda9c5ca4941fdd",
+            "content_type": "application/json",
+            "http_status": 200
+          }
+        ],
+        "metadata": {
+          "upstream_metadata": {
+            "@id": "https://environment.data.gov.uk/hydrology/id/stations.json?lat=52.45&long=-1.93&dist=1.0&_limit=2&_offset=0&observedProperty=groundwaterLevel",
+            "publisher": "Environment Agency",
+            "license": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+            "licenseName": "OGL 3",
+            "comment": "Hydrology API for sub-daily data",
+            "version": "2.1.1",
+            "hasFormat": [
+              "https://environment.data.gov.uk/hydrology/id/stations.ttl?_limit=2&_offset=0&dist=1.0&lat=52.45&long=-1.93&observedProperty=groundwaterLevel",
+              "https://environment.data.gov.uk/hydrology/id/stations.csv?_limit=2&_offset=0&dist=1.0&lat=52.45&long=-1.93&observedProperty=groundwaterLevel",
+              "https://environment.data.gov.uk/hydrology/id/stations.rdf?_limit=2&_offset=0&dist=1.0&lat=52.45&long=-1.93&observedProperty=groundwaterLevel",
+              "https://environment.data.gov.uk/hydrology/id/stations.json?_limit=2&_offset=0&dist=1.0&lat=52.45&long=-1.93&observedProperty=groundwaterLevel",
+              "https://environment.data.gov.uk/hydrology/id/stations.html?_limit=2&_offset=0&dist=1.0&lat=52.45&long=-1.93&observedProperty=groundwaterLevel",
+              "https://environment.data.gov.uk/hydrology/id/stations.geojson?_limit=2&_offset=0&dist=1.0&lat=52.45&long=-1.93&observedProperty=groundwaterLevel"
+            ],
+            "limit": 2
+          },
+          "pagination": {
+            "offset": 0,
+            "requested_limit": 2,
+            "upstream_limit": 2,
+            "returned": 1,
+            "has_more": false,
+            "complete_snapshot": false
+          },
+          "crs": "EPSG:4326",
+          "observation_type": "station_metadata"
+        },
+        "warnings": [
+          "Environment Agency service for England; not UK-wide coverage.",
+          "The provider's location filter may approximate the radius with a bounding box. Results are a bounded page, not an exhaustive survey of this site.",
+          "Retain the supplied units and vertical datum: mASD (station datum), mAOD (Ordnance Datum), groundwater depth and flood depth are different quantities.",
+          "A nearby groundwater station may monitor a different aquifer. Its level does not establish the site's groundwater depth, pore pressure or seasonal maximum.",
+          "Parameters, measurement datum, units, interval and quality differ between series.",
+          "A nearby surface-water gauge is not a site groundwater measurement.",
+          "Not a complete UK-wide hydrometric service.",
+          "An empty result is not evidence that a hazard, asset or geological feature is absent.",
+          "Retrieved timestamps describe access time; use record observation dates for freshness."
+        ],
+        "use": "Data discovery and preliminary screening; does not certify site safety or establish design parameters."
+      }
+    },
+    {
+      "id": "query-010",
+      "topic": "planning_authority",
+      "tool": "planning_entities",
+      "arguments": {
+        "dataset": "local-planning-authority",
+        "latitude": 52.45,
+        "longitude": -1.93,
+        "limit": 2
+      },
+      "status": "ok",
+      "result": {
+        "schema_version": "1.0",
+        "source_id": "planning_data",
+        "status": "ok",
+        "source": {
+          "id": "planning_data",
+          "name": "Planning Data platform",
+          "provider": "Ministry of Housing, Communities and Local Government / data publishers",
+          "category": "planning",
+          "coverage": [
+            "England"
+          ],
+          "access": "open_no_key",
+          "interface": [
+            "REST JSON",
+            "GeoJSON"
+          ],
+          "status": "implemented",
+          "documentation_url": "https://www.planning.data.gov.uk/docs",
+          "licence": {
+            "name": "Dataset-specific; most data under OGL",
+            "url": "https://www.planning.data.gov.uk/terms-and-conditions",
+            "scope": "Use each dataset licence and attribution-text from dataset metadata; the platform includes third-party intellectual property."
+          },
+          "attribution": "Use the exact attribution-text returned in the selected dataset metadata, including publisher and OS credits where present.",
+          "limitations": [
+            "Coverage, completeness and duplication vary by dataset and local authority.",
+            "A missing constraint in the platform does not establish planning approval or the absence of a restriction.",
+            "England only; authoritative legal records may require checking the originating authority."
+          ],
+          "priority": 1,
+          "reviewed_on": "2026-10-27"
+        },
+        "retrieved_at_utc": "2026-10-28T19:11:02.930571Z",
+        "query": {
+          "dataset": "local-planning-authority",
+          "latitude": 52.45,
+          "longitude": -1.93,
+          "limit": 2,
+          "offset": 0
+        },
+        "data": [
+          {
+            "entity": 626130,
+            "name": "Birmingham LPA",
+            "dataset": "local-planning-authority",
+            "reference": "E60000130",
+            "entry-date": "",
+            "start-date": "",
+            "end-date": "",
+            "point": "POINT (-1.874708 52.48861)"
+          }
+        ],
+        "pagination": {
+          "returned": 1,
+          "total_reported_by_provider": 1,
+          "truncated": false,
+          "next_page": null
+        },
+        "provenance": [
+          {
+            "url": "https://www.planning.data.gov.uk/entity.json?dataset=local-planning-authority&latitude=52.45&longitude=-1.93&limit=2&offset=0&field=entity&field=name&field=dataset&field=reference&field=entry-date&field=start-date&field=end-date&field=point",
+            "retrieved_at_utc": "2026-10-28T19:11:02.000157Z",
+            "response_sha256": "389d7965f913ffb6c354c860de56e8ae9b7519832a509cf50c45a0784b7aee71",
+            "content_type": "application/json",
+            "http_status": 200
+          },
+          {
+            "url": "https://www.planning.data.gov.uk/dataset/local-planning-authority.json",
+            "retrieved_at_utc": "2026-10-28T19:11:02.930571Z",
+            "response_sha256": "4c6de27e2aa874adfd3c21701b11a063816502e2812df4daec68e3827c4b3577",
+            "content_type": "application/json",
+            "http_status": 200
+          }
+        ],
+        "metadata": {
+          "coverage": "England",
+          "crs": "EPSG:4326",
+          "spatial_predicate": "intersects_point",
+          "fields": [
+            "entity",
+            "name",
+            "dataset",
+            "reference",
+            "entry-date",
+            "start-date",
+            "end-date",
+            "point"
+          ],
+          "geometry_omitted": true,
+          "licence_status": "provider_declared",
+          "dataset_page": "https://www.planning.data.gov.uk/dataset/local-planning-authority",
+          "pagination": {
+            "offset": 0,
+            "limit": 2,
+            "returned": 1,
+            "total": 1
+          },
+          "dataset_metadata": {
+            "dataset": "local-planning-authority",
+            "name": "Local Planning Authority",
+            "description": "Local Planning Authorities and their boundaries",
+            "text": "This dataset contains the administrative boundary for each Local Planning Authority (LPA) in England.\n\nIt can be used to:\n<ul>\n<li>assist in the production planning and other statistics</li>\n<li>help find the LPA responsible for a planning application on a map, for example</li>\n</ul>",
+            "licence": "ogl3",
+            "licence-text": "Licensed under the [Open Government Licence v.3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).",
+            "attribution": "ons-boundary",
+            "attribution-text": "Source: Office for National Statistics licensed under the Open Government Licence v.3.0\nContains OS data © Crown copyright and database right 2026",
+            "phase": "beta",
+            "entry-date": "",
+            "start-date": "",
+            "end-date": ""
+          },
+          "licence_evidence_url": "https://www.planning.data.gov.uk/dataset/local-planning-authority.json"
+        },
+        "warnings": [
+          "Planning Data covers England and coverage varies by dataset and local authority. No returned records does not establish absence of planning constraints.",
+          "This is a geometry-intersects-point query, not a nearby search or a search of a site boundary. Point assets such as listed buildings may not match an arbitrary coordinate.",
+          "Geometry is omitted from returned records to keep responses bounded; only selected metadata fields are returned.",
+          "Entry and start/end dates are source metadata; they are not proof of a current planning determination.",
+          "Coverage, completeness and duplication vary by dataset and local authority.",
+          "A missing constraint in the platform does not establish planning approval or the absence of a restriction.",
+          "England only; authoritative legal records may require checking the originating authority.",
+          "An empty result is not evidence that a hazard, asset or geological feature is absent.",
+          "Retrieved timestamps describe access time; use record observation dates for freshness."
+        ],
+        "use": "Data discovery and preliminary screening; does not certify site safety or establish design parameters."
+      }
+    },
+    {
+      "id": "query-011",
+      "topic": "groundwater_readings",
+      "tool": "hydrology_readings",
+      "arguments": {
+        "measure_id": "0957e811-a4b7-45c1-8b50-2896a1598fe6-gw-dipped-i-mAOD-qualified",
+        "limit": 2
+      },
+      "status": "ok",
+      "result": {
+        "schema_version": "1.0",
+        "source_id": "ea_hydrology",
+        "status": "ok",
+        "source": {
+          "id": "ea_hydrology",
+          "name": "Environment Agency Hydrology API",
+          "provider": "Environment Agency",
+          "category": "flood_and_water",
+          "coverage": [
+            "England / EA monitoring service; inspect station metadata"
+          ],
+          "access": "open_no_key",
+          "interface": [
+            "REST JSON"
+          ],
+          "status": "implemented",
+          "documentation_url": "https://environment.data.gov.uk/hydrology/doc/reference",
+          "licence": {
+            "name": "Open Government Licence v3.0",
+            "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+            "scope": "Data returned by the Hydrology API with its licence metadata; retain specific record attribution and quality flags."
+          },
+          "attribution": "Contains Environment Agency information licensed under the Open Government Licence v3.0.",
+          "limitations": [
+            "Parameters, measurement datum, units, interval and quality differ between series.",
+            "A nearby surface-water gauge is not a site groundwater measurement.",
+            "Not a complete UK-wide hydrometric service."
+          ],
+          "priority": 1,
+          "reviewed_on": "2026-10-27"
+        },
+        "retrieved_at_utc": "2026-10-28T19:11:04.043976Z",
+        "query": {
+          "measure_id": "0957e811-a4b7-45c1-8b50-2896a1598fe6-gw-dipped-i-mAOD-qualified",
+          "limit": 2,
+          "latest": true
+        },
+        "data": [
+          {
+            "measure": {
+              "@id": "http://environment.data.gov.uk/hydrology/id/measures/0957e811-a4b7-45c1-8b50-2896a1598fe6-gw-dipped-i-mAOD-qualified"
+            },
+            "date": "2026-06-16",
+            "dateTime": "2026-06-16T09:28:28",
+            "value": 129.14,
+            "quality": "Unchecked"
+          }
+        ],
+        "pagination": {
+          "returned": 1,
+          "total_reported_by_provider": null,
+          "truncated": false,
+          "next_page": null
+        },
+        "provenance": [
+          {
+            "url": "https://environment.data.gov.uk/hydrology/id/measures/0957e811-a4b7-45c1-8b50-2896a1598fe6-gw-dipped-i-mAOD-qualified.json",
+            "retrieved_at_utc": "2026-10-28T19:11:03.065335Z",
+            "response_sha256": "ee75444241467903744a0f296028e8328be65e92e6f4b5add4de03a5a50bd6a0",
+            "content_type": "application/json",
+            "http_status": 200
+          },
+          {
+            "url": "https://environment.data.gov.uk/hydrology/id/measures/0957e811-a4b7-45c1-8b50-2896a1598fe6-gw-dipped-i-mAOD-qualified/readings.json?latest=&_limit=2&_view=full",
+            "retrieved_at_utc": "2026-10-28T19:11:04.043976Z",
+            "response_sha256": "510906eccbde68ee4b56e49358c8058c8aa4974fe505c2084fb588197c0732eb",
+            "content_type": "application/json",
+            "http_status": 200
+          }
+        ],
+        "metadata": {
+          "measure": {
+            "@id": "http://environment.data.gov.uk/hydrology/id/measures/0957e811-a4b7-45c1-8b50-2896a1598fe6-gw-dipped-i-mAOD-qualified",
+            "parameter": "level",
+            "observedProperty": {
+              "@id": "http://environment.data.gov.uk/reference/def/op/groundwaterLevel",
+              "label": "Groundwater level",
+              "type": [
+                {
+                  "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+                }
+              ]
+            },
+            "parameterName": "GroundwaterLevel",
+            "type": [
+              {
+                "@id": "http://environment.data.gov.uk/reference/def/core/TimeSeries"
+              },
+              {
+                "@id": "http://environment.data.gov.uk/flood-monitoring/def/core/Measure"
+              },
+              {
+                "@id": "http://environment.data.gov.uk/flood-monitoring/def/core/GroundwaterLevel"
+              }
+            ],
+            "timeseriesID": "317b6650-79e1-429f-bbde-628b6bf80b52",
+            "unitName": "mAOD",
+            "observationType": {
+              "@id": "http://environment.data.gov.uk/reference/def/core/Qualified",
+              "label": "Qualified",
+              "comment": "Indicates that the values in a series or dataset are qualified and quality checked versions of direct measurements",
+              "type": [
+                {
+                  "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+                }
+              ]
+            },
+            "notation": "0957e811-a4b7-45c1-8b50-2896a1598fe6-gw-dipped-i-mAOD-qualified",
+            "qualifier": "Groundwater Dipped",
+            "station": {
+              "@id": "http://environment.data.gov.uk/hydrology/id/stations/0957e811-a4b7-45c1-8b50-2896a1598fe6",
+              "stationGuid": "0957e811-a4b7-45c1-8b50-2896a1598fe6",
+              "observedProperty": {
+                "@id": "http://environment.data.gov.uk/reference/def/op/groundwaterLevel",
+                "label": "Groundwater level",
+                "type": [
+                  {
+                    "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+                  }
+                ]
+              },
+              "dateOpened": "1994-06-07",
+              "notation": "0957e811-a4b7-45c1-8b50-2896a1598fe6",
+              "status": {
+                "@id": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive"
+              },
+              "datum": 135.23,
+              "wiskiID": "1229GW",
+              "type": [
+                {
+                  "@id": "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+                },
+                {
+                  "@id": "http://environment.data.gov.uk/flood-monitoring/def/core/GroundwaterDippedOnly"
+                },
+                {
+                  "@id": "http://environment.data.gov.uk/flood-monitoring/def/core/Groundwater"
+                },
+                {
+                  "@id": "http://environment.data.gov.uk/reference/def/core/SamplingLocation"
+                }
+              ],
+              "lat": 52.449027,
+              "easting": 404685,
+              "measures": {
+                "@id": "http://environment.data.gov.uk/hydrology/id/measures/0957e811-a4b7-45c1-8b50-2896a1598fe6-gw-dipped-i-mAOD-qualified"
+              },
+              "northing": 283455,
+              "long": -1.932486,
+              "label": "Birmingham University",
+              "inSet": {
+                "@id": "http://environment.data.gov.uk/reference/set/HydroMonitoringStation"
+              },
+              "gridReference": "SP04688345",
+              "searchText": "Birmingham University 1229GW"
+            },
+            "unit": {
+              "@id": "http://qudt.org/1.1/vocab/unit#Meter"
+            },
+            "inDataset": {
+              "@id": "http://environment.data.gov.uk/reference/set/HydrologyDataset"
+            },
+            "valueType": "instantaneous",
+            "valueStatistic": {
+              "@id": "http://environment.data.gov.uk/reference/def/core/instantaneous",
+              "label": "instantaneous",
+              "comment": "Measurements which just represent the value at the instance they are taken.",
+              "type": [
+                {
+                  "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+                }
+              ]
+            },
+            "label": "Groundwater Dipped (mAOD) time series for Birmingham University"
+          },
+          "upstream_metadata": {
+            "@id": "https://environment.data.gov.uk/hydrology/id/measures/0957e811-a4b7-45c1-8b50-2896a1598fe6-gw-dipped-i-mAOD-qualified/readings.json?latest=&_limit=2&_view=full",
+            "publisher": "Environment Agency",
+            "license": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+            "licenseName": "OGL 3",
+            "comment": "Hydrology API for sub-daily data",
+            "version": "2.1.1",
+            "hasFormat": [
+              "https://environment.data.gov.uk/hydrology/id/measures/0957e811-a4b7-45c1-8b50-2896a1598fe6-gw-dipped-i-mAOD-qualified/readings.html?_limit=2&_view=full&latest",
+              "https://environment.data.gov.uk/hydrology/id/measures/0957e811-a4b7-45c1-8b50-2896a1598fe6-gw-dipped-i-mAOD-qualified/readings.csv?_limit=2&_view=full&latest",
+              "https://environment.data.gov.uk/hydrology/id/measures/0957e811-a4b7-45c1-8b50-2896a1598fe6-gw-dipped-i-mAOD-qualified/readings.json?_limit=2&_view=full&latest"
+            ],
+            "limit": 2
+          },
+          "pagination": {
+            "offset": 0,
+            "requested_limit": 2,
+            "upstream_limit": 2,
+            "returned": 1,
+            "has_more": false,
+            "complete_snapshot": false
+          },
+          "observation_type": "latest_readings"
+        },
+        "warnings": [
+          "Environment Agency service for England; not UK-wide coverage.",
+          "Retain the supplied units and vertical datum: mASD (station datum), mAOD (Ordnance Datum), groundwater depth and flood depth are different quantities.",
+          "Latest means the most recent available observation, not a measurement at retrieval time. Preserve observation timestamps and per-reading quality flags.",
+          "At least one returned reading is marked Unchecked by the provider. A measure name or identifier containing 'qualified' does not override this per-reading flag.",
+          "At least one latest observation predates retrieval by more than two calendar days. Check the recorded observation date before treating it as current.",
+          "Groundwater elevation in mAOD is not depth below ground. A compatible surveyed ground elevation and the borehole context are required for that conversion.",
+          "Parameters, measurement datum, units, interval and quality differ between series.",
+          "A nearby surface-water gauge is not a site groundwater measurement.",
+          "Not a complete UK-wide hydrometric service.",
+          "An empty result is not evidence that a hazard, asset or geological feature is absent.",
+          "Retrieved timestamps describe access time; use record observation dates for freshness."
+        ],
+        "use": "Data discovery and preliminary screening; does not certify site safety or establish design parameters."
+      }
+    }
+  ],
+  "investigations": [
+    {
+      "id": "investigation-712be03a51a9",
+      "collection": "onshoreboreholeindex",
+      "provider_id": "305147",
+      "reference": "SP08SE14",
+      "name": "BECHENHURST NO 1 BIRMINGHAM",
+      "depth_m": 4,
+      "year": null,
+      "updated_at": "2013-01-22T18:16:54",
+      "position_precision": "± 10 METRES",
+      "latitude": 52.444581437957645,
+      "longitude": -1.925658937626633,
+      "distance_m": 670.5,
+      "within_radius": true,
+      "links": [
+        {
+          "label": "Borehole scan",
+          "url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305147"
+        }
+      ],
+      "evidence_ids": [
+        "query-003"
+      ],
+      "duplicate_records": 0,
+      "provider_properties": {
+        "reference": "SP08SE14",
+        "name": "BECHENHURST NO 1 BIRMINGHAM",
+        "grid_ref": "SP 05150 82960",
+        "easting": 405150,
+        "northing": 282960,
+        "precision": "± 10 METRES",
+        "length": 4,
+        "year_known": null,
+        "sitereport": null,
+        "held_at": "KW",
+        "id": 305147,
+        "length_scan_cat": "1_Y",
+        "bgs_id": 305147,
+        "date_updated": "2013-01-22T18:16:54",
+        "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305147",
+        "ags_log_url": null,
+        "water_well_ref": "N/A",
+        "scan_quality": "not Entered"
+      },
+      "review": {
+        "status": "unreviewed",
+        "notes": ""
+      }
+    },
+    {
+      "id": "investigation-6973cf73d570",
+      "collection": "onshoreboreholeindex",
+      "provider_id": "305149",
+      "reference": "SP08SE16",
+      "name": "BOURNBROOK A BIRMINGHAM",
+      "depth_m": 15,
+      "year": null,
+      "updated_at": "2013-01-22T18:16:54",
+      "position_precision": "± 10 METRES",
+      "latitude": 52.44664895396065,
+      "longitude": -1.9253612098959327,
+      "distance_m": 487.5,
+      "within_radius": true,
+      "links": [
+        {
+          "label": "Borehole scan",
+          "url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305149"
+        }
+      ],
+      "evidence_ids": [
+        "query-003"
+      ],
+      "duplicate_records": 0,
+      "provider_properties": {
+        "reference": "SP08SE16",
+        "name": "BOURNBROOK A BIRMINGHAM",
+        "grid_ref": "SP 05170 83190",
+        "easting": 405170,
+        "northing": 283190,
+        "precision": "± 10 METRES",
+        "length": 15,
+        "year_known": null,
+        "sitereport": null,
+        "held_at": "KW",
+        "id": 305149,
+        "length_scan_cat": "2_Y",
+        "bgs_id": 305149,
+        "date_updated": "2013-01-22T18:16:54",
+        "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305149",
+        "ags_log_url": null,
+        "water_well_ref": "N/A",
+        "scan_quality": "not Entered"
+      },
+      "review": {
+        "status": "unreviewed",
+        "notes": ""
+      }
+    },
+    {
+      "id": "investigation-b7939906d449",
+      "collection": "onshoreboreholeindex",
+      "provider_id": "305182",
+      "reference": "SP08SE49",
+      "name": "BRISTOL ROAD A BIRMINGHAM",
+      "depth_m": 18.29,
+      "year": null,
+      "updated_at": "2013-01-22T18:16:54",
+      "position_precision": "± 10 METRES",
+      "latitude": 52.44727880582878,
+      "longitude": -1.9262429404092587,
+      "distance_m": 395.5,
+      "within_radius": true,
+      "links": [
+        {
+          "label": "Borehole scan",
+          "url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305182"
+        }
+      ],
+      "evidence_ids": [
+        "query-004"
+      ],
+      "duplicate_records": 0,
+      "provider_properties": {
+        "reference": "SP08SE49",
+        "name": "BRISTOL ROAD A BIRMINGHAM",
+        "grid_ref": "SP 05110 83260",
+        "easting": 405110,
+        "northing": 283260,
+        "precision": "± 10 METRES",
+        "length": 18.29,
+        "year_known": null,
+        "sitereport": null,
+        "held_at": "KW",
+        "id": 305182,
+        "length_scan_cat": "2_Y",
+        "bgs_id": 305182,
+        "date_updated": "2013-01-22T18:16:54",
+        "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305182",
+        "ags_log_url": null,
+        "water_well_ref": "N/A",
+        "scan_quality": "not Entered"
+      },
+      "review": {
+        "status": "unreviewed",
+        "notes": ""
+      }
+    },
+    {
+      "id": "investigation-c2fda875c321",
+      "collection": "onshoreboreholeindex",
+      "provider_id": "305183",
+      "reference": "SP08SE50",
+      "name": "BRISTOL ROAD B BIRMINGHAM",
+      "depth_m": 15.24,
+      "year": null,
+      "updated_at": "2013-01-22T18:16:54",
+      "position_precision": "± 10 METRES",
+      "latitude": 52.44691902259527,
+      "longitude": -1.925949277803139,
+      "distance_m": 439,
+      "within_radius": true,
+      "links": [
+        {
+          "label": "Borehole scan",
+          "url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305183"
+        }
+      ],
+      "evidence_ids": [
+        "query-004"
+      ],
+      "duplicate_records": 0,
+      "provider_properties": {
+        "reference": "SP08SE50",
+        "name": "BRISTOL ROAD B BIRMINGHAM",
+        "grid_ref": "SP 05130 83220",
+        "easting": 405130,
+        "northing": 283220,
+        "precision": "± 10 METRES",
+        "length": 15.24,
+        "year_known": null,
+        "sitereport": null,
+        "held_at": "KW",
+        "id": 305183,
+        "length_scan_cat": "2_Y",
+        "bgs_id": 305183,
+        "date_updated": "2013-01-22T18:16:54",
+        "scan_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305183",
+        "ags_log_url": null,
+        "water_well_ref": "N/A",
+        "scan_quality": "not Entered"
+      },
+      "review": {
+        "status": "unreviewed",
+        "notes": ""
+      }
+    }
+  ],
+  "groundwater": [
+    {
+      "id": "query-011",
+      "station_name": "Birmingham University",
+      "measure_id": "0957e811-a4b7-45c1-8b50-2896a1598fe6-gw-dipped-i-mAOD-qualified",
+      "evidence_id": "query-011",
+      "status": "ok",
+      "measure": {
+        "@id": "http://environment.data.gov.uk/hydrology/id/measures/0957e811-a4b7-45c1-8b50-2896a1598fe6-gw-dipped-i-mAOD-qualified",
+        "parameter": "level",
+        "observedProperty": {
+          "@id": "http://environment.data.gov.uk/reference/def/op/groundwaterLevel",
+          "label": "Groundwater level",
+          "type": [
+            {
+              "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ]
+        },
+        "parameterName": "GroundwaterLevel",
+        "type": [
+          {
+            "@id": "http://environment.data.gov.uk/reference/def/core/TimeSeries"
+          },
+          {
+            "@id": "http://environment.data.gov.uk/flood-monitoring/def/core/Measure"
+          },
+          {
+            "@id": "http://environment.data.gov.uk/flood-monitoring/def/core/GroundwaterLevel"
+          }
+        ],
+        "timeseriesID": "317b6650-79e1-429f-bbde-628b6bf80b52",
+        "unitName": "mAOD",
+        "observationType": {
+          "@id": "http://environment.data.gov.uk/reference/def/core/Qualified",
+          "label": "Qualified",
+          "comment": "Indicates that the values in a series or dataset are qualified and quality checked versions of direct measurements",
+          "type": [
+            {
+              "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ]
+        },
+        "notation": "0957e811-a4b7-45c1-8b50-2896a1598fe6-gw-dipped-i-mAOD-qualified",
+        "qualifier": "Groundwater Dipped",
+        "station": {
+          "@id": "http://environment.data.gov.uk/hydrology/id/stations/0957e811-a4b7-45c1-8b50-2896a1598fe6",
+          "stationGuid": "0957e811-a4b7-45c1-8b50-2896a1598fe6",
+          "observedProperty": {
+            "@id": "http://environment.data.gov.uk/reference/def/op/groundwaterLevel",
+            "label": "Groundwater level",
+            "type": [
+              {
+                "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+              }
+            ]
+          },
+          "dateOpened": "1994-06-07",
+          "notation": "0957e811-a4b7-45c1-8b50-2896a1598fe6",
+          "status": {
+            "@id": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive"
+          },
+          "datum": 135.23,
+          "wiskiID": "1229GW",
+          "type": [
+            {
+              "@id": "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+            },
+            {
+              "@id": "http://environment.data.gov.uk/flood-monitoring/def/core/GroundwaterDippedOnly"
+            },
+            {
+              "@id": "http://environment.data.gov.uk/flood-monitoring/def/core/Groundwater"
+            },
+            {
+              "@id": "http://environment.data.gov.uk/reference/def/core/SamplingLocation"
+            }
+          ],
+          "lat": 52.449027,
+          "easting": 404685,
+          "measures": {
+            "@id": "http://environment.data.gov.uk/hydrology/id/measures/0957e811-a4b7-45c1-8b50-2896a1598fe6-gw-dipped-i-mAOD-qualified"
+          },
+          "northing": 283455,
+          "long": -1.932486,
+          "label": "Birmingham University",
+          "inSet": {
+            "@id": "http://environment.data.gov.uk/reference/set/HydroMonitoringStation"
+          },
+          "gridReference": "SP04688345",
+          "searchText": "Birmingham University 1229GW"
+        },
+        "unit": {
+          "@id": "http://qudt.org/1.1/vocab/unit#Meter"
+        },
+        "inDataset": {
+          "@id": "http://environment.data.gov.uk/reference/set/HydrologyDataset"
+        },
+        "valueType": "instantaneous",
+        "valueStatistic": {
+          "@id": "http://environment.data.gov.uk/reference/def/core/instantaneous",
+          "label": "instantaneous",
+          "comment": "Measurements which just represent the value at the instance they are taken.",
+          "type": [
+            {
+              "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ]
+        },
+        "label": "Groundwater Dipped (mAOD) time series for Birmingham University"
+      },
+      "readings": [
+        {
+          "measure": {
+            "@id": "http://environment.data.gov.uk/hydrology/id/measures/0957e811-a4b7-45c1-8b50-2896a1598fe6-gw-dipped-i-mAOD-qualified"
+          },
+          "date": "2026-06-16",
+          "dateTime": "2026-06-16T09:28:28",
+          "value": 129.14,
+          "quality": "Unchecked"
+        }
+      ],
+      "warnings": [
+        "Environment Agency service for England; not UK-wide coverage.",
+        "Retain the supplied units and vertical datum: mASD (station datum), mAOD (Ordnance Datum), groundwater depth and flood depth are different quantities.",
+        "Latest means the most recent available observation, not a measurement at retrieval time. Preserve observation timestamps and per-reading quality flags.",
+        "At least one returned reading is marked Unchecked by the provider. A measure name or identifier containing 'qualified' does not override this per-reading flag.",
+        "At least one latest observation predates retrieval by more than two calendar days. Check the recorded observation date before treating it as current.",
+        "Groundwater elevation in mAOD is not depth below ground. A compatible surveyed ground elevation and the borehole context are required for that conversion.",
+        "Parameters, measurement datum, units, interval and quality differ between series.",
+        "A nearby surface-water gauge is not a site groundwater measurement.",
+        "Not a complete UK-wide hydrometric service.",
+        "An empty result is not evidence that a hazard, asset or geological feature is absent.",
+        "Retrieved timestamps describe access time; use record observation dates for freshness."
+      ],
+      "retrieved_at_utc": "2026-10-28T19:11:04.043976Z"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "site-scope",
+      "priority": "high",
+      "topic": "project",
+      "title": "Confirm the site boundary and proposed works",
+      "reason": "The search uses a supplied point and approximate enclosing box; it does not establish a site boundary or construction loads.",
+      "actions": [
+        "Confirm the boundary, levels, proposed structures, loading and access constraints.",
+        "Agree the desk-study and investigation objectives with the project geotechnical engineer."
+      ],
+      "evidence_ids": [],
+      "status": "open",
+      "notes": ""
+    },
+    {
+      "id": "investigation-review",
+      "priority": "high",
+      "topic": "historic_investigations",
+      "title": "Review the original investigation records",
+      "reason": "4 unique index candidates were retrieved. Index entries do not establish usable stratigraphy or test parameters; search gaps remain possible.",
+      "actions": [
+        "Open the original logs or AGS files under their applicable terms.",
+        "Review location precision, age, investigation purpose, depths, sampling and relevance to the proposed works.",
+        "Record relevance and reasons for each candidate before planning additional investigation."
+      ],
+      "evidence_ids": [
+        "query-003",
+        "query-004",
+        "query-005"
+      ],
+      "status": "open",
+      "notes": ""
+    },
+    {
+      "id": "detailed-ground-model",
+      "priority": "high",
+      "topic": "regional_geology",
+      "title": "Establish a site-specific conceptual ground model",
+      "reason": "Implemented geology is 1:625,000 regional mapping. It cannot resolve local strata, fill, weathering or founding levels.",
+      "actions": [
+        "Obtain suitably detailed mapping and relevant historic records.",
+        "Review a site walkover and original investigation logs; identify unresolved strata and geological boundaries."
+      ],
+      "evidence_ids": [
+        "query-001",
+        "query-002"
+      ],
+      "status": "open",
+      "notes": ""
+    },
+    {
+      "id": "groundwater-model",
+      "priority": "high",
+      "topic": "groundwater",
+      "title": "Establish site groundwater conditions",
+      "reason": "Nearby stations and latest available readings do not establish the site's aquifer, seasonal groundwater range or pore pressures.",
+      "actions": [
+        "Review station/aquifer relevance, observation dates, units, datum and per-reading quality.",
+        "Obtain relevant historical series and agree site monitoring where required.",
+        "Keep groundwater elevation and depth below ground distinct."
+      ],
+      "evidence_ids": [
+        "query-009",
+        "query-011"
+      ],
+      "status": "open",
+      "notes": ""
+    },
+    {
+      "id": "design-parameters",
+      "priority": "high",
+      "topic": "material_properties",
+      "title": "Obtain evidence for geotechnical design parameters",
+      "reason": "Strength, stiffness, permeability, bearing pressure and design groundwater level remain unestablished.",
+      "actions": [
+        "Define required parameters from the proposed works and conceptual ground model.",
+        "Agree appropriate field and laboratory investigation, quality requirements and interpretation with the geotechnical engineer."
+      ],
+      "evidence_ids": [],
+      "status": "open",
+      "notes": ""
+    },
+    {
+      "id": "history-contamination",
+      "priority": "medium",
+      "topic": "site_history",
+      "title": "Review site history and potential contamination",
+      "reason": "This workflow does not retrieve a complete historic land-use record, remediation history or site contamination assessment.",
+      "actions": [
+        "Review historic maps, former uses, local records and relevant environmental reports.",
+        "Define contamination questions and investigation needs from evidenced source-pathway-receptor relationships."
+      ],
+      "evidence_ids": [],
+      "status": "open",
+      "notes": ""
+    },
+    {
+      "id": "mining-ground-hazards",
+      "priority": "medium",
+      "topic": "ground_hazards",
+      "title": "Obtain relevant mining and ground-hazard evidence",
+      "reason": "The implemented sources do not provide a comprehensive mine-workings, dissolution or ground-stability search.",
+      "actions": [
+        "Establish whether mining or other ground-hazard searches are relevant from detailed geology and site history.",
+        "Obtain authorised records and investigate unresolved features where relevant."
+      ],
+      "evidence_ids": [
+        "query-006"
+      ],
+      "status": "open",
+      "notes": ""
+    },
+    {
+      "id": "utilities-access",
+      "priority": "high",
+      "topic": "utilities",
+      "title": "Confirm utilities and safe investigation access",
+      "reason": "Public evidence does not establish buried utility positions, depths, absence or investigation clearance.",
+      "actions": [
+        "Obtain current asset-owner records and appropriate utility surveys.",
+        "Confirm permissions, access, service avoidance and investigation constraints before intrusive work."
+      ],
+      "evidence_ids": [],
+      "status": "open",
+      "notes": ""
+    },
+    {
+      "id": "terrain-walkover",
+      "priority": "medium",
+      "topic": "terrain",
+      "title": "Review terrain, drainage and neighbouring assets",
+      "reason": "The workflow does not ingest terrain surveys, drainage condition, structure condition or a site walkover.",
+      "actions": [
+        "Review site levels, slopes, drainage, adjacent structures and signs of previous movement during a walkover.",
+        "Obtain surveyed levels and asset information appropriate to the proposed works."
+      ],
+      "evidence_ids": [
+        "query-006",
+        "query-007",
+        "query-008"
+      ],
+      "status": "open",
+      "notes": ""
+    },
+    {
+      "id": "excavation-scope",
+      "priority": "high",
+      "topic": "project",
+      "title": "Resolve excavation, groundwater and adjacent-asset questions",
+      "reason": "These are investigation questions based on the selected development type; they are not observed hazards or a design solution.",
+      "actions": [
+        "Confirm excavation geometry, retained heights, adjacent assets and movement criteria.",
+        "Assess the evidence needed for groundwater control, permeability and support design with the project specialists."
+      ],
+      "evidence_ids": [],
+      "status": "open",
+      "notes": ""
+    },
+    {
+      "id": "coverage-query-001",
+      "priority": "medium",
+      "topic": "source_coverage",
+      "title": "Review incomplete query query-001",
+      "reason": "This bounded query may omit further matching records or metadata.",
+      "actions": [
+        "Review pagination and provider metadata before treating the retrieved page as a complete search.",
+        "If relevant, continue within an agreed request budget and retain the search history."
+      ],
+      "evidence_ids": [
+        "query-001"
+      ],
+      "status": "open",
+      "notes": ""
+    },
+    {
+      "id": "coverage-query-002",
+      "priority": "medium",
+      "topic": "source_coverage",
+      "title": "Review incomplete query query-002",
+      "reason": "This bounded query may omit further matching records or metadata.",
+      "actions": [
+        "Review pagination and provider metadata before treating the retrieved page as a complete search.",
+        "If relevant, continue within an agreed request budget and retain the search history."
+      ],
+      "evidence_ids": [
+        "query-002"
+      ],
+      "status": "open",
+      "notes": ""
+    },
+    {
+      "id": "coverage-query-004",
+      "priority": "medium",
+      "topic": "source_coverage",
+      "title": "Review incomplete query query-004",
+      "reason": "Configured page limit reached.",
+      "actions": [
+        "Review pagination and provider metadata before treating the retrieved page as a complete search.",
+        "If relevant, continue within an agreed request budget and retain the search history."
+      ],
+      "evidence_ids": [
+        "query-004"
+      ],
+      "status": "open",
+      "notes": ""
+    }
+  ],
+  "omitted_queries": [],
+  "design_parameters": {
+    "effective_stress_friction_angle_deg": {
+      "value": null,
+      "reason": "not established by these data queries"
+    },
+    "undrained_shear_strength_kPa": {
+      "value": null,
+      "reason": "not established by these data queries"
+    },
+    "soil_stiffness_MPa": {
+      "value": null,
+      "reason": "not established by these data queries"
+    },
+    "permeability_m_per_s": {
+      "value": null,
+      "reason": "not established by these data queries"
+    },
+    "design_groundwater_level_mAOD": {
+      "value": null,
+      "reason": "not established by these data queries"
+    },
+    "allowable_bearing_pressure_kPa": {
+      "value": null,
+      "reason": "not established by these data queries"
+    },
+    "buried_utility_clearance_m": {
+      "value": null,
+      "reason": "not established by these data queries"
+    }
+  },
+  "warnings": [
+    "Query status describes retrieval and coverage, not site suitability or engineering safety.",
+    "The nation is caller supplied and has not been independently boundary-validated.",
+    "BGS results intersect an approximate enclosing box, not an exact radius or site polygon; candidates outside the radius remain visible.",
+    "Distances use supplied WGS84 points and ignore location uncertainty; BNG coordinates are retained without conversion.",
+    "Borehole and AGS indexes can overlap. Separate source identities are retained; candidate counts are not counts of distinct physical investigations.",
+    "Provider records and links are untrusted data. Linked files are not fetched or interpreted.",
+    "Source dates, licence scope, attribution, units, datum and quality remain in each evidence envelope.",
+    "The GI register records unanswered questions; it does not specify investigation locations, quantities or depths.",
+    "No current-warning or empty-record search establishes absence of a hazard."
+  ],
+  "workspace": {
+    "demo": false
+  }
+}

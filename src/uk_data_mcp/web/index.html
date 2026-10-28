@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Source-linked preliminary geotechnical desk studies and ground-investigation gap planning, using UK public-data MCP tools.">
+  <title>Groundwork — Desk study & GI planner</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to study</a>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="Groundwork home">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>Groundwork<small>Desk study & GI planner</small></span>
+    </a>
+    <div class="side-label">STUDY WORKSPACE</div>
+    <nav aria-label="Study sections">
+      <button class="nav-item active" data-tab="overview" aria-current="page"><span class="nav-icon" aria-hidden="true">◫</span>Overview</button>
+      <button class="nav-item" data-tab="investigations"><span class="nav-icon" aria-hidden="true">▤</span>Historic investigations<span id="nav-records" class="nav-count">—</span></button>
+      <button class="nav-item" data-tab="gaps"><span class="nav-icon" aria-hidden="true">⊞</span>GI gaps<span id="nav-gaps" class="nav-count">—</span></button>
+      <button class="nav-item" data-tab="sources"><span class="nav-icon" aria-hidden="true">↗</span>Sources & provenance</button>
+    </nav>
+    <div class="side-note">
+      <div class="strata-art" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      <strong>Evidence before assumptions.</strong>
+      <p>Public records for a considered first look. Engineering questions stay visible.</p>
+    </div>
+    <div class="side-footer"><span class="connection-dot" aria-hidden="true"></span>LOCAL WORKSPACE<span>Powered by UK Data MCP</span></div>
+  </aside>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="breadcrumb">WORKSPACE <span>/</span> <strong id="breadcrumb-study">NEW STUDY</strong></div>
+      <div class="top-actions">
+        <span class="local-label"><span aria-hidden="true">●</span> Runs locally</span>
+        <button id="open-workspace" class="button button-quiet">Open saved study</button>
+        <input id="workspace-file" type="file" accept=".json,application/json" hidden>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <div class="page-heading">
+        <div><div class="eyebrow">UK GROUND & INVESTIGATION EVIDENCE</div><h1 id="page-title">Start with what’s known.</h1><p id="page-description">Bring public ground records into one study, review their relevance, and plan the evidence you still need.</p></div>
+        <button id="load-demo" class="button button-outline"><span aria-hidden="true">↗</span> Explore Birmingham demo</button>
+      </div>
+      <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+      <div id="demo-banner" class="demo-banner" hidden><strong>Dated public demonstration</strong><span id="demo-description">These are saved source records, not a fresh retrieval or a construction-site assessment.</span></div>
+      <details id="site-panel" class="site-panel" open>
+        <summary><span class="section-number">01</span><span><strong>Define your study</strong><small id="site-summary">A site point and a bounded search area</small></span><span class="summary-chevron" aria-hidden="true">⌄</span></summary>
+        <form id="study-form">
+          <div class="form-grid project-fields">
+            <label>Project name<input name="project_name" maxlength="120" placeholder="e.g. Riverside residential scheme" required></label>
+            <label>Proposed development<select name="development_type"><option value="general">General development</option><option value="housing">Housing</option><option value="industrial">Industrial / warehouse</option><option value="solar_battery">Solar / battery storage</option><option value="basement">Basement / excavation</option><option value="corridor">Road / utility corridor</option><option value="brownfield">Brownfield redevelopment</option></select></label>
+          </div>
+          <div class="form-grid location-fields">
+            <label>Latitude <span class="field-unit">WGS84</span><input name="latitude" type="number" min="49" max="61.5" step="any" value="52.45" required></label>
+            <label>Longitude <span class="field-unit">WGS84</span><input name="longitude" type="number" min="-9.5" max="2.5" step="any" value="-1.93" required></label>
+            <label>UK nation<select name="nation"><option>England</option><option>Scotland</option><option>Wales</option><option>Northern Ireland</option></select></label>
+            <label>Search radius <span class="field-unit">km</span><input name="radius_km" type="number" min="0.1" max="20" step="0.1" value="1" required></label>
+          </div>
+          <div class="form-context"><span aria-hidden="true">⌖</span> Example coordinates are shown. BGS searches use an enclosing rectangle; nation is supplied by you.</div>
+          <label class="works-field">Proposed works <span class="optional">optional</span><textarea name="works_description" maxlength="2000" rows="2" placeholder="Briefly describe the structures, excavations, or investigation questions."></textarea></label>
+          <div class="form-bottom">
+            <details class="advanced"><summary>Retrieval limits</summary><div class="advanced-fields"><label>Records per page<input name="limit_per_source" type="number" min="1" max="20" value="10" required></label><label>Borehole pages per index<input name="max_borehole_pages" type="number" min="1" max="5" value="3" required></label><label>Groundwater series<input name="max_groundwater_measures" type="number" min="0" max="5" value="3" required></label></div></details>
+            <div class="run-action"><span id="run-hint">Read-only public data · no provider key</span><button id="run-study" type="submit" class="button button-primary"><span id="run-icon" aria-hidden="true">→</span><span id="run-label">Gather site evidence</span></button></div>
+          </div>
+        </form>
+      </details>
+      <div id="study-toolbar" class="study-toolbar" hidden><div><span id="query-status" class="status-pill"></span><span id="study-timestamp" class="muted"></span><span id="unsaved-indicator" class="unsaved" hidden>Review changes in memory</span></div><div><button id="download-workspace" class="button button-outline button-small">Save study JSON</button><button id="export-report" class="button button-primary button-small">Export printable report <span aria-hidden="true">↗</span></button></div></div>
+      <section id="empty-state" class="empty-state" aria-labelledby="empty-title"><div class="empty-symbol" aria-hidden="true">▥</div><div><div class="eyebrow">YOUR EVIDENCE WORKSPACE</div><h2 id="empty-title">From scattered records to a reviewable plan.</h2><p>Gather regional context and historic investigations. Review every candidate, keep source limitations close, and turn missing evidence into explicit investigation tasks.</p></div><div class="workflow-steps"><div><b>1</b><span><strong>Gather</strong><small>BGS, EA & planning records</small></span></div><div><b>2</b><span><strong>Review</strong><small>Historic record relevance</small></span></div><div><b>3</b><span><strong>Plan</strong><small>Evidence and investigation gaps</small></span></div></div></section>
+      <div id="workspace" hidden>
+        <section id="tab-overview" class="tab-panel" aria-label="Study overview">
+          <div id="metrics" class="metrics"></div>
+          <div class="overview-grid"><section class="panel"><div class="panel-heading"><div class="eyebrow">SOURCE EXECUTION</div><h2>Evidence coverage</h2><p>Query outcomes describe retrieval, not site suitability.</p></div><div id="coverage-list"></div><button class="text-button panel-link" data-tab="sources">Inspect sources & provenance <span aria-hidden="true">→</span></button></section><section class="panel"><div class="panel-heading"><div class="eyebrow">INVESTIGATION PLANNING</div><h2>Next review priorities</h2><p>Open tasks selected from the evidence and project scope.</p></div><div id="priority-list"></div><button class="text-button panel-link" data-tab="gaps">Open the full GI gap register <span aria-hidden="true">→</span></button></section></div>
+          <div class="overview-grid context-grid"><section class="panel"><div class="panel-heading"><div class="eyebrow">MAPPED INTERPRETATION</div><h2>Regional geological context</h2><p>1:625,000 overview mapping. Confirm site conditions through detailed records and investigation.</p></div><div id="geology-context" class="panel-body"></div></section><section class="panel"><div class="panel-heading"><div class="eyebrow">OBSERVATION EVIDENCE</div><h2>Groundwater follow-up</h2><p>Latest available observations; check dates, aquifer relevance, units and datum.</p></div><div id="groundwater-context" class="panel-body"></div></section></div>
+          <section class="assumption-note"><span aria-hidden="true">⊙</span><div><strong>Design parameters remain unestablished.</strong><p>This workflow does not derive strength, stiffness, permeability, bearing pressure or design groundwater level. Review and site investigation are required.</p></div></section>
+          <details class="limitations"><summary>Study limitations and omitted coverage</summary><ul id="limitations-list"></ul></details>
+        </section>
+        <section id="tab-investigations" class="tab-panel" aria-label="Historic investigations" hidden><div class="section-heading"><div><div class="eyebrow">SOBI & AGS INDEX CANDIDATES</div><h2>Historic investigations</h2><p>Review original records before deciding whether an investigation is relevant. Nearby records do not establish ground conditions.</p></div><button id="export-investigations" class="button button-outline button-small">Export candidates CSV</button></div><div class="filterbar"><label class="search-field"><span class="sr-only">Search investigations</span><input id="candidate-search" type="search" placeholder="Search reference or record name"></label><label><span class="sr-only">Filter index</span><select id="candidate-collection"><option value="all">All indexes</option><option value="onshoreboreholeindex">SOBI</option><option value="agsboreholeindex">AGS</option></select></label><label><span class="sr-only">Filter review status</span><select id="candidate-review"><option value="all">All review states</option><option value="unreviewed">Unreviewed</option><option value="relevant">Relevant</option><option value="not_relevant">Not relevant</option><option value="needs_review">Needs further review</option></select></label></div><div id="candidate-results" class="result-count"></div><div class="table-wrap"><table class="records-table"><thead><tr><th scope="col">Record / investigation</th><th scope="col">Index</th><th scope="col">Depth</th><th scope="col">Year</th><th scope="col">Distance</th><th scope="col">Review</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead><tbody id="candidate-body"></tbody></table></div><div class="table-footnote">Distances use available WGS84 positions and are approximate. An enclosing BGS search box may include candidates beyond the chosen radius. Missing values remain unknown.</div></section>
+        <section id="tab-gaps" class="tab-panel" aria-label="GI gap register" hidden><div class="section-heading"><div><div class="eyebrow">EVIDENCE TO ACQUIRE & QUESTIONS TO RESOLVE</div><h2>Ground-investigation gap register</h2><p>Record your review progress. Closing a task does not establish a design value or certify the site.</p></div><button id="export-gaps" class="button button-outline button-small">Export gaps CSV</button></div><div class="filterbar"><label><span class="sr-only">Filter gap status</span><select id="gap-filter"><option value="all">All tasks</option><option value="open">Open</option><option value="in_progress">In progress</option><option value="closed">Closed</option></select></label><span id="gap-results" class="muted"></span></div><div id="gap-list" class="gap-list"></div></section>
+        <section id="tab-sources" class="tab-panel" aria-label="Sources and provenance" hidden><div class="section-heading"><div><div class="eyebrow">AUDIT TRAIL</div><h2>Sources & provenance</h2><p>Inspect provider outcomes, observation metadata, licences and the exact requests behind this study. Retrieval time is not observation time.</p></div></div><div class="source-key"><span class="status-pill status-ok">Completed</span><span>Query returned records</span><span class="status-pill status-partial">Partial</span><span>Bounded or incomplete result</span><span class="status-pill status-empty">Empty</span><span>No records returned</span><span class="status-pill status-error">Error</span><span>Data unavailable</span></div><div id="source-list" class="source-list"></div></section>
+      </div>
+      <footer class="main-footer"><span>Groundwork <span class="footer-divider">/</span> UK public-data MCP</span><span>Preliminary evidence · Human review required</span></footer>
+    </main>
+  </div>
+  <dialog id="record-dialog" aria-labelledby="record-title"><div class="dialog-top"><div><div class="eyebrow">HISTORIC INVESTIGATION CANDIDATE</div><h2 id="record-title"></h2></div><button id="close-record" class="icon-button" aria-label="Close investigation review">×</button></div><div id="record-details"></div></dialog>
+</body>
+</html>

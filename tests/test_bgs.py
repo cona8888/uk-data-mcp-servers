@@ -94,6 +94,30 @@ async def test_bgs_retains_geometry_when_explicitly_requested():
 
 
 @pytest.mark.asyncio
+async def test_final_offset_page_remains_a_subset_of_matching_records():
+    payload = {
+        "type": "FeatureCollection",
+        "features": [feature(14)],
+        "numberMatched": 3,
+        "numberReturned": 1,
+        "links": [],
+    }
+    async with httpx.AsyncClient(
+        transport=httpx.MockTransport(lambda request: httpx.Response(200, json=payload))
+    ) as raw:
+        result = await bgs_features(
+            HttpClient(client=raw, rate_interval=0),
+            "onshoreboreholeindex",
+            BBOX,
+            limit=2,
+            offset=2,
+        )
+    assert result["status"] == "partial"
+    assert result["pagination"]["truncated"] is True
+    assert result["pagination"]["next_page"] is None
+
+
+@pytest.mark.asyncio
 async def test_bgs_empty_result_does_not_imply_absence():
     def handler(request):
         return httpx.Response(

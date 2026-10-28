@@ -1,5 +1,10 @@
 # MCP validation and geotechnical project opportunities
 
+Projects 1 and 2 were subsequently implemented in **v0.2.0** as
+[Groundwork](GROUNDWORK.md), including the BGS pagination repair. See
+[implementation validation](GROUNDWORK_VALIDATION.md) for the new checks;
+the assessment below records the earlier reviewed commit.
+
 Review date: **28 October 2026**. Reviewed repository: [cona8888/uk-data-mcp-servers](https://github.com/cona8888/uk-data-mcp-servers), branch `main`, commit `ab2e76a4de1fac9f94a03e23255e81062790510e`.
 
 The MCP server is a working foundation for preliminary geotechnical evidence gathering. The strongest first application is an **England desk-study assistant combined with a historic investigation review and ground-investigation gap register**. Its software and protocol checks passed on Windows. Live data access was inconsistent: one request timed out in the provider smoke suite, and a separate live MCP site query retained four BGS connection failures alongside successful sources. Treat the service as a research MVP with visible data gaps.
