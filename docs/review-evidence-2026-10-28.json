@@ -1,0 +1,65 @@
+{
+  "generated_at_utc": "2026-10-28T18:20:47.766792Z",
+  "reviewed_commit": "ab2e76a4de1fac9f94a03e23255e81062790510e",
+  "runtime": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "registry_source_count": 36,
+  "real_stdio_mcp": {
+    "protocol_version": "2026-07-28",
+    "tools": [
+      "list_sources",
+      "source_details",
+      "bgs_collections",
+      "bgs_features",
+      "ea_stations",
+      "ea_floods",
+      "ea_readings",
+      "hydrology_stations",
+      "hydrology_readings",
+      "planning_entities",
+      "data_gov_search",
+      "os_products",
+      "os_downloads",
+      "dft_traffic",
+      "site_context"
+    ],
+    "resources": [
+      "ukdata://sources",
+      "ukdata://limitations"
+    ],
+    "prompts": [
+      "preliminary_site_review"
+    ],
+    "registry_tool_is_error": false,
+    "implemented_source_count": 11
+  },
+  "findings": [
+    {
+      "kind": "synthetic_reproduction_not_field_evidence",
+      "severity": "minor",
+      "description": "Final BGS page with a positive offset omits earlier matches but is labelled ok and not truncated.",
+      "request": {
+        "collection": "onshoreboreholeindex",
+        "bbox": [
+          -1.94,
+          52.44,
+          -1.92,
+          52.46
+        ],
+        "limit": 2,
+        "offset": 2,
+        "include_geometry": false
+      },
+      "actual_status": "ok",
+      "actual_pagination": {
+        "returned": 1,
+        "total_reported_by_provider": 3,
+        "truncated": false,
+        "next_page": null
+      },
+      "expected_status_under_documented_contract": "partial",
+      "expected_truncated": true,
+      "confirmed": true,
+      "code_modified": false
+    }
+  ]
+}

@@ -1,0 +1,442 @@
+{
+  "generated_at_utc": "2026-10-28T18:20:21.274415Z",
+  "kind": "public_api_live_checks",
+  "checks": [
+    {
+      "tool": "bgs_collections",
+      "arguments": {},
+      "status": "ok",
+      "elapsed_seconds": 0.313,
+      "returned": 45,
+      "total_reported_by_provider": 45,
+      "provenance": [
+        {
+          "url": "https://ogcapi.bgs.ac.uk/collections?f=json",
+          "retrieved_at_utc": "2026-10-28T18:19:46.756596Z",
+          "response_sha256": "09e9e60d5f079b623794be7ff68ba999c6e5614d4d942dc469735b66b5e71228",
+          "content_type": "application/json",
+          "http_status": 200
+        }
+      ],
+      "error": null
+    },
+    {
+      "tool": "bgs_features",
+      "arguments": {
+        "collection": "onshoreboreholeindex",
+        "bbox": [
+          -1.94,
+          52.44,
+          -1.92,
+          52.46
+        ],
+        "limit": 2
+      },
+      "status": "partial",
+      "elapsed_seconds": 0.781,
+      "returned": 2,
+      "total_reported_by_provider": 299,
+      "provenance": [
+        {
+          "url": "https://ogcapi.bgs.ac.uk/collections/onshoreboreholeindex/items?f=json&bbox=-1.94%2C52.44%2C-1.92%2C52.46&limit=2&offset=0&skipGeometry=true",
+          "retrieved_at_utc": "2026-10-28T18:19:47.538160Z",
+          "response_sha256": "b5694515e489109ac129d63e73d04f24be6bb43d387ad1531132575262deb499",
+          "content_type": "application/json",
+          "http_status": 200
+        }
+      ],
+      "error": null
+    },
+    {
+      "tool": "bgs_features",
+      "arguments": {
+        "collection": "bgsgeology625kbedrock",
+        "bbox": [
+          -1.94,
+          52.44,
+          -1.92,
+          52.46
+        ],
+        "limit": 2
+      },
+      "status": "partial",
+      "elapsed_seconds": 1.016,
+      "returned": 2,
+      "total_reported_by_provider": 2,
+      "provenance": [
+        {
+          "url": "https://ogcapi.bgs.ac.uk/collections/bgsgeology625kbedrock/items?f=json&bbox=-1.94%2C52.44%2C-1.92%2C52.46&limit=2&offset=0&skipGeometry=true",
+          "retrieved_at_utc": "2026-10-28T18:19:48.559313Z",
+          "response_sha256": "ed307e6584956088c70aa38bad247f673b60984273fcbdd5150a4cd34227aa95",
+          "content_type": "application/json",
+          "http_status": 200
+        }
+      ],
+      "error": null
+    },
+    {
+      "tool": "bgs_features",
+      "arguments": {
+        "collection": "bgsgeology625ksuperficial",
+        "bbox": [
+          -1.94,
+          52.44,
+          -1.92,
+          52.46
+        ],
+        "limit": 2
+      },
+      "status": "partial",
+      "elapsed_seconds": 1.0,
+      "returned": 2,
+      "total_reported_by_provider": 2,
+      "provenance": [
+        {
+          "url": "https://ogcapi.bgs.ac.uk/collections/bgsgeology625ksuperficial/items?f=json&bbox=-1.94%2C52.44%2C-1.92%2C52.46&limit=2&offset=0&skipGeometry=true",
+          "retrieved_at_utc": "2026-10-28T18:19:49.547721Z",
+          "response_sha256": "9efb2de0fe2de15dd3701d7dcc51a6847fe0df3ebb267b84ea7257c90f6332ed",
+          "content_type": "application/json",
+          "http_status": 200
+        }
+      ],
+      "error": null
+    },
+    {
+      "tool": "bgs_features",
+      "arguments": {
+        "collection": "bgsgeology625kfaults",
+        "bbox": [
+          -1.94,
+          52.44,
+          -1.92,
+          52.46
+        ],
+        "limit": 2
+      },
+      "status": "ok",
+      "elapsed_seconds": 1.0,
+      "returned": 1,
+      "total_reported_by_provider": 1,
+      "provenance": [
+        {
+          "url": "https://ogcapi.bgs.ac.uk/collections/bgsgeology625kfaults/items?f=json&bbox=-1.94%2C52.44%2C-1.92%2C52.46&limit=2&offset=0&skipGeometry=true",
+          "retrieved_at_utc": "2026-10-28T18:19:50.558691Z",
+          "response_sha256": "ab37d41504a73d0ea267d6e021204cd8029cc0f88fe830b000448d89f53e5d68",
+          "content_type": "application/json",
+          "http_status": 200
+        }
+      ],
+      "error": null
+    },
+    {
+      "tool": "bgs_features",
+      "arguments": {
+        "collection": "bgsgeology625kdykes",
+        "bbox": [
+          -1.94,
+          52.44,
+          -1.92,
+          52.46
+        ],
+        "limit": 2
+      },
+      "status": "empty",
+      "elapsed_seconds": 1.015,
+      "returned": 0,
+      "total_reported_by_provider": 0,
+      "provenance": [
+        {
+          "url": "https://ogcapi.bgs.ac.uk/collections/bgsgeology625kdykes/items?f=json&bbox=-1.94%2C52.44%2C-1.92%2C52.46&limit=2&offset=0&skipGeometry=true",
+          "retrieved_at_utc": "2026-10-28T18:19:51.575560Z",
+          "response_sha256": "abfc4f9f932c56f450e3aadd928891ace6c37fa56abd079275bfd06eeb882c8d",
+          "content_type": "application/json",
+          "http_status": 200
+        }
+      ],
+      "error": null
+    },
+    {
+      "tool": "bgs_features",
+      "arguments": {
+        "collection": "agsboreholeindex",
+        "bbox": [
+          -1.94,
+          52.44,
+          -1.92,
+          52.46
+        ],
+        "limit": 2
+      },
+      "status": "empty",
+      "elapsed_seconds": 1.016,
+      "returned": 0,
+      "total_reported_by_provider": 0,
+      "provenance": [
+        {
+          "url": "https://ogcapi.bgs.ac.uk/collections/agsboreholeindex/items?f=json&bbox=-1.94%2C52.44%2C-1.92%2C52.46&limit=2&offset=0&skipGeometry=true",
+          "retrieved_at_utc": "2026-10-28T18:19:52.580394Z",
+          "response_sha256": "bef70762510fe29ae1a3b4f0d694cf678b8b0663f7d8bff4f02c4adac066a423",
+          "content_type": "application/json",
+          "http_status": 200
+        }
+      ],
+      "error": null
+    },
+    {
+      "tool": "bgs_features",
+      "arguments": {
+        "collection": "landslideindex",
+        "bbox": [
+          -1.94,
+          52.44,
+          -1.92,
+          52.46
+        ],
+        "limit": 2
+      },
+      "status": "empty",
+      "elapsed_seconds": 1.016,
+      "returned": 0,
+      "total_reported_by_provider": 0,
+      "provenance": [
+        {
+          "url": "https://ogcapi.bgs.ac.uk/collections/landslideindex/items?f=json&bbox=-1.94%2C52.44%2C-1.92%2C52.46&limit=2&offset=0&skipGeometry=true",
+          "retrieved_at_utc": "2026-10-28T18:19:53.592315Z",
+          "response_sha256": "a06a5adbc22b397f8dd97a3db658d2ca2db2b9c43fb9d46a1b59d99651a37531",
+          "content_type": "application/json",
+          "http_status": 200
+        }
+      ],
+      "error": null
+    },
+    {
+      "tool": "ea_stations",
+      "arguments": {
+        "latitude": 52.45,
+        "longitude": -1.93,
+        "limit": 2
+      },
+      "status": "error",
+      "elapsed_seconds": 15.062,
+      "returned": 0,
+      "total_reported_by_provider": null,
+      "provenance": [],
+      "error": {
+        "code": "timeout",
+        "message": "Public API timed out; no data were inferred.",
+        "url": "https://environment.data.gov.uk/flood-monitoring/id/stations.json?lat=52.45&long=-1.93&dist=5.0&_limit=2&_offset=0",
+        "http_status": null
+      }
+    },
+    {
+      "tool": "ea_floods",
+      "arguments": {
+        "latitude": 52.45,
+        "longitude": -1.93,
+        "limit": 2
+      },
+      "status": "empty",
+      "elapsed_seconds": 7.031,
+      "returned": 0,
+      "total_reported_by_provider": null,
+      "provenance": [
+        {
+          "url": "https://environment.data.gov.uk/flood-monitoring/id/floods.json?lat=52.45&long=-1.93&dist=5.0&_limit=2&_offset=0&min-severity=3",
+          "retrieved_at_utc": "2026-10-28T18:20:15.691810Z",
+          "response_sha256": "4ef2414495bc611b5df707327421c0b87c269da4efd83814f0a14fcd2f264a40",
+          "content_type": "application/json",
+          "http_status": 200
+        }
+      ],
+      "error": null
+    },
+    {
+      "tool": "ea_readings",
+      "arguments": {
+        "station_id": "4039",
+        "limit": 3
+      },
+      "status": "ok",
+      "elapsed_seconds": 0.25,
+      "returned": 1,
+      "total_reported_by_provider": null,
+      "provenance": [
+        {
+          "url": "https://environment.data.gov.uk/flood-monitoring/id/stations/4039/readings.json?latest=&_limit=3&_view=full",
+          "retrieved_at_utc": "2026-10-28T18:20:15.939186Z",
+          "response_sha256": "0847f4648c9203fff612af4f881b8c8d0e3ff9d7b1d89f7e5cef0371d750eb2a",
+          "content_type": "application/json",
+          "http_status": 200
+        }
+      ],
+      "error": null
+    },
+    {
+      "tool": "hydrology_stations",
+      "arguments": {
+        "latitude": 52.45,
+        "longitude": -1.93,
+        "limit": 2
+      },
+      "status": "partial",
+      "elapsed_seconds": 0.891,
+      "returned": 2,
+      "total_reported_by_provider": null,
+      "provenance": [
+        {
+          "url": "https://environment.data.gov.uk/hydrology/id/stations.json?lat=52.45&long=-1.93&dist=5.0&_limit=2&_offset=0&observedProperty=groundwaterLevel",
+          "retrieved_at_utc": "2026-10-28T18:20:16.828690Z",
+          "response_sha256": "73f7357d498e878ec625bf19a3bf465e0e00094d4967d7840475f0c71973246b",
+          "content_type": "application/json",
+          "http_status": 200
+        }
+      ],
+      "error": null
+    },
+    {
+      "tool": "hydrology_readings",
+      "arguments": {
+        "measure_id": "0957e811-a4b7-45c1-8b50-2896a1598fe6-gw-dipped-i-mAOD-qualified",
+        "limit": 2
+      },
+      "status": "ok",
+      "elapsed_seconds": 2.016,
+      "returned": 1,
+      "total_reported_by_provider": null,
+      "provenance": [
+        {
+          "url": "https://environment.data.gov.uk/hydrology/id/measures/0957e811-a4b7-45c1-8b50-2896a1598fe6-gw-dipped-i-mAOD-qualified.json",
+          "retrieved_at_utc": "2026-10-28T18:20:17.747512Z",
+          "response_sha256": "2034ed640880b712bc81a5a6e83832a99ebd54e9b7c5e7c382ebbafcf7ba3baa",
+          "content_type": "application/json",
+          "http_status": 200
+        },
+        {
+          "url": "https://environment.data.gov.uk/hydrology/id/measures/0957e811-a4b7-45c1-8b50-2896a1598fe6-gw-dipped-i-mAOD-qualified/readings.json?latest=&_limit=2&_view=full",
+          "retrieved_at_utc": "2026-10-28T18:20:18.844405Z",
+          "response_sha256": "510906eccbde68ee4b56e49358c8058c8aa4974fe505c2084fb588197c0732eb",
+          "content_type": "application/json",
+          "http_status": 200
+        }
+      ],
+      "error": null
+    },
+    {
+      "tool": "planning_entities",
+      "arguments": {
+        "dataset": "local-planning-authority",
+        "latitude": 52.45,
+        "longitude": -1.93,
+        "limit": 2
+      },
+      "status": "ok",
+      "elapsed_seconds": 1.047,
+      "returned": 1,
+      "total_reported_by_provider": 1,
+      "provenance": [
+        {
+          "url": "https://www.planning.data.gov.uk/entity.json?dataset=local-planning-authority&latitude=52.45&longitude=-1.93&limit=2&offset=0&field=entity&field=name&field=dataset&field=reference&field=entry-date&field=start-date&field=end-date&field=point",
+          "retrieved_at_utc": "2026-10-28T18:20:18.954514Z",
+          "response_sha256": "389d7965f913ffb6c354c860de56e8ae9b7519832a509cf50c45a0784b7aee71",
+          "content_type": "application/json",
+          "http_status": 200
+        },
+        {
+          "url": "https://www.planning.data.gov.uk/dataset/local-planning-authority.json",
+          "retrieved_at_utc": "2026-10-28T18:20:19.898162Z",
+          "response_sha256": "4c6de27e2aa874adfd3c21701b11a063816502e2812df4daec68e3827c4b3577",
+          "content_type": "application/json",
+          "http_status": 200
+        }
+      ],
+      "error": null
+    },
+    {
+      "tool": "data_gov_search",
+      "arguments": {
+        "query": "borehole",
+        "limit": 1
+      },
+      "status": "partial",
+      "elapsed_seconds": 0.156,
+      "returned": 1,
+      "total_reported_by_provider": 361,
+      "provenance": [
+        {
+          "url": "https://ckan.publishing.service.gov.uk/api/action/package_search?q=borehole&rows=1&start=0",
+          "retrieved_at_utc": "2026-10-28T18:20:20.045173Z",
+          "response_sha256": "d9235f1b1cfade538102e3de26b134a87e67e36e21c2f46778efdd3d3bdcae61",
+          "content_type": "application/json;charset=utf-8",
+          "http_status": 200
+        }
+      ],
+      "error": null
+    },
+    {
+      "tool": "os_products",
+      "arguments": {
+        "query": "roads",
+        "limit": 2
+      },
+      "status": "partial",
+      "elapsed_seconds": 0.156,
+      "returned": 2,
+      "total_reported_by_provider": 3,
+      "provenance": [
+        {
+          "url": "https://api.os.uk/downloads/v1/products?expanded=true",
+          "retrieved_at_utc": "2026-10-28T18:20:20.212580Z",
+          "response_sha256": "41d419f208cd0f1aa1de1adc3adb2be907bc62bf5c58f4e787857dd920ae37e5",
+          "content_type": "application/json",
+          "http_status": 200
+        }
+      ],
+      "error": null
+    },
+    {
+      "tool": "os_downloads",
+      "arguments": {
+        "product_id": "OpenRoads",
+        "limit": 2
+      },
+      "status": "partial",
+      "elapsed_seconds": 0.922,
+      "returned": 2,
+      "total_reported_by_provider": 4,
+      "provenance": [
+        {
+          "url": "https://api.os.uk/downloads/v1/products/OpenRoads/downloads",
+          "retrieved_at_utc": "2026-10-28T18:20:21.124338Z",
+          "response_sha256": "ebb77a38f6014fc8f40704859a5ae7bbfe86cbc34d6fc091879b8ca720eea253",
+          "content_type": "application/json",
+          "http_status": 200
+        }
+      ],
+      "error": null
+    },
+    {
+      "tool": "dft_traffic",
+      "arguments": {
+        "year": 2024,
+        "road_name": "A38",
+        "limit": 2
+      },
+      "status": "partial",
+      "elapsed_seconds": 0.141,
+      "returned": 2,
+      "total_reported_by_provider": 196,
+      "provenance": [
+        {
+          "url": "https://roadtraffic.dft.gov.uk/api/average-annual-daily-flow?filter%5Byear%5D=2024&page%5Bsize%5D=2&page%5Bnumber%5D=1&sort=count_point_id&filter%5Broad_name%5D=A38",
+          "retrieved_at_utc": "2026-10-28T18:20:21.273907Z",
+          "response_sha256": "7b19e58a832baba8d4d265c38a6cc7c260385dcec3eff893a4ea65a713e0606a",
+          "content_type": "application/json",
+          "http_status": 200
+        }
+      ],
+      "error": null
+    }
+  ],
+  "failed": 1,
+  "interpretation": "HTTP/API checks only. Empty or partial is not an absence-of-hazard finding."
+}

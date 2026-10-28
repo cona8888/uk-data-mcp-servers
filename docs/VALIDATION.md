@@ -1,5 +1,10 @@
 # Validation record
 
+A fresh Windows review dated **28 October 2026**, including 86 passing tests,
+live provider failures and geotechnical project opportunities, is recorded in
+[MCP validation and geotechnical project opportunities](GEOTECHNICAL_REVIEW.md).
+The dated record below describes the earlier run.
+
 Date: **27 October 2026**. This record describes software/interface validation,
 not the accuracy of geological maps, the completeness of datasets or the safety
 of any site.
