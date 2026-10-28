@@ -1,0 +1,5 @@
+include requirements-runtime.txt Dockerfile compose.yaml .dockerignore
+recursive-include docs *.md *.json
+recursive-include examples *.py *.json
+recursive-include scripts *.py
+recursive-include tests *.py

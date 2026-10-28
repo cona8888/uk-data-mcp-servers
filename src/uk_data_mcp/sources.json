@@ -1,0 +1,1059 @@
+[
+  {
+    "id": "bgs_ogc",
+    "name": "BGS OGC API collection discovery",
+    "provider": "British Geological Survey",
+    "category": "geology",
+    "coverage": [
+      "Collection-specific; UK and other extents"
+    ],
+    "access": "mixed",
+    "interface": [
+      "OGC API Features",
+      "JSON metadata"
+    ],
+    "status": "implemented",
+    "documentation_url": "https://ogcapi.bgs.ac.uk/collections?f=html",
+    "licence": {
+      "name": "Collection-specific; inspect collection metadata",
+      "url": "https://ogcapi.bgs.ac.uk/collections?f=html",
+      "scope": "Discovery metadata does not grant unrestricted reuse of every collection. Follow each collection licence and linked product terms."
+    },
+    "attribution": "Use the attribution of the selected collection; BGS material commonly requires: Contains British Geological Survey materials © UKRI 2026.",
+    "limitations": [
+      "Service is labelled BETA and can change.",
+      "Implemented collection discovery is not an adapter for every BGS dataset.",
+      "Coverage, scale and access depend on the collection."
+    ],
+    "priority": 1,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "bgs_boreholes",
+    "name": "BGS borehole index discovery",
+    "provider": "British Geological Survey",
+    "category": "ground_investigation",
+    "coverage": [
+      "Great Britain"
+    ],
+    "access": "open_no_key",
+    "interface": [
+      "OGC API Features",
+      "GeoJSON index records"
+    ],
+    "status": "implemented",
+    "documentation_url": "https://www.bgs.ac.uk/datasets/boreholes-index/",
+    "licence": {
+      "name": "Open Government Licence v3.0 for the open index",
+      "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "scope": "The public borehole index is open; linked scans, reports, confidential records and third-party test data may have separate rights/access conditions."
+    },
+    "attribution": "Contains British Geological Survey materials © UKRI 2026.",
+    "limitations": [
+      "Index discovery does not extract or validate SPT/CPT/laboratory test results.",
+      "The index is incomplete and location/record quality varies.",
+      "Nearby boreholes do not establish ground conditions at the site; absent records do not mean no investigation exists."
+    ],
+    "priority": 1,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "bgs_geology_625k",
+    "name": "BGS geology at 1:625,000",
+    "provider": "British Geological Survey",
+    "category": "geology",
+    "coverage": [
+      "United Kingdom"
+    ],
+    "access": "open_no_key",
+    "interface": [
+      "OGC API Features",
+      "GeoJSON"
+    ],
+    "status": "implemented",
+    "documentation_url": "https://www.bgs.ac.uk/datasets/bgs-geology-625k/",
+    "licence": {
+      "name": "Open Government Licence v3.0",
+      "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "scope": "Applies to BGS Geology 625K, not automatically to 1:50,000 mapping or other commercial BGS products."
+    },
+    "attribution": "Contains British Geological Survey materials © UKRI 2026.",
+    "limitations": [
+      "National overview at 1:625,000; unsuitable for resolving site-scale geology or design parameters.",
+      "Mapped geology is an interpretation and is not a measured stratigraphic profile.",
+      "Do not infer soil strength, stiffness, groundwater depth or founding depth from these polygons."
+    ],
+    "priority": 1,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "bgs_landslides",
+    "name": "BGS recorded landslide inventory discovery",
+    "provider": "British Geological Survey",
+    "category": "ground_hazards",
+    "coverage": [
+      "Great Britain"
+    ],
+    "access": "open_no_key",
+    "interface": [
+      "OGC API Features",
+      "GeoJSON inventory points"
+    ],
+    "status": "implemented",
+    "documentation_url": "https://www.bgs.ac.uk/geology-projects/landslides/national-landslide-database/a-guide-to-the-national-landslide-database-on-the-geoindex/",
+    "licence": {
+      "name": "Public layer terms; check collection metadata and BGS guidance",
+      "url": "https://www.bgs.ac.uk/technologies/web-map-services-wms/geoindex-wms-services/",
+      "scope": "Public inventory/map-layer access only; follow current BGS licence and usage guidance. The GeoIndex guide states the data must not be used for insurance purposes."
+    },
+    "attribution": "Contains British Geological Survey materials © UKRI 2026.",
+    "limitations": [
+      "Inventory of recorded events, not a landslide susceptibility or probability model.",
+      "Point locations do not map the entire affected footprint.",
+      "Incomplete and biased toward documented events; absence of a record does not establish safety.",
+      "Excludes Northern Ireland, Isle of Man and Channel Islands."
+    ],
+    "priority": 1,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "bgs_ags",
+    "name": "BGS available AGS investigation data index",
+    "provider": "British Geological Survey",
+    "category": "ground_investigation",
+    "coverage": [
+      "Record-dependent; inspect collection extent"
+    ],
+    "access": "mixed",
+    "interface": [
+      "OGC API Features",
+      "GeoJSON index and links"
+    ],
+    "status": "implemented",
+    "documentation_url": "https://www.bgs.ac.uk/technologies/geotechnical-data-services/ags-download-service/",
+    "licence": {
+      "name": "Dataset and donor permission dependent",
+      "url": "https://www.bgs.ac.uk/technologies/geotechnical-data-services/ags-download-service/",
+      "scope": "The implemented tool discovers index records and links. Reuse/download rights and the exported AGS groups must be checked for each record; donor consent controls availability."
+    },
+    "attribution": "Contains British Geological Survey materials © UKRI 2026. Retain original investigation/data-owner attribution where supplied.",
+    "limitations": [
+      "Not all investigations or AGS groups are available.",
+      "Does not parse/download arbitrary AGS files or certify tests.",
+      "Preserve units, methods, depth and original provenance before using test values."
+    ],
+    "priority": 1,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "ea_flood",
+    "name": "Environment Agency flood-monitoring API",
+    "provider": "Environment Agency",
+    "category": "flood_and_water",
+    "coverage": [
+      "England service; some water-level records may be from Wales"
+    ],
+    "access": "open_no_key",
+    "interface": [
+      "REST JSON"
+    ],
+    "status": "implemented",
+    "documentation_url": "https://environment.data.gov.uk/flood-monitoring/doc/reference",
+    "licence": {
+      "name": "Open Government Licence v3.0",
+      "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "scope": "EA real-time flood and river-level data API; retain record ownership where Welsh data are included."
+    },
+    "attribution": "This uses Environment Agency flood and river level data from the real-time data API (Beta).",
+    "limitations": [
+      "Current alerts and gauge observations are not a site-specific flood-risk assessment.",
+      "No warning or nearby station does not mean no flood risk.",
+      "Retrieval time differs from measurement time; telemetry updates can be delayed.",
+      "Coverage is not UK-wide and the provider gives no safety-critical availability guarantee."
+    ],
+    "priority": 1,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "ea_hydrology",
+    "name": "Environment Agency Hydrology API",
+    "provider": "Environment Agency",
+    "category": "flood_and_water",
+    "coverage": [
+      "England / EA monitoring service; inspect station metadata"
+    ],
+    "access": "open_no_key",
+    "interface": [
+      "REST JSON"
+    ],
+    "status": "implemented",
+    "documentation_url": "https://environment.data.gov.uk/hydrology/doc/reference",
+    "licence": {
+      "name": "Open Government Licence v3.0",
+      "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "scope": "Data returned by the Hydrology API with its licence metadata; retain specific record attribution and quality flags."
+    },
+    "attribution": "Contains Environment Agency information licensed under the Open Government Licence v3.0.",
+    "limitations": [
+      "Parameters, measurement datum, units, interval and quality differ between series.",
+      "A nearby surface-water gauge is not a site groundwater measurement.",
+      "Not a complete UK-wide hydrometric service."
+    ],
+    "priority": 1,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "planning_data",
+    "name": "Planning Data platform",
+    "provider": "Ministry of Housing, Communities and Local Government / data publishers",
+    "category": "planning",
+    "coverage": [
+      "England"
+    ],
+    "access": "open_no_key",
+    "interface": [
+      "REST JSON",
+      "GeoJSON"
+    ],
+    "status": "implemented",
+    "documentation_url": "https://www.planning.data.gov.uk/docs",
+    "licence": {
+      "name": "Dataset-specific; most data under OGL",
+      "url": "https://www.planning.data.gov.uk/terms-and-conditions",
+      "scope": "Use each dataset licence and attribution-text from dataset metadata; the platform includes third-party intellectual property."
+    },
+    "attribution": "Use the exact attribution-text returned in the selected dataset metadata, including publisher and OS credits where present.",
+    "limitations": [
+      "Coverage, completeness and duplication vary by dataset and local authority.",
+      "A missing constraint in the platform does not establish planning approval or the absence of a restriction.",
+      "England only; authoritative legal records may require checking the originating authority."
+    ],
+    "priority": 1,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "data_gov_uk",
+    "name": "data.gov.uk / National Data Library directory",
+    "provider": "UK public-sector data publishers",
+    "category": "discovery",
+    "coverage": [
+      "United Kingdom; dataset-specific extents"
+    ],
+    "access": "open_no_key",
+    "interface": [
+      "CKAN catalogue API"
+    ],
+    "status": "implemented",
+    "documentation_url": "https://guidance.data.gov.uk/get_data/api_documentation/",
+    "licence": {
+      "name": "Dataset/distribution-specific",
+      "url": "https://guidance.data.gov.uk/get_data/api_documentation/",
+      "scope": "An open catalogue is not a blanket licence for the datasets it describes. Licence may be missing and records can describe restricted products."
+    },
+    "attribution": "Attribute each original dataset publisher and follow the resource licence.",
+    "limitations": [
+      "Metadata/distribution discovery, not automatic access to all referenced data.",
+      "Links and metadata can be stale.",
+      "Catalogue inclusion does not prove an API is public, functional or appropriate for the proposed use."
+    ],
+    "priority": 1,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "os_open_downloads",
+    "name": "OS OpenData discovery and download metadata",
+    "provider": "Ordnance Survey",
+    "category": "mapping",
+    "coverage": [
+      "Great Britain"
+    ],
+    "access": "open_no_key",
+    "interface": [
+      "REST JSON metadata",
+      "Dataset download links"
+    ],
+    "status": "implemented",
+    "documentation_url": "https://docs.os.uk/os-apis/accessing-os-apis/os-downloads-api/technical-specification",
+    "licence": {
+      "name": "Product-specific; OS-owned OpenData commonly OGL, third-party products have their own terms",
+      "url": "https://docs.os.uk/os-apis/accessing-os-apis/os-downloads-api/technical-specification",
+      "scope": "No-key product discovery may include third-party products. Apply OGL only to OS-owned OpenData explicitly under it; use each product provider and documentation for third-party licence and attribution. Discovery does not cover Premium dataPackages or other licensed APIs."
+    },
+    "attribution": "Use each product provider and required attribution. OS-owned OpenData commonly requires Contains OS data © Crown copyright and database right 2026; third-party providers require their own credit.",
+    "limitations": [
+      "Metadata/download-link tools do not query site features or download national archives.",
+      "Most OpenData products cover GB, not Northern Ireland.",
+      "Available formats, grid-square coverage and product versions vary.",
+      "The inventory can include BGS and other third-party products; an OS-hosted download listing is not a blanket OS/OGL licence."
+    ],
+    "priority": 1,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "dft_traffic",
+    "name": "DfT annual average daily flow statistics",
+    "provider": "Department for Transport",
+    "category": "transport",
+    "coverage": [
+      "Great Britain"
+    ],
+    "access": "open_no_key",
+    "interface": [
+      "REST JSON",
+      "CSV",
+      "Shapefile"
+    ],
+    "status": "implemented",
+    "documentation_url": "https://roadtraffic.dft.gov.uk/api-documentation",
+    "licence": {
+      "name": "Open Government Licence; check product and third-party terms",
+      "url": "https://roadtraffic.dft.gov.uk/downloads",
+      "scope": "Road-traffic statistics and downloadable products; retain source attribution and release metadata."
+    },
+    "attribution": "Department for Transport, Road Traffic Statistics; include dataset year and release.",
+    "limitations": [
+      "Annual average daily flows include estimates and are not live traffic.",
+      "Traffic counts are not axle-load histories or direct design loading.",
+      "The current adapter queries annual average daily flow statistics only; it does not ingest bulk road geometry or all transport datasets."
+    ],
+    "priority": 1,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "national_highways",
+    "name": "National Highways Data Lab APIs",
+    "provider": "National Highways",
+    "category": "transport",
+    "coverage": [
+      "England strategic road network"
+    ],
+    "access": "free_registration",
+    "interface": [
+      "REST APIs",
+      "Geospatial open-data portal"
+    ],
+    "status": "planned",
+    "documentation_url": "https://developer.data.nationalhighways.co.uk/faq",
+    "licence": {
+      "name": "National Highways service and dataset terms",
+      "url": "https://developer.data.nationalhighways.co.uk/",
+      "scope": "Registration/subscription/API key required for Data Lab APIs; check each API and geospatial product licence."
+    },
+    "attribution": "Attribute National Highways and any other providers as required by the selected API terms.",
+    "limitations": [
+      "Does not cover every UK road.",
+      "Current FAQ limits APIs to 10 calls per subscription key per minute.",
+      "Locations, closures and signs do not provide comprehensive structural condition or capacity."
+    ],
+    "priority": 2,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "tfl",
+    "name": "TfL Unified API",
+    "provider": "Transport for London",
+    "category": "transport",
+    "coverage": [
+      "London; product-specific network coverage"
+    ],
+    "access": "free_registration",
+    "interface": [
+      "REST JSON"
+    ],
+    "status": "planned",
+    "documentation_url": "https://api.tfl.gov.uk/",
+    "licence": {
+      "name": "TfL Transport Data terms; third-party data terms apply",
+      "url": "https://tfl.gov.uk/info-for/open-data-users/",
+      "scope": "Register for app_key and follow current API/transport data terms. Third-party sources can impose additional attribution."
+    },
+    "attribution": "Follow TfL transport data terms and source attribution listed at https://tfl.gov.uk/corporate/data-sources.",
+    "limitations": [
+      "Transport operations/status data is not a structural inspection dataset.",
+      "Coverage is not national.",
+      "Quota and caching requirements vary by service."
+    ],
+    "priority": 2,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "network_rail",
+    "name": "Network Rail open feeds and Rail Data Marketplace",
+    "provider": "Network Rail / rail-data publishers",
+    "category": "transport",
+    "coverage": [
+      "Great Britain rail network; dataset-specific"
+    ],
+    "access": "mixed",
+    "interface": [
+      "Registered data feeds",
+      "XML/JSON downloads",
+      "Product-specific APIs"
+    ],
+    "status": "planned",
+    "documentation_url": "https://www.networkrail.co.uk/who-we-are/transparency-and-ethics/transparency/open-data-feeds/",
+    "licence": {
+      "name": "Feed/product-specific terms; selected feeds released under OGL principles",
+      "url": "https://www.networkrail.co.uk/who-we-are/transparency-and-ethics/transparency/",
+      "scope": "Registration and feed allocation may be required. Rail Data Marketplace includes both open and commercial products with separate terms."
+    },
+    "attribution": "Attribute Network Rail Infrastructure Limited or the actual data owner; do not call derived products official.",
+    "limitations": [
+      "Open feeds are not complete track, earthwork, bridge or tunnel inspection records.",
+      "Infrastructure model, operational schedule and movement feeds have distinct semantics.",
+      "Network Rail account quotas/availability must be checked during onboarding."
+    ],
+    "priority": 2,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "street_manager",
+    "name": "Street Manager open roadworks events",
+    "provider": "Department for Transport",
+    "category": "transport",
+    "coverage": [
+      "England"
+    ],
+    "access": "free_registration",
+    "interface": [
+      "AWS SNS HTTPS push events"
+    ],
+    "status": "planned",
+    "documentation_url": "https://department-for-transport-streetmanager.github.io/street-manager-docs/open-data/",
+    "licence": {
+      "name": "Open Government Licence (open roadworks feed)",
+      "url": "https://findtransportdata.dft.gov.uk/dataset/roadworks-service-api-street-manager",
+      "scope": "Applies to open data feed. Operational permit creation/management APIs have separate restricted accounts and permissions."
+    },
+    "attribution": "Contains Department for Transport Street Manager information licensed under the Open Government Licence.",
+    "limitations": [
+      "Requires a verified HTTPS POST receiver and persistent event ingestion.",
+      "Not a simple historic GET search endpoint.",
+      "Roadworks records do not prove the precise location, depth or existence of utilities."
+    ],
+    "priority": 2,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "nuar",
+    "name": "National Underground Asset Register",
+    "provider": "Ordnance Survey / Government Digital Service",
+    "category": "underground_utilities",
+    "coverage": [
+      "England",
+      "Wales",
+      "Northern Ireland"
+    ],
+    "access": "restricted",
+    "interface": [
+      "Authorised secure map service"
+    ],
+    "status": "restricted",
+    "documentation_url": "https://www.nuar.uk/faqs",
+    "licence": {
+      "name": "Legally enforceable access agreements and approved use cases",
+      "url": "https://www.nuar.uk/faqs",
+      "scope": "Operational service is invitation-only for participating asset owners and authorised contractors. Expansion testing does not create open access or a public API entitlement."
+    },
+    "attribution": "Follow the applicable NUAR agreement and individual asset-owner attribution/handling requirements.",
+    "limitations": [
+      "No public NUAR connector is implemented.",
+      "Current FAQ restricts use to approved safe-dig/statutory purposes and lists exclusions including land acquisition and network expansion planning.",
+      "Recorded asset data is not a guarantee of exact location, depth or absence of other assets.",
+      "University/research status alone is not an access entitlement."
+    ],
+    "priority": 3,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "scottish_vault",
+    "name": "Scottish Community Apparatus Data Vault",
+    "provider": "Scottish Road Works Commissioner / authorised asset owners",
+    "category": "underground_utilities",
+    "coverage": [
+      "Scotland"
+    ],
+    "access": "restricted",
+    "interface": [
+      "Authorised Scottish Road Works Register service"
+    ],
+    "status": "restricted",
+    "documentation_url": "https://www.nuar.uk/faqs",
+    "licence": {
+      "name": "Service/asset-owner access agreements",
+      "url": "https://www.nuar.uk/faqs",
+      "scope": "Scotland has its own underground apparatus system; verify eligibility and direct service terms before integration."
+    },
+    "attribution": "Follow the authorised service and asset-owner requirements.",
+    "limitations": [
+      "No public API or unrestricted data access is claimed.",
+      "NUAR geographic coverage does not include Scotland.",
+      "No connector is implemented in the current release."
+    ],
+    "priority": 3,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "met_office",
+    "name": "Met Office Weather DataHub",
+    "provider": "Met Office",
+    "category": "weather_and_climate",
+    "coverage": [
+      "United Kingdom and global coverage depending on product/model"
+    ],
+    "access": "free_registration",
+    "interface": [
+      "Credentialed APIs",
+      "GRIB2",
+      "Site forecasts",
+      "Map products"
+    ],
+    "status": "planned",
+    "documentation_url": "https://datahub.metoffice.gov.uk/docs/getting-started",
+    "licence": {
+      "name": "Weather DataHub licence and subscription terms",
+      "url": "https://datahub.metoffice.gov.uk/support/faqs",
+      "scope": "Free and paid plans depend on product and usage. API credentials and subscription are required; do not treat all Met Office data as unrestricted."
+    },
+    "attribution": "Powered by Met Office data.",
+    "limitations": [
+      "Forecast model resolution and uncertainty must be retained.",
+      "Weather forecasts are not the same product as historic observations or climate projections.",
+      "Credentials, quotas and any paid use must be explicitly configured by the user."
+    ],
+    "priority": 2,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "nrfa",
+    "name": "National River Flow Archive",
+    "provider": "UK Centre for Ecology & Hydrology / monitoring authorities",
+    "category": "flood_and_water",
+    "coverage": [
+      "United Kingdom gauging network; series-specific coverage"
+    ],
+    "access": "open_no_key",
+    "interface": [
+      "REST API",
+      "Station/catchment metadata",
+      "Flow/rainfall time series"
+    ],
+    "status": "planned",
+    "documentation_url": "https://nrfaapps.ceh.ac.uk/nrfa/nrfa-api.html",
+    "licence": {
+      "name": "NRFA Data Terms and Conditions",
+      "url": "https://nrfa.ceh.ac.uk/data/use-nrfa-data/nrfa-api",
+      "scope": "NRFA-specific API/data terms apply; do not substitute a blanket OGL declaration."
+    },
+    "attribution": "Data from the UK National River Flow Archive.",
+    "limitations": [
+      "API documentation describes a test service that can change.",
+      "Station quality and temporal aggregation matter; daily flow is not sub-hourly peak flow.",
+      "River-flow measurements do not establish site groundwater level."
+    ],
+    "priority": 1,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "ons_geography",
+    "name": "ONS Open Geography Portal",
+    "provider": "Office for National Statistics",
+    "category": "boundaries_and_statistics",
+    "coverage": [
+      "United Kingdom and constituent nations; product-specific"
+    ],
+    "access": "open_no_key",
+    "interface": [
+      "ArcGIS REST",
+      "Geospatial downloads"
+    ],
+    "status": "planned",
+    "documentation_url": "https://www.ons.gov.uk/methodology/geography/geographicalproducts/opengeography",
+    "licence": {
+      "name": "Open Government Licence with applicable third-party rights",
+      "url": "https://www.ons.gov.uk/methodology/geography/licences",
+      "scope": "ONS intellectual property is OGL; third-party IP and attribution are product-specific."
+    },
+    "attribution": "Credit ONS and include the applicable product attribution/copyright statements.",
+    "limitations": [
+      "Select the correct boundary date and level of generalisation.",
+      "Statistical boundaries are not cadastral or engineering survey boundaries.",
+      "Availability of a UK portal does not mean every layer covers all four nations."
+    ],
+    "priority": 1,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "ons_statistics",
+    "name": "ONS Beta statistics API",
+    "provider": "Office for National Statistics",
+    "category": "boundaries_and_statistics",
+    "coverage": [
+      "Dataset-specific UK and national/subnational coverage"
+    ],
+    "access": "open_no_key",
+    "interface": [
+      "REST JSON",
+      "Dataset filters"
+    ],
+    "status": "planned",
+    "documentation_url": "https://developer.ons.gov.uk/",
+    "licence": {
+      "name": "Open Government Licence; check dataset rights",
+      "url": "https://www.ons.gov.uk/help/termsandconditions",
+      "scope": "ONS data terms and any dataset-specific third-party rights apply."
+    },
+    "attribution": "Source: Office for National Statistics; retain dataset, edition and release/version.",
+    "limitations": [
+      "Beta API may introduce breaking changes.",
+      "Dimensions, statistical geography and publication revisions need explicit handling.",
+      "Not a source of detailed engineering asset-condition records."
+    ],
+    "priority": 2,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "hmlr_open",
+    "name": "HM Land Registry open data",
+    "provider": "HM Land Registry",
+    "category": "land_and_property",
+    "coverage": [
+      "England and Wales; UK House Price Index has wider coverage"
+    ],
+    "access": "open_no_key",
+    "interface": [
+      "CSV/linked data",
+      "INSPIRE GML downloads"
+    ],
+    "status": "planned",
+    "documentation_url": "https://www.gov.uk/government/publications/hm-land-registry-data/public-data",
+    "licence": {
+      "name": "Open Government Licence with dataset-specific attribution",
+      "url": "https://use-land-property-data.service.gov.uk/datasets/inspire",
+      "scope": "Covers specified open products such as Price Paid and INSPIRE; does not cover every land/property product."
+    },
+    "attribution": "Use the exact HMLR attribution required by the product; INSPIRE geometry also requires the listed Ordnance Survey statement.",
+    "limitations": [
+      "INSPIRE polygons show indicative positions rather than legally definitive boundaries.",
+      "Property ownership/addresses can carry additional rights and privacy obligations.",
+      "A download dataset is not automatically a point-query API."
+    ],
+    "priority": 2,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "hmlr_licensed",
+    "name": "HM Land Registry licensed datasets API",
+    "provider": "HM Land Registry",
+    "category": "land_and_property",
+    "coverage": [
+      "England and Wales"
+    ],
+    "access": "licensed",
+    "interface": [
+      "Authenticated REST JSON",
+      "Time-limited dataset download links"
+    ],
+    "status": "discovery_only",
+    "documentation_url": "https://use-land-property-data.service.gov.uk/api-documentation",
+    "licence": {
+      "name": "Individual dataset licences; some free, some paid",
+      "url": "https://use-land-property-data.service.gov.uk/api-information",
+      "scope": "Account/API key and explicit acceptance of each data licence are required; address data can have Royal Mail/OS restrictions."
+    },
+    "attribution": "Follow the selected dataset licence and third-party attribution.",
+    "limitations": [
+      "No authenticated connector is implemented.",
+      "Some licences limit redistribution or use as a standalone product.",
+      "Signed download URLs expire quickly and should not be exposed in public logs."
+    ],
+    "priority": 3,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "mining_remediation",
+    "name": "Mining Remediation Authority maps and records",
+    "provider": "Mining Remediation Authority",
+    "category": "ground_hazards",
+    "coverage": [
+      "Great Britain coalfields; some other products cover England"
+    ],
+    "access": "mixed",
+    "interface": [
+      "Map viewer",
+      "Catalogue",
+      "Licensed datasets",
+      "Commissioned records"
+    ],
+    "status": "discovery_only",
+    "documentation_url": "https://www.gov.uk/guidance/access-coal-mining-information-and-data",
+    "licence": {
+      "name": "Dataset-specific open and licensed products",
+      "url": "https://www.gov.uk/guidance/access-coal-mining-information-and-data",
+      "scope": "Selected map/catalogue access is free; copies, detailed searches and some datasets can require payment or licences."
+    },
+    "attribution": "Attribute the Mining Remediation Authority and follow product-specific terms.",
+    "limitations": [
+      "Viewing a map does not permit unrestricted bulk redistribution of all mine plans.",
+      "Historical records are incomplete and not a ground-stability guarantee.",
+      "Detailed mine workings/borehole data may need a licensed report or supplied records."
+    ],
+    "priority": 1,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "sepa_hydrometry",
+    "name": "SEPA Time Series Data Service",
+    "provider": "Scottish Environment Protection Agency",
+    "category": "flood_and_water",
+    "coverage": [
+      "Scotland"
+    ],
+    "access": "open_no_key",
+    "interface": [
+      "Time-series HTTP API"
+    ],
+    "status": "planned",
+    "documentation_url": "https://timeseriesdoc.sepa.org.uk/api-documentation/",
+    "licence": {
+      "name": "Open Government Licence v3.0",
+      "url": "https://www.sepa.org.uk/environment/environmental-data",
+      "scope": "SEPA identifies hydrometric API data as OGL. Access keys are needed only for larger retrieval volumes; normal use has quotas."
+    },
+    "attribution": "Attribute SEPA as specified in the selected dataset/service metadata.",
+    "limitations": [
+      "Retain measurement datum, quality status, time interval and units.",
+      "Data access volume is restricted; optional keys do not remove licence obligations.",
+      "Hydrometry is distinct from modelled flood zones and warnings."
+    ],
+    "priority": 1,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "sepa_flood",
+    "name": "SEPA flood mapping and Floodline",
+    "provider": "Scottish Environment Protection Agency",
+    "category": "flood_and_water",
+    "coverage": [
+      "Scotland"
+    ],
+    "access": "mixed",
+    "interface": [
+      "Spatial downloads",
+      "API by access request"
+    ],
+    "status": "planned",
+    "documentation_url": "https://www.sepa.org.uk/environment/environmental-data",
+    "licence": {
+      "name": "Product-specific; listed flood layers OGL",
+      "url": "https://www.sepa.org.uk/environment/environmental-data",
+      "scope": "Some open flood layers have explicit OGL attribution; Floodline API requires an access request."
+    },
+    "attribution": "Use the attribution for the chosen SEPA product and its version.",
+    "limitations": [
+      "No UK-wide flood layer is implied.",
+      "Flood alerts, historic extents and modelled hazard zones answer different questions.",
+      "A mapping result cannot replace site-specific flood assessment."
+    ],
+    "priority": 2,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "spatialhub_scotland",
+    "name": "Spatial Hub Scotland",
+    "provider": "Improvement Service / Scottish local authorities",
+    "category": "planning",
+    "coverage": [
+      "Scotland; local-authority completeness varies"
+    ],
+    "access": "mixed",
+    "interface": [
+      "WMS",
+      "WFS",
+      "Geospatial downloads"
+    ],
+    "status": "planned",
+    "documentation_url": "https://data.spatialhub.scot/faq",
+    "licence": {
+      "name": "Open datasets OGL; premium/other datasets have separate rights",
+      "url": "https://data.spatialhub.scot/faq",
+      "scope": "National open datasets require a free account/authkey; premium and bespoke products require eligible entitlements."
+    },
+    "attribution": "Contains OS data © Crown copyright and database right 2026 and Scottish local authority data from the Spatial Hub; add further product credits if required.",
+    "limitations": [
+      "Never expose an authkey through a public client-facing map.",
+      "Academic access does not imply permission to redistribute premium datasets.",
+      "National standardisation does not guarantee every local authority supplied complete data."
+    ],
+    "priority": 2,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "data_gov_scot",
+    "name": "data.gov.scot catalogue",
+    "provider": "Scottish Government / public-sector publishers",
+    "category": "discovery",
+    "coverage": [
+      "Scotland; dataset-specific"
+    ],
+    "access": "open_no_key",
+    "interface": [
+      "CKAN catalogue/query/metadata APIs"
+    ],
+    "status": "planned",
+    "documentation_url": "https://data.gov.scot/help/technical-support/how-to-access-data-using-the-api",
+    "licence": {
+      "name": "Dataset-specific licences",
+      "url": "https://data.gov.scot/help/technical-support/how-to-access-data-using-the-api",
+      "scope": "Catalogue and data resources have distinct rights; inspect dataset metadata."
+    },
+    "attribution": "Attribute the original data publisher and product.",
+    "limitations": [
+      "Catalogue discovery is not proof of current endpoint availability or open reuse.",
+      "No adapter is included in this release."
+    ],
+    "priority": 2,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "nrw",
+    "name": "Natural Resources Wales open APIs",
+    "provider": "Natural Resources Wales",
+    "category": "flood_and_water",
+    "coverage": [
+      "Wales; product-specific"
+    ],
+    "access": "free_registration",
+    "interface": [
+      "Credentialed REST APIs"
+    ],
+    "status": "planned",
+    "documentation_url": "https://api-portal.naturalresources.wales/",
+    "licence": {
+      "name": "Open API product terms; inspect product licence",
+      "url": "https://api-portal.naturalresources.wales/",
+      "scope": "Free signup/API key required; terms and attribution are attached to each API product."
+    },
+    "attribution": "Contains Natural Resources Wales information © Natural Resources Wales and Database Right. All rights Reserved.",
+    "limitations": [
+      "No safety-critical availability guarantee is provided.",
+      "Current alerts, five-day risk forecasts and measured water levels are distinct products.",
+      "Credentials and applicable quotas must be configured."
+    ],
+    "priority": 1,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "datamap_wales",
+    "name": "DataMapWales",
+    "provider": "Welsh Government / partner publishers",
+    "category": "mapping",
+    "coverage": [
+      "Wales; some layers have wider extents"
+    ],
+    "access": "mixed",
+    "interface": [
+      "Catalogue",
+      "WMS",
+      "WFS",
+      "Downloads"
+    ],
+    "status": "planned",
+    "documentation_url": "https://datamap.gov.wales/info/what-we-do",
+    "licence": {
+      "name": "Dataset-specific; OGL where stated",
+      "url": "https://datamap.gov.wales/info/what-we-do",
+      "scope": "Public catalogue/layers are available, while restricted licensed data require sign-in. Read each layer metadata."
+    },
+    "attribution": "Use the selected layer publisher, version and attribution statement.",
+    "limitations": [
+      "Not all catalogue content is public or openly reusable.",
+      "Map services and downloadable feature datasets are different interfaces.",
+      "Coverage and precision must be checked per layer."
+    ],
+    "priority": 1,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "gsni",
+    "name": "GSNI / OpenDataNI / Spatial NI",
+    "provider": "Geological Survey of Northern Ireland and NI publishers",
+    "category": "geology",
+    "coverage": [
+      "Northern Ireland"
+    ],
+    "access": "mixed",
+    "interface": [
+      "Catalogue",
+      "Geospatial downloads",
+      "GeoIndex",
+      "Product-specific services"
+    ],
+    "status": "planned",
+    "documentation_url": "https://www.bgs.ac.uk/geology-projects/gsni/",
+    "licence": {
+      "name": "Product-specific; some OpenDataNI distributions OGL",
+      "url": "https://admin.opendatani.gov.uk/dataset/?organization=geological-survey-of-northern-ireland",
+      "scope": "Do not assume a blanket licence across geology, chemistry, boreholes and site reports; retain individual distribution rights."
+    },
+    "attribution": "Attribute GSNI/BGS and any data owner as specified in product metadata.",
+    "limitations": [
+      "Regional 1:250,000 mapping is not a site investigation.",
+      "BGS GB borehole and landslide tools must not be described as complete NI coverage.",
+      "No adapter is implemented in the current release."
+    ],
+    "priority": 1,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "neso",
+    "name": "NESO Data Portal",
+    "provider": "National Energy System Operator",
+    "category": "energy",
+    "coverage": [
+      "Primarily Great Britain; dataset-specific"
+    ],
+    "access": "open_no_key",
+    "interface": [
+      "CKAN catalogue API",
+      "Datastore API",
+      "CSV/downloads"
+    ],
+    "status": "planned",
+    "documentation_url": "https://www.neso.energy/data-portal/api-guidance",
+    "licence": {
+      "name": "NESO Open Licence where explicitly assigned",
+      "url": "https://www.neso.energy/data-portal/neso-open-licence",
+      "scope": "The NESO Open Licence applies only to datasets explicitly associated with it; inspect each dataset licence."
+    },
+    "attribution": "Supported by National Energy SO Open Data (for datasets under that licence).",
+    "limitations": [
+      "Recommended maximum CKAN rate is one request/second; datastore two requests/minute.",
+      "Open system datasets do not reveal all local distribution or buried cable assets.",
+      "Avoid arbitrary SQL and unbounded queries."
+    ],
+    "priority": 2,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "ea_lidar",
+    "name": "Environment Agency LiDAR DTM/DSM and survey metadata",
+    "provider": "Environment Agency",
+    "category": "terrain",
+    "coverage": [
+      "England"
+    ],
+    "access": "open_no_key",
+    "interface": [
+      "GeoTIFF tiles",
+      "WMS",
+      "WCS",
+      "WMTS",
+      "Survey metadata WFS/OGC Features"
+    ],
+    "status": "planned",
+    "documentation_url": "https://environment.data.gov.uk/dataset/13787b9a-26a4-4775-8523-806d13af58fc",
+    "licence": {
+      "name": "Open Government Licence",
+      "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "scope": "Applies to the documented EA LiDAR product; retain survey/product attribution and licence metadata."
+    },
+    "attribution": "Use the Environment Agency copyright/database-right statement for the selected survey/product version.",
+    "limitations": [
+      "DTM and DSM represent different surfaces.",
+      "Pixel spacing is not positional or vertical accuracy.",
+      "Composite tiles can combine surveys of different ages; verify height datum and CRS.",
+      "Not UK-wide and not a current site survey."
+    ],
+    "priority": 1,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "os_premium",
+    "name": "OS Premium data packages and APIs",
+    "provider": "Ordnance Survey",
+    "category": "mapping",
+    "coverage": [
+      "Product-specific; many datasets cover Great Britain"
+    ],
+    "access": "licensed",
+    "interface": [
+      "API key/OAuth APIs",
+      "Licensed downloads"
+    ],
+    "status": "discovery_only",
+    "documentation_url": "https://docs.os.uk/os-apis/accessing-os-apis/os-downloads-api/technical-specification/data-packages",
+    "licence": {
+      "name": "OS product/account licence",
+      "url": "https://osdatahub.os.uk/legal/termsConditions",
+      "scope": "Requires entitlement and valid key/OAuth credentials; redistribution/derived-use terms vary by product."
+    },
+    "attribution": "Use the precise OS licence and product attribution statement.",
+    "limitations": [
+      "OpenData API access does not confer Premium rights.",
+      "Academic or PSGA access cannot be assumed for every user.",
+      "No Premium adapter is included in the current release."
+    ],
+    "priority": 3,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "api_gov_uk",
+    "name": "UK public-sector API catalogue",
+    "provider": "Government Digital Service / API publishers",
+    "category": "discovery",
+    "coverage": [
+      "United Kingdom public sector"
+    ],
+    "access": "open_no_key",
+    "interface": [
+      "Human-readable API catalogue"
+    ],
+    "status": "discovery_only",
+    "documentation_url": "https://www.api.gov.uk/",
+    "licence": {
+      "name": "API-specific licences and access restrictions",
+      "url": "https://www.api.gov.uk/",
+      "scope": "The catalogue explicitly says inclusion does not mean an API is publicly accessible."
+    },
+    "attribution": "Credit the API/data publisher and follow its terms.",
+    "limitations": [
+      "A directory entry is not an implemented MCP tool.",
+      "Access and licence must be verified at the publisher."
+    ],
+    "priority": 2,
+    "reviewed_on": "2026-10-27"
+  },
+  {
+    "id": "local_authority_data",
+    "name": "Local-authority open data and asset records",
+    "provider": "Individual UK local authorities",
+    "category": "local_infrastructure",
+    "coverage": [
+      "Authority-specific; all UK nations require separate discovery"
+    ],
+    "access": "mixed",
+    "interface": [
+      "Local catalogues",
+      "ArcGIS REST",
+      "WFS",
+      "Downloads",
+      "Some non-public records"
+    ],
+    "status": "discovery_only",
+    "documentation_url": "https://guidance.data.gov.uk/get_data/api_documentation/",
+    "licence": {
+      "name": "Dataset-specific; no blanket local-authority licence",
+      "url": "https://www.api.gov.uk/",
+      "scope": "Council public catalogues include open products, but highways inspection, drainage, ownership and private records can have distinct terms/access."
+    },
+    "attribution": "Attribute the publishing authority and any third-party rights holder.",
+    "limitations": [
+      "No central service contains every council asset record.",
+      "Missing published data does not establish absence of an asset or hazard.",
+      "No unrestricted arbitrary portal scraping is provided."
+    ],
+    "priority": 2,
+    "reviewed_on": "2026-10-27"
+  }
+]

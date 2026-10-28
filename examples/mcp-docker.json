@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "uk-infrastructure": {
+      "command": "docker",
+      "args": ["run", "--rm", "-i", "uk-data-mcp:0.1.0"]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "uk-infrastructure": {
+      "command": "/ABSOLUTE/PATH/uk-data-mcp-servers/.venv/bin/python",
+      "args": ["-m", "uk_data_mcp", "serve"]
+    }
+  }
+}
