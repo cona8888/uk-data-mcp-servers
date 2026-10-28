@@ -36,9 +36,14 @@ remain explicit. The example is not a defined construction project.
 
 A [draft desk-study report](desk-studies/birmingham-draft-geotechnical-desk-study.pdf)
 and its [editable Markdown source](desk-studies/birmingham-draft-geotechnical-desk-study.md)
-review the fresh 28 October Birmingham run. They cover the six retrieved records,
-the 423 provider-reported index matches, groundwater limitations and a phased GI
-plan. The report retains the demonstration's undefined site boundary and works.
+review the fresh 28 October Birmingham run. Revision **D02** includes visual
+review of all twelve pages of the six original BGS PDFs, with recorded strata,
+historic water/test notes, depth/date discrepancies and a revised prioritised GI
+plan. The [factual log-review audit record](../examples/birmingham_original_log_review_2026-10-28.json)
+retains source URLs, hashes, page references, conversions and uncertainties;
+original scans are not redistributed. The 423 provider-reported index matches
+remain incompletely searched, and the demonstration's site boundary and works
+remain undefined. The frozen app export is unchanged; D02 is a subsequent review.
 
 For a fresh study, enter the project name, location, nation, search radius,
 development type and proposed works. Review the advanced request limits before

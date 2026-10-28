@@ -1,0 +1,1192 @@
+{
+  "schema": "birmingham-original-log-review-v1",
+  "report_revision": "D02",
+  "review_date": "2026-10-28",
+  "review_method": "Visual reading of all 12 original PDF pages, with enlarged views and independent checks of critical depths, dates, water observations and test qualifiers. Factual paraphrases, not a certified transcription or engineering design.",
+  "scope": "Six historic index candidates around 52.45, -1.93; actual construction boundary and proposed works remain undefined. Observations apply to the individual archived holes only.",
+  "conversion_basis": "1 international foot = 0.3048 m; 1 inch = 0.0254 m. Conversions do not resolve conflicting source statements, validate a datum or add measurement accuracy.",
+  "source_handling": "Original PDFs/drawings are linked for source checking, not redistributed. Index OGL scope does not automatically license linked report content. Personal names, signatures and contact details are excluded from this derived record.",
+  "frozen_workspace": {
+    "path": "examples/birmingham_report_evidence_2026-10-28.json",
+    "sha256": "a8ccd4e9dd99e1e7d5c32c5b895cef50448f1be28273df6102aa45719f39f2b6",
+    "unchanged": true
+  },
+  "records": [
+    {
+      "reference": "SP08SE14",
+      "bgs_id": 305147,
+      "pages_reviewed": [
+        1
+      ],
+      "page_reference": "SP08SE14 original PDF, p. 1",
+      "identity": {
+        "wrapper_and_original_reference_match": true,
+        "bng_easting": 405150,
+        "bng_northing": 282960,
+        "form_title": "Record of Shaft or Bore for Minerals",
+        "confidence": "high"
+      },
+      "date": {
+        "original_field": "Date of Sinking",
+        "year": 1960,
+        "day_month": null,
+        "confidence": "high",
+        "page": 1
+      },
+      "record_purpose": {
+        "paraphrase": "Trial investigation",
+        "confidence": "high",
+        "page": 1
+      },
+      "drilling_method": {
+        "value": null,
+        "reason": "Not recorded on the reviewed page"
+      },
+      "commencement_elevation": {
+        "value": null,
+        "reason": "Field blank"
+      },
+      "depth_unit_interpretation": {
+        "units": "feet and inches",
+        "basis": "Paired imperial thickness/depth columns agree with metric annotations",
+        "confidence": "high"
+      },
+      "end_depth": {
+        "original": {
+          "feet": 14,
+          "inches": 6,
+          "text": "14 ft 6 in"
+        },
+        "converted_m": 4.4196,
+        "rounded_converted_m": 4.42,
+        "scan_metric_annotation_m": 4.42,
+        "mcp_index_depth_m": 4.0,
+        "conflict": "The index gives 4 m; the original imperial depth and metric scan annotation support approximately 4.42 m.",
+        "confidence": "high",
+        "page": 1
+      },
+      "intervals": [
+        {
+          "from_original": "0 ft 0 in",
+          "to_original": "0 ft 9 in",
+          "from_m": 0,
+          "to_m": 0.2286,
+          "material_paraphrase": "Topsoil",
+          "depth_confidence": "high",
+          "description_confidence": "high",
+          "page": 1
+        },
+        {
+          "from_original": "0 ft 9 in",
+          "to_original": "3 ft 6 in",
+          "from_m": 0.2286,
+          "to_m": 1.0668,
+          "material_paraphrase": "Sandy clay and gravel containing brick traces",
+          "depth_confidence": "high",
+          "description_confidence": "high",
+          "page": 1
+        },
+        {
+          "from_original": "3 ft 6 in",
+          "to_original": "4 ft 6 in",
+          "from_m": 1.0668,
+          "to_m": 1.3716,
+          "material_paraphrase": "Brown silty clay, apparently gravelly",
+          "depth_confidence": "high",
+          "description_confidence": "medium",
+          "uncertainty": "The handwritten gravelly qualifier is less clear than the main lithology.",
+          "page": 1
+        },
+        {
+          "from_original": "4 ft 6 in",
+          "to_original": "5 ft 6 in",
+          "from_m": 1.3716,
+          "to_m": 1.6764,
+          "material_paraphrase": "Firm brown clay",
+          "depth_confidence": "high",
+          "description_confidence": "high",
+          "page": 1
+        },
+        {
+          "from_original": "5 ft 6 in",
+          "to_original": "5 ft 9 in",
+          "from_m": 1.6764,
+          "to_m": 1.7526,
+          "material_paraphrase": "Brown sandy clay and gravel",
+          "depth_confidence": "high",
+          "description_confidence": "high",
+          "page": 1
+        },
+        {
+          "from_original": "5 ft 9 in",
+          "to_original": "7 ft 0 in",
+          "from_m": 1.7526,
+          "to_m": 2.1336,
+          "material_paraphrase": "Brown silty clay with sand and gravel traces",
+          "depth_confidence": "high",
+          "description_confidence": "medium_to_high",
+          "page": 1
+        },
+        {
+          "from_original": "7 ft 0 in",
+          "to_original": "7 ft 6 in",
+          "from_m": 2.1336,
+          "to_m": 2.286,
+          "material_paraphrase": "Clayey sand containing clay pockets",
+          "depth_confidence": "high",
+          "description_confidence": "high",
+          "page": 1
+        },
+        {
+          "from_original": "7 ft 6 in",
+          "to_original": "8 ft 9 in",
+          "from_m": 2.286,
+          "to_m": 2.667,
+          "material_paraphrase": "Sand and gravel with clay traces",
+          "depth_confidence": "high",
+          "description_confidence": "high",
+          "page": 1
+        },
+        {
+          "from_original": "8 ft 9 in",
+          "to_original": "11 ft 0 in",
+          "from_m": 2.667,
+          "to_m": 3.3528,
+          "material_paraphrase": "Brown friable silty clay",
+          "depth_confidence": "high",
+          "description_confidence": "high",
+          "page": 1
+        },
+        {
+          "from_original": "11 ft 0 in",
+          "to_original": "13 ft 0 in",
+          "from_m": 3.3528,
+          "to_m": 3.9624,
+          "material_paraphrase": "Friable grey clayey silt",
+          "depth_confidence": "high",
+          "description_confidence": "high",
+          "page": 1
+        },
+        {
+          "from_original": "13 ft 0 in",
+          "to_original": "14 ft 6 in",
+          "from_m": 3.9624,
+          "to_m": 4.4196,
+          "material_paraphrase": "Very friable brown clayey silt",
+          "depth_confidence": "high",
+          "description_confidence": "high",
+          "page": 1
+        }
+      ],
+      "observations": [
+        {
+          "finding": "Shallow brick-bearing material is evidence of possible local anthropogenic disturbance.",
+          "qualification": "Does not establish made-ground thickness or continuity across the proposed development site.",
+          "page": 1
+        },
+        {
+          "finding": "Alternating clay, silt, sand and gravel descriptions indicate local shallow heterogeneity.",
+          "qualification": "Historical descriptors are not measured engineering parameters.",
+          "page": 1
+        }
+      ],
+      "missing_observations": [
+        "No groundwater observation visible; absence of a note does not establish dry conditions.",
+        "No sampling or laboratory results visible.",
+        "No in-situ tests or SPT values visible.",
+        "No explicit bedrock identification at termination.",
+        "No termination reason recorded."
+      ],
+      "uncertainties": [
+        "Handwritten bore name is difficult to resolve; rely on the verified BGS reference and index name.",
+        "Some descriptive qualifiers are less legible; broad lithology and depth boundaries are more secure.",
+        "Historic off-site evidence does not establish present conditions beneath the development footprint."
+      ],
+      "gi_relevance": "Supports targeted investigation of shallow fill or disturbance and variable granular/cohesive strata; supplies no design strength, stiffness, bearing or groundwater parameters.",
+      "original_pdf_provenance": {
+        "reference": "SP08SE14",
+        "provider_id": 305147,
+        "url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305147",
+        "retrieved_at_utc": "2026-10-28T20:56:17.864928+00:00",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "bytes": 181308,
+        "sha256": "3c2fea4a8ba610d86aa5b9f787f9f41ea2d993b27e44e6b17e1e74c8a8d9e153"
+      }
+    },
+    {
+      "reference": "SP08SE16",
+      "bgs_id": 305149,
+      "pages_reviewed": [
+        1
+      ],
+      "page_reference": "SP08SE16 original PDF, p. 1",
+      "identity": {
+        "wrapper_and_original_reference_match": true,
+        "bng_easting": 405170,
+        "bng_northing": 283190,
+        "form_title": "Record of Shaft or Bore for Minerals",
+        "confidence": "high"
+      },
+      "date": {
+        "original_field": "Date of Sinking",
+        "year": 1959,
+        "day_month": null,
+        "confidence": "high",
+        "page": 1
+      },
+      "record_purpose": {
+        "value": null,
+        "reason": "Field blank"
+      },
+      "drilling_method": {
+        "value": null,
+        "reason": "Not recorded on the reviewed page"
+      },
+      "commencement_elevation": {
+        "original_value_ft_OD": 401.5,
+        "scan_metric_annotation_m": 122.35,
+        "exact_conversion_m": 122.3772,
+        "datum_text": "O.D.",
+        "uncertainty": "The metric annotation differs slightly from exact conversion. Preserve the source values; do not silently reconcile them or assume modern survey precision.",
+        "confidence": "high",
+        "page": 1
+      },
+      "depth_unit_interpretation": {
+        "units": "feet and inches",
+        "basis": "Paired imperial columns and metric annotations",
+        "confidence": "high"
+      },
+      "end_depth": {
+        "original": {
+          "feet": 50,
+          "inches": 0,
+          "text": "50 ft"
+        },
+        "converted_m": 15.24,
+        "scan_metric_annotation_m": 15.0,
+        "mcp_index_depth_m": 15.0,
+        "conflict": "Original thicknesses sum to 50 ft (11 ft 6 in + 8 ft 6 in + 30 ft), equal to 15.24 m. The later scan metric annotation appears 15.00 m, and the index gives 15 m. Retain both source presentations and the conversion basis.",
+        "confidence": "high for imperial values and arithmetic; medium_to_high for the later 15.00 m annotation",
+        "page": 1
+      },
+      "intervals": [
+        {
+          "from_original": "0 ft 0 in",
+          "to_original": "11 ft 6 in",
+          "thickness_original": "11 ft 6 in",
+          "from_m": 0,
+          "to_m": 3.5052,
+          "material_paraphrase": "Made ground",
+          "depth_confidence": "high",
+          "description_confidence": "high",
+          "page": 1
+        },
+        {
+          "from_original": "11 ft 6 in",
+          "to_original": "20 ft 0 in",
+          "thickness_original": "8 ft 6 in",
+          "from_m": 3.5052,
+          "to_m": 6.096,
+          "material_paraphrase": "Blackish brown clay containing traces of sand and gravel",
+          "depth_confidence": "high",
+          "description_confidence": "high",
+          "page": 1
+        },
+        {
+          "from_original": "20 ft 0 in",
+          "to_original": "50 ft 0 in",
+          "thickness_original": "30 ft 0 in",
+          "from_m": 6.096,
+          "to_m": 15.24,
+          "material_paraphrase": "Historical Keuper marl description",
+          "depth_confidence": "high",
+          "description_confidence": "high",
+          "page": 1
+        }
+      ],
+      "observations": [
+        {
+          "finding": "The log records made ground extending to 11 ft 6 in, approximately 3.51 m.",
+          "qualification": "This is a local historical observation, not a measured thickness for the current development site.",
+          "page": 1
+        },
+        {
+          "finding": "A historical marl description begins at 20 ft, approximately 6.10 m.",
+          "qualification": "Do not automatically translate the historical term into a modern formation, intact rock horizon, competence or strength.",
+          "page": 1
+        }
+      ],
+      "missing_observations": [
+        "No groundwater observation visible; absence of a note does not establish dry conditions.",
+        "No sampling or laboratory results visible.",
+        "No in-situ tests or SPT values visible.",
+        "No weathering, rock strength, core recovery or discontinuity information recorded.",
+        "No termination reason recorded."
+      ],
+      "uncertainties": [
+        "Exact imperial depth conversion differs from the later metric annotation and MCP index.",
+        "Commencement elevation contains a small imperial-to-metric conversion discrepancy.",
+        "Historic off-site evidence does not establish present conditions beneath the development footprint."
+      ],
+      "gi_relevance": "Supports testing the extent and properties of made ground and the depth and weathering of marl beneath the actual footprint. Groundwater monitoring and appropriate soil/rock sampling and testing remain necessary; no design parameters are established.",
+      "original_pdf_provenance": {
+        "reference": "SP08SE16",
+        "provider_id": 305149,
+        "url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305149",
+        "retrieved_at_utc": "2026-10-28T20:56:19.315449+00:00",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "bytes": 173935,
+        "sha256": "6c88941f5ab70ffd11896e53fb512856c64bf9efbbecdc8ae70807ce6ddff9b6"
+      }
+    },
+    {
+      "reference": "SP08SE49",
+      "bgs_id": 305182,
+      "original_title": "Geological Survey record of shaft or bore for minerals; Bristol Road B.H. A",
+      "source_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305182",
+      "pages_reviewed": [
+        1
+      ],
+      "grid_reference_bng": {
+        "easting": 405110,
+        "northing": 283260
+      },
+      "dates": [
+        {
+          "original": "1963",
+          "type": "date of sinking",
+          "precision": "year",
+          "page": 1,
+          "confidence": "high"
+        }
+      ],
+      "purpose": {
+        "observation": "Trial",
+        "page": 1
+      },
+      "depth_unit": "feet and inches, explicitly labelled in the original table",
+      "depth_datum_note": "The intervals_m_bgl keys retain the requested report schema, but values are nominal depths converted from the original cumulative table. Ground level/O.D. is blank; the relationship between table zero, surface and pit is not independently resolved. They must not be treated as surveyed elevations or independently verified bgl levels.",
+      "strata": [
+        {
+          "interval_original": "0 to 2 ft 0 in",
+          "intervals_m_bgl": {
+            "from": 0.0,
+            "to": 0.6096
+          },
+          "description_paraphrased": "Brick, mortar, timber and stones.",
+          "page": 1,
+          "confidence": "high"
+        },
+        {
+          "interval_original": "2 ft 0 in to 8 ft 6 in",
+          "intervals_m_bgl": {
+            "from": 0.6096,
+            "to": 2.5908
+          },
+          "description_paraphrased": "Mixed clay containing brick, stone and earthenware.",
+          "page": 1,
+          "confidence": "high"
+        },
+        {
+          "interval_original": "8 ft 6 in to 18 ft 6 in",
+          "intervals_m_bgl": {
+            "from": 2.5908,
+            "to": 5.6388
+          },
+          "description_paraphrased": "Friable brown/grey marls.",
+          "page": 1,
+          "confidence": "high"
+        },
+        {
+          "interval_original": "18 ft 6 in to 60 ft 0 in",
+          "intervals_m_bgl": {
+            "from": 5.6388,
+            "to": 18.288
+          },
+          "description_paraphrased": "Friable brown/grey marls containing rock bands.",
+          "page": 1,
+          "confidence": "high"
+        }
+      ],
+      "total_depth_conflict": {
+        "table_original": "60 ft 0 in",
+        "table_converted_m": 18.288,
+        "index_depth_m": 18.29,
+        "separate_note_original": "Total depth incl. pit 58'-6\"",
+        "separate_note_converted_m": 17.8308,
+        "assessment": "The index agrees with the cumulative table after rounding. The separate handwritten pit-inclusive total is inconsistent with that table. No reconciliation is supported by this sheet.",
+        "page": 1,
+        "confidence": "high"
+      },
+      "water": {
+        "observation": "No groundwater observations shown on this page.",
+        "interpretation_limit": "Absence of a recorded observation is not evidence of dry ground.",
+        "page": 1
+      },
+      "drilling_notes": {
+        "method": "Not established from the page.",
+        "pit": "Mentioned only by the separate total-depth note; no pit dimensions shown.",
+        "page": 1
+      },
+      "sampling_testing_termination": {
+        "observation": "No sampling schedule, laboratory results, in-situ test results or termination reason shown.",
+        "page": 1
+      },
+      "uncertainties": [
+        "Internal total-depth conflict and pit/table datum relationship remain unresolved.",
+        "Ground-level elevation is absent.",
+        "An unclear marginal geological-classification annotation is deliberately not transcribed.",
+        "Historical marl terminology does not establish a modern formation designation, soil parameters or bearing capacity."
+      ],
+      "conditional_gi_implications": [
+        "Anthropogenic components demonstrate locally man-made material at this historic hole; verify its continuity and thickness at the proposed works.",
+        "Establish the weathered-material and rock-band profile using suitable investigation methods; do not transfer these off-site layer boundaries directly to the development site.",
+        "Seek supporting project records to clarify the original depth and pit datum."
+      ],
+      "original_pdf_provenance": {
+        "reference": "SP08SE49",
+        "provider_id": 305182,
+        "url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305182",
+        "retrieved_at_utc": "2026-10-28T20:56:20.950607+00:00",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "bytes": 178938,
+        "sha256": "9e86b844fda072608537c9eebc708e9724d6173034fbf0cbd79cf8678dd609ee"
+      }
+    },
+    {
+      "reference": "SP08SE50",
+      "bgs_id": 305183,
+      "original_title": "Contractor borehole chart; Contract No. 307, Bristol Road, Birmingham; Borehole B",
+      "source_url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305183",
+      "pages_reviewed": [
+        1
+      ],
+      "grid_reference_bng": {
+        "easting": 405130,
+        "northing": 283220
+      },
+      "dates": [
+        {
+          "original": "20th October 1962",
+          "iso": "1962-10-20",
+          "type": "commenced",
+          "page": 1,
+          "confidence": "high"
+        },
+        {
+          "original": "12th November 1962",
+          "iso": "1962-11-12",
+          "type": "completed",
+          "page": 1,
+          "confidence": "high"
+        },
+        {
+          "original": "Rec. 10.4.63",
+          "iso": "1963-04-10",
+          "type": "receipt notation, not drilling date",
+          "page": 1,
+          "confidence": "high"
+        }
+      ],
+      "purpose": {
+        "observation": "Not explicitly stated on the chart.",
+        "page": 1
+      },
+      "depth_unit": "Paired feet/inches table convention, supported by the sheet's dimensional notes and handwritten metric conversions.",
+      "depth_datum_note": "The intervals_m_bgl keys retain the requested report schema, but values are nominal depths converted from the original cumulative table. Ground/street level and height above sea level are blank. The relationship between table zero, surface, tubes and inspection pit is not independently resolved; these are not surveyed elevations or independently verified bgl levels.",
+      "strata": [
+        {
+          "interval_original": "0 to 3 ft 0 in",
+          "intervals_m_bgl": {
+            "from": 0.0,
+            "to": 0.9144
+          },
+          "description_paraphrased": "Mixed clay containing brick and stones.",
+          "page": 1,
+          "confidence": "high"
+        },
+        {
+          "interval_original": "3 ft 0 in to 6 ft 0 in",
+          "intervals_m_bgl": {
+            "from": 0.9144,
+            "to": 1.8288
+          },
+          "description_paraphrased": "Silty clay with pebbles, sandy pockets, brick and tree roots.",
+          "page": 1,
+          "confidence": "high"
+        },
+        {
+          "interval_original": "6 ft 0 in to 14 ft 3 in",
+          "intervals_m_bgl": {
+            "from": 1.8288,
+            "to": 4.3434
+          },
+          "description_paraphrased": "Friable brown/grey marls.",
+          "page": 1,
+          "confidence": "high"
+        },
+        {
+          "interval_original": "14 ft 3 in to 38 ft 0 in",
+          "intervals_m_bgl": {
+            "from": 4.3434,
+            "to": 11.5824
+          },
+          "description_paraphrased": "Friable brown/grey marls containing rock bands.",
+          "page": 1,
+          "confidence": "high"
+        },
+        {
+          "interval_original": "38 ft 0 in to 50 ft 0 in",
+          "intervals_m_bgl": {
+            "from": 11.5824,
+            "to": 15.24
+          },
+          "description_paraphrased": "Friable brown/grey marls containing very hard rock bands.",
+          "page": 1,
+          "confidence": "high"
+        }
+      ],
+      "total_depth_conflict": {
+        "table_original": "50 ft 0 in",
+        "table_converted_m": 15.24,
+        "index_depth_m": 15.24,
+        "separate_note_original": "Total depth bored including pit 49 ft.",
+        "separate_note_converted_m": 14.9352,
+        "assessment": "The index agrees with the cumulative table. The separate typed pit-inclusive total is inconsistent with that table. The inspection-pit and tube notes do not provide a demonstrated reconciliation.",
+        "page": 1,
+        "confidence": "high"
+      },
+      "water": {
+        "original_notation": "Standing 16'-7\"",
+        "converted_distance_m": 5.0546,
+        "measurement_type": "Standing-water notation on historical chart.",
+        "datum": "Not explicitly established.",
+        "date_time_stabilisation": "Not documented.",
+        "interpretation_limit": "Do not treat this distance as a surveyed elevation, a verified depth below current ground, a stabilised groundwater level or a contemporary design water level.",
+        "page": 1,
+        "confidence": "High for the notation; datum and measurement conditions unknown."
+      },
+      "drilling_notes": {
+        "method": "Technique not confidently established from this chart.",
+        "inspection_pit_original": "4 ft x 2 ft x 4 ft deep",
+        "lining_notes_paraphrased": [
+          "6 ft 6 in of 8-inch tubes, level with the surface.",
+          "14 ft 6 in of 6-inch tubes, projecting 10 inches above the surface.",
+          "Tubes withdrawn on completion."
+        ],
+        "page": 1,
+        "confidence": "high"
+      },
+      "sampling_testing_termination": {
+        "observations_paraphrased": [
+          "Ten 4-inch samples described by the historical chart as undisturbed.",
+          "A separate 4-inch sampling note extends to 50 ft."
+        ],
+        "limitations": "Individual sample depths, recovery, modern sample quality class and laboratory results are absent. No SPT results, material design parameters or explicit termination reason are shown. The final depth is not proof of a competent bearing stratum.",
+        "page": 1,
+        "confidence": "high"
+      },
+      "uncertainties": [
+        "Internal total-depth conflict and table/pit/tube datum relationship remain unresolved.",
+        "Water notation lacks an established reference datum and measurement conditions.",
+        "Ground-level elevation is absent.",
+        "Project-heading acronym is unclear and deliberately omitted.",
+        "Historical marl terminology and hard-band descriptions do not establish modern formation names, strength, stiffness or bearing capacity."
+      ],
+      "conditional_gi_implications": [
+        "Confirm current site boundaries and investigate local man-made-ground thickness and variability at the proposed works.",
+        "Plan suitable progression and sampling through variable weathered material and hard bands; do not transfer this off-site profile directly to the development site.",
+        "Obtain project-specific groundwater monitoring appropriate to the development; the historic standing-water note does not close that gap.",
+        "Seek supporting project and laboratory records for the recorded samples and clarify the depth conflict.",
+        "Review historical land use and sampling requirements; anthropogenic components alone do not establish contamination."
+      ],
+      "original_pdf_provenance": {
+        "reference": "SP08SE50",
+        "provider_id": 305183,
+        "url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305183",
+        "retrieved_at_utc": "2026-10-28T20:56:22.426811+00:00",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "bytes": 172937,
+        "sha256": "d907ef0bf4359d2aef46b711c15ea58fad9f1b094cf14ce116a1e6611c1fad27"
+      }
+    },
+    {
+      "reference": "SP08SE122",
+      "original_borehole_number": {
+        "value": "1",
+        "page": 1
+      },
+      "method": {
+        "value": "Cable percussion",
+        "diameter_mm": 150,
+        "casing_depth_m": 8.0,
+        "page": 1
+      },
+      "dates": {
+        "original_drilling_dates": [
+          "1988-08-31",
+          "1988-09-01"
+        ],
+        "index_year": 1989,
+        "original_page": 1,
+        "note": "The original drilling dates conflict with the catalogue year; retain both with provenance."
+      },
+      "pagination": {
+        "log_sheet": "1 of 1",
+        "pdf_pages": 4,
+        "page": 1
+      },
+      "termination": {
+        "logged_depth_m_bgl": 8.1,
+        "reason": null,
+        "note": "The logged succession ends at 8.10 m; an explicit termination reason is not stated.",
+        "page": 1
+      },
+      "intervals_m_bgl": [
+        {
+          "from": 0.0,
+          "to": 0.2,
+          "description": "Sandy topsoil labelled as fill.",
+          "page": 1
+        },
+        {
+          "from": 0.2,
+          "to": 1.1,
+          "description": "Soft dark-brown silty sandy clay fill with gravel, occasional cobbles and brick pieces.",
+          "page": 1
+        },
+        {
+          "from": 1.1,
+          "to": 1.3,
+          "description": "Very soft orange-brown clayey sand.",
+          "page": 1
+        },
+        {
+          "from": 1.3,
+          "to": 2.3,
+          "description": "Firm red-brown sandy clay containing gravel.",
+          "page": 1
+        },
+        {
+          "from": 2.3,
+          "to": 4.0,
+          "description": "Dense red-brown gravelly coarse sand grading to coarse sandy gravel.",
+          "page": 1
+        },
+        {
+          "from": 4.0,
+          "to": 4.3,
+          "description": "Firm to stiff red-brown sandy clay.",
+          "page": 1
+        },
+        {
+          "from": 4.3,
+          "to": 6.5,
+          "description": "Medium-dense red-brown fine sand with occasional sandstone lithorelicts.",
+          "page": 1
+        },
+        {
+          "from": 6.5,
+          "to": 8.1,
+          "description": "Fine sandstone with very poor cementation; described as weak, becoming moderately weak. The depth of the strength-description change is unspecified.",
+          "page": 1
+        }
+      ],
+      "unstarred_reported_spt_entries": [
+        {
+          "depth_m_bgl": 0.5,
+          "count": 4,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 1.0,
+          "count": 7,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 1.5,
+          "count": 11,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 2.0,
+          "count": 54,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 2.5,
+          "count": 39,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 3.0,
+          "count": 46,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 3.5,
+          "count": 41,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 4.0,
+          "count": 25,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 4.5,
+          "count": 25,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 5.0,
+          "count": 77,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 5.5,
+          "count": 59,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 6.0,
+          "count": 54,
+          "page": 1
+        }
+      ],
+      "restricted_seating_blow_entries": [
+        {
+          "depth_m_bgl": 6.5,
+          "blows": 94,
+          "penetration_mm": 150,
+          "starred_in_source": true,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 7.0,
+          "blows": 53,
+          "penetration_mm": 75,
+          "starred_in_source": true,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 7.5,
+          "blows": 51,
+          "penetration_mm": 75,
+          "starred_in_source": true,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 8.0,
+          "blows": 64,
+          "penetration_mm": 75,
+          "starred_in_source": true,
+          "page": 1
+        }
+      ],
+      "sampling_notes": [
+        {
+          "note": "Standalone bulk sample markings occur at 0.00, 1.30 and 2.30 m. Combined S/B markings occur at selected SPT depths.",
+          "page": 1
+        },
+        {
+          "note": "The asterisk legend identifies SPT seating blows. Preserve the stated short penetrations; these entries are not ordinary full-penetration N values.",
+          "page": 1
+        }
+      ],
+      "water_drilling_notes": [
+        {
+          "date": "1988-08-31",
+          "note": "Borehole recorded dry; water added to aid boring below 2.30 m.",
+          "page": 1
+        },
+        {
+          "date": "1988-09-01",
+          "note": "One hour of chiselling recorded from 6.50 to 8.00 m.",
+          "page": 1
+        },
+        {
+          "note": "The water-level column is blank and no monitoring installation is recorded.",
+          "page": 1
+        }
+      ],
+      "uncertainties": [
+        {
+          "note": "Ground-level/AOD field is blank; a surveyed elevation cannot be taken from the individual log.",
+          "page": 1
+        },
+        {
+          "note": "The drilling-day dry observation, particularly with water added, does not establish present groundwater depth or exclude seasonal water.",
+          "page": 1
+        },
+        {
+          "note": "No SPT energy/calibration corrections, laboratory results, rock core recovery, RQD or measured rock strength are supplied in this four-page PDF.",
+          "pages": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "note": "Use the individual log on page 1 as the primary source of the test transcription; page 4 is a shared interpreted section.",
+          "pages": [
+            1,
+            4
+          ]
+        }
+      ],
+      "confidence": "High for visually legible dates, material boundaries, reported test numbers and drilling notes. Geological continuity beyond the historical borehole is unproven.",
+      "original_pdf_provenance": {
+        "reference": "SP08SE122",
+        "provider_id": 305255,
+        "url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305255",
+        "retrieved_at_utc": "2026-10-28T20:56:24.417366+00:00",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "bytes": 336986,
+        "sha256": "bfd3ff231812425a9a62568e1c9e8982cb016a3ba794b28ae999b61b56693319"
+      },
+      "pages_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "reference": "SP08SE123",
+      "original_borehole_number": {
+        "value": "2",
+        "page": 1
+      },
+      "method": {
+        "value": "Cable percussion",
+        "diameter_mm": 150,
+        "casing_depth_m": 8.0,
+        "page": 1
+      },
+      "dates": {
+        "original_drilling_date_start": "1988-09-02",
+        "original_drilling_date_end": "1988-09-05",
+        "index_year": 1989,
+        "original_page": 1,
+        "note": "The original drilling dates conflict with the catalogue year; retain both with provenance."
+      },
+      "pagination": {
+        "log_sheet": "1 of 1",
+        "pdf_pages": 4,
+        "page": 1
+      },
+      "termination": {
+        "logged_depth_m_bgl": 8.1,
+        "reason": null,
+        "note": "The logged succession ends at 8.10 m; an explicit termination reason is not stated.",
+        "page": 1
+      },
+      "intervals_m_bgl": [
+        {
+          "from": 0.0,
+          "to": 0.2,
+          "description": "Sandy topsoil labelled as fill.",
+          "page": 1
+        },
+        {
+          "from": 0.2,
+          "to": 0.6,
+          "description": "Soft to firm grey-brown silty sandy clay fill with brick pieces, gravel and occasional cobbles.",
+          "page": 1
+        },
+        {
+          "from": 0.6,
+          "to": 1.6,
+          "description": "Red-brown sandy clay containing fine to coarse gravel; firm, becoming stiff to very stiff.",
+          "page": 1
+        },
+        {
+          "from": 1.6,
+          "to": 4.65,
+          "description": "Red-brown coarse sandy gravel of dense to very dense description, with clayey sand pockets towards the base.",
+          "page": 1
+        },
+        {
+          "from": 4.65,
+          "to": 5.5,
+          "description": "Medium-dense red-brown fine sand becoming very dense.",
+          "page": 1
+        },
+        {
+          "from": 5.5,
+          "to": 8.1,
+          "description": "Fine sandstone with very poor cementation; very weak, becoming weak to moderately weak. The strength-description change depths are unspecified.",
+          "page": 1
+        }
+      ],
+      "unstarred_reported_spt_entries": [
+        {
+          "depth_m_bgl": 0.5,
+          "count": 14,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 1.0,
+          "count": 16,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 1.5,
+          "count": 67,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 2.0,
+          "count": 48,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 2.5,
+          "count": 38,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 3.0,
+          "count": 70,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 3.5,
+          "count": 98,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 4.0,
+          "count": 50,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 4.5,
+          "count": 19,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 5.0,
+          "count": 46,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 5.5,
+          "count": 141,
+          "page": 1
+        }
+      ],
+      "restricted_seating_blow_entries": [
+        {
+          "depth_m_bgl": 6.0,
+          "blows": 52,
+          "penetration_mm": 75,
+          "starred_in_source": true,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 6.5,
+          "blows": 61,
+          "penetration_mm": 75,
+          "starred_in_source": true,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 7.0,
+          "blows": 60,
+          "penetration_mm": 75,
+          "starred_in_source": true,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 7.5,
+          "blows": 65,
+          "penetration_mm": 75,
+          "starred_in_source": true,
+          "page": 1
+        },
+        {
+          "depth_m_bgl": 8.0,
+          "blows": 70,
+          "penetration_mm": 75,
+          "starred_in_source": true,
+          "page": 1
+        }
+      ],
+      "sampling_notes": [
+        {
+          "note": "Standalone bulk sample markings occur at 0.00 and 1.60 m. Combined S/B markings occur at selected SPT depths.",
+          "page": 1
+        },
+        {
+          "note": "The asterisk legend identifies SPT seating blows. Preserve the stated short penetrations; these entries are not ordinary full-penetration N values.",
+          "page": 1
+        }
+      ],
+      "water_drilling_notes": [
+        {
+          "date": "1988-09-02",
+          "note": "Borehole recorded dry; water added to aid boring below 1.60 m.",
+          "page": 1
+        },
+        {
+          "date": "1988-09-05",
+          "note": "Borehole recorded dry; water added to aid boring.",
+          "page": 1
+        },
+        {
+          "note": "One hour of chiselling recorded from 5.90 to 8.00 m.",
+          "page": 1
+        },
+        {
+          "note": "The water-level column is blank and no monitoring installation is recorded.",
+          "page": 1
+        }
+      ],
+      "uncertainties": [
+        {
+          "note": "Ground-level/AOD field is blank; a surveyed elevation cannot be taken from the individual log.",
+          "page": 1
+        },
+        {
+          "note": "Drilling-day dry observations, particularly with water added, do not establish present groundwater depth or exclude seasonal water.",
+          "page": 1
+        },
+        {
+          "note": "No SPT energy/calibration corrections, laboratory results, rock core recovery, RQD or measured rock strength are supplied in this four-page PDF.",
+          "pages": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "note": "The reported count of 141 at 5.50 m is visually legible; no modern test-quality validation is implied.",
+          "page": 1
+        },
+        {
+          "note": "Use the individual log on page 1 as the primary source of the test transcription; page 4 is a shared interpreted section.",
+          "pages": [
+            1,
+            4
+          ]
+        }
+      ],
+      "confidence": "High for visually legible dates, material boundaries, reported test numbers and drilling notes. Geological continuity beyond the historical borehole is unproven.",
+      "original_pdf_provenance": {
+        "reference": "SP08SE123",
+        "provider_id": 305256,
+        "url": "https://api.bgs.ac.uk/sobi-scans/v1/borehole/scans/items/305256",
+        "retrieved_at_utc": "2026-10-28T20:56:26.485009+00:00",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "bytes": 338914,
+        "sha256": "0bb3f55e9e2bd5ea91a6df78bdf43f4051b5b2fbc60fca6fb7fd80365200149f"
+      },
+      "pages_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "shared_edgbaston_context": {
+    "review_scope": "Visual review of all four pages of each original BGS PDF; factual paraphrases for a preliminary desk study, without design parameters.",
+    "shared_pages": [
+      {
+        "references": [
+          "SP08SE122",
+          "SP08SE123"
+        ],
+        "page": 2,
+        "description": "Same historical site-location plans in both PDFs, with different BGS wrappers. Drawing 1, contract 1829, September 1988."
+      },
+      {
+        "references": [
+          "SP08SE122",
+          "SP08SE123"
+        ],
+        "page": 3,
+        "description": "Same exploratory-hole location plan in both PDFs. Drawing 2, September 1988; shows BH1, BH2, BH3 and TP1 to TP6, a historical proposed-building footprint, an approximately 1 m retaining wall and vegetation. This is a historical plan, not a current site boundary."
+      },
+      {
+        "references": [
+          "SP08SE122",
+          "SP08SE123"
+        ],
+        "page": 4,
+        "description": "Same west-to-east geological section in both PDFs. Drawing 3, September 1988; depicts BH1 to BH3 and trial pits with questioned correlations. It explicitly states that ground levels were extrapolated from another drawing. The interpreted boulder-clay key does not turn the individual logs' sandy-clay descriptions into a confirmed site-wide till unit. Do not infer current groundwater or a surveyed borehole datum from this section."
+      }
+    ],
+    "report_family_gap": {
+      "note": "The shared exploratory plan and section show BH3 and TP1 to TP6 in addition to the two individual logs reviewed here. Obtain the complete investigation report and remaining original logs before finalising the ground model or GI scope; no detailed findings for those additional holes have been transcribed from these diagrams.",
+      "references": [
+        "SP08SE122",
+        "SP08SE123"
+      ],
+      "pages": [
+        3,
+        4
+      ]
+    },
+    "conditional_gi_implications": [
+      {
+        "inference": "Reconcile the drilling-date discrepancy and georeference the historical plan to the actual development before transferring any depths or observations.",
+        "basis_pages": [
+          1,
+          2,
+          3
+        ],
+        "references": [
+          "SP08SE122",
+          "SP08SE123"
+        ]
+      },
+      {
+        "inference": "If relevant to the actual site and works, target made-ground thickness, shallow soft pockets, clay/granular variability and the sand-to-weak-sandstone transition. The two historical fill bases are 1.10 and 0.60 m, and sandstone tops 6.50 and 5.50 m; these are observations at those holes only.",
+        "basis_pages": [
+          1
+        ],
+        "references": [
+          "SP08SE122",
+          "SP08SE123"
+        ]
+      },
+      {
+        "inference": "Select investigation equipment for cobbles and weak rock; consider coring where rock quality affects design. Chiselling and short penetration seating blows do not establish competent bearing rock.",
+        "basis_pages": [
+          1
+        ],
+        "references": [
+          "SP08SE122",
+          "SP08SE123"
+        ]
+      },
+      {
+        "inference": "Obtain appropriately screened and surveyed groundwater monitoring with repeat observations where relevant to the works. Historic dry drilling notes do not justify omitting groundwater assessment.",
+        "basis_pages": [
+          1
+        ],
+        "references": [
+          "SP08SE122",
+          "SP08SE123"
+        ]
+      }
+    ]
+  },
+  "review_limits": [
+    "No current site ground profile, design parameter, foundation recommendation or hazard absence has been established.",
+    "Six reviewed records are not an exhaustive search of the 423 reported index matches in the enclosing box.",
+    "Historic descriptions and uncorrected test entries require relevance and quality assessment before design use.",
+    "Raw drilling-day observations and an old off-site station observation do not establish current or design groundwater conditions."
+  ]
+}
