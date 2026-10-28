@@ -34,6 +34,12 @@ display preserves that date. It contains bounded SOBI results and a groundwater
 follow-up; the original snapshot did not query the AGS index. Missing queries
 remain explicit. The example is not a defined construction project.
 
+A [draft desk-study report](desk-studies/birmingham-draft-geotechnical-desk-study.pdf)
+and its [editable Markdown source](desk-studies/birmingham-draft-geotechnical-desk-study.md)
+review the fresh 28 October Birmingham run. They cover the six retrieved records,
+the 423 provider-reported index matches, groundwater limitations and a phased GI
+plan. The report retains the demonstration's undefined site boundary and works.
+
 For a fresh study, enter the project name, location, nation, search radius,
 development type and proposed works. Review the advanced request limits before
 running it. The point and nation are supplied by the user; they are not a

@@ -12,3 +12,5 @@ dist/
 live-checks.json
 data/raw/
 reports/
+output/
+tmp/
