@@ -169,6 +169,9 @@
       mapping(item.result, `${path}.result`);
       mapping(item.arguments || {}, `${path}.arguments`);
       const result = item.result;
+      if (result.status !== item.status || (result.error && item.status !== "error")) {
+        throw new Error(`Evidence ${item.id} has inconsistent query and result statuses.`);
+      }
       for (const key of ["source", "query", "pagination", "metadata", "error"]) {
         if (result[key] !== undefined && result[key] !== null) mapping(result[key], `${path}.result.${key}`);
       }
@@ -197,6 +200,7 @@
         || !Object.hasOwn(reviewStates, item.review.status) || typeof item.review.notes !== "string"
         || item.review.notes.length > 20000) throw new Error("Invalid investigation review in study.");
       strings(item.evidence_ids, "investigation.evidence_ids");
+      if (item.evidence_ids.some((id) => !evidenceIDs.has(id))) throw new Error("Investigation references missing evidence.");
       records(item.links, "investigation.links");
       recordIDs.add(item.id);
     }
@@ -208,9 +212,11 @@
         || item.notes.length > 20000) throw new Error("Invalid GI gap task in study.");
       strings(item.actions, "gap.actions");
       strings(item.evidence_ids, "gap.evidence_ids");
+      if (item.evidence_ids.some((id) => !evidenceIDs.has(id))) throw new Error("GI task references missing evidence.");
       gapIDs.add(item.id);
     }
     for (const item of value.groundwater) {
+      if (!evidenceIDs.has(item.evidence_id)) throw new Error("Groundwater record references missing evidence.");
       if (item.measure !== undefined && item.measure !== null) mapping(item.measure, "groundwater.measure");
       records(item.readings === undefined ? [] : item.readings, "groundwater.readings", 10000);
       strings(item.warnings === undefined ? [] : item.warnings, "groundwater.warnings");
@@ -262,8 +268,18 @@
       if (input && inputs[key] !== undefined && inputs[key] !== null) input.value = inputs[key];
     }
   }
-  function setReport(value, { demo = false, imported = false } = {}) {
-    report = checkReport(value);
+  async function validateWorkspace(value) {
+    // The local Python validator is authoritative for imports and exports.
+    // It recomputes summary counts, without provider calls or persistent storage.
+    checkReport(value);
+    const response = await fetch("/api/validate-report", {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(value),
+    });
+    return checkReport(await responseJSON(response));
+  }
+  async function setReport(value, { demo = false, imported = false } = {}) {
+    const validated = await validateWorkspace(value);
+    report = validated;
     report.workspace = { ...(report.workspace || {}), demo: demo || Boolean(report.demo) || Boolean(imported && report.workspace?.demo) };
     dirty = false;
     $("unsaved-indicator").hidden = true;
@@ -375,7 +391,9 @@
     if (!mapped.length) geology.append(element("p", "", "No regional geological queries are available. See the source register and GI gaps."));
     const groundwater = $("groundwater-context");
     groundwater.replaceChildren();
-    const observed = report.evidence.filter((item) => item.tool === "hydrology_readings");
+    const acceptedReadings = new Set(report.groundwater.map((item) => item.evidence_id));
+    const observed = report.evidence.filter((item) => item.tool === "hydrology_readings"
+      && acceptedReadings.has(item.id) && item.groundwater_validation?.status !== "rejected");
     for (const item of observed) {
       const block = element("div", "groundwater-item");
       const measure = item.result?.metadata?.measure || {};
@@ -664,7 +682,7 @@
       const response = await fetch("/api/desk-study", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(args) });
       const value = await responseJSON(response);
       clearInterval(timer);
-      setReport(value);
+      await setReport(value);
     } catch (error) { notify(`The study could not be assembled: ${error.message}. Any previous study is still available.`, "error"); }
     finally { clearInterval(timer); setBusy(false); }
   });
@@ -672,20 +690,21 @@
     if (busy || !await confirmReplace()) return;
     setBusy(true);
     notify("Opening the saved public Birmingham demonstration…", "loading");
-    try { setReport(await responseJSON(await fetch("/api/demo")), { demo: true }); }
+    try { await setReport(await responseJSON(await fetch("/api/demo")), { demo: true }); }
     catch (error) { notify(`Could not open the demonstration: ${error.message}`, "error"); }
     finally { setBusy(false); }
   });
   $("open-workspace").addEventListener("click", () => { if (!busy) $("workspace-file").click(); });
   $("workspace-file").addEventListener("change", async () => {
     const file = $("workspace-file").files[0];
-    if (!file) return;
+    if (!file || busy) return;
+    setBusy(true);
     try {
-      if (file.size > 10 * 1024 * 1024) throw new Error("Study JSON files must be 10 MB or smaller.");
+      if (file.size > 10_000_000) throw new Error("Study JSON files must be 10 MB or smaller.");
       const value = checkReport(JSON.parse(await file.text()));
-      if (await confirmReplace()) setReport(value, { imported: true });
+      if (await confirmReplace()) await setReport(value, { imported: true });
     } catch (error) { notify(`Study file not opened: ${error.message}`, "error"); }
-    finally { $("workspace-file").value = ""; }
+    finally { $("workspace-file").value = ""; setBusy(false); }
   });
   $("download-workspace").addEventListener("click", () => {
     if (!report) return;
@@ -715,6 +734,6 @@
   $("close-record").addEventListener("click", () => $("record-dialog").close());
   document.querySelectorAll("[data-tab]").forEach((button) => button.addEventListener("click", () => showTab(button.dataset.tab)));
   window.addEventListener("beforeunload", (event) => { if (dirty) { event.preventDefault(); event.returnValue = ""; } });
-  window.Groundwork = Object.freeze({ validateReport: checkReport, safeURL, csvCell, csv, getReport: () => report, showTab });
+  window.Groundwork = Object.freeze({ validateReport: checkReport, validateWorkspace, safeURL, csvCell, csv, getReport: () => report, showTab });
   showTab(activeTab);
 })();

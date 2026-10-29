@@ -295,11 +295,15 @@ async def hydrology_stations(
 
 
 async def hydrology_readings(
-    client: HttpClient, measure_id: str, limit: int = 20
+    client: HttpClient, measure_id: str, limit: int = 20, *, metadata_only: bool = False
 ) -> dict[str, Any]:
     """Latest reading for one hydrology series, with the series' explicit unit metadata."""
     measure_id = _identifier(measure_id, "measure_id")
     limit = validate_limit(limit)
+    if not isinstance(metadata_only, bool):
+        raise ValueError("metadata_only must be a boolean.")
+    # The desk-study composer can inspect a compact station's unknown series
+    # before spending its readings budget. This option never fetches readings.
     # Sequential requests respect EA hydrology's request-volume guidance.
     measure_result = await client.get_json(f"{HYDROLOGY_BASE}/id/measures/{measure_id}.json")
     measure_records = _items(measure_result)
@@ -308,6 +312,13 @@ async def hydrology_readings(
             "Expected one EA hydrology measure description.",
             code="invalid_response",
             url=measure_result.url,
+        )
+    if metadata_only:
+        return envelope(
+            "ea_hydrology", measure_records, requests=[measure_result], total=1,
+            query={"measure_id": measure_id, "limit": limit, "metadata_only": True},
+            metadata={"measure": measure_records[0], "observation_type": "measure_metadata"},
+            warnings=["Series metadata only; no water-level observations were retrieved."],
         )
     result = await client.get_json(
         f"{HYDROLOGY_BASE}/id/measures/{measure_id}/readings.json",

@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import asyncio
-import json
 from collections.abc import Awaitable, Callable
 from importlib.resources import files
 from urllib.parse import urlsplit
@@ -17,6 +16,7 @@ from starlette.responses import JSONResponse, Response
 from starlette.routing import Route
 
 from . import __version__
+from .json_safety import loads_json
 
 INPUT_FIELDS = {
     "latitude",
@@ -54,10 +54,7 @@ async def _json_body(request: Request, maximum: int) -> dict:
         if len(body) > maximum:
             raise ValueError(f"Request exceeds the {maximum:,} byte limit.")
     try:
-        value = json.loads(
-            body,
-            parse_constant=lambda value: (_ for _ in ()).throw(ValueError("Non-finite number")),
-        )
+        value = loads_json(body)
     except (ValueError, RecursionError) as exc:
         raise ValueError("Request must contain valid finite JSON.") from exc
     if not isinstance(value, dict):
@@ -138,6 +135,17 @@ def create_app(run_study: Callable[[dict], Awaitable[dict]] | None = None) -> St
                     status_code=502,
                 )
 
+    async def validate_workspace(request: Request) -> Response:
+        from .reporting import prepare_report
+
+        try:
+            report = await _json_body(request, 10_000_000)
+            prepared = prepare_report(report)
+        except (ValueError, TypeError) as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+        # Local validation only: no provider calls, disk writes or remote storage.
+        return JSONResponse(prepared)
+
     async def export_report(request: Request) -> Response:
         from .reporting import render_html
 
@@ -160,6 +168,7 @@ def create_app(run_study: Callable[[dict], Awaitable[dict]] | None = None) -> St
             Route("/api/health", health),
             Route("/api/demo", demo),
             Route("/api/desk-study", desk_study, methods=["POST"]),
+            Route("/api/validate-report", validate_workspace, methods=["POST"]),
             Route("/api/export/report", export_report, methods=["POST"]),
         ],
         middleware=[Middleware(TrustedHostMiddleware, allowed_hosts=["127.0.0.1", "localhost"])],

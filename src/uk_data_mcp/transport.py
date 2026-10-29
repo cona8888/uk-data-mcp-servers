@@ -6,7 +6,6 @@ No credentials, request bodies, bulk downloads or user-chosen hosts are accepted
 
 import asyncio
 import hashlib
-import json
 import time
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -17,6 +16,7 @@ from urllib.parse import urljoin, urlsplit
 import httpx
 
 from . import __version__
+from .json_safety import loads_json
 
 ALLOWED_PATHS = {
     "ogcapi.bgs.ac.uk": ("/collections",),
@@ -240,12 +240,10 @@ class HttpClient:
                             url=target,
                         )
                     try:
-                        data = json.loads(
-                            chunks, parse_constant=lambda x: (_ for _ in ()).throw(ValueError(x))
-                        )
-                    except (ValueError, UnicodeDecodeError) as exc:
+                        data = loads_json(chunks)
+                    except (ValueError, RecursionError, OverflowError) as exc:
                         raise DataAccessError(
-                            "Public API returned malformed JSON.",
+                            "Public API returned invalid or excessively complex JSON.",
                             code="invalid_response",
                             url=target,
                         ) from exc

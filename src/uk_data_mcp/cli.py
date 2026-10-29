@@ -7,6 +7,7 @@ import sys
 from pathlib import Path
 
 from . import __version__
+from .json_safety import loads_json
 from .registry import list_sources
 from .service import NATIONS, TOOLS, DataService
 from .transport import HttpClient
@@ -23,9 +24,9 @@ async def _call(name, arguments):
 
 def save_report(report: dict, output_directory: str) -> dict:
     """Export fixed filenames; user text never becomes a filesystem path."""
-    from .reporting import export_csv, render_html, render_markdown, validate_report
+    from .reporting import export_csv, prepare_report, render_html, render_markdown
 
-    validate_report(report)
+    report = prepare_report(report)
     files = {
         "desk-study.json": json.dumps(report, ensure_ascii=False, indent=2, allow_nan=False) + "\n",
         "desk-study.html": render_html(report),
@@ -118,7 +119,7 @@ def main():
             path = Path(args.input)
             if path.stat().st_size > 10_000_000:
                 raise ValueError("Saved workspace exceeds the 10 MB limit.")
-            value = json.loads(path.read_text(encoding="utf-8"))
+            value = loads_json(path.read_bytes())
             emit(save_report(value, args.output_dir))
             return
         if args.command == "serve":
@@ -190,7 +191,7 @@ def main():
                 "limit_per_source": args.limit,
             }
         else:
-            name, arguments = args.tool, json.loads(args.json)
+            name, arguments = args.tool, loads_json(args.json)
             if not isinstance(arguments, dict):
                 raise ValueError("--json must contain an object, not a list or string.")
         result = asyncio.run(_call(name, arguments))

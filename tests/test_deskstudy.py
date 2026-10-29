@@ -244,7 +244,7 @@ async def test_groundwater_only_follows_discovered_safe_ids_and_preserves_observ
     readings = [
         {"dateTime": "2020-01-01T09:00:00Z", "value": 12.3, "quality": {"label": "Unchecked"}}
     ]
-    measure = {"unitName": "mAOD", "label": "Synthetic groundwater elevation"}
+    measure = {"unitName": "mAOD", "label": "Synthetic groundwater elevation", "parameterName": "GroundwaterLevel"}
     stations = [
         {
             "label": "Synthetic station",
@@ -258,6 +258,10 @@ async def test_groundwater_only_follows_discovered_safe_ids_and_preserves_observ
             ],
         }
     ]
+
+    for station in stations:
+        for series in station["measures"]:
+            series["parameterName"] = "GroundwaterLevel"
 
     async def call(tool, args):
         called.append((tool, args))
@@ -284,7 +288,7 @@ async def test_zero_groundwater_budget_is_an_explicit_omission():
     async def call(tool, args):
         assert tool != "hydrology_readings"
         if tool == "hydrology_stations":
-            return reply(tool, args, [{"measures": {"notation": "safe-gw"}}])
+            return reply(tool, args, [{"measures": {"notation": "safe-gw", "parameterName": "GroundwaterLevel"}}])
         return reply(tool, args)
 
     report = await build_desk_study(call, **SITE, max_groundwater_measures=0)

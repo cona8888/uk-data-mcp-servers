@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import copy
 import csv
 import io
 import json
@@ -9,6 +10,9 @@ import math
 from html import escape
 from typing import Any
 from urllib.parse import quote, urlsplit
+
+from .json_safety import validate_json_tree
+from .report_contract import derived_fields, validate_integrity
 
 _DESIGN_PARAMETERS = {
     "effective_stress_friction_angle_deg": "Effective stress friction angle (degrees)",
@@ -39,6 +43,8 @@ def _records(value: Any, path: str) -> list[dict]:
 def _strings(value: Any, path: str) -> list[str]:
     if not isinstance(value, list) or any(not isinstance(item, str) for item in value):
         raise ValueError(f"{path} must be an array of strings.")
+    if len(value) > 10_000:
+        raise ValueError(f"{path} contains too many strings.")
     return value
 
 
@@ -49,6 +55,7 @@ def validate_report(report: Any) -> dict:
     to establish any design parameter, even if a saved JSON file was hand-edited.
     The returned object is the original, unmodified report.
     """
+    validate_json_tree(report)
     _mapping(report, "Report")
     if report.get("kind") != "geotechnical_desk_study" or report.get("schema_version") != "1.0":
         raise ValueError("Expected a geotechnical_desk_study report with schema_version 1.0.")
@@ -72,7 +79,7 @@ def validate_report(report: Any) -> dict:
             raise ValueError("Evidence IDs must be unique for unambiguous source references.")
         seen_evidence_ids.add(evidence["id"])
         result = _mapping(evidence.get("result"), f"{path}.result")
-        _mapping(evidence.get("arguments", {}), f"{path}.arguments")
+        _mapping(evidence.get("arguments"), f"{path}.arguments")
         for key in ("source", "query", "pagination", "metadata", "error"):
             if result.get(key) is not None:
                 _mapping(result[key], f"{path}.result.{key}")
@@ -81,8 +88,19 @@ def validate_report(report: Any) -> dict:
             _mapping(source["licence"], f"{path}.result.source.licence")
         _records(result.get("provenance", []), f"{path}.result.provenance")
         _strings(result.get("warnings", []), f"{path}.result.warnings")
-        if not isinstance(result.get("data", []), (list, dict)):
+        data = result.get("data", [])
+        if isinstance(data, list):
+            _records(data, f"{path}.result.data")
+            for record in data:
+                if record.get("properties") is not None:
+                    _mapping(record["properties"], f"{path}.result.data.properties")
+        elif not isinstance(data, dict):
             raise ValueError(f"{path}.result.data must be an array or object.")
+        if source.get("limitations") is not None:
+            _strings(source["limitations"], f"{path}.result.source.limitations")
+        metadata = result.get("metadata") or {}
+        if metadata.get("measure") is not None:
+            _mapping(metadata["measure"], f"{path}.result.metadata.measure")
     for index, investigation in enumerate(
         _records(report.get("investigations"), "investigations")
     ):
@@ -128,7 +146,18 @@ def validate_report(report: Any) -> dict:
         raise ValueError("Report must contain finite, serializable JSON data.") from exc
     if len(encoded) > _MAX_REPORT_BYTES:
         raise ValueError("Report exceeds the 10 MB export limit.")
+    validate_integrity(report)
     return report
+
+
+def prepare_report(report: dict) -> dict:
+    """Validate and normalize derived display fields on a copy, retaining evidence."""
+    validate_report(report)
+    prepared = copy.deepcopy(report)
+    counts, status = derived_fields(prepared)
+    prepared["summary"] = {**prepared["summary"], **counts}
+    prepared["status"] = status
+    return prepared
 
 
 def _text(value: Any, unknown: str = "Unknown") -> str:
@@ -239,7 +268,7 @@ tr{break-inside:avoid}h2,h3{break-after:avoid}.raw{display:none}.source{break-in
 
 def render_html(report: dict) -> str:
     """Return a printable HTML document with no scripts or remote assets."""
-    validate_report(report)
+    report = prepare_report(report)
     project, site = report["project"], report["site"]
     anchors = {item["id"]: f"source-{index + 1}" for index, item in enumerate(report["evidence"])}
     parts = [
@@ -446,7 +475,7 @@ def _md(value: Any, unknown: str = "Unknown") -> str:
 
 def render_markdown(report: dict) -> str:
     """Return a Markdown report with an escaped JSON evidence appendix."""
-    validate_report(report)
+    report = prepare_report(report)
     lines = [
         f"# {_md(report['project']['project_name'])}", "",
         "Geotechnical desk study and GI gap planner", "",
@@ -532,7 +561,7 @@ def _csv_cell(value: Any) -> Any:
 
 def export_csv(report: dict, kind: str = "investigations") -> str:
     """Export reviewable registers, guarding strings against spreadsheet formulas."""
-    validate_report(report)
+    report = prepare_report(report)
     if kind not in {"investigations", "gaps"}:
         raise ValueError("CSV kind must be investigations or gaps.")
     if kind == "investigations":

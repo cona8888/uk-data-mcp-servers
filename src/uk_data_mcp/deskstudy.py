@@ -15,7 +15,9 @@ from typing import Any
 from urllib.parse import urlsplit
 
 from .adapters.bgs import COLLECTIONS
+from .coverage import incomplete_entries as _incomplete_entries
 from .geo import bbox_around, validate_limit, validate_point
+from .groundwater import groundwater_kind
 from .results import error_envelope
 from .transport import DataAccessError, utc_now
 
@@ -164,7 +166,10 @@ def _measure_id(value: Any) -> str | None:
     return value if _IDENTIFIER.fullmatch(value) and ".." not in value else None
 
 
-def _measures(stations: list) -> list[tuple[str, dict]]:
+def _measures(
+    stations: list, *, include_unclassified: bool = False
+) -> list[tuple[str, dict]]:
+    """Filter explicit series metadata before the follow-up budget is applied."""
     found: dict[str, dict] = {}
     for station in stations:
         if not isinstance(station, dict):
@@ -178,9 +183,18 @@ def _measures(stations: list) -> list[tuple[str, dict]]:
             if not isinstance(measure, dict):
                 continue
             identifier = _measure_id(measure.get("notation")) or _measure_id(measure.get("@id"))
-            if identifier:
+            if identifier and (
+                include_unclassified or groundwater_kind(measure) == "confirmed"
+            ):
                 found.setdefault(identifier, station)
     return list(found.items())
+
+
+def _confirmed_groundwater(measure: Any, identifier: str) -> bool:
+    if groundwater_kind(measure) != "confirmed":
+        return False
+    returned_id = _measure_id(measure.get("notation")) or _measure_id(measure.get("@id"))
+    return returned_id is None or returned_id == identifier
 
 
 async def build_desk_study(
@@ -312,9 +326,56 @@ async def build_desk_study(
                 "limit": limit_per_source,
             },
         )
-        measures = _measures(stations["result"].get("data", []))
+        station_records = stations["result"].get("data", [])
+        measures = _measures(station_records)
+        uncertain: dict[str, tuple[dict, str]] = {}
+        for station in station_records:
+            series = station.get("measures", []) if isinstance(station, dict) else []
+            series = [series] if isinstance(series, dict) else series
+            for measure in series if isinstance(series, list) else []:
+                if not isinstance(measure, dict):
+                    continue
+                identifier = _measure_id(measure.get("notation")) or _measure_id(measure.get("@id"))
+                kind = groundwater_kind(measure)
+                if identifier and kind in {"unknown", "conflicting"}:
+                    if identifier not in uncertain or kind == "conflicting":
+                        uncertain[identifier] = (station, kind)
+        conflicts = {identifier for identifier, (_, kind) in uncertain.items() if kind == "conflicting"}
+        measures = [(identifier, station) for identifier, station in measures if identifier not in conflicts]
+        confirmed_ids = {identifier for identifier, _ in measures}
+        uncertain = {identifier: item for identifier, item in uncertain.items() if identifier not in confirmed_ids}
+        unresolved = set(uncertain)
+        # EA embeds compact measure references without observedProperty. Resolve
+        # a bounded number of descriptions, rather than guessing from ID text.
+        metadata_budget = min(10, 2 * max_groundwater_measures)
+        inspections = 0
+        for identifier, (station, kind) in uncertain.items():
+            if kind == "conflicting":
+                continue
+            if len(measures) >= max_groundwater_measures or inspections >= metadata_budget:
+                break
+            inspections += 1
+            entry = await _query(
+                call, evidence, "groundwater_measure_metadata", "hydrology_readings",
+                {"measure_id": identifier, "limit": 1, "metadata_only": True},
+            )
+            result = entry["result"]
+            description = (result.get("metadata") or {}).get("measure", {})
+            if entry["status"] != "error" and _confirmed_groundwater(description, identifier):
+                measures.append((identifier, station))
+                unresolved.discard(identifier)
+                entry["groundwater_validation"] = {"status": "confirmed", "basis": "explicit series description"}
+            elif entry["status"] != "error" and groundwater_kind(description) == "other":
+                unresolved.discard(identifier)
+                entry["groundwater_validation"] = {"status": "other", "basis": "not a groundwater series"}
+        if unresolved:
+            omitted.append(
+                f"Skipped {len(unresolved)} series with missing or conflicting measurement-type "
+                f"metadata after {inspections} bounded description lookups (maximum {metadata_budget}). "
+                "Obtain explicit groundwaterLevel metadata before following them."
+            )
         for identifier, _station in measures[:max_groundwater_measures]:
-            await _query(
+            entry = await _query(
                 call,
                 evidence,
                 "groundwater_readings",
@@ -324,10 +385,24 @@ async def build_desk_study(
                     "limit": limit_per_source,
                 },
             )
+            result = entry["result"]
+            if entry["status"] != "error":
+                measure = (result.get("metadata") or {}).get("measure", {})
+                confirmed = _confirmed_groundwater(measure, identifier)
+                entry["groundwater_validation"] = {
+                    "status": "confirmed" if confirmed else "rejected",
+                    "basis": "explicit returned measure metadata; not the station filter or ID text",
+                }
+                if not confirmed:
+                    omitted.append(
+                        f"{entry['id']}: returned metadata did not confirm the requested groundwater "
+                        "series. Original response retained in the source register, excluded from "
+                        "groundwater observations."
+                    )
         if len(measures) > max_groundwater_measures:
             omitted.append(
                 f"Groundwater follow-up capped at {max_groundwater_measures} of "
-                f"{len(measures)} discovered unique measure identifiers."
+                f"{len(measures)} confirmed groundwater measure identifiers (provider order; not quality-ranked)."
             )
     else:
         omitted.append(
@@ -490,45 +565,6 @@ def _investigations(evidence: list[dict], request: dict) -> list[dict]:
     return list(found.values())
 
 
-def _incomplete_entries(evidence: list[dict]) -> list[dict]:
-    incomplete = []
-    for entry in evidence:
-        result = entry["result"]
-        if entry["status"] != "partial" and not result.get("pagination", {}).get("next_page"):
-            continue
-        if entry.get("pagination_followed"):
-            continue
-        # A final BGS page is labelled partial because it omits prior pages; those
-        # pages are already retained in this bundle when the sequence began at zero.
-        if (
-            entry["tool"] == "bgs_features"
-            and not result.get("pagination", {}).get("next_page")
-            and not entry.get("pagination_stop_reason")
-        ):
-            collection = entry["arguments"].get("collection")
-            previous = [
-                e
-                for e in evidence
-                if e["tool"] == "bgs_features" and e["arguments"].get("collection") == collection
-            ]
-            expected = 0
-            contiguous = True
-            for prior in previous:
-                if prior["status"] == "error" or prior["arguments"].get("offset", 0) != expected:
-                    contiguous = False
-                    break
-                expected += len(prior["result"].get("data", []))
-            total = result.get("pagination", {}).get("total_reported_by_provider")
-            accounted_for = (
-                isinstance(total, int) and not isinstance(total, bool) and expected >= total
-            )
-            implicit_final = total is None and entry["arguments"].get("offset", 0) > 0
-            if contiguous and (accounted_for or implicit_final):
-                continue
-        incomplete.append(entry)
-    return incomplete
-
-
 def _groundwater(evidence: list[dict]) -> list[dict]:
     stations = [
         station
@@ -536,14 +572,20 @@ def _groundwater(evidence: list[dict]) -> list[dict]:
         if entry["tool"] == "hydrology_stations"
         for station in entry["result"].get("data", [])
     ]
-    lookup = dict(_measures(stations))
+    lookup = dict(_measures(stations, include_unclassified=True))
     output = []
     for entry in evidence:
-        if entry["tool"] != "hydrology_readings":
+        if entry["tool"] != "hydrology_readings" or entry["arguments"].get("metadata_only"):
             continue
         identifier = entry["arguments"].get("measure_id")
         station = lookup.get(identifier, {})
         result = entry["result"]
+        measure = (result.get("metadata") or {}).get("measure", {})
+        if entry["status"] != "error" and (
+            groundwater_kind(measure) != "confirmed"
+            or entry.get("groundwater_validation", {}).get("status") == "rejected"
+        ):
+            continue
         output.append(
             {
                 "id": entry["id"],
@@ -551,7 +593,7 @@ def _groundwater(evidence: list[dict]) -> list[dict]:
                 "measure_id": identifier,
                 "evidence_id": entry["id"],
                 "status": entry["status"],
-                "measure": copy.deepcopy(result.get("metadata", {}).get("measure", {})),
+                "measure": copy.deepcopy(measure),
                 "readings": copy.deepcopy(result.get("data", [])),
                 "warnings": copy.deepcopy(result.get("warnings", [])),
                 "retrieved_at_utc": result.get("retrieved_at_utc"),
@@ -845,7 +887,7 @@ def assemble_report(
         "request_limits": {
             key: request[key]
             for key in ("limit_per_source", "max_borehole_pages", "max_groundwater_measures")
-        },
+        } | {"max_groundwater_metadata_queries": min(10, 2 * request["max_groundwater_measures"])},
         "summary": {
             "investigation_count": len(investigations),
             "query_count": len(evidence),
