@@ -1,0 +1,192 @@
+{
+  "kind": "small_example_validation",
+  "validation_date": "2026-10-29",
+  "tested_code_commit": "90224de266a5c0c8bbf2ee0ee2e4833a0f67c65d",
+  "outcome": "functional_checks_passed_with_presentation_and_export_findings",
+  "example_file": "examples/leeds_small_house_example_2026-10-29.json",
+  "example_sha256": "d95dfac6aa8fa577b1a4e4ad37ded61ce1a8416f85ad76e2b5d8340d4ab9ae50",
+  "scenario": {
+    "hypothetical": true,
+    "location": "Leeds demonstration point, England",
+    "latitude": 53.797,
+    "longitude": -1.543,
+    "proposed_works": "One two-storey house, approximately 100 m2 footprint, no basement, driveway and service/drainage connections. No actual development parcel or engineering design is established."
+  },
+  "live_mcp_run": {
+    "tested_commit": "90224de266a5c0c8bbf2ee0ee2e4833a0f67c65d",
+    "mcp_sdk": "2.3.0",
+    "request": {
+      "latitude": 53.797,
+      "longitude": -1.543,
+      "nation": "England",
+      "project_name": "Leeds live validation example",
+      "development_type": "general",
+      "works_description": "Software validation demonstration only. No defined construction boundary, surveyed levels, layout, loads or excavation depths.",
+      "radius_km": 1,
+      "limit_per_source": 5,
+      "max_borehole_pages": 2,
+      "max_groundwater_measures": 2
+    },
+    "elapsed_seconds": 9.922,
+    "transport": "MCP SDK in-memory Client(create_server()) with real bounded read-only HTTP providers",
+    "request_trace": [
+      {
+        "url": "https://ogcapi.bgs.ac.uk/collections/bgsgeology625kbedrock/items?f=json&bbox=-1.5583914181293292%2C53.78790909090909%2C-1.5276085818706706%2C53.806090909090905&limit=5&offset=0&skipGeometry=true",
+        "status": 200,
+        "seconds": 0.203,
+        "sha256": "a6a9e6a73d91ed197f962c959d65dec6bd535ab5ddc4407e5882b631d9a7d43b"
+      },
+      {
+        "url": "https://ogcapi.bgs.ac.uk/collections/bgsgeology625ksuperficial/items?f=json&bbox=-1.5583914181293292%2C53.78790909090909%2C-1.5276085818706706%2C53.806090909090905&limit=5&offset=0&skipGeometry=true",
+        "status": 200,
+        "seconds": 0.875,
+        "sha256": "3b0c6daa4b61cf18dce89c8c4dae25367c9909eaa3611c3b22f3879d877e824e"
+      },
+      {
+        "url": "https://ogcapi.bgs.ac.uk/collections/onshoreboreholeindex/items?f=json&bbox=-1.5583914181293292%2C53.78790909090909%2C-1.5276085818706706%2C53.806090909090905&limit=5&offset=0&skipGeometry=false",
+        "status": 200,
+        "seconds": 1.031,
+        "sha256": "b3b6b1a5c485e246d6e820ee091471f0df0159129d08d3344300e3b156326989"
+      },
+      {
+        "url": "https://ogcapi.bgs.ac.uk/collections/onshoreboreholeindex/items?f=json&bbox=-1.5583914181293292%2C53.78790909090909%2C-1.5276085818706706%2C53.806090909090905&limit=5&offset=5&skipGeometry=false",
+        "status": 200,
+        "seconds": 1.016,
+        "sha256": "e5af3fc067b3889036188d0aaf87ddccce7ae53e59ae9a000157f57386a978fb"
+      },
+      {
+        "url": "https://ogcapi.bgs.ac.uk/collections/agsboreholeindex/items?f=json&bbox=-1.5583914181293292%2C53.78790909090909%2C-1.5276085818706706%2C53.806090909090905&limit=5&offset=0&skipGeometry=false",
+        "status": 200,
+        "seconds": 1.0,
+        "sha256": "df557e24ee34afc3aab488b0c0634dd7516e23862d50a4e3bfb434adadf35428"
+      },
+      {
+        "url": "https://ogcapi.bgs.ac.uk/collections/agsboreholeindex/items?f=json&bbox=-1.5583914181293292%2C53.78790909090909%2C-1.5276085818706706%2C53.806090909090905&limit=5&offset=5&skipGeometry=false",
+        "status": 200,
+        "seconds": 1.016,
+        "sha256": "45f6bc35a64b44c956a80977cf187b1bb3d3eeaee5dab32efe3447409b3526ff"
+      },
+      {
+        "url": "https://ogcapi.bgs.ac.uk/collections/landslideindex/items?f=json&bbox=-1.5583914181293292%2C53.78790909090909%2C-1.5276085818706706%2C53.806090909090905&limit=5&offset=0&skipGeometry=false",
+        "status": 200,
+        "seconds": 1.015,
+        "sha256": "9d5b38c534198844a8d8fd12a96324e6f1fd51a1d6f9a70b6117bbb1a598d358"
+      },
+      {
+        "url": "https://environment.data.gov.uk/flood-monitoring/id/stations.json?lat=53.797&long=-1.543&dist=1.0&_limit=5&_offset=0",
+        "status": 200,
+        "seconds": 0.625,
+        "sha256": "7dcb4075535b9200a3aa84c7930e4b99377e914f84d021a6bc8806e4116312f2"
+      },
+      {
+        "url": "https://environment.data.gov.uk/flood-monitoring/id/floods.json?lat=53.797&long=-1.543&dist=1.0&_limit=5&_offset=0&min-severity=3",
+        "status": 200,
+        "seconds": 1.016,
+        "sha256": "b320e986d0cd68f33657cd39a9187eb169464d90acf5829b9f585187faddb153"
+      },
+      {
+        "url": "https://environment.data.gov.uk/hydrology/id/stations.json?lat=53.797&long=-1.543&dist=1.0&_limit=5&_offset=0&observedProperty=groundwaterLevel",
+        "status": 200,
+        "seconds": 0.906,
+        "sha256": "31dba8706050643eed842b9bb45778f5f932ba2256f366e4efef3c3e7c37328d"
+      },
+      {
+        "url": "https://www.planning.data.gov.uk/entity.json?dataset=local-planning-authority&latitude=53.797&longitude=-1.543&limit=5&offset=0&field=entity&field=name&field=dataset&field=reference&field=entry-date&field=start-date&field=end-date&field=point",
+        "status": 200,
+        "seconds": 0.172,
+        "sha256": "f8020bc75fc728a4a7d14e018aafdd1414786b1afd4f352f3500382aef6e3718"
+      },
+      {
+        "url": "https://www.planning.data.gov.uk/dataset/local-planning-authority.json",
+        "status": 200,
+        "seconds": 0.875,
+        "sha256": "4c6de27e2aa874adfd3c21701b11a063816502e2812df4daec68e3827c4b3577"
+      }
+    ],
+    "report_sha256": "b4b6805eac48389b3682a74b4769c6aebf7ef42908a3d726510ca3636eece3b1"
+  },
+  "assembly_note": "The live MCP run used general development; the small housing scenario was then assembled offline from exactly the same retained evidence. Housing adds one project-specific GI task. No extra provider requests or original-log/AGS-file downloads were made.",
+  "checked": {
+    "backend_contract": "passed",
+    "evidence_and_observations_preserved": "passed",
+    "provenance_url_status_and_hash_match": "12/12",
+    "source_specific_terms_preserved": "passed",
+    "html_markdown_csv_record_consistency": "passed for content; CSV newline defect separately recorded",
+    "housing_scope_gap_added": "passed",
+    "summary": {
+      "investigation_count": 20,
+      "query_count": 11,
+      "failed_query_count": 0,
+      "incomplete_query_count": 2,
+      "open_gap_count": 12
+    },
+    "aggregate_status": "partial",
+    "unknown_design_parameters": 7,
+    "human_candidate_reviews": "all unreviewed",
+    "javascript_preflight": "passed using actual app.js in a synthetic DOM; no network calls; browser rendering not checked"
+  },
+  "coverage": {
+    "sobi_returned": 10,
+    "sobi_provider_reported_box_matches": 1981,
+    "ags_returned": 10,
+    "ags_provider_reported_box_matches": 26,
+    "incomplete_query_ids": [
+      "query-004",
+      "query-006"
+    ],
+    "unsearched_provider_pages": true,
+    "counts_are_distinct_physical_holes": false,
+    "original_logs_reviewed": false
+  },
+  "groundwater": {
+    "discovery_query": "query-010",
+    "discovery_result": "empty, HTTP 200",
+    "returned_stations": 0,
+    "metadata_lookups": 0,
+    "reading_queries": 0,
+    "observations": 0,
+    "groundwater_gap_remains_open": true,
+    "surface_water_stations_kept_separate": 3,
+    "nonempty_series_selection_and_quality_path_exercised": false
+  },
+  "confirmed_findings": [
+    {
+      "id": "leeds-lithology-display",
+      "severity": "P2",
+      "files": [
+        "src/uk_data_mcp/reporting.py:334",
+        "src/uk_data_mcp/web/app.js:384"
+      ],
+      "observed": "Alluvium source has whitespace-only rcs_d and populated rock_d=CLAY, SILT AND SAND. Export/display fallback ignores rock_d, producing a blank lithology description. Source evidence is preserved.",
+      "fixed": false
+    },
+    {
+      "id": "windows-csv-newlines",
+      "severity": "P2",
+      "files": [
+        "src/uk_data_mcp/cli.py:40"
+      ],
+      "observed": "Windows text-file newline translation turns CSV CRLF into CRCRLF, exposing alternate blank lines. Parsed nonempty records remain correct.",
+      "crcrlf_occurrences": {
+        "investigations.csv": 21,
+        "gi-gaps.csv": 13
+      },
+      "fixed": false
+    }
+  ],
+  "prior_review_findings": {
+    "invalid_returned_groundwater_uri": "not exercised by this empty groundwater-discovery result; remains unresolved",
+    "oversized_integer_coordinate": "not exercised by this ordinary coordinate input; remains unresolved"
+  },
+  "ui_check": {
+    "status": "not_completed",
+    "reason": "Browser permission for the new local app origin was declined. No alternate browser route was used. The saved JSON can be opened manually with Groundwork Open saved study."
+  },
+  "licence_note": "Preserve the complete per-source notices in the example. Open index/mapping metadata does not grant blanket OGL rights over linked AGS files or scans. No linked originals are redistributed.",
+  "limits": [
+    "Software/example validation, not a geotechnical design or verified site assessment.",
+    "The demonstration point and 1 km enclosing search do not define a construction boundary.",
+    "Regional mapping and unreviewed index entries do not establish a site profile, foundation choice or GI depths."
+  ],
+  "example_hash_basis": "Canonical UTF-8 JSON with LF newlines, matching the Git blob; normalize CRLF to LF before checking a Windows checkout."
+}

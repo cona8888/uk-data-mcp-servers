@@ -49,6 +49,24 @@ box matches; coverage remains partial. The demonstration's site boundary and
 works, current groundwater conditions and design parameters remain unresolved.
 The frozen app export is unchanged; D03 is a subsequent review.
 
+For a smaller project to check, download the [Leeds small-house workspace](../examples/leeds_small_house_example_2026-10-29.json)
+and choose **Open saved study** in Groundwork. This hypothetical example is one
+two-storey house of about 100 m2 footprint, without a basement, at a Leeds
+demonstration point. It reuses evidence retrieved through the MCP on 29 October
+2026 and adds the housing-specific investigation questions without another
+provider run. It contains 20 index candidates, 12 open GI tasks and seven unknown
+design parameters. It does not identify a real development parcel.
+
+The [validation record](../examples/leeds_small_house_validation_2026-10-29.json)
+retains the tested code commit, request trace, hashes, coverage and limitations.
+It records two confirmed presentation/export issues: missing alluvium lithology
+text where a source field is whitespace, and extra blank lines in Windows CSV
+files. The source evidence remains intact. No original logs or AGS files were
+downloaded, and the groundwater search returned no stations. This example
+therefore checks empty groundwater discovery rather than a populated reading
+selection. Browser loading was not completed because permission for the new
+local app origin was declined; the workspace can be opened manually.
+
 For a fresh study, enter the project name, location, nation, search radius,
 development type and proposed works. Review the advanced request limits before
 running it. The point and nation are supplied by the user; they are not a
