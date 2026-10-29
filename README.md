@@ -82,6 +82,7 @@ See [sources, coverage and data licences](docs/DATA_SOURCES.md).
 | Run a study and review the GI gaps | [Groundwork guide](docs/GROUNDWORK.md) |
 | Use an AI assistant or automate queries | [MCP, command line and Docker reference](docs/REFERENCE.md) |
 | See an original-log desk-study example | [Birmingham draft report](docs/desk-studies/birmingham-draft-geotechnical-desk-study.pdf) |
+| Explore groundwater monitoring points | [Birmingham observation map and data](docs/maps/README.md) |
 | Check known issues and software validation | [Review notes](docs/REVIEW_FIXES.md) · [Leeds validation](examples/leeds_small_house_validation_2026-10-29.json) |
 | Improve the project | [Contributing](CONTRIBUTING.md) · [Open an issue](https://github.com/cona8888/uk-data-mcp-servers/issues/new) |
 

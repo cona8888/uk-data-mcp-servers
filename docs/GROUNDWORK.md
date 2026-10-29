@@ -52,6 +52,12 @@ box matches; coverage remains partial. The demonstration's site boundary and
 works, current groundwater conditions and design parameters remain unresolved.
 The frozen app export is unchanged; D03 is a subsequent review.
 
+The separate [Birmingham groundwater map](maps/README.md) plots 12 EA monitoring
+locations within 15 km of the city centre, retrieved through the MCP on
+29 October 2026. Download its HTML and open it to inspect dates, mAOD values and
+quality flags offline. These differently dated observations do not establish a
+current groundwater surface or groundwater depth at the demonstration site.
+
 For a smaller project to check, download the [Leeds small-house workspace](../examples/leeds_small_house_example_2026-10-29.json)
 and choose **Open saved study** in Groundwork. This hypothetical example is one
 two-storey house of about 100 m2 footprint, without a basement, at a Leeds

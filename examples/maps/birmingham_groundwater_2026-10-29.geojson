@@ -1,0 +1,447 @@
+{
+  "type": "FeatureCollection",
+  "name": "Birmingham-area latest available groundwater observations",
+  "retrieved_date": "2026-10-29",
+  "search_centre": [
+    -1.8904,
+    52.4862
+  ],
+  "radius_km": 15,
+  "attribution": "Contains Environment Agency information licensed under the Open Government Licence v3.0",
+  "licence_url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "caution": "Independent station observations with different dates, methods and unverified aquifer/screen context; no current or interpolated groundwater surface, site groundwater depth or design level established.",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "34d518d0-bc5b-4374-a061-6de7b7b2dc31",
+      "properties": {
+        "number": 1,
+        "station_id": "34d518d0-bc5b-4374-a061-6de7b7b2dc31",
+        "station_name": "Rocky Lane",
+        "station_url": "http://environment.data.gov.uk/hydrology/id/stations/34d518d0-bc5b-4374-a061-6de7b7b2dc31",
+        "measure_id": "34d518d0-bc5b-4374-a061-6de7b7b2dc31-gw-dipped-i-mAOD-qualified",
+        "measure_url": "http://environment.data.gov.uk/hydrology/id/measures/34d518d0-bc5b-4374-a061-6de7b7b2dc31-gw-dipped-i-mAOD-qualified",
+        "value_mAOD": 95.99,
+        "unit": "mAOD",
+        "observed_at": "2026-01-14T09:53:11",
+        "observed_date": "2026-01-14",
+        "quality": "Unchecked",
+        "age_days": 288,
+        "method": "Groundwater Dipped",
+        "series_observation_type": "Qualified",
+        "distance_km": 1.4549,
+        "aquifer": null,
+        "screen_depth_m": null,
+        "retrieved_at_utc": "2026-10-29T13:10:35.019225Z",
+        "source_query_urls": [
+          "https://environment.data.gov.uk/hydrology/id/measures/34d518d0-bc5b-4374-a061-6de7b7b2dc31-gw-dipped-i-mAOD-qualified.json",
+          "https://environment.data.gov.uk/hydrology/id/measures/34d518d0-bc5b-4374-a061-6de7b7b2dc31-gw-dipped-i-mAOD-qualified/readings.json?latest=&_limit=1&_view=full"
+        ],
+        "identity_checks": "requested measure, returned measure, reading measure and station URI match"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.882034,
+          52.498252
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "8d14f88d-e323-48a2-bf57-438c6729a50a",
+      "properties": {
+        "number": 2,
+        "station_id": "8d14f88d-e323-48a2-bf57-438c6729a50a",
+        "station_name": "Upper Trinity",
+        "station_url": "http://environment.data.gov.uk/hydrology/id/stations/8d14f88d-e323-48a2-bf57-438c6729a50a",
+        "measure_id": "8d14f88d-e323-48a2-bf57-438c6729a50a-gw-dipped-i-mAOD-qualified",
+        "measure_url": "http://environment.data.gov.uk/hydrology/id/measures/8d14f88d-e323-48a2-bf57-438c6729a50a-gw-dipped-i-mAOD-qualified",
+        "value_mAOD": 98.85,
+        "unit": "mAOD",
+        "observed_at": "2025-12-23T08:10:17",
+        "observed_date": "2025-12-23",
+        "quality": "Unchecked",
+        "age_days": 310,
+        "method": "Groundwater Dipped",
+        "series_observation_type": "Qualified",
+        "distance_km": 1.578,
+        "aquifer": null,
+        "screen_depth_m": null,
+        "retrieved_at_utc": "2026-10-29T13:10:37.053331Z",
+        "source_query_urls": [
+          "https://environment.data.gov.uk/hydrology/id/measures/8d14f88d-e323-48a2-bf57-438c6729a50a-gw-dipped-i-mAOD-qualified.json",
+          "https://environment.data.gov.uk/hydrology/id/measures/8d14f88d-e323-48a2-bf57-438c6729a50a-gw-dipped-i-mAOD-qualified/readings.json?latest=&_limit=1&_view=full"
+        ],
+        "identity_checks": "requested measure, returned measure, reading measure and station URI match"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.878565,
+          52.473976
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "08ac97c9-d8f4-49ed-ac5b-271d245cf662",
+      "properties": {
+        "number": 3,
+        "station_id": "08ac97c9-d8f4-49ed-ac5b-271d245cf662",
+        "station_name": "Dares Brewery",
+        "station_url": "http://environment.data.gov.uk/hydrology/id/stations/08ac97c9-d8f4-49ed-ac5b-271d245cf662",
+        "measure_id": "08ac97c9-d8f4-49ed-ac5b-271d245cf662-gw-dipped-i-mAOD-qualified",
+        "measure_url": "http://environment.data.gov.uk/hydrology/id/measures/08ac97c9-d8f4-49ed-ac5b-271d245cf662-gw-dipped-i-mAOD-qualified",
+        "value_mAOD": 78.9,
+        "unit": "mAOD",
+        "observed_at": "2026-06-16T09:09:44",
+        "observed_date": "2026-06-16",
+        "quality": "Unchecked",
+        "age_days": 135,
+        "method": "Groundwater Dipped",
+        "series_observation_type": "Qualified",
+        "distance_km": 2.408,
+        "aquifer": null,
+        "screen_depth_m": null,
+        "retrieved_at_utc": "2026-10-29T13:10:39.071883Z",
+        "source_query_urls": [
+          "https://environment.data.gov.uk/hydrology/id/measures/08ac97c9-d8f4-49ed-ac5b-271d245cf662-gw-dipped-i-mAOD-qualified.json",
+          "https://environment.data.gov.uk/hydrology/id/measures/08ac97c9-d8f4-49ed-ac5b-271d245cf662-gw-dipped-i-mAOD-qualified/readings.json?latest=&_limit=1&_view=full"
+        ],
+        "identity_checks": "requested measure, returned measure, reading measure and station URI match"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.889777,
+          52.464548
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "f48290a2-6d8b-4a2f-985a-7b6b0a90d890",
+      "properties": {
+        "number": 4,
+        "station_id": "f48290a2-6d8b-4a2f-985a-7b6b0a90d890",
+        "station_name": "Kynock Press",
+        "station_url": "http://environment.data.gov.uk/hydrology/id/stations/f48290a2-6d8b-4a2f-985a-7b6b0a90d890",
+        "measure_id": "f48290a2-6d8b-4a2f-985a-7b6b0a90d890-gw-dipped-i-mAOD-qualified",
+        "measure_url": "http://environment.data.gov.uk/hydrology/id/measures/f48290a2-6d8b-4a2f-985a-7b6b0a90d890-gw-dipped-i-mAOD-qualified",
+        "value_mAOD": 92.4,
+        "unit": "mAOD",
+        "observed_at": "2026-04-22T09:21:46",
+        "observed_date": "2026-04-22",
+        "quality": "Unchecked",
+        "age_days": 190,
+        "method": "Groundwater Dipped",
+        "series_observation_type": "Qualified",
+        "distance_km": 3.1181,
+        "aquifer": null,
+        "screen_depth_m": null,
+        "retrieved_at_utc": "2026-10-29T13:10:41.074262Z",
+        "source_query_urls": [
+          "https://environment.data.gov.uk/hydrology/id/measures/f48290a2-6d8b-4a2f-985a-7b6b0a90d890-gw-dipped-i-mAOD-qualified.json",
+          "https://environment.data.gov.uk/hydrology/id/measures/f48290a2-6d8b-4a2f-985a-7b6b0a90d890-gw-dipped-i-mAOD-qualified/readings.json?latest=&_limit=1&_view=full"
+        ],
+        "identity_checks": "requested measure, returned measure, reading measure and station URI match"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.884202,
+          52.513987
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "293f5e00-6a62-43b2-83d2-e31eb7a928ff_46519",
+      "properties": {
+        "number": 5,
+        "station_id": "293f5e00-6a62-43b2-83d2-e31eb7a928ff_46519",
+        "station_name": "Summerfield Park E",
+        "station_url": "http://environment.data.gov.uk/hydrology/id/stations/293f5e00-6a62-43b2-83d2-e31eb7a928ff_46519",
+        "measure_id": "293f5e00-6a62-43b2-83d2-e31eb7a928ff_46519-gw-logged-i-subdaily-mAOD-qualified",
+        "measure_url": "http://environment.data.gov.uk/hydrology/id/measures/293f5e00-6a62-43b2-83d2-e31eb7a928ff_46519-gw-logged-i-subdaily-mAOD-qualified",
+        "value_mAOD": 117.461,
+        "unit": "mAOD",
+        "observed_at": "2026-07-28T13:00:00",
+        "observed_date": "2026-07-28",
+        "quality": "Good",
+        "age_days": 93,
+        "method": "Groundwater Logged",
+        "series_observation_type": "Qualified",
+        "distance_km": 3.1706,
+        "aquifer": null,
+        "screen_depth_m": null,
+        "retrieved_at_utc": "2026-10-29T13:10:43.274365Z",
+        "source_query_urls": [
+          "https://environment.data.gov.uk/hydrology/id/measures/293f5e00-6a62-43b2-83d2-e31eb7a928ff_46519-gw-logged-i-subdaily-mAOD-qualified.json",
+          "https://environment.data.gov.uk/hydrology/id/measures/293f5e00-6a62-43b2-83d2-e31eb7a928ff_46519-gw-logged-i-subdaily-mAOD-qualified/readings.json?latest=&_limit=1&_view=full"
+        ],
+        "identity_checks": "requested measure, returned measure, reading measure and station URI match"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.937144,
+          52.48454
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "293f5e00-6a62-43b2-83d2-e31eb7a928ff_1230GW",
+      "properties": {
+        "number": 6,
+        "station_id": "293f5e00-6a62-43b2-83d2-e31eb7a928ff_1230GW",
+        "station_name": "Summerfield Park",
+        "station_url": "http://environment.data.gov.uk/hydrology/id/stations/293f5e00-6a62-43b2-83d2-e31eb7a928ff_1230GW",
+        "measure_id": "293f5e00-6a62-43b2-83d2-e31eb7a928ff_1230GW-gw-dipped-i-mAOD-qualified",
+        "measure_url": "http://environment.data.gov.uk/hydrology/id/measures/293f5e00-6a62-43b2-83d2-e31eb7a928ff_1230GW-gw-dipped-i-mAOD-qualified",
+        "value_mAOD": 119.12,
+        "unit": "mAOD",
+        "observed_at": "2020-01-23T13:00:00",
+        "observed_date": "2020-01-23",
+        "quality": "Good",
+        "age_days": 2471,
+        "method": "Groundwater Dipped",
+        "series_observation_type": "Qualified",
+        "distance_km": 3.2005,
+        "aquifer": null,
+        "screen_depth_m": null,
+        "retrieved_at_utc": "2026-10-29T13:10:45.159400Z",
+        "source_query_urls": [
+          "https://environment.data.gov.uk/hydrology/id/measures/293f5e00-6a62-43b2-83d2-e31eb7a928ff_1230GW-gw-dipped-i-mAOD-qualified.json",
+          "https://environment.data.gov.uk/hydrology/id/measures/293f5e00-6a62-43b2-83d2-e31eb7a928ff_1230GW-gw-dipped-i-mAOD-qualified/readings.json?latest=&_limit=1&_view=full"
+        ],
+        "identity_checks": "requested measure, returned measure, reading measure and station URI match"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.937586,
+          52.48454
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "0957e811-a4b7-45c1-8b50-2896a1598fe6",
+      "properties": {
+        "number": 7,
+        "station_id": "0957e811-a4b7-45c1-8b50-2896a1598fe6",
+        "station_name": "Birmingham University",
+        "station_url": "http://environment.data.gov.uk/hydrology/id/stations/0957e811-a4b7-45c1-8b50-2896a1598fe6",
+        "measure_id": "0957e811-a4b7-45c1-8b50-2896a1598fe6-gw-dipped-i-mAOD-qualified",
+        "measure_url": "http://environment.data.gov.uk/hydrology/id/measures/0957e811-a4b7-45c1-8b50-2896a1598fe6-gw-dipped-i-mAOD-qualified",
+        "value_mAOD": 129.14,
+        "unit": "mAOD",
+        "observed_at": "2026-06-16T09:28:28",
+        "observed_date": "2026-06-16",
+        "quality": "Unchecked",
+        "age_days": 135,
+        "method": "Groundwater Dipped",
+        "series_observation_type": "Qualified",
+        "distance_km": 5.0213,
+        "aquifer": null,
+        "screen_depth_m": null,
+        "retrieved_at_utc": "2026-10-29T13:10:47.165616Z",
+        "source_query_urls": [
+          "https://environment.data.gov.uk/hydrology/id/measures/0957e811-a4b7-45c1-8b50-2896a1598fe6-gw-dipped-i-mAOD-qualified.json",
+          "https://environment.data.gov.uk/hydrology/id/measures/0957e811-a4b7-45c1-8b50-2896a1598fe6-gw-dipped-i-mAOD-qualified/readings.json?latest=&_limit=1&_view=full"
+        ],
+        "identity_checks": "requested measure, returned measure, reading measure and station URI match"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.932486,
+          52.449027
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "6b89e5b7-b65a-4fd0-adc0-67bdaf8c3c1e_1198GW",
+      "properties": {
+        "number": 8,
+        "station_id": "6b89e5b7-b65a-4fd0-adc0-67bdaf8c3c1e_1198GW",
+        "station_name": "Park House Shallow",
+        "station_url": "http://environment.data.gov.uk/hydrology/id/stations/6b89e5b7-b65a-4fd0-adc0-67bdaf8c3c1e_1198GW",
+        "measure_id": "6b89e5b7-b65a-4fd0-adc0-67bdaf8c3c1e_1198GW-gw-dipped-i-mAOD-qualified",
+        "measure_url": "http://environment.data.gov.uk/hydrology/id/measures/6b89e5b7-b65a-4fd0-adc0-67bdaf8c3c1e_1198GW-gw-dipped-i-mAOD-qualified",
+        "value_mAOD": 112.632,
+        "unit": "mAOD",
+        "observed_at": "2026-05-11T15:23:05",
+        "observed_date": "2026-05-11",
+        "quality": "Unchecked",
+        "age_days": 171,
+        "method": "Groundwater Dipped",
+        "series_observation_type": "Qualified",
+        "distance_km": 9.6711,
+        "aquifer": null,
+        "screen_depth_m": null,
+        "retrieved_at_utc": "2026-10-29T13:10:49.244130Z",
+        "source_query_urls": [
+          "https://environment.data.gov.uk/hydrology/id/measures/6b89e5b7-b65a-4fd0-adc0-67bdaf8c3c1e_1198GW-gw-dipped-i-mAOD-qualified.json",
+          "https://environment.data.gov.uk/hydrology/id/measures/6b89e5b7-b65a-4fd0-adc0-67bdaf8c3c1e_1198GW-gw-dipped-i-mAOD-qualified/readings.json?latest=&_limit=1&_view=full"
+        ],
+        "identity_checks": "requested measure, returned measure, reading measure and station URI match"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.833463,
+          52.565978
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "6b89e5b7-b65a-4fd0-adc0-67bdaf8c3c1e_1197GW",
+      "properties": {
+        "number": 9,
+        "station_id": "6b89e5b7-b65a-4fd0-adc0-67bdaf8c3c1e_1197GW",
+        "station_name": "Park House Deep",
+        "station_url": "http://environment.data.gov.uk/hydrology/id/stations/6b89e5b7-b65a-4fd0-adc0-67bdaf8c3c1e_1197GW",
+        "measure_id": "6b89e5b7-b65a-4fd0-adc0-67bdaf8c3c1e_1197GW-gw-dipped-i-mAOD-qualified",
+        "measure_url": "http://environment.data.gov.uk/hydrology/id/measures/6b89e5b7-b65a-4fd0-adc0-67bdaf8c3c1e_1197GW-gw-dipped-i-mAOD-qualified",
+        "value_mAOD": 113.408,
+        "unit": "mAOD",
+        "observed_at": "2026-05-11T15:21:48",
+        "observed_date": "2026-05-11",
+        "quality": "Unchecked",
+        "age_days": 171,
+        "method": "Groundwater Dipped",
+        "series_observation_type": "Qualified",
+        "distance_km": 9.6763,
+        "aquifer": null,
+        "screen_depth_m": null,
+        "retrieved_at_utc": "2026-10-29T13:10:51.192785Z",
+        "source_query_urls": [
+          "https://environment.data.gov.uk/hydrology/id/measures/6b89e5b7-b65a-4fd0-adc0-67bdaf8c3c1e_1197GW-gw-dipped-i-mAOD-qualified.json",
+          "https://environment.data.gov.uk/hydrology/id/measures/6b89e5b7-b65a-4fd0-adc0-67bdaf8c3c1e_1197GW-gw-dipped-i-mAOD-qualified/readings.json?latest=&_limit=1&_view=full"
+        ],
+        "identity_checks": "requested measure, returned measure, reading measure and station URI match"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.83361,
+          52.566068
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "84776baf-dcdd-4583-a972-a21379440ec6",
+      "properties": {
+        "number": 10,
+        "station_id": "84776baf-dcdd-4583-a972-a21379440ec6",
+        "station_name": "Hartopp",
+        "station_url": "http://environment.data.gov.uk/hydrology/id/stations/84776baf-dcdd-4583-a972-a21379440ec6",
+        "measure_id": "84776baf-dcdd-4583-a972-a21379440ec6-gw-dipped-i-mAOD-qualified",
+        "measure_url": "http://environment.data.gov.uk/hydrology/id/measures/84776baf-dcdd-4583-a972-a21379440ec6-gw-dipped-i-mAOD-qualified",
+        "value_mAOD": 135.057,
+        "unit": "mAOD",
+        "observed_at": "2026-05-11T15:04:34",
+        "observed_date": "2026-05-11",
+        "quality": "Unchecked",
+        "age_days": 171,
+        "method": "Groundwater Dipped",
+        "series_observation_type": "Qualified",
+        "distance_km": 10.8142,
+        "aquifer": null,
+        "screen_depth_m": null,
+        "retrieved_at_utc": "2026-10-29T13:10:53.170434Z",
+        "source_query_urls": [
+          "https://environment.data.gov.uk/hydrology/id/measures/84776baf-dcdd-4583-a972-a21379440ec6-gw-dipped-i-mAOD-qualified.json",
+          "https://environment.data.gov.uk/hydrology/id/measures/84776baf-dcdd-4583-a972-a21379440ec6-gw-dipped-i-mAOD-qualified/readings.json?latest=&_limit=1&_view=full"
+        ],
+        "identity_checks": "requested measure, returned measure, reading measure and station URI match"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.84566,
+          52.579569
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "e20bf859-87b6-4596-a190-dffca0b345ed",
+      "properties": {
+        "number": 11,
+        "station_id": "e20bf859-87b6-4596-a190-dffca0b345ed",
+        "station_name": "Moor Hall Golf Course",
+        "station_url": "http://environment.data.gov.uk/hydrology/id/stations/e20bf859-87b6-4596-a190-dffca0b345ed",
+        "measure_id": "e20bf859-87b6-4596-a190-dffca0b345ed-gw-dipped-i-mAOD-qualified",
+        "measure_url": "http://environment.data.gov.uk/hydrology/id/measures/e20bf859-87b6-4596-a190-dffca0b345ed-gw-dipped-i-mAOD-qualified",
+        "value_mAOD": 124.816,
+        "unit": "mAOD",
+        "observed_at": "2026-05-21T09:01:55",
+        "observed_date": "2026-05-21",
+        "quality": "Unchecked",
+        "age_days": 161,
+        "method": "Groundwater Dipped",
+        "series_observation_type": "Qualified",
+        "distance_km": 11.2261,
+        "aquifer": null,
+        "screen_depth_m": null,
+        "retrieved_at_utc": "2026-10-29T13:10:55.185451Z",
+        "source_query_urls": [
+          "https://environment.data.gov.uk/hydrology/id/measures/e20bf859-87b6-4596-a190-dffca0b345ed-gw-dipped-i-mAOD-qualified.json",
+          "https://environment.data.gov.uk/hydrology/id/measures/e20bf859-87b6-4596-a190-dffca0b345ed-gw-dipped-i-mAOD-qualified/readings.json?latest=&_limit=1&_view=full"
+        ],
+        "identity_checks": "requested measure, returned measure, reading measure and station URI match"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.818811,
+          52.577283
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1b7e2cfb-c038-49bf-b380-6c0d7ec5bb8b",
+      "properties": {
+        "number": 12,
+        "station_id": "1b7e2cfb-c038-49bf-b380-6c0d7ec5bb8b",
+        "station_name": "Nuttalls Farm",
+        "station_url": "http://environment.data.gov.uk/hydrology/id/stations/1b7e2cfb-c038-49bf-b380-6c0d7ec5bb8b",
+        "measure_id": "1b7e2cfb-c038-49bf-b380-6c0d7ec5bb8b-gw-logged-i-subdaily-mAOD-qualified",
+        "measure_url": "http://environment.data.gov.uk/hydrology/id/measures/1b7e2cfb-c038-49bf-b380-6c0d7ec5bb8b-gw-logged-i-subdaily-mAOD-qualified",
+        "value_mAOD": 130.983,
+        "unit": "mAOD",
+        "observed_at": "2024-10-22T22:00:00",
+        "observed_date": "2024-10-22",
+        "quality": "Unchecked",
+        "age_days": 737,
+        "method": "Groundwater Logged",
+        "series_observation_type": "Qualified",
+        "distance_km": 13.5451,
+        "aquifer": null,
+        "screen_depth_m": null,
+        "retrieved_at_utc": "2026-10-29T13:10:57.228520Z",
+        "source_query_urls": [
+          "https://environment.data.gov.uk/hydrology/id/measures/1b7e2cfb-c038-49bf-b380-6c0d7ec5bb8b-gw-logged-i-subdaily-mAOD-qualified.json",
+          "https://environment.data.gov.uk/hydrology/id/measures/1b7e2cfb-c038-49bf-b380-6c0d7ec5bb8b-gw-logged-i-subdaily-mAOD-qualified/readings.json?latest=&_limit=1&_view=full"
+        ],
+        "identity_checks": "requested measure, returned measure, reading measure and station URI match"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.903152,
+          52.607767
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "artifact": "Birmingham groundwater station-observation map",
+  "checked_on": "2026-10-29",
+  "provider_code_commit": "3dbf2922753af1ca65f6fdbf53f243f2bfd676f1",
+  "checks": {
+    "groundwater_source_http_responses": 26,
+    "groundwater_source_http_statuses": [
+      200
+    ],
+    "station_candidate_distinct_uris": 65,
+    "inside_true_15km_circle": 12,
+    "outside_true_circle": 53,
+    "mapped_readings_match_raw_values_dates_quality_units_coordinates": true,
+    "requested_returned_and_reading_measure_identity_and_station_uri_match": true,
+    "reading_quality_counts": {
+      "Unchecked": 10,
+      "Good": 2
+    },
+    "method_counts": {
+      "Groundwater Dipped": 10,
+      "Groundwater Logged": 2
+    },
+    "observation_age_calendar_days": [
+      93,
+      2471
+    ],
+    "html_embedded_data_matches_geojson": true,
+    "publication_svg_station_groups": 12,
+    "javascript_syntax": "passed",
+    "mock_dom_interaction_scenarios_passed": 11,
+    "interaction_checks": [
+      "initial selection and observation register",
+      "quality filters",
+      "combined age and quality filters",
+      "zero-result filter state",
+      "separate nearby station selection",
+      "map click",
+      "Enter and Space keyboard selection",
+      "station-list selection"
+    ],
+    "png_visual_review": "passed: station labels, numbered callouts, caution, scale bar and full credits legible",
+    "browser_rendering_tested": false,
+    "ruff_all_repository": "passed",
+    "core_test_suite": "not rerun for this map-only change; no packaged application code changed",
+    "sourced_context": {
+      "ons_boundary_code": "E08000025",
+      "ons_boundary_vintage": "May 2024 BGC",
+      "osm_selected_ways": 8557
+    },
+    "private_data_review": "public EA/ONS data and filtered public OSM properties only; no credentials or personal/contact fields",
+    "rebuild": "offline Python builder rerun; PNG rendered from publication SVG using Sharp"
+  },
+  "limitations": [
+    "Dated independent monitoring-point observations, not a current groundwater surface.",
+    "Ten readings are Unchecked. All observations are at least 93 calendar days old.",
+    "Aquifer, screen depth and site ground levels not supplied; no contours, flow direction, depth below ground or design groundwater inferred.",
+    "Bounded two-page provider discovery; inventory completeness not established.",
+    "Provider dateTime strings lack a time-zone suffix and remain unchanged."
+  ],
+  "file_hash_convention": "UTF-8 text with LF line endings; PNG and gzip bytes unchanged; this manifest excluded from its own hashes.",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 5077,
+      "sha256": "9ea870aa0f4610296b0823c067b61d29c3658730640c304bfff05ffd13626b56",
+      "git_blob_sha": "cafb52c9618236b0bcee31a7bbba5119c8b23d1f"
+    },
+    {
+      "path": "docs/GROUNDWORK.md",
+      "bytes": 13192,
+      "sha256": "d1466d85515da651742bbea6d2a73c86b2f81d39a081dd868ba791a5792d95b0",
+      "git_blob_sha": "64281a543a6906b67a332fcaa9e8cc2c26c5ec00"
+    },
+    {
+      "path": "docs/maps/README.md",
+      "bytes": 5658,
+      "sha256": "91bd4cc1bbe1a8b0f849713ee047b9ee78befdd696d632695a0b3fbdb7a7c55a",
+      "git_blob_sha": "d4521e5bdb16b56958b4a2ca78c95fa3af438a69"
+    },
+    {
+      "path": "docs/maps/birmingham-groundwater-map.html",
+      "bytes": 1283597,
+      "sha256": "0a2133d9838c073db0e30ab8a3043cb73b05fcf39a63612a4cda270ef851530d",
+      "git_blob_sha": "888046867a9a2c00ed5cbbfdd493ae18ec61ea7e"
+    },
+    {
+      "path": "docs/maps/birmingham-groundwater-map.png",
+      "bytes": 368515,
+      "sha256": "b48af4d52a40661f2cf0a807267c886b8f7b82af515a5464e651d3260e63d469",
+      "git_blob_sha": "376404c67b4c0b78e3f858a991fd2fa230e91e42"
+    },
+    {
+      "path": "docs/maps/birmingham-groundwater-preview.svg",
+      "bytes": 1264404,
+      "sha256": "eaecd41cbd008b2a8b1700ba8968bb293d0037b45d065b3b5a73fa8fdf42cd38",
+      "git_blob_sha": "98b39978239b1cbc90e82f05bb9bd6f6c6e09126"
+    },
+    {
+      "path": "examples/maps/birmingham_groundwater_2026-10-29.geojson",
+      "bytes": 20206,
+      "sha256": "ac7f45415771bbc03ba4adef6ba9476243a892b7560d7d99c196b467934a0235",
+      "git_blob_sha": "b679d3b9785ebed2703ca8d467e18d2a4d9537fb"
+    },
+    {
+      "path": "examples/maps/birmingham_groundwater_evidence_2026-10-29.json",
+      "bytes": 297520,
+      "sha256": "8c5ff671ee08be28880e37f5ea4cc4819ceb6764eaf5fa73bd08962491691b0f",
+      "git_blob_sha": "14309f9feb6e8095b1db971ff7969a115f6a422a"
+    },
+    {
+      "path": "examples/maps/birmingham_ons_boundary_2024.geojson",
+      "bytes": 19180,
+      "sha256": "e3f444b1481dca85e05c9f345716d7475b36960fa134948b34cd1fc8f6bb38ea",
+      "git_blob_sha": "2bfa96fb120d86b4188dafcffd852d1e8dbdbc09"
+    },
+    {
+      "path": "examples/maps/birmingham_osm_context_2026-10-29.geojson.gz",
+      "bytes": 604444,
+      "sha256": "1c9f32db78f79b1362e78657ff644a21bb08de45afa78c21127f1adbb8679a0a",
+      "git_blob_sha": "5ee053f429e0fa356e696d288667e103a82a10b8"
+    },
+    {
+      "path": "scripts/build_birmingham_groundwater_map.py",
+      "bytes": 12480,
+      "sha256": "88d66ff98bbe978689bb122ffcb10e8de1352fd3fdc66acb96f20c5026e5e25f",
+      "git_blob_sha": "d85eea3d3cb2926d127976ded1deaeef107dc069"
+    },
+    {
+      "path": "scripts/groundwater_map_template.html",
+      "bytes": 9377,
+      "sha256": "7c2c4d2dd44eec5be4932b7aa6a54cbf635ccaa05ab44c134aa1b6a10cdb7e5c",
+      "git_blob_sha": "2be1f1ad15253367350a71f3484e5df529f3715c"
+    }
+  ]
+}
