@@ -12,6 +12,9 @@ external JavaScript service is required.
 
 ## Start the application
 
+For the one-command launcher and first-time setup, use the
+[quick-start guide](QUICKSTART.md).
+
 Install the repository following the README, then run:
 
 ```text
@@ -64,8 +67,7 @@ text where a source field is whitespace, and extra blank lines in Windows CSV
 files. The source evidence remains intact. No original logs or AGS files were
 downloaded, and the groundwater search returned no stations. This example
 therefore checks empty groundwater discovery rather than a populated reading
-selection. Browser loading was not completed because permission for the new
-local app origin was declined; the workspace can be opened manually.
+selection. Load the workspace using **Open saved study**.
 
 For a fresh study, enter the project name, location, nation, search radius,
 development type and proposed works. Review the advanced request limits before

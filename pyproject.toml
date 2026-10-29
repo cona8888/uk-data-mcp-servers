@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "uk-data-mcp-servers"
 version = "0.2.0"
-description = "Read-only UK public-data MCP tools for infrastructure and ground investigation discovery"
+description = "Groundwork: UK public-data desk studies and ground investigation gap planning with a local app and read-only MCP tools"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"

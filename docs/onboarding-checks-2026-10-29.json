@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-29",
+  "scope": "Public README, example figures and local launcher; software checks only",
+  "base_commit": "b968d5ae7cdedb4788281a0d01f3002134765543",
+  "local_environment": {
+    "os": "Windows",
+    "python": "3.12.14",
+    "mcp_sdk": "2.3.0"
+  },
+  "checks": {
+    "offline_python_suite": {"passed": 236, "failed": 0, "includes_launcher_cases": 16},
+    "ruff": "passed",
+    "launcher_help": "passed",
+    "relative_document_links": {"checked": 35, "missing": 0},
+    "fresh_install_in_isolated_checkout_copy": {
+      "passed": true,
+      "installation_performed": true,
+      "health_http_status": 200,
+      "bundled_example_http_status": 200,
+      "small_house_validation_http_status": 200
+    },
+    "cached_restart": {
+      "passed": true,
+      "installation_skipped": true,
+      "health_http_status": 200,
+      "bundled_example_http_status": 200,
+      "small_house_validation_http_status": 200
+    },
+    "example_figures": {
+      "svg_generated_from_saved_example": true,
+      "png_renders_visually_inspected": true,
+      "leeds_index_candidates": 20,
+      "leeds_open_review_tasks": 12,
+      "unknown_design_or_check_values": 7,
+      "application_screenshots": false
+    }
+  },
+  "limits": [
+    "Startup smoke checks used --no-browser; automatic browser opening is covered by mocked lifecycle tests, not a real browser launch.",
+    "No live provider calls were made for these onboarding checks.",
+    "Native macOS and Linux launcher execution was not performed in this local run.",
+    "Previously recorded data-display, CSV and input-validation findings are outside this documentation and launcher change."
+  ]
+}
