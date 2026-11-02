@@ -11,6 +11,7 @@ from typing import Literal
 
 import httpx
 
+from . import civil_housing as housing
 from . import civil_tables as tables
 from . import public_server
 from .civil_coverage import civil_coverage
@@ -20,7 +21,6 @@ from .transport import DataAccessError, HttpClient
 GROUND = ('list_sources', 'source_details', *TOOLS, 'site_context', 'desk_study')
 CIVIL = ('civil_coverage', 'area_census', 'road_collisions', 'civil_area_context')
 NAMES = (*GROUND, *public_server.TOOL_NAMES, *CIVIL)
-# Deliberately small; do not guess an HPI region or use geographic name matching.
 HPI_AREAS = {'E08000025': 'birmingham', 'E08000035': 'leeds', 'W06000015': 'cardiff'}
 
 
@@ -36,17 +36,24 @@ def collisions(gss_code, year=2025):
     return tables.area_record(f'stats19-{year}', gss_code)
 
 
-async def context(http, gss_code, collision_year=2025, housing_month=None):
+async def context(http, gss_code, collision_year=2025, housing_month=None, housing_edition='live'):
     if housing_month is not None and (not isinstance(housing_month, str) or not re.fullmatch(r'\d{4}-(?:0[1-9]|1[0-2])', housing_month)):
         raise ValueError('Use an explicit YYYY-MM for the optional housing period.')
+    if housing_edition not in ('live',housing.EDITION):
+        raise ValueError('housing_edition must be live or ' + housing.EDITION)
     result = {'population': await asyncio.to_thread(census, gss_code),
               'road_safety': await asyncio.to_thread(collisions, gss_code, collision_year)}
     if housing_month is not None:
         slug = HPI_AREAS.get(gss_code)
-        if slug:
+        if housing_edition == housing.EDITION:
+            result['housing'] = await asyncio.to_thread(housing.record, gss_code, housing_month)
+        elif slug:
             result['housing'] = await public_server.invoke(http, 'house_prices', {'region': slug, 'month': housing_month})
             result['housing']['area_mapping'] = {'code': gss_code, 'hpi_slug': slug,
                 'authority_reference': f'https://www.ons.gov.uk/explore-local-statistics/areas/{gss_code}-{slug}'}
+            if result['housing']['status'] == 'error' and housing_month <= housing.EDITION:
+                result['housing']['alternative'] = {'prepare':'uk-civil-data prepare '+housing.KEY,
+                    'housing_edition':housing.EDITION,'note':'Re-run with this explicit historical publication; live result was not replaced.'}
         else:
             result['housing'] = {'status':'error', 'error':{'code':'no_reviewed_area_mapping'}, 'data':[]}
     statuses = [r['status'] for r in result.values()]
@@ -75,7 +82,6 @@ def create_server(http=None):
     from .server import READ_ONLY, _result
     from .server import create_server as ground_server
 
-    # The existing ground server owns and closes this single client in its lifespan.
     client = http if http is not None else HttpClient(public_data=True)
     server = ground_server(client)
     public_server.register_tools(server, lambda: client)
@@ -96,9 +102,10 @@ def create_server(http=None):
         return _result(await invoke(client, 'road_collisions', {'gss_code': gss_code, 'year': year}))
 
     @server.tool(annotations=READ_ONLY)
-    async def civil_area_context(gss_code: str, collision_year: int = 2025, housing_month: str | None = None):
-        """Compare census and road-safety evidence for the same authority; optional HPI for Birmingham, Leeds or Cardiff. Separate source dates, scope and failures; no inferred rates."""
-        return _result(await invoke(client, 'civil_area_context', {'gss_code': gss_code, 'collision_year': collision_year, 'housing_month': housing_month}))
+    async def civil_area_context(gss_code: str, collision_year: int = 2025, housing_month: str | None = None,
+                                housing_edition: Literal['live','2025-01'] = 'live'):
+        """Compare census and road safety using a GSS area code; optional HPI: live (3 reviewed areas) or a prepared January 2025 release matched by code. No silent vintage substitution or risk rate."""
+        return _result(await invoke(client, 'civil_area_context', dict(gss_code=gss_code, collision_year=collision_year, housing_month=housing_month, housing_edition=housing_edition)))
 
     return server
 
@@ -109,7 +116,7 @@ def main():
     sub.add_parser('serve', help='Start one read-only stdio gateway')
     sub.add_parser('tools', help='List registered tools')
     prep = sub.add_parser('prepare', help='Download a specified public edition to a local aggregate index')
-    prep.add_argument('editions', nargs='+', choices=tables.DATASETS)
+    prep.add_argument('editions', nargs='+', choices=(*tables.DATASETS,housing.KEY))
     call = sub.add_parser('call')
     call.add_argument('tool', choices=NAMES)
     call.add_argument('--json', default='{}')
@@ -123,7 +130,7 @@ def main():
 
     async def run():
         if args.cmd == 'prepare':
-            return [await tables.prepare(key) for key in dict.fromkeys(args.editions)]
+            return [await housing.prepare() if key == housing.KEY else await tables.prepare(key) for key in dict.fromkeys(args.editions)]
         params = json.loads(args.json)
         async with HttpClient(public_data=True) as http:
             return await invoke(http, args.tool, params)

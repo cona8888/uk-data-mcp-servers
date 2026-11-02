@@ -1,4 +1,4 @@
-"""Explicit live integration check; persist aggregate evidence only, never raw records."""
+"""Verify official files and an explicit vintage join. Separately report live HPI availability."""
 
 import asyncio
 import json
@@ -6,6 +6,7 @@ import os
 import tempfile
 from pathlib import Path
 
+from uk_data_mcp import civil_housing as h
 from uk_data_mcp import civil_tables as t
 from uk_data_mcp.civil_server import context
 from uk_data_mcp.transport import HttpClient
@@ -25,18 +26,29 @@ async def main():
                 if key in t.CENSUS:
                     assert any(v['value'] is not None for v in row['data'][0]['observations'].values())
             manifest.append(result)
-        async with HttpClient(public_data=True) as client:
-            bham = await context(client, 'E08000025', 2025, '2024-01')
-        assert bham['status'] == 'ok', {k: v.get('status') for k, v in bham['results'].items()}
-        cells = bham['results']['population']['data'][0]['observations']
+        code = 'E08000025'
+        cells = t.area_record('ts001',code)['data'][0]['observations']
         totals = [cell['value'] for label,cell in cells.items() if 'total' in label.lower()]
         assert len(totals) == 1 and 1_140_000 < totals[0] < 1_150_000, cells
-        crashes = bham['results']['road_safety']['data'][0]['reported_injury_collisions']
+        crashes = t.area_record('stats19-2025',code)['data'][0]['reported_injury_collisions']
+        print('Birmingham TS001 and STATS19:', totals[0], crashes, flush=True)
         assert crashes > 0
-        file = Path('civil-validation.json')
-        file.write_text(json.dumps({'commit':os.environ.get('GITHUB_SHA'), 'sources':manifest, 'Birmingham':bham}, indent=2), encoding='utf-8')
-        line = f'Birmingham: {totals[0]:,} 2021 residents; {crashes:,} reported injury collisions in 2025'
-        print(line)
+        price_source = await h.prepare()
+        manifest.append(price_source)
+        async with HttpClient(public_data=True) as client:
+            bham = await context(client, code, 2025, '2024-01', h.EDITION)
+            live = await context(client, code, 2025, '2024-01', 'live')
+        assert bham['status'] == 'ok', {k:v.get('status') for k,v in bham['results'].items()}
+        assert bham['results']['housing']['source']['edition'] == '2025-01'
+        price = bham['results']['housing']['data'][0]['averagePrice']
+        assert 100000 < price < 500000
+        print('Optional HPI linked-data endpoint (not the release file):', live['results']['housing'].get('status'), live['results']['housing'].get('error'), flush=True)
+        # The profile-specific smoke suite tests the live HPI service separately. Here the
+        # assertion is the explicitly selected dated three-way join, never a silent fallback.
+        line = f'Birmingham: {totals[0]:,} Census 2021 residents; {crashes:,} reported injury collisions in 2025; GBP {price:,.0f} Jan 2024 HPI (Jan 2025 vintage); linked API {live["results"]["housing"]["status"]}'
+        print(line, flush=True)
+        Path('civil-validation.json').write_text(json.dumps({'commit':os.environ.get('GITHUB_SHA'), 'sources':manifest,
+            'Birmingham':bham,'live_hpi_diagnostic':live['results']['housing']}, indent=2), encoding='utf-8')
         if 'GITHUB_OUTPUT' in os.environ:
             with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as stream:
                 print('summary='+line, file=stream)
