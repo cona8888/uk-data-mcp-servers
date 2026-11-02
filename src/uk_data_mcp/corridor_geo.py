@@ -1,10 +1,13 @@
 """2-D grid-metre screening of complete feature geometries against a polyline."""
 import math
 from dataclasses import dataclass
+from functools import cached_property
 
 from pyproj import Transformer
 from shapely.geometry import LineString, Point, shape
 from shapely.ops import nearest_points, transform
+
+from .corridor_chainage import RouteAxis
 
 
 @dataclass
@@ -68,6 +71,10 @@ class Corridor:
             raise ValueError('Geometry invalid after projection.')
         return self.measure(grid)
 
+    @cached_property
+    def axis(self):
+        return RouteAxis(self.line)
+
     def measure(self, grid):
         """Inclusive threshold against the entire geometry, not its centroid or sampled vertices."""
         distance = self.line.distance(grid)
@@ -82,8 +89,10 @@ class Corridor:
                'nearest_route_bng_m':[round(on_route.x,3),round(on_route.y,3)],
                'nearest_feature_bng_m':[round(on_feature.x,3),round(on_feature.y,3)],
                'geometry_type':grid.geom_type,'centreline_intersects':self.line.intersects(grid)}
-        if grid.geom_type in ('Polygon','MultiPolygon'):
-            out['centreline_length_in_area_m'] = round(self.line.intersection(grid).length,3)
+        contacts = self.axis.contacts(grid)
+        out['centreline_contacts'] = contacts
+        if 'covered_length_m' in contacts:
+            out['centreline_length_in_area_m'] = contacts['covered_length_m']
         return out
 
     def bgs_point(self, properties):

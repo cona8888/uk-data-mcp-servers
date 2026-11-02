@@ -27,6 +27,8 @@ jobs:
       - name: Classify actual records along the example alignment
         id: demo
         run: python scripts/check_corridor.py
+      - name: Check directed chainages and export the review schedule
+        run: python scripts/check_corridor_chainage.py
       - name: Render standalone map of the returned evidence
         run: python scripts/corridor_view.py corridor-evidence/report.json corridor-evidence/map.html
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
