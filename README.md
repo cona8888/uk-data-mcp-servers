@@ -1,13 +1,22 @@
-# Groundwork
+# UK Public Data MCP Servers and Groundwork
+
+One repository, two entry points. Use **UK Public Data** for cross-sector discovery, housing, social statistics, the water industry and infrastructure publications. Use **Groundwork** for the existing geotechnical desk-study app. Neither service claims to contain every UK dataset.
+
+| Start here | What you get |
+|---|---|
+| [UK Public Data: tools, source coverage and examples](docs/PUBLIC_DATA.md) | Search data.gov.uk and ONS, read a regional house price or social time series, retrieve published leakage indicators, find NISTA documents or resolve a dataset to its resources. Run `uk-public-data serve` for MCP. |
+| [Groundwork quick start](docs/QUICKSTART.md) | Launch the local browser app, gather ground evidence, review records and plan what to investigate. Existing `uk-data-mcp` commands are unchanged. |
+
+[![Offline validation](https://github.com/cona8888/uk-data-mcp-servers/actions/workflows/ci.yml/badge.svg)](https://github.com/cona8888/uk-data-mcp-servers/actions/workflows/ci.yml)
+[![Licence: MIT](https://img.shields.io/badge/code-MIT-18746b.svg)](LICENSE)
+
+## Groundwork
 
 **Explore UK ground data. Review the evidence. Plan what to investigate next.**
 
 Groundwork is a free, open-source desk-study assistant and ground investigation
 (GI) gap planner. It brings public records into one local workspace for
 geotechnical engineers, architects, planners, students and people researching a site.
-
-[![Offline validation](https://github.com/cona8888/uk-data-mcp-servers/actions/workflows/ci.yml/badge.svg)](https://github.com/cona8888/uk-data-mcp-servers/actions/workflows/ci.yml)
-[![Licence: MIT](https://img.shields.io/badge/code-MIT-18746b.svg)](LICENSE)
 
 ![Four steps: enter a location and proposed works, gather public evidence, review records and gaps, then save the study.](docs/images/groundwork-workflow.png)
 
@@ -62,7 +71,7 @@ Read the [validation findings](examples/leeds_small_house_validation_2026-10-29.
 ## Where does it work?
 
 Coverage varies by source and UK nation. **England currently has the fullest
-combined workflow.**
+combined Groundwork workflow.**
 
 | Area | Groundwork includes now |
 |---|---|
@@ -86,5 +95,4 @@ See [sources, coverage and data licences](docs/DATA_SOURCES.md).
 | Check known issues and software validation | [Review notes](docs/REVIEW_FIXES.md) · [Leeds validation](examples/leeds_small_house_validation_2026-10-29.json) |
 | Improve the project | [Contributing](CONTRIBUTING.md) · [Open an issue](https://github.com/cona8888/uk-data-mcp-servers/issues/new) |
 
-**Code: MIT. Data: source-specific licences.** Groundwork is an independent
-project. It is not an official BGS, Environment Agency or UK Government service.
+**Code: MIT. Data: source-specific licences.** This is an independent project, not an official BGS, Environment Agency, ONS or UK Government service.

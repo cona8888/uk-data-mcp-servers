@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "uk-data-mcp-servers"
 version = "0.2.0"
-description = "Groundwork: UK public-data desk studies and ground investigation gap planning with a local app and read-only MCP tools"
+description = "Read-only UK public data: housing, social statistics, water, infrastructure and Groundwork desk studies"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
@@ -17,6 +17,7 @@ dev = ["pytest>=9.0,<10", "pytest-asyncio>=1.0,<2", "ruff>=0.17,<0.18", "build>=
 
 [project.scripts]
 uk-data-mcp = "uk_data_mcp.cli:main"
+uk-public-data = "uk_data_mcp.public_server:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
