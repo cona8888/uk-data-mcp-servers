@@ -1,0 +1,31 @@
+name: Pinned civil stakeholder benchmark
+on:
+  workflow_dispatch:
+  push:
+    branches: ['review/civil-readiness-2026-11-02']
+    paths: ['review/benchmark.py','.github/workflows/stakeholder-bench.yml']
+permissions:
+  contents: read
+jobs:
+  measure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12'
+      - name: Verify production source matches reviewed revision
+        run: git diff --exit-code c7debb9cb833f9b8fa81ef25f16f84ad1be8599f HEAD -- src pyproject.toml tests
+      - run: python -m pip install -q .
+      - name: Measure stdio, adversarial fixtures and source equivalence
+        run: python review/benchmark.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: stakeholder-benchmark
+          path: benchmark.json
+          retention-days: 30
