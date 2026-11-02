@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "uk-data-mcp-servers"
 version = "0.2.0"
-description = "Read-only UK public data: housing, social statistics, water, infrastructure and Groundwork desk studies"
+description = "UK civil engineering and public data: one read-only gateway for ground, water, transport, places and social evidence"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
@@ -18,6 +18,7 @@ dev = ["pytest>=9.0,<10", "pytest-asyncio>=1.0,<2", "ruff>=0.17,<0.18", "build>=
 [project.scripts]
 uk-data-mcp = "uk_data_mcp.cli:main"
 uk-public-data = "uk_data_mcp.public_server:main"
+uk-civil-data = "uk_data_mcp.civil_server:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

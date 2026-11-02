@@ -1,0 +1,38 @@
+name: Civil data source contracts
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - src/uk_data_mcp/civil_tables.py
+      - src/uk_data_mcp/civil_server.py
+      - scripts/check_civil_sources.py
+      - .github/workflows/civil-sources.yml
+permissions:
+  contents: read
+jobs:
+  published-files:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      summary: ${{ steps.verify.outputs.summary }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with: {persist-credentials: false}
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with: {python-version: '3.12'}
+      - run: python -m pip install -q .
+      - name: Check five census tables, two collision editions and HPI lookup
+        id: verify
+        run: python scripts/check_civil_sources.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: civil-source-evidence-${{ github.sha }}
+          path: civil-validation.json
+          retention-days: 14
+  published-example:
+    needs: published-files
+    name: ${{ needs.published-files.outputs.summary || 'Birmingham example' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Source hashes and dated records are in the validation artifact.'

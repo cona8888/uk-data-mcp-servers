@@ -1,10 +1,11 @@
-# UK Public Data MCP Servers and Groundwork
+# UK Civil and Public Data MCP Servers and Groundwork
 
-One repository, two entry points. Use **UK Public Data** for cross-sector discovery, housing, social statistics, the water industry and infrastructure publications. Use **Groundwork** for the existing geotechnical desk-study app. Neither service claims to contain every UK dataset.
+**Use one civil-engineering MCP connection:** `uk-civil-data serve`. It includes the existing ground and public-data tools, a map of civil source coverage and local-authority census and road-safety queries. Start with `civil_coverage`. A named sector is not a claim that all its records are open or queryable. Groundwork remains the specialist browser application; both original MCP profiles still work.
 
 | Start here | What you get |
 |---|---|
-| [UK Public Data: tools, source coverage and examples](docs/PUBLIC_DATA.md) | Search data.gov.uk and ONS, read a regional house price or social time series, retrieve published leakage indicators, find NISTA documents or resolve a dataset to its resources. Run `uk-public-data serve` for MCP. |
+| [Civil gateway: setup, coverage and Birmingham example](docs/CIVIL_GATEWAY.md) | One MCP connection. Use `uk-civil-data prepare ts001 stats19-2025` to enable an offline comparison of census population and reported road collisions. Optionally include an explicitly dated house price. |
+| [UK Public Data: tools, source coverage and examples](docs/PUBLIC_DATA.md) | Search data.gov.uk and ONS, read a regional house price or social time series, retrieve published leakage indicators, find NISTA documents or resolve a dataset to its resources. Run `uk-public-data serve` for the narrower profile. |
 | [Groundwork quick start](docs/QUICKSTART.md) | Launch the local browser app, gather ground evidence, review records and plan what to investigate. Existing `uk-data-mcp` commands are unchanged. |
 
 [![Offline validation](https://github.com/cona8888/uk-data-mcp-servers/actions/workflows/ci.yml/badge.svg)](https://github.com/cona8888/uk-data-mcp-servers/actions/workflows/ci.yml)
