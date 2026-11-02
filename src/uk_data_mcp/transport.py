@@ -12,6 +12,7 @@ from urllib.parse import urljoin, urlsplit
 import httpx
 
 from . import __version__
+from .corridor_policy import EXACT as CORRIDOR_EXACT
 from .json_safety import loads_json
 
 ALLOWED_PATHS = {
@@ -35,6 +36,8 @@ PUBLIC_EXACT = {
     "data.gov.uk": {"/api/3/action/package_show", "/api/action/package_show"},
     "landregistry.data.gov.uk": {"/data/ukhpi.json"},
 }
+for _host, _path in CORRIDOR_EXACT:
+    PUBLIC_EXACT.setdefault(_host, set()).add(_path)
 
 
 def utc_now() -> str:
@@ -61,8 +64,7 @@ class FetchResult:
 
     def provenance(self) -> dict:
         return {"url": self.url, "retrieved_at_utc": self.retrieved_at,
-                "response_sha256": self.sha256, "content_type": self.content_type,
-                "http_status": self.status_code}
+                "response_sha256": self.sha256, "content_type": self.content_type, "http_status": self.status_code}
 
 
 def checked_url(url: str, *, public_data: bool = False) -> str:

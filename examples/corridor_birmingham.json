@@ -1,0 +1,8 @@
+{
+  "alignment": {"type":"LineString", "coordinates":[[-1.888,52.4728],[-1.8856,52.47515],[-1.8835,52.47710],[-1.8806,52.4792]]},
+  "input_crs":"OGC:CRS84",
+  "nation":"England",
+  "radius_m":250,
+  "candidate_budget":1000,
+  "limit":100
+}

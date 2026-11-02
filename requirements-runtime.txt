@@ -1,4 +1,4 @@
-# Tested runtime dependency versions, Linux / Python 3.12, 2026-10-27.
+# Linux / Python 3.12 runtime pins. Corridor geometry also requires the last three packages.
 # pip can add platform-specific dependencies on other operating systems.
 annotated-types==0.8.0
 anyio==4.15.1
@@ -31,3 +31,6 @@ truststore==0.10.5
 typing-extensions==4.16.0
 typing-inspection==0.4.4
 uvicorn==0.54.0
+numpy==2.3.4
+pyproj==3.7.2
+shapely==2.1.2

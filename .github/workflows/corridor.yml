@@ -4,7 +4,9 @@ on:
   push:
     paths:
       - 'src/uk_data_mcp/corridor*'
+      - 'src/uk_data_mcp/civil_server.py'
       - 'scripts/*corridor*.py'
+      - 'examples/corridor_birmingham.json'
       - '.github/workflows/corridor.yml'
 permissions:
   contents: read
@@ -12,9 +14,29 @@ jobs:
   sources:
     runs-on: ubuntu-latest
     timeout-minutes: 8
+    outputs:
+      summary: ${{ steps.demo.outputs.summary }}
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
         with:
           persist-credentials: false
-      - name: Identify published layers and available fields
-        run: python scripts/inspect_corridor_sources.py
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -q .
+      - name: Classify actual records along the example alignment
+        id: demo
+        run: python scripts/check_corridor.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: corridor-evidence-${{ github.sha }}
+          path: corridor-evidence/
+          retention-days: 30
+  summary:
+    if: always()
+    needs: sources
+    name: ${{ needs.sources.outputs.summary || 'Corridor summary unavailable' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'See source job conclusion and route evidence artifact.'

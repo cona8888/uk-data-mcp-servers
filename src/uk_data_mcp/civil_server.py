@@ -7,6 +7,7 @@ import json
 import re
 import sys
 import zipfile
+from pathlib import Path
 from typing import Literal
 
 import httpx
@@ -15,11 +16,12 @@ from . import civil_housing as housing
 from . import civil_tables as tables
 from . import public_server
 from .civil_coverage import civil_coverage
+from .corridor import corridor_query
 from .service import TOOLS, DataService
 from .transport import DataAccessError, HttpClient
 
 GROUND = ('list_sources', 'source_details', *TOOLS, 'site_context', 'desk_study')
-CIVIL = ('civil_coverage', 'area_census', 'road_collisions', 'civil_area_context')
+CIVIL = ('civil_coverage', 'area_census', 'road_collisions', 'civil_area_context', 'corridor_screen')
 NAMES = (*GROUND, *public_server.TOOL_NAMES, *CIVIL)
 HPI_AREAS = {'E08000025': 'birmingham', 'E08000035': 'leeds', 'W06000015': 'cardiff'}
 
@@ -72,6 +74,8 @@ async def invoke(http, name, args):
             return await DataService(http).call(name, args)
         if name == 'civil_area_context':
             return await context(http, **args)
+        if name == 'corridor_screen':
+            return await corridor_query(http, **args)
         fn = {'civil_coverage': civil_coverage, 'area_census': census, 'road_collisions': collisions}[name]
         return await asyncio.to_thread(fn, **args)
     except (ValueError, TypeError, DataAccessError, OSError, RecursionError) as e:
@@ -107,6 +111,14 @@ def create_server(http=None):
         """Compare census and road safety using a GSS area code; optional HPI: live (3 reviewed areas) or a prepared January 2025 release matched by code. No silent vintage substitution or risk rate."""
         return _result(await invoke(client, 'civil_area_context', dict(gss_code=gss_code, collision_year=collision_year, housing_month=housing_month, housing_edition=housing_edition)))
 
+    @server.tool(annotations=READ_ONLY)
+    async def corridor_screen(alignment: dict, nation: Literal['England','Scotland','Wales'], radius_m: float = 250,
+                              input_crs: Literal['OGC:CRS84','EPSG:27700'] = 'OGC:CRS84',
+                              layers: list[str] | None = None, candidate_budget: int = 500, limit: int = 25):
+        """Screen a 2-D LineString (2–256 vertices, max 20 km) for boreholes, bridges (Trust network), flood_defences (England), collisions (mapped 2025 events), and communities (2024 wards). Distance and chainage are British National Grid metres. Not an asset inventory or proof of beneficiaries. Inspect per-source completeness."""
+        return _result(await invoke(client, 'corridor_screen', dict(alignment=alignment,nation=nation,radius_m=radius_m,
+                       input_crs=input_crs,layers=layers,candidate_budget=candidate_budget,limit=limit)))
+
     return server
 
 
@@ -119,7 +131,9 @@ def main():
     prep.add_argument('editions', nargs='+', choices=(*tables.DATASETS,housing.KEY))
     call = sub.add_parser('call')
     call.add_argument('tool', choices=NAMES)
-    call.add_argument('--json', default='{}')
+    inputs = call.add_mutually_exclusive_group()
+    inputs.add_argument('--json', default='{}')
+    inputs.add_argument('--json-file', type=Path, help='Read a local JSON argument object (CLI only).')
     args = p.parse_args()
     if args.cmd == 'serve':
         create_server().run(transport='stdio')
@@ -131,7 +145,14 @@ def main():
     async def run():
         if args.cmd == 'prepare':
             return [await housing.prepare() if key == housing.KEY else await tables.prepare(key) for key in dict.fromkeys(args.editions)]
-        params = json.loads(args.json)
+        if args.json_file:
+            with args.json_file.open('rb') as fh:
+                raw = fh.read(32769)
+            if len(raw)>32768:
+                raise ValueError('CLI argument file exceeds 32 KiB.')
+            params = json.loads(raw)
+        else:
+            params = json.loads(args.json)
         async with HttpClient(public_data=True) as http:
             return await invoke(http, args.tool, params)
 
