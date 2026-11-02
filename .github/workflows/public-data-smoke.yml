@@ -8,6 +8,7 @@ permissions:
   contents: read
 jobs:
   check:
+    # Eight bounded public queries, including cross-listed historical file metadata.
     runs-on: ubuntu-latest
     timeout-minutes: 9
     steps:

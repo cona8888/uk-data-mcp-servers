@@ -1,4 +1,4 @@
-"""Offline, aggregate-only Yorkshire Water CSV reader. No URL/file-system tool is exposed to MCP clients."""
+"""Local, aggregate-only reader for the historic Yorkshire Water meter CSVs."""
 
 import argparse
 import csv
@@ -27,8 +27,10 @@ def day(raw):
 def summarize(stream):
     reader = csv.DictReader(stream)
     names = [v.strip().lstrip('\ufeff').upper() for v in (reader.fieldnames or [])]
+    # The published data dictionary uses GROSS_COMSUMPTION in some editions.
+    names = ['GROSS_CONSUMPTION' if v == 'GROSS_COMSUMPTION' else v for v in names]
     if not FIELDS.issubset(names) or len(set(names)) != len(names):
-        raise ValueError('Unrecognised meter CSV headers. Check this file against the publisher guidance.')
+        raise ValueError('Unrecognised or ambiguous meter CSV headers; check the publisher guidance.')
     reader.fieldnames = names
     groups = {}
     invalid = 0
@@ -47,7 +49,6 @@ def summarize(stream):
         except (ValueError, InvalidOperation):
             invalid += 1
             continue
-        # Do not label estimated intervals as actual. Preserve the source's grouping.
         group = (town.upper(), source, end.year)
         if group not in groups:
             if len(groups) >= 20000:
@@ -67,6 +68,7 @@ def summarize(stream):
                            'litres_per_recorded_meter_day':round(float(1000*volume/days), 3)})
     return {'kind':'local_aggregate', 'source':SOURCES['meter_yorkshire'], 'groups':output,
             'excluded_invalid_intervals':invalid, 'minimum_distinct_meters_per_output_group':MIN_METERS,
+            'attribution':'Contains derived Yorkshire Water customer meter data. Check the file-specific licence: the original Calderdale catalogue states OGL; the Data Mill North publisher page links to Creative Commons Attribution.',
             'method':'Group complete input intervals by end year, postal town and reading source. Ratio of summed volumes to summed interval-days, not an arithmetic mean of daily rates. Not population-weighted or leakage. Identifiers never exported. Completeness, overlap and duplicate intervals are not audited; use one original file per run. Small groups are not returned.'}
 
 

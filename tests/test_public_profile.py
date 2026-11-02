@@ -1,4 +1,4 @@
-"""Synthetic contract tests; no customer records, credentials or provider calls."""
+"""Synthetic integration and error contracts. No customer data or upstream requests."""
 
 import csv
 import io
@@ -9,9 +9,21 @@ from mcp import Client
 
 from uk_data_mcp.meter_summary import summarize
 from uk_data_mcp.public_catalogue import METER, TELEMETRY, public_sources
-from uk_data_mcp.public_queries import company_leakage, dataset_record, house_prices, ons_series
+from uk_data_mcp.public_queries import (
+    METER_PUBLISHER_ID,
+    company_leakage,
+    dataset_record,
+    house_prices,
+    ons_series,
+)
 from uk_data_mcp.public_server import TOOL_NAMES, create_server, invoke
-from uk_data_mcp.transport import LEAKAGE_PATH, DataAccessError, FetchResult, HttpClient, checked_url
+from uk_data_mcp.transport import (
+    LEAKAGE_PATH,
+    DataAccessError,
+    FetchResult,
+    HttpClient,
+    checked_url,
+)
 
 URI = '/employmentandlabourmarket/peoplenotinwork/unemployment/timeseries/mgsx/lms'
 OBS = 'http://landregistry.data.gov.uk/data/ukhpi/region/birmingham/month/2024-01'
@@ -104,6 +116,24 @@ async def test_alias_only_reads_catalogue_and_retains_resource_terms():
 
 
 @pytest.mark.asyncio
+async def test_meter_cross_listing_preserves_provenance_without_downloading():
+    calls = []
+
+    def handler(req):
+        key = req.url.params['id']
+        calls.append(key)
+        assert req.url.host == 'ckan.publishing.service.gov.uk'
+        rows = [{'name':'2010-11','url':'https://publisher.test/file.csv','format':'CSV'}] if key == METER_PUBLISHER_ID else []
+        return httpx.Response(200,json={'success':True, 'result':{'id':key,'title':'Customer meter data','resources':rows}})
+    async with httpx.AsyncClient(transport=httpx.MockTransport(handler)) as raw:
+        result = await dataset_record(HttpClient(client=raw,public_data=True,rate_interval=0),'meter_yorkshire')
+    assert calls == [METER, METER_PUBLISHER_ID]
+    assert len(result['provenance']) == 2 and result['metadata']['primary_resource_count'] == 0
+    assert result['metadata']['record']['id'] == METER and result['metadata']['resource_listing_record']['id'] == METER_PUBLISHER_ID
+    assert result['data'][0]['format'] == 'CSV' and result['metadata']['resource_bytes_fetched'] is False
+
+
+@pytest.mark.asyncio
 async def test_federated_search_preserves_partial_failure_and_real_empty():
     def handler(request):
         if request.url.host == 'api.beta.ons.gov.uk':
@@ -138,10 +168,11 @@ async def test_leakage_rejects_wrong_table_and_retains_zero():
             await company_leakage(page(invalid))
 
 
-def test_meter_ratio_of_sums_suppression_missing_and_privacy():
+@pytest.mark.parametrize('header', ['GROSS_CONSUMPTION','GROSS_COMSUMPTION'])
+def test_meter_ratio_of_sums_suppression_missing_and_privacy(header):
     s = io.StringIO()
     w = csv.writer(s)
-    w.writerow(['POSTAL_TOWN','READING_SOURCE','METER_KEY','GROSS_CONSUMPTION','READING_START_DATE','READING_END_DATE'])
+    w.writerow(['POSTAL_TOWN','READING_SOURCE','METER_KEY',header,'READING_START_DATE','READING_END_DATE'])
     for i in range(10):
         w.writerow(['A','Actual',f'private-key-{i}',1 if i else 10,'01/01/2015','11/01/2015' if i else '21/01/2015'])
     w.writerow(['A','Estimated','private-key-a',999,'01/01/2015','11/01/2015'])
