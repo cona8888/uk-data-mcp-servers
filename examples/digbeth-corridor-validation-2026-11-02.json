@@ -1,0 +1,33 @@
+{
+  "kind": "corridor_validation_receipt",
+  "description": "Hypothetical Digbeth alignment; a dated software integration check, not a proposed scheme or a survey.",
+  "run_utc_minute": "2026-11-02T01:49Z",
+  "implementation_commit": "e33fbb75d9436e8c6d4757d963352815e7845b45",
+  "input_file": "examples/corridor_birmingham.json",
+  "metric_crs": "EPSG:27700",
+  "alignment_length_m": 873.225,
+  "radius_each_side_m": 250,
+  "candidate_budget_per_source": 1000,
+  "display_limit_per_source": 100,
+  "all_five_scans_complete": true,
+  "layers": [
+    {"layer":"boreholes", "source":"BGS Single Onshore Borehole Index", "examined":130, "matched":40, "returned":40, "source_page":"https://www.bgs.ac.uk/datasets/boreholes-index/"},
+    {"layer":"bridges", "source":"Canal & River Trust bridge points", "examined":14, "matched":5, "returned":5, "source_page":"https://www.data.gov.uk/dataset/3bad9280-3167-4a8f-ad12-4fa93297bf51/bridges"},
+    {"layer":"flood_defences", "source":"Environment Agency AIMS spatial flood defences", "examined":15, "matched":14, "returned":14, "source_page":"https://www.data.gov.uk/dataset/cc76738e-fc17-49f9-a216-977c61858dda/aims-spatial-flood-defences-inc-standardised-attributes"},
+    {"layer":"collisions", "source":"DfT STATS19 2025 police-reported personal-injury events", "examined":37, "matched":22, "returned":22, "source_page":"https://www.gov.uk/government/statistical-data-sets/road-safety-open-data"},
+    {"layer":"communities", "source":"ONS December 2024 generalised ward boundaries", "examined":4, "matched":2, "returned":2, "source_page":"https://www.data.gov.uk/dataset/e8493e3d-619e-4362-aa3a-0a3538177da8/wards-december-2024-boundaries-uk-bgc"}
+  ],
+  "defence_centreline_contacts": [
+    {"feature_id":"Spatial_Flood_Defences_Including_Standardised_Attributes.80479", "kind":"point_contact", "chainage_m":313.675113},
+    {"feature_id":"Spatial_Flood_Defences_Including_Standardised_Attributes.80869", "kind":"point_contact", "chainage_m":358.743599}
+  ],
+  "wards": [
+    {"name":"Bordesley & Highgate", "relation":"interior_traversed", "start_m":0.0, "end_m":873.224845, "interior_length_m":873.225, "boundary_length_m":0.0},
+    {"name":"Nechells", "relation":"nearby_only", "interior_length_m":0.0, "boundary_length_m":0.0}
+  ],
+  "source_check": "https://github.com/cona8888/uk-data-mcp-servers/actions/runs/41374398910/job/125051408861",
+  "full_pack": "https://github.com/cona8888/uk-data-mcp-servers/actions/runs/41374398910/artifacts/13109918646",
+  "pack_sha256": "e1367a1e74a489405909e7dc354b10db94546b0f1650c13edd084abea3c98b15",
+  "pack_retention_until_utc": "2026-12-02T01:49:05Z",
+  "interpretation": "Counts refer only to the named products. Chainages are calculated horizontal distances, not survey accuracy. A mapped contact is not structural interference. Ward traversal is not service accessibility. Fresh data can differ; retain report.json for request hashes and provider terms."
+}
