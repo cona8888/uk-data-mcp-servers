@@ -1,0 +1,216 @@
+{
+  "kind": "civil_evidence_integrity_validation_receipt",
+  "date_utc": "2026-11-11",
+  "baseline_commit": "c7debb9cb833f9b8fa81ef25f16f84ad1be8599f",
+  "tested_commit": "2291f47e1a23e0b41e0b1f1c10a551f605ecb314",
+  "tested_tree": "b6ca52004a3b6f26b8c4e7142174d74f1a197edf",
+  "code_review_scope": "No misleading complete result: corridor jurisdiction, source contracts, saved exports, prepared indexes and utility handoffs.",
+  "checks": {
+    "python_mcp_tests": 392,
+    "python_mcp_tests_failures": 0,
+    "new_regression_cases": 84,
+    "frontend_synthetic_dom_tests": 12,
+    "offline_ci_configurations_passed": 5,
+    "configurations": [
+      "Ubuntu Python 3.11",
+      "Ubuntu Python 3.12",
+      "Ubuntu Python 3.13",
+      "Windows Python 3.12",
+      "macOS Python 3.12"
+    ],
+    "lint": "passed",
+    "dependency_consistency": "passed",
+    "wheel_and_sdist": "passed",
+    "read_only_mcp_tools": 29,
+    "routing_benchmark_before": 6,
+    "routing_benchmark_after": 12,
+    "routing_benchmark_total": 12,
+    "nation_sector_handoffs": 12,
+    "official_cache_releases_validated": 8,
+    "live_wrong_nation": "nation_mismatch; no asset queries",
+    "live_cross_border": "border_or_coast_unverified; no asset queries"
+  },
+  "performance": {
+    "cold_start_ms": [
+      701.9600949999898,
+      683.8127710000066,
+      682.4897750000076
+    ],
+    "warm_lookup": {
+      "n": 30,
+      "median_ms": 1.478838499998858,
+      "p95_nearest_rank_ms": 1.5373519999997143
+    },
+    "digbeth_ms": 2156.359624000004,
+    "leeds_ms": 2231.1557139999964,
+    "interpretation": "Single-user observed durations, not service-level guarantees or saturation benchmarks."
+  },
+  "digbeth": {
+    "duration_ms": 2156.359624000004,
+    "layers": {
+      "boreholes": {
+        "status": "ok",
+        "matched_examined": 40,
+        "returned": 40,
+        "boundary_candidates_count": 5,
+        "threshold_sensitive_matched": 2,
+        "candidate_scan_complete": true
+      },
+      "bridges": {
+        "status": "ok",
+        "matched_examined": 5,
+        "returned": 5,
+        "boundary_candidates_count": 0,
+        "threshold_sensitive_matched": 2,
+        "candidate_scan_complete": true
+      },
+      "flood_defences": {
+        "status": "ok",
+        "matched_examined": 14,
+        "returned": 14,
+        "boundary_candidates_count": 1,
+        "threshold_sensitive_matched": 2,
+        "candidate_scan_complete": true
+      },
+      "collisions": {
+        "status": "ok",
+        "matched_examined": 22,
+        "returned": 22,
+        "boundary_candidates_count": 4,
+        "threshold_sensitive_matched": 1,
+        "candidate_scan_complete": true
+      },
+      "communities": {
+        "status": "ok",
+        "matched_examined": 2,
+        "returned": 2,
+        "boundary_candidates_count": 0,
+        "threshold_sensitive_matched": 1,
+        "candidate_scan_complete": true
+      }
+    },
+    "reference": {
+      "reference_rows": 101525,
+      "unlocated": 2,
+      "strict_reference_positive": 22,
+      "strict_server_positive": 22,
+      "common": 22,
+      "reference_only": 0,
+      "server_only": 0,
+      "reference_only_in_review_band": 0,
+      "unflagged_disagreements": 0,
+      "reference_only_distances": [],
+      "interpretation": "Separate published coordinate representations, not surveyed ground truth."
+    },
+    "structured_bytes": 89958
+  },
+  "leeds": {
+    "duration_ms": 2231.1557139999964,
+    "layers": {
+      "collisions": {
+        "status": "ok",
+        "matched_examined": 31,
+        "returned": 31,
+        "boundary_candidates_count": 5,
+        "threshold_sensitive_matched": 4,
+        "candidate_scan_complete": true
+      }
+    },
+    "reference": {
+      "reference_rows": 101525,
+      "unlocated": 2,
+      "strict_reference_positive": 32,
+      "strict_server_positive": 31,
+      "common": 31,
+      "reference_only": 1,
+      "server_only": 0,
+      "reference_only_in_review_band": 1,
+      "unflagged_disagreements": 0,
+      "reference_only_distances": [
+        {
+          "csv_offset_m": 249.701,
+          "map_offset_m": 250.735
+        }
+      ],
+      "interpretation": "Separate published coordinate representations, not surveyed ground truth."
+    },
+    "structured_bytes": 36551
+  },
+  "reference_source": {
+    "url": "https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-collision-2025.csv",
+    "sha256": "e699c19bdb82e47e449b6f3381ac87631865f6a31cef118c9955ba80ca870e2b",
+    "bytes": 19349153
+  },
+  "cache_releases": [
+    {
+      "dataset": "ts001",
+      "schema": 2,
+      "source_sha256": "b724c1208b7628c7c558156fcc619446486353a12d0b6e0bf388add225653dc6",
+      "derived_sha256": "9defbfeff10a05c85ec267779cdc3891fe6fe52bf3821729b39ee417af18363a"
+    },
+    {
+      "dataset": "ts041",
+      "schema": 2,
+      "source_sha256": "e4f11fc0ea22393fe3be444027878e67b51d2a44687e122c37439d19a548cb9f",
+      "derived_sha256": "a45b39c999ca86f83ec16815582117a9665821c276e351632eb9b2c92aba8edc"
+    },
+    {
+      "dataset": "ts045",
+      "schema": 2,
+      "source_sha256": "95593dcd53247d4458e97edd7454577a63e47fd43be957f0a2460e872efdc070",
+      "derived_sha256": "332a22c5f46b810e6917c6d6599abd049cda9d217ec377443cbce3032c5eb17f"
+    },
+    {
+      "dataset": "ts061",
+      "schema": 2,
+      "source_sha256": "ab9756081498826c4aed237e22b811c12d4a52767326c55d1371fcde98f80a31",
+      "derived_sha256": "f805f31715cff6d7d60eb36f288058fbbee291014f504a616518dd14b086b3cc"
+    },
+    {
+      "dataset": "ts066",
+      "schema": 2,
+      "source_sha256": "eb9d792d4b9d196b2e36ab558af2ad85f52f5f2f2643b3895b42cd4fad068d1a",
+      "derived_sha256": "2d17ce81f18294372ecff5b00b6f063818baa8252aaace75db2353dd3c9edb62"
+    },
+    {
+      "dataset": "stats19-2024",
+      "schema": 2,
+      "source_sha256": "32a78f4662e309160f37b1ea2b82017e85e07b62a022d680da7140e88706a17c",
+      "derived_sha256": "e2fc225eb984bb26b9c72e77a0450a01f93521968be0d3134c8110288aca3765"
+    },
+    {
+      "dataset": "stats19-2025",
+      "schema": 2,
+      "source_sha256": "e699c19bdb82e47e449b6f3381ac87631865f6a31cef118c9955ba80ca870e2b",
+      "derived_sha256": "86c9f1ebd178064db55a16127ab1bd758454e38778d34ca03a2c33c5452d3037"
+    },
+    {
+      "edition": "2025-01",
+      "schema": 2,
+      "source_sha256": "c0de8b1597b13695d70cb7dee1193f38acb7cccd66ba84b19e83a61bef28727d",
+      "derived_sha256": "714f2c59c5f09cce91cc1b4e2d610dab5d5b2e9844b5a78dd5b67cee11c3af86"
+    }
+  ],
+  "links": {
+    "offline_ci": "https://github.com/cona8888/uk-data-mcp-servers/actions/runs/42940052351",
+    "live_acceptance": "https://github.com/cona8888/uk-data-mcp-servers/actions/runs/42940052306",
+    "validated_artifact": "https://github.com/cona8888/uk-data-mcp-servers/actions/runs/42940052306/artifacts/13819804549"
+  },
+  "validated_artifact_sha256": "bd6a339c75694b630a8c836d92396e171e95497436f555f7c649c92549cf4a22",
+  "retained_failure": {
+    "attempt": 1,
+    "cause": "Environment Agency flood-defence timeout",
+    "observed_behaviour": "Failed source remained error inside a partial report; no zero substituted.",
+    "artifact": "https://github.com/cona8888/uk-data-mcp-servers/actions/runs/42940052306/artifacts/13820416786",
+    "retry_attempt": 2,
+    "retry_result": "passed"
+  },
+  "limits": [
+    "No utility location, network-capacity or excavation-clearance certification.",
+    "Country verification is conservative: the full padded envelope must fit one versioned generalised country polygon.",
+    "The fixed 25 m review band is not a surveyed accuracy or a statistical confidence interval.",
+    "A co-stored derived digest is not authentication; use a separately trusted receipt or rebuild from the source.",
+    "Human user trial, concurrent-load testing and visual browser testing were not performed.",
+    "Legacy schema-1 caches require explicit operator preparation; no automatic downloads through MCP."
+  ]
+}
