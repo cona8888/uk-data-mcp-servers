@@ -101,7 +101,8 @@ async def test_declared_england_for_scottish_polygon_blocks_asset_search():
     r = await query(handler)
     assert r['status'] == 'error' and r['error']['code'] == 'nation_mismatch'
     assert r['results'] == {} and len(calls) == 1
-    out=io.StringIO();write_schedule(r,out)
+    out=io.StringIO()
+    write_schedule(r,out)
     assert 'report_summary' in out.getvalue() and 'mismatch' in out.getvalue()
 
 
@@ -129,7 +130,8 @@ async def test_boundary_band_preserves_strict_membership_and_near_miss():
     payload={'type':'FeatureCollection','numberMatched':4,
              'features':[feature('inside',249.701), feature('outside',250.735),
                          feature('well_inside',10), feature('far',300)]}
-    r=await query(routed(payload));layer=r['results']['boreholes']
+    r=await query(routed(payload))
+    layer=r['results']['boreholes']
     assert layer['matched_examined']==2 and layer['outside_corridor']==2
     assert layer['boundary_candidates_count']==1
     assert layer['boundary_candidates'][0]['source_feature_id']=='outside'
@@ -137,7 +139,8 @@ async def test_boundary_band_preserves_strict_membership_and_near_miss():
     assert layer['membership_stability']=='review_required'
     assert layer['boundary_candidates'][0]['source_position']['crs']=='EPSG:27700'
     validate_corridor_report(r)
-    out=io.StringIO();write_schedule(r,out)
+    out=io.StringIO()
+    write_schedule(r,out)
     assert 'boundary_review_only' in out.getvalue()
 
 
@@ -156,49 +159,78 @@ def valid_report():
     'nonzero_offset','bad_relation','bad_truncation','bad_length','bad_status','duplicate','nan','empty_incomplete',
     'error_marked_complete','numeric_flag','invalid_attributes'])
 def test_exports_reject_inconsistent_saved_report(mutation):
-    r=valid_report();g=r['results']['boreholes'];f=g['data'][0];c=f['centreline_contacts'];e=c['events'][0]
-    if mutation=='negative_chainage': e['start_m']=e['end_m']=-5
-    elif mutation=='over_length': e['start_m']=e['end_m']=1001
-    elif mutation=='nearby_contact': c['relation']='nearby_only'
-    elif mutation=='wrong_count': c['count']=0
-    elif mutation=='nonzero_offset': f['offset_m']=123
-    elif mutation=='bad_relation': c['relation']='interior_traversed'
-    elif mutation=='bad_truncation': c['truncated']=True
-    elif mutation=='bad_length': r['metric']['length_m']=900
-    elif mutation=='bad_status': g['status']='partial'
-    elif mutation=='duplicate': g['data'].append(copy.deepcopy(f));g['matched_examined']=2
-    elif mutation=='nan': f['offset_m']=float('nan')
-    elif mutation=='empty_incomplete': g.update(status='empty',candidate_scan_complete=False,data=[],matched_examined=0)
-    elif mutation=='error_marked_complete': g['error']={'code':'upstream_error'}
-    elif mutation=='numeric_flag': g['more_matches_than_shown']=0
-    elif mutation=='invalid_attributes': f['attributes']=[]
-    out=io.StringIO('unchanged');out.seek(0,2)
-    with pytest.raises(ValueError): write_schedule(r,out)
+    r=valid_report()
+    g=r['results']['boreholes']
+    f=g['data'][0]
+    c=f['centreline_contacts']
+    e=c['events'][0]
+    if mutation=='negative_chainage':
+        e['start_m']=e['end_m']=-5
+    elif mutation=='over_length':
+        e['start_m']=e['end_m']=1001
+    elif mutation=='nearby_contact':
+        c['relation']='nearby_only'
+    elif mutation=='wrong_count':
+        c['count']=0
+    elif mutation=='nonzero_offset':
+        f['offset_m']=123
+    elif mutation=='bad_relation':
+        c['relation']='interior_traversed'
+    elif mutation=='bad_truncation':
+        c['truncated']=True
+    elif mutation=='bad_length':
+        r['metric']['length_m']=900
+    elif mutation=='bad_status':
+        g['status']='partial'
+    elif mutation=='duplicate':
+        g['data'].append(copy.deepcopy(f))
+        g['matched_examined']=2
+    elif mutation=='nan':
+        f['offset_m']=float('nan')
+    elif mutation=='empty_incomplete':
+        g.update(status='empty',candidate_scan_complete=False,data=[],matched_examined=0)
+    elif mutation=='error_marked_complete':
+        g['error']={'code':'upstream_error'}
+    elif mutation=='numeric_flag':
+        g['more_matches_than_shown']=0
+    elif mutation=='invalid_attributes':
+        f['attributes']=[]
+    out=io.StringIO('unchanged')
+    out.seek(0,2)
+    with pytest.raises(ValueError):
+        write_schedule(r,out)
     assert out.getvalue()=='unchanged'
 
 
 def test_valid_legacy_export_marks_jurisdiction_unverified():
-    out=io.StringIO();write_schedule(valid_report(),out)
+    out=io.StringIO()
+    write_schedule(valid_report(),out)
     rows=list(csv.DictReader(io.StringIO(out.getvalue())))
     assert all(x['jurisdiction_status']=='unverified_legacy' and x['inventory_complete']=='False' for x in rows)
 
 
 def test_invalid_file_does_not_replace_previous_export(tmp_path):
-    src=tmp_path/'report.json';dst=tmp_path/'schedule.csv'
-    r=valid_report();r['results']['boreholes']['data'][0]['offset_m']=123
-    src.write_text(json.dumps(r));dst.write_text('keep me')
+    src=tmp_path/'report.json'
+    dst=tmp_path/'schedule.csv'
+    r=valid_report()
+    r['results']['boreholes']['data'][0]['offset_m']=123
+    src.write_text(json.dumps(r))
+    dst.write_text('keep me')
     p=subprocess.run([sys.executable,'-m','uk_data_mcp.corridor_schedule',str(src),str(dst)],
                      capture_output=True,text=True)
     assert p.returncode==2 and dst.read_text()=='keep me'
 
 
 def test_polygon_totals_checked():
-    r=valid_report();route=Corridor.make(LINE,250,'EPSG:27700')
-    hit=route.measure(box(400100,279990,400200,280010));hit.update(source_feature_id='1',attributes={})
+    r=valid_report()
+    route=Corridor.make(LINE,250,'EPSG:27700')
+    hit=route.measure(box(400100,279990,400200,280010))
+    hit.update(source_feature_id='1',attributes={})
     r['results']['boreholes']['data']=[hit]
     validate_corridor_report(r)
     hit['centreline_contacts']['covered_length_m']=99
-    with pytest.raises(ValueError): validate_corridor_report(r)
+    with pytest.raises(ValueError):
+        validate_corridor_report(r)
 
 
 def collision_cache(tmp_path):
@@ -209,14 +241,27 @@ def collision_cache(tmp_path):
 
 @pytest.mark.parametrize('mutation', ['negative','bool','severity_sum','positive_edit','source_count','old_schema','nonfinite'])
 def test_corrupt_cache_never_returns_known_count(tmp_path,mutation):
-    index,path=collision_cache(tmp_path);row=index['areas']['E08000025']
-    if mutation=='negative': row['reported_injury_collisions']=-7;seal(index)
-    elif mutation=='bool': row['reported_injury_collisions']=True;seal(index)
-    elif mutation=='severity_sum': row['by_reported_collision_severity']['slight']=2;seal(index)
-    elif mutation=='positive_edit': row['reported_injury_collisions']=7
-    elif mutation=='source_count': index['source_records']=8;seal(index)
-    elif mutation=='old_schema': index['schema']=1;index.pop('derived_sha256')
-    elif mutation=='nonfinite': row['reported_injury_collisions']=float('nan')
+    index,path=collision_cache(tmp_path)
+    row=index['areas']['E08000025']
+    if mutation=='negative':
+        row['reported_injury_collisions']=-7
+        seal(index)
+    elif mutation=='bool':
+        row['reported_injury_collisions']=True
+        seal(index)
+    elif mutation=='severity_sum':
+        row['by_reported_collision_severity']['slight']=2
+        seal(index)
+    elif mutation=='positive_edit':
+        row['reported_injury_collisions']=7
+    elif mutation=='source_count':
+        index['source_records']=8
+        seal(index)
+    elif mutation=='old_schema':
+        index['schema']=1
+        index.pop('derived_sha256')
+    elif mutation=='nonfinite':
+        row['reported_injury_collisions']=float('nan')
     path.write_text(json.dumps(index))
     r=tables.area_record('stats19-2025','E08000025',tmp_path)
     assert r['status']=='error' and r['error']['code']=='invalid_cache' and r['data']==[]
@@ -224,22 +269,27 @@ def test_corrupt_cache_never_returns_known_count(tmp_path,mutation):
 
 
 def test_digest_is_not_claimed_authentication_and_external_reference_can_detect_reseal(tmp_path):
-    index,_=collision_cache(tmp_path);trusted=index['derived_sha256']
+    index,_=collision_cache(tmp_path)
+    trusted=index['derived_sha256']
     index['areas']['E08000025']['reported_injury_collisions']=2
     index['areas']['E08000025']['by_reported_collision_severity']['slight']=2
-    index['source_records']=2;seal(index)
-    with pytest.raises(ValueError,match='trusted'):verify(index,trusted)
+    index['source_records']=2
+    seal(index)
+    with pytest.raises(ValueError,match='trusted'):
+        verify(index,trusted)
 
 
 def test_hpi_derived_values_verified(tmp_path):
     index=housing.index_file(b'Date,Region_Name,Area_Code,Average_Price\n01/01/2024,Test,E08000025,10\n')
-    index['areas']['E08000025']['months']['2024-01']='-7';seal(index)
+    index['areas']['E08000025']['months']['2024-01']='-7'
+    seal(index)
     (tmp_path/(housing.KEY+'.json')).write_text(json.dumps(index))
     assert housing.record('E08000025','2024-01',tmp_path)['error']['code']=='invalid_cache'
 
 
 def test_duplicate_json_keys_rejected():
-    with pytest.raises(ValueError,match='Duplicate'):loads_json('{"a":1,"a":2}')
+    with pytest.raises(ValueError,match='Duplicate'):
+        loads_json('{"a":1,"a":2}')
 
 
 @pytest.mark.parametrize('query,domain', [

@@ -33,6 +33,10 @@ jobs:
         run: python -m pytest -q tests/test_evidence_integrity.py --junitxml=integrity-evidence/regressions.xml
       - name: Live coverage checks and independent collision comparison via MCP
         run: python scripts/check_evidence_integrity.py
+      - name: Verify schema-2 caches using official published releases
+        run: |
+          python scripts/check_civil_sources.py
+          cp civil-validation.json integrity-evidence/civil-validation.json
       - name: Render validated evidence map
         run: python scripts/corridor_view.py integrity-evidence/digbeth.json integrity-evidence/digbeth-map.html
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

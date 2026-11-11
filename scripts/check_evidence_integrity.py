@@ -33,8 +33,10 @@ def distance(p, a, b):
 
 
 def reference(raw, report):
-    xy=report['metric']['route_bng_m'];radius=report['request']['radius_m']
-    expected={};invalid=total=0
+    xy=report['metric']['route_bng_m']
+    radius=report['request']['radius_m']
+    expected={}
+    invalid=total=0
     for row in csv.DictReader(io.StringIO(raw.decode('utf-8-sig'))):
         total+=1
         try:
