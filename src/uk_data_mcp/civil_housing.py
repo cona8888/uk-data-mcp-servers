@@ -15,6 +15,8 @@ from datetime import datetime, timezone
 import httpx
 
 from . import civil_tables as t
+from .cache_integrity import cache_error, seal, validate_housing
+from .json_safety import loads_json
 
 EDITION = '2025-01'
 KEY = 'hpi-' + EDITION
@@ -58,10 +60,13 @@ def index_file(raw):
         area['months'][month] = price or None
     if not areas:
         raise ValueError('Empty HPI district table.')
-    return {'schema':1, 'edition':EDITION, 'url':URL, 'landing_page':LANDING,
+    index = {'schema':2, 'edition':EDITION, 'url':URL, 'landing_page':LANDING,
             'retrieved_at_utc':datetime.now(timezone.utc).isoformat(),
             'source_sha256':hashlib.sha256(raw).hexdigest(), 'areas':areas,
             'licence':t.OGL, 'attribution':'Contains HM Land Registry data © Crown copyright and database right 2025. Open Government Licence v3.0.'}
+    seal(index)
+    validate_housing(index, EDITION, URL)
+    return index
 
 
 async def prepare(directory=None):
@@ -102,13 +107,13 @@ def record(code, month, directory=None):
             raw = f.read(MAX+1)
     except FileNotFoundError:
         return {'status':'error','data':[], 'error':{'code':'not_prepared'}, 'operator_action':'uk-civil-data prepare '+KEY}
-    if len(raw)>MAX:
-        raise ValueError('Invalid HPI cache size.')
-    index = json.loads(raw)
-    if (not isinstance(index,dict) or index.get('schema') != 1 or index.get('edition') != EDITION
-            or index.get('url') != URL or not isinstance(index.get('areas'), dict)
-            or not re.fullmatch(r'[a-f0-9]{64}', str(index.get('source_sha256')))):
-        raise ValueError('Invalid HPI cache. Prepare the named edition again.')
+    try:
+        if len(raw) > MAX:
+            raise ValueError('Invalid HPI cache size.')
+        index = loads_json(raw, max_nodes=2_000_000)
+        validate_housing(index, EDITION, URL)
+    except (ValueError, TypeError, KeyError) as exc:
+        return cache_error(KEY, str(exc))
     source = {k:v for k,v in index.items() if k != 'areas'}
     area = index['areas'].get(code)
     price = area['months'].get(month) if area else None

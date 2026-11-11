@@ -56,6 +56,15 @@ def _invalid_constant(token: str) -> None:
     raise ValueError("Non-finite JSON constants are not permitted.")
 
 
+def _unique_object(pairs):
+    out = {}
+    for key, value in pairs:
+        if key in out:
+            raise ValueError("Duplicate JSON object keys are not permitted.")
+        out[key] = value
+    return out
+
+
 def loads_json(raw: str | bytes | bytearray, *, max_depth: int = MAX_DEPTH,
                max_nodes: int = MAX_NODES) -> Any:
     """Reject excessive nesting before invoking the recursive stdlib decoder."""
@@ -79,7 +88,8 @@ def loads_json(raw: str | bytes | bytearray, *, max_depth: int = MAX_DEPTH,
                     raise ValueError("JSON exceeds its nesting limit.")
             elif character in "]}":
                 depth -= 1
-        value = json.loads(text, parse_float=_finite_float, parse_constant=_invalid_constant)
+        value = json.loads(text, parse_float=_finite_float, parse_constant=_invalid_constant,
+                           object_pairs_hook=_unique_object)
         validate_json_tree(value, max_depth=max_depth, max_nodes=max_nodes)
         return value
     except (RecursionError, OverflowError, UnicodeError) as exc:

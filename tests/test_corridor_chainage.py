@@ -92,7 +92,9 @@ def test_csv_distinguishes_nearby_omission_and_crossing():
              for i, (x, y) in enumerate([(20, 0), (10, 100)])]
     group = {'source_page': 'https://example.org/', 'status': 'ok', 'candidate_scan_complete': True,
              'matched_examined': 2, 'more_matches_than_shown': False, 'data': items}
-    report = {'kind': 'civil_corridor_screen', 'results': {'assets': group, 'other':
+    report = {'kind': 'civil_corridor_screen', 'schema_version':'1.0', 'status':'partial',
+              'metric':{'crs':'EPSG:27700','length_m':100,'route_bng_m':[[0,0],[100,0]]},
+              'request':{'radius_m':250}, 'results': {'assets': group, 'other':
               {'status': 'error', 'source_page': 'https://example.org/', 'data': []}}}
     out = io.StringIO(newline='')
     write_schedule(report, out)

@@ -1,9 +1,11 @@
 """Render a saved corridor report as a self-contained HTML locator map. No web requests."""
 import argparse
 import html
-import json
 import math
 from pathlib import Path
+
+from uk_data_mcp.corridor_contract import validate_corridor_report
+from uk_data_mcp.json_safety import loads_json
 
 LAYERS = {'boreholes':('Borehole records','#3b648b'), 'bridges':('Canal-network bridges','#ac5124'),
           'flood_defences':('Defence records','#147867'), 'collisions':('Injury collisions','#994438'),
@@ -15,8 +17,11 @@ def esc(value):
 
 
 def render(report):
+    validate_corridor_report(report)
     if report.get('kind')!='civil_corridor_screen' or report.get('metric',{}).get('crs')!='EPSG:27700':
         raise ValueError('Expected a British National Grid corridor report.')
+    jurisdiction = report.get('jurisdiction', {}).get('status', 'unverified_legacy')
+    near = sum(group.get('boundary_candidates_count', 0) for group in report['results'].values())
     m=report['metric']
     pts=m['route_bng_m']
     radius=float(report['request']['radius_m'])
@@ -73,7 +78,7 @@ def render(report):
     svg.append('</svg>')
     css='''*{box-sizing:border-box}body{margin:0;background:#eef3f1;color:#15302c;font:16px/1.5 system-ui,sans-serif}main{max-width:1120px;margin:auto;padding:32px}header,article,aside,details{background:white;border:1px solid #c9d6d0;border-radius:12px;padding:22px 26px;margin-bottom:16px}h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:8px 0}h2{font-size:21px;margin:0 0 10px}.eyebrow{letter-spacing:.14em;font-weight:700;font-size:12px;color:#45695e}.muted,small{color:#4b625c}.grid{display:grid;grid-template-columns:minmax(0,1.5fr) 1fr;gap:16px}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:12px}.metrics div{border-top:1px solid #dce5e1;padding:7px 0}.metrics strong,.metrics small{display:block}.metrics strong{font-size:28px}svg{width:100%;max-height:660px}.controls label{display:block;margin:6px 0}.tablewrap{max-height:420px;overflow:auto}table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:7px;border-bottom:1px solid #dae5e0}th{position:sticky;top:0;background:#edf3f0}td:nth-child(3),td:nth-child(4){font-variant-numeric:tabular-nums}summary{cursor:pointer;font-weight:bold}code{overflow-wrap:anywhere;font-size:.84em}[hidden]{display:none!important}@media(max-width:750px){main{padding:12px}.grid{grid-template-columns:1fr}header,article,aside,details{padding:16px}}'''
     js="document.querySelectorAll('[data-toggle]').forEach(box=>box.addEventListener('change',()=>document.querySelectorAll('[data-layer='+box.dataset.toggle+']').forEach(node=>node.toggleAttribute('hidden',!box.checked))));"
-    return (f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Civil corridor | Evidence map</title><style>{css}</style></head><body><main><header><div class="eyebrow">UK CIVIL DATA / CORRIDOR SCREEN</div><h1>Alignment evidence map</h1><p>{esc(report.get("example","User-supplied alignment"))}</p><b>{m["length_m"]:,.1f} m alignment · {radius:g} m each side</b><div class="muted">Retrieved {esc(report["retrieved_at_utc"])} · Screen status: {esc(report["status"])}</div></header><div class="grid"><article><h2>Plan view</h2><p class="muted">British National Grid, metres. North is up. The shaded area is the search corridor.</p>'
+    return (f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Civil corridor | Evidence map</title><style>{css}</style></head><body><main><header><div class="eyebrow">UK CIVIL DATA / CORRIDOR SCREEN</div><h1>Alignment evidence map</h1><p>{esc(report.get("example","User-supplied alignment"))}</p><b>{m["length_m"]:,.1f} m alignment · {radius:g} m each side</b><div class="muted">Retrieved {esc(report["retrieved_at_utc"])} · Screen status: {esc(report["status"])}</div><p>Jurisdiction: {esc(jurisdiction)}. Inventory completeness is not established. {near} outside-radius records are retained separately for threshold review in the JSON and CSV; they are not plotted as matches.</p></header><div class="grid"><article><h2>Plan view</h2><p class="muted">British National Grid, metres. North is up. The shaded area is the search corridor.</p>'
             +''.join(svg)+'</article><aside><h2>Records within the corridor</h2><div class="metrics">'+''.join(cards)+'</div><h2 style="margin-top:22px">Visible layers</h2><div class="controls">'+''.join(switches)+'</div><p class="muted">For lines and polygons, each dot is one closest point, not the full feature. Ward contact does not establish who uses the route.</p></aside></div><article><h2>Feature register</h2><div class="tablewrap"><table><thead><tr><th>Layer</th><th>Name or source ID</th><th>Offset (m)</th><th>Chainage (m)</th><th>Crosses or touches centreline?</th></tr></thead><tbody>'+''.join(rows)+'</tbody></table></div></article><details><summary>Sources, rights and screening limits</summary>'+''.join(credits)+''.join('<p>'+esc(n)+'</p>' for n in report['limitations'])+f'</details></main><script>{js}</script></body></html>')
 
 
@@ -82,4 +87,11 @@ if __name__=='__main__':
     parser.add_argument('report',type=Path)
     parser.add_argument('output',type=Path)
     args=parser.parse_args()
-    args.output.write_text(render(json.loads(args.report.read_text(encoding='utf-8'))),encoding='utf-8')
+    if args.report.resolve() == args.output.resolve():
+        parser.error('Input and output must differ.')
+    with args.report.open('rb') as f:
+        raw = f.read(16_000_001)
+    if len(raw) > 16_000_000:
+        raise ValueError('Report exceeds 16 MB.')
+    rendered = render(loads_json(raw))
+    args.output.write_text(rendered, encoding='utf-8')

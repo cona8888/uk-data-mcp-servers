@@ -10,7 +10,12 @@ DFT = ('https://services5.arcgis.com/qUwnXV5uf1zyW6Y2/ArcGIS/rest/services/'
        'RoadCasualtyStatsCollision_GB_DfT_Point_2025/FeatureServer/0/query')
 ONS = ('https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/'
        'Wards_December_2024_Boundaries_UK_BGC/FeatureServer/0/query')
-EXACT = frozenset((urlsplit(url).hostname, urlsplit(url).path) for url in (EA, CRT, DFT, ONS))
+# Country validation uses one additional reviewed route, never an arbitrary host.
+COUNTRIES = ('https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/'
+             'Countries_December_2024_Boundaries_UK_BGC/FeatureServer/0/query')
+
+EXACT = frozenset((urlsplit(url).hostname, urlsplit(url).path)
+                  for url in (EA, CRT, DFT, ONS, COUNTRIES))
 
 PRODUCTS = {
     'boreholes': (BGS, 'BGS Single Onshore Borehole Index', 'Great Britain',

@@ -19,9 +19,10 @@ from .civil_coverage import civil_coverage
 from .corridor import corridor_query
 from .service import TOOLS, DataService
 from .transport import DataAccessError, HttpClient
+from .utility_handoff import utility_handoff as handoff
 
 GROUND = ('list_sources', 'source_details', *TOOLS, 'site_context', 'desk_study')
-CIVIL = ('civil_coverage', 'area_census', 'road_collisions', 'civil_area_context', 'corridor_screen')
+CIVIL = ('civil_coverage', 'area_census', 'road_collisions', 'civil_area_context', 'corridor_screen', 'utility_handoff')
 NAMES = (*GROUND, *public_server.TOOL_NAMES, *CIVIL)
 HPI_AREAS = {'E08000025': 'birmingham', 'E08000035': 'leeds', 'W06000015': 'cardiff'}
 
@@ -75,8 +76,16 @@ async def invoke(http, name, args):
         if name == 'civil_area_context':
             return await context(http, **args)
         if name == 'corridor_screen':
+            requested = args.get('layers')
+            if isinstance(requested, list) and any(isinstance(k, str) and k in
+                    ('gas', 'gas_mains', 'electricity', 'cables', 'sewers', 'utilities') for k in requested):
+                return {'status':'error', 'tool':name, 'data':[],
+                        'error':{'code':'unsupported_asset_layer',
+                                 'message':'Restricted utility records are not a public corridor layer.'},
+                        'next_action':{'tool':'utility_handoff', 'arguments':{'nation':args.get('nation')}},
+                        'note':'No utility absence, capacity or clearance is established.'}
             return await corridor_query(http, **args)
-        fn = {'civil_coverage': civil_coverage, 'area_census': census, 'road_collisions': collisions}[name]
+        fn = {'civil_coverage': civil_coverage, 'area_census': census, 'road_collisions': collisions, 'utility_handoff': handoff}[name]
         return await asyncio.to_thread(fn, **args)
     except (ValueError, TypeError, DataAccessError, OSError, RecursionError) as e:
         return {'status': 'error', 'tool': name, 'error': {'code': getattr(e, 'code', 'invalid_request_or_cache'), 'message': str(e)}, 'data': []}
@@ -91,9 +100,17 @@ def create_server(http=None):
     public_server.register_tools(server, lambda: client)
 
     @server.tool(name='civil_coverage', annotations=READ_ONLY)
-    def coverage(query: str = ''):
+    def coverage(query: str = '', nation: Literal['England','Scotland','Wales','Northern Ireland'] | None = None):
         """Find a civil domain and its next tool. Distinguish direct queries, prepared official data, metadata, manual discovery and restricted records."""
-        return _result(civil_coverage(query))
+        return _result(civil_coverage(query, nation))
+
+    @server.tool(annotations=READ_ONLY)
+    def utility_handoff(sector: Literal['gas','electricity','water','utilities'] = 'utilities',
+                        nation: Literal['England','Scotland','Wales','Northern Ireland'] | None = None,
+                        purpose: Literal['asset_records','capacity','connection','diversion'] = 'asset_records',
+                        operator: str | None = None):
+        """Find the official evidence-holder route for utilities. No asset, capacity, offer or excavation clearance is returned; operator selection is not a site-coverage check."""
+        return _result(handoff(sector, nation, purpose, operator))
 
     @server.tool(annotations=READ_ONLY)
     async def area_census(gss_code: str, table: Literal['ts001','ts041','ts045','ts061','ts066'] = 'ts001'):

@@ -9,7 +9,7 @@ from shapely.geometry import LineString, Point, Polygon
 from uk_data_mcp.civil_server import create_server
 from uk_data_mcp.corridor import corridor_query
 from uk_data_mcp.corridor_geo import Corridor
-from uk_data_mcp.corridor_policy import BGS, CRT, DFT, EA, ONS
+from uk_data_mcp.corridor_policy import BGS, COUNTRIES, CRT, DFT, EA, ONS
 from uk_data_mcp.transport import DataAccessError, HttpClient, checked_url
 
 XY = [[400000,280000],[401000,280000],[401000,281000]]
@@ -71,7 +71,13 @@ def feat(i,x,y):
 
 
 async def exercise(handler, **kw):
-    async with httpx.AsyncClient(transport=httpx.MockTransport(handler)) as raw:
+    def routed(req):
+        if str(req.url).startswith(COUNTRIES):
+            nation = kw.get('nation', 'England')
+            code = 'S92000003' if nation == 'Scotland' else 'E92000001'
+            return httpx.Response(200, json={'features':[{'attributes':{'CTRY24CD':code,'CTRY24NM':nation}}]})
+        return handler(req)
+    async with httpx.AsyncClient(transport=httpx.MockTransport(routed)) as raw:
         client = HttpClient(client=raw,public_data=True,rate_interval=0,max_retries=0)
         return await corridor_query(client,**args(**kw))
 
@@ -110,7 +116,11 @@ async def test_empty_vs_outside_national_scope_and_bad_arcgis():
 
 
 async def test_handshake_calls_corridor_through_mcp():
-    async with httpx.AsyncClient(transport=httpx.MockTransport(lambda _:httpx.Response(200,json={'objectIds':[]}))) as raw:
+    def routed(req):
+        if str(req.url).startswith(COUNTRIES):
+            return httpx.Response(200, json={'features':[{'attributes':{'CTRY24CD':'E92000001','CTRY24NM':'England'}}]})
+        return httpx.Response(200,json={'objectIds':[]})
+    async with httpx.AsyncClient(transport=httpx.MockTransport(routed)) as raw:
         http=HttpClient(client=raw,public_data=True,rate_interval=0,max_retries=0)
         async with Client(create_server(http)) as mcp:
             tool=await mcp.call_tool('corridor_screen',args(layers=['bridges']))

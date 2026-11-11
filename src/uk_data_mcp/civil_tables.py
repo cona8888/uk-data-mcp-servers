@@ -19,6 +19,9 @@ from pathlib import Path
 
 import httpx
 
+from .cache_integrity import cache_error, seal, validate_table
+from .json_safety import loads_json
+
 CENSUS = {'ts001': ('Usual residents by residence type', 'people'),
           'ts041': ('Households', 'households'),
           'ts045': ('Car or van availability', 'households'),
@@ -138,10 +141,13 @@ def from_bytes(key, raw):
     areas, metadata = census_rows(key, raw) if key in CENSUS else collision_rows(key, raw)
     if not areas:
         raise ValueError('No valid local-authority records; previous cache was not replaced.')
-    return {'schema': 1, 'dataset': key, 'url': url, 'source_sha256': hashlib.sha256(raw).hexdigest(),
+    index = {'schema': 2, 'dataset': key, 'url': url, 'source_sha256': hashlib.sha256(raw).hexdigest(),
             'retrieved_at_utc': datetime.now(timezone.utc).isoformat(), 'licence': OGL,
             'attribution': metadata['provider'] + '; contains public sector information licensed under the Open Government Licence v3.0.',
             'area_count': len(areas), **metadata, 'areas': areas}
+    seal(index)
+    validate_table(index, key, url, key in CENSUS, EW if key in CENSUS else GB)
+    return index
 
 
 async def download(key):
@@ -163,7 +169,7 @@ async def download(key):
 
 def store(index, directory):
     key = index['dataset']
-    address(key)
+    validate_table(index, key, address(key), key in CENSUS, EW if key in CENSUS else GB)
     content = json.dumps(index, ensure_ascii=False, allow_nan=False, separators=(',', ':')).encode()
     if len(content) > INDEX_CAP:
         raise ValueError('Index exceeds size budget.')
@@ -204,14 +210,13 @@ def area_record(key, code, directory=None):
     except FileNotFoundError:
         return {'status': 'error', 'error': {'code': 'not_prepared'}, 'dataset': key, 'data': [],
                 'source_url': url, 'operator_action': f'uk-civil-data prepare {key}'}
-    if len(content) > INDEX_CAP:
-        raise ValueError('Invalid cache size. Re-prepare this edition.')
-    obj = json.loads(content)
-    if (not isinstance(obj, dict) or obj.get('schema') != 1 or obj.get('dataset') != key
-            or obj.get('url') != url or not isinstance(obj.get('areas'), dict)
-            or obj.get('area_count') != len(obj['areas'])
-            or not re.fullmatch('[0-9a-f]{64}', str(obj.get('source_sha256')))):
-        raise ValueError('Invalid prepared index. Re-prepare this edition.')
+    try:
+        if len(content) > INDEX_CAP:
+            raise ValueError('Invalid cache size.')
+        obj = loads_json(content, max_nodes=2_000_000)
+        validate_table(obj, key, url, key in CENSUS, EW if key in CENSUS else GB)
+    except (ValueError, TypeError, KeyError) as exc:
+        return cache_error(key, str(exc))
     areas = obj.pop('areas')
     if code not in areas:
         return {'status': 'empty', 'area_code': code, 'data': [], 'source': obj,

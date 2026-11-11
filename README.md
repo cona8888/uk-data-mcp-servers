@@ -97,3 +97,7 @@ See [sources, coverage and data licences](docs/DATA_SOURCES.md).
 | Improve the project | [Contributing](CONTRIBUTING.md) · [Open an issue](https://github.com/cona8888/uk-data-mcp-servers/issues/new) |
 
 **Code: MIT. Data: source-specific licences.** This is an independent project, not an official BGS, Environment Agency, ONS or UK Government service.
+
+## Evidence integrity
+
+Country coverage is verified before corridor asset searches. Saved exports and prepared indexes are checked for internal consistency; utility requests receive official evidence-holder guidance. See [the integrity milestone](docs/EVIDENCE_INTEGRITY.md), including cache migration and remaining limits.

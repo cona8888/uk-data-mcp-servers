@@ -2,6 +2,8 @@
 
 Submit a proposed road or rail centreline to `corridor_screen` in the existing `uk-civil-data` MCP connection. No keys, new repository, bulk preparation or Git storage of source data are required. The tool queries live services: their servers receive the padded search bounds, not an uploaded project file. Do not use sensitive alignments without permission to disclose that search area.
 
+See [evidence-integrity changes](EVIDENCE_INTEGRITY.md) for mandatory country verification, validated exports and the separate threshold-review band.
+
 ## Run the Digbeth example
 
 With the project's virtual environment active, run these commands from the repo root:

@@ -1,6 +1,6 @@
 # UK civil engineering data gateway
 
-`uk-civil-data serve` exposes 28 tools in one read-only stdio MCP connection: the original Groundwork and public-data tools plus civil coverage, local-authority census, collision counts, area comparison and corridor screening. The original CLI, GUI and narrower profiles still work. Install from this repository (`python -m pip install .`, Python 3.11+).
+`uk-civil-data serve` exposes 29 tools in one read-only stdio MCP connection: the original Groundwork and public-data tools plus civil coverage, local-authority census, collision counts, area comparison and corridor screening. The original CLI, GUI and narrower profiles still work. Install from this repository (`python -m pip install .`, Python 3.11+).
 
 ```json
 {"mcpServers":{"uk-civil":{"command":"/absolute/path/.venv/bin/python","args":["-m","uk_data_mcp.civil_server","serve"]}}}
@@ -49,3 +49,5 @@ Census scope is England/Wales lower-tier local authorities on 21 March 2021: TS0
 3. Terrain sampling and devolved parity: PSNI collisions, Scotland/NI census, SEPA/NRW/DfI water and flood datasets. Do not substitute English records for other nations.
 
 Acceptance for numerical adapters: reviewed official sources and terms, bounded access, tests for missing versus zero and schema changes, units/geography checks and a dated real-source example. Licensed standards, sensitive utilities and project-specific inspections need appropriate authorised access. The gateway is not a design, approval or safe-to-dig service.
+
+See [evidence integrity](EVIDENCE_INTEGRITY.md) before using saved caches, utility handoffs or near-boundary corridor results.

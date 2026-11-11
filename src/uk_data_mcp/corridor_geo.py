@@ -56,7 +56,7 @@ class Corridor:
         box = list(inv.transform_bounds(*grid_box,densify_pts=41,errcheck=True))
         return cls(line,float(radius_m),fw,inv,box,grid_box,input_crs)
 
-    def metric(self, feature):
+    def metric(self, feature, *, tolerance_m=0):
         raw = feature.get('geometry')
         if not isinstance(raw,dict) or raw.get('type') not in ('Point','MultiPoint','LineString','MultiLineString','Polygon','MultiPolygon'):
             raise ValueError('Missing or unsupported feature geometry.')
@@ -69,22 +69,24 @@ class Corridor:
         grid = transform(self.forward.transform, geom)
         if grid.is_empty or not grid.is_valid or not all(math.isfinite(n) for n in grid.bounds):
             raise ValueError('Geometry invalid after projection.')
-        return self.measure(grid)
+        return self.measure(grid, tolerance_m=tolerance_m)
 
     @cached_property
     def axis(self):
         return RouteAxis(self.line)
 
-    def measure(self, grid):
+    def measure(self, grid, *, tolerance_m=0):
         """Inclusive threshold against the entire geometry, not its centroid or sampled vertices."""
         distance = self.line.distance(grid)
         if not math.isfinite(distance):
             raise ValueError('Distance is not finite.')
-        if distance > self.radius:
+        if distance > self.radius + tolerance_m:
             return None
         on_route,on_feature = nearest_points(self.line,grid)
         x,y = self.inverse.transform(on_feature.x,on_feature.y,errcheck=True)
-        out = {'offset_m':round(distance,3),'chainage_m':round(self.line.project(on_route),3),
+        out = {'within_corridor':distance <= self.radius,
+               'threshold_sensitive':abs(distance-self.radius) <= 25,
+               'offset_m':round(distance,3),'chainage_m':round(self.line.project(on_route),3),
                'nearest_feature_lonlat':[round(x,7),round(y,7)],
                'nearest_route_bng_m':[round(on_route.x,3),round(on_route.y,3)],
                'nearest_feature_bng_m':[round(on_feature.x,3),round(on_feature.y,3)],

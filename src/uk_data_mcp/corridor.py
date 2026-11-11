@@ -7,6 +7,8 @@ from shapely.errors import ShapelyError
 
 from .corridor_geo import Corridor
 from .corridor_policy import PRODUCTS
+from .corridor_validation import geojson_features, page_contract
+from .jurisdiction import verify_jurisdiction
 from .transport import DataAccessError, utc_now
 
 # Keep source identifiers and dates, not whole provider payloads or person-level fields.
@@ -26,14 +28,7 @@ def bad(message):
 
 
 def features(payload):
-    if not isinstance(payload,dict) or payload.get('type') != 'FeatureCollection' or not isinstance(payload.get('features'),list):
-        bad('Provider did not return a GeoJSON FeatureCollection.')
-    crs = payload.get('crs')
-    if crs:
-        label = str(crs).lower()
-        if 'crs84' not in label and '4326' not in label:
-            bad('Unexpected coordinate system for the source features.')
-    return payload['features']
+    return geojson_features(payload)
 
 
 async def pages(http, layer, route, budget, audit):
@@ -58,12 +53,8 @@ async def pages(http, layer, route, budget, audit):
             rows = features(doc)
             if len(rows) > limit:
                 bad('Provider ignored the requested feature limit.')
-            total = doc.get('numberMatched')
-            total = total if type(total) is int and total >= 0 else None
-            if start and total is not None and audit['bbox_candidate_count'] not in (None,total):
-                audit['issues'].append('Upstream candidate count changed between pages.')
+            total, more = page_contract(doc, start, len(rows), audit['bbox_candidate_count'])
             audit['bbox_candidate_count'] = total
-            more = any(isinstance(link,dict) and link.get('rel')=='next' for link in (doc.get('links') or []))
             start += len(rows)
             yield rows
             if not more and (start>=total if total is not None else len(rows)<limit):
@@ -85,6 +76,8 @@ async def pages(http, layer, route, budget, audit):
         ids = []  # ArcGIS uses null for an empty ID set on some layers.
     if not isinstance(ids,list) or not all(type(x) is int and x>=0 for x in ids) or len(set(ids))!=len(ids):
         bad('Invalid or duplicate object IDs in spatial query.')
+    if 'exceededTransferLimit' in response and type(response['exceededTransferLimit']) is not bool:
+        bad('Invalid ArcGIS transfer-limit flag.')
     if response.get('exceededTransferLimit'):
         audit['issues'].append('Upstream capped the spatial ID list.')
     audit['bbox_candidate_count'] = len(ids)
@@ -128,27 +121,36 @@ def inspect_feature(route,layer,row):
         raise ValueError('Missing ward identity.')
     pt = route.bgs_point(attrs) if layer=='boreholes' else None
     if pt is not None:
-        measurement = route.measure(pt)
+        measurement = route.measure(pt, tolerance_m=25)
+        source_position = {'crs':'EPSG:27700', 'coordinates':[pt.x, pt.y]}
         basis = 'published BNG easting/northing'
     else:
         geom = row.get('geometry')
         if not isinstance(geom,dict) or geom.get('type') not in TYPES[layer]:
             raise ValueError('Missing or unexpected source geometry.')
-        measurement = route.metric(row)
+        measurement = route.metric(row, tolerance_m=25)
+        source_position = {'crs':'OGC:CRS84', 'geometry_type':geom['type']}
+        if geom['type'] == 'Point':
+            source_position['coordinates'] = geom['coordinates']
         basis = 'source geometry projected to EPSG:27700'
     if measurement is None:
         return str(ident),None
-    return str(ident), {'source_feature_id':str(ident),'attributes':props,'position_basis':basis,**measurement}
+    return str(ident), {'source_feature_id':str(ident),'attributes':props,'position_basis':basis,'source_position':source_position,**measurement}
 
 
 async def _layer(http,layer,route,nation,budget,limit):
     _,title,coverage,url,terms = PRODUCTS[layer]
     audit = {'product':title,'source_page':url,'coverage':coverage,'attribution_and_limits':terms,
              'requests':[],'bbox_candidate_count':None,'features_examined':0,'unlocatable_or_invalid':0,
-             'outside_corridor':0,'duplicate_candidates':0,'issues':[],'data':[]}
+             'outside_corridor':0,'duplicate_candidates':0,'issues':[],'data':[],
+             'inventory_complete':False, 'coverage_status':'verified_for_declared_nation', 'boundary_candidates':[],
+             'boundary_candidates_count':0, 'boundary_candidates_truncated':False,
+             'boundary_review_margin_m':25, 'threshold_sensitive_matched':0}
     if (layer=='flood_defences' and nation!='England') or (layer=='bridges' and nation=='Scotland'):
-        return {**audit,'status':'not_applicable','matched_examined':None,'issues':['Product not configured for the declared nation. Split cross-border routes.']}
-    seen, hits = set(), []
+        return {**audit,'status':'not_applicable','coverage_status':'not_applicable',
+                'candidate_scan_complete':False,'returned':0,'more_matches_than_shown':False,
+                'matched_examined':None,'issues':['Product not configured for the declared nation. Split cross-border routes.']}
+    seen, hits, borderline = set(), [], []
     try:
         async for rows in pages(http,layer,route,budget,audit):
             for row in rows:
@@ -162,8 +164,10 @@ async def _layer(http,layer,route,nation,budget,limit):
                     audit['duplicate_candidates']+=1
                     continue
                 seen.add(fid)
-                if hit is None:
+                if hit is None or not hit['within_corridor']:
                     audit['outside_corridor']+=1
+                    if hit is not None:
+                        borderline.append(hit)
                 else:
                     hits.append(hit)
     except (DataAccessError, ValueError, TypeError, TimeoutError) as exc:
@@ -172,6 +176,12 @@ async def _layer(http,layer,route,nation,budget,limit):
     if audit['unlocatable_or_invalid'] or audit['duplicate_candidates']:
         audit['issues'].append('Invalid, unlocatable or duplicate candidates prevent a complete determination.')
     hits.sort(key=lambda x:(x['offset_m'],x['chainage_m'],x['source_feature_id']))
+    borderline.sort(key=lambda x:(x['offset_m'],x['chainage_m'],x['source_feature_id']))
+    audit.update(boundary_candidates=borderline[:limit], boundary_candidates_count=len(borderline),
+                 boundary_candidates_truncated=len(borderline)>limit,
+                 threshold_sensitive_matched=sum(hit['threshold_sensitive'] for hit in hits),
+                 membership_stability='review_required' if borderline or any(hit['threshold_sensitive'] for hit in hits)
+                                      else 'no_candidates_in_fixed_review_band')
     failed = 'error' in audit and not audit['features_examined']
     audit.update(status='error' if failed else 'partial' if audit['issues'] else 'ok' if hits else 'empty',
                  matched_examined=None if failed else len(hits), data=hits[:limit],
@@ -191,17 +201,25 @@ async def corridor_query(http, alignment, nation, radius_m=250, input_crs='OGC:C
     if not isinstance(layers,list) or not 1<=len(layers)<=len(PRODUCTS) or any(not isinstance(k,str) or k not in PRODUCTS for k in layers) or len(set(layers))!=len(layers):
         raise ValueError('Select distinct layers from: '+', '.join(PRODUCTS))
     route = Corridor.make(alignment,radius_m,input_crs)
+    jurisdiction = await verify_jurisdiction(http, route, nation)
+    if jurisdiction['status'] != 'verified':
+        return {'kind':'civil_corridor_screen', 'schema_version':'1.1', 'status':'error',
+                'error':jurisdiction['error'], 'jurisdiction':jurisdiction, 'results':{},
+                'data':[], 'inventory_complete':False,
+                'note':'Asset searches were not run. Coverage could not be established; this is not a zero result.'}
     results = dict(zip(layers, await asyncio.gather(*(_layer(http,k,route,nation,candidate_budget,limit) for k in layers))))
     states = [r['status'] for r in results.values()]
     status = 'error' if all(s=='error' for s in states) else 'partial' if any(s in ('partial','error','not_applicable') for s in states) else 'empty' if all(s=='empty' for s in states) else 'ok'
     op = route.inverse.get_last_used_operation()
-    return {'kind':'civil_corridor_screen','schema_version':'1.0','status':status,'retrieved_at_utc':utc_now(),
+    return {'kind':'civil_corridor_screen','schema_version':'1.1','status':status,
+            'jurisdiction':jurisdiction,'inventory_complete':False,'retrieved_at_utc':utc_now(),
             'request':{'alignment':alignment,'input_crs':input_crs,'nation':nation,'radius_m':radius_m,'candidate_budget':candidate_budget,'limit':limit,'layers':layers},
             'metric':{'crs':'EPSG:27700','length_m':round(route.line.length,3),'route_bng_m':[list(p) for p in route.line.coords],
                       'candidate_bbox_crs84':route.bbox,'inverse_coordinate_operation':op.description,
                       'inverse_operation_accuracy_m':op.accuracy if math.isfinite(op.accuracy) and op.accuracy>=0 else None,
                       'rule':'Unrounded minimum 2-D grid distance to the complete centreline <= radius_m; round end caps. Chainage is one nearest location, not every crossing.'},
-            'results':results,'limitations':['Caller supplies nation; split routes at national boundaries. Not a survey or a statutory search.',
+            'results':results,'limitations':['Nation verified for the entire padded envelope against ONS December 2024 polygons. Not a survey or a statutory search.',
             'Results close to the threshold depend on positional precision, coordinate transformation and map generalisation.',
+            'The 25 m threshold-review band is a screening heuristic, not a surveyed accuracy or confidence interval.',
             'An offset is plan distance, not vertical clearance, hydraulic protection, structural condition, collision attribution or a service catchment.',
             'Matched counts apply to uniquely identified, located records examined. Output is limited per layer; inspect issues and candidate_scan_complete. Faults and empty queries do not prove absence.']}
